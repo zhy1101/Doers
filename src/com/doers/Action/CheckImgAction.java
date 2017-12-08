@@ -16,8 +16,7 @@ import org.apache.struts2.ServletActionContext;
 
 public class CheckImgAction extends ActionSupport
 {
-  public String execute()
-    throws IOException
+  public String execute() throws IOException
   {
     int width = 120;
     int height = 30;
@@ -78,8 +77,7 @@ public class CheckImgAction extends ActionSupport
 
     graphics.dispose();
     ImageIO.write(bufferedImage, "jpg", ServletActionContext.getResponse().getOutputStream());
-
-    return "none";
+    return NONE;
   }
 
   private Color getRandColor(int fc, int bc) {

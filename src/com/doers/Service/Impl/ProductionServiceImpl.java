@@ -1,6 +1,6 @@
 package com.doers.Service.Impl;
 
-import com.doers.dao.productionDao;
+import com.doers.Dao.ProductionDao;
 import com.doers.domain.Production;
 import com.doers.domain.User;
 import com.doers.Service.ProductionService;
@@ -13,9 +13,9 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class ProductionServiceImpl implements ProductionService
 {
-  private productionDao productionDao;
+  private ProductionDao productionDao;
 
-  public void setProductionDao(productionDao productionDao)
+  public void setProductionDao(ProductionDao productionDao)
   {
     this.productionDao = productionDao;
   }

@@ -124,7 +124,7 @@
                             <input type="text" id="checkcode" name="checkcode" class="text captcha"  maxlength="4" autocomplete="off"> 
                             <span class="ie8 icon-close close hide"></span>
                             <label class="f-size12 c-999 f-fl f-pl10">
-                            	<img src="${pageContext.request.contextPath}/checkImg.action" id="validate_code"/>  
+                            	<img src="${pageContext.request.contextPath}/checkImgAction" id="validate_code"/>  
                             	 <span style="color:red">${info }</span>                              
                             </label>                        
                             <label class="icon-sucessfill blank hide" style="left:380px"></label>
@@ -135,14 +135,13 @@
                     <div class="item col-xs-12" style="margin-top:20px">
                         <span class="intelligent-label f-fl">&nbsp;</span>    
                         <div class="f-fl item-ifo">
-                           <input href="javascript:;" class="btn btn-blue f-r3" id="btn_part1" type="submit"></input>  
-                                            
+                           <input href="javascript:;" class="btn btn-blue f-r3" id="btn_part1" type="submit" value="注册"></input>                                   
                         </div>
                     </div> 
                     </form>   
                 </div>
                 
-<script>
+<script type="text/javascript">
 var xmlHttp;  
 //异步刷新验证码  
 function reload() {  
@@ -161,7 +160,7 @@ function reload() {
             }  
         }  
     }  
-    var url="${pageContext.request.contextPath}/checkImg.action";  
+    var url="${pageContext.request.contextPath}/checkImgAction";  
     xmlHttp.onreadystatechange = deal;//该属性为一个函数  
     xmlHttp.open("GET", url, true);//初始化xmlHttp  
     xmlHttp.send(null);//发送  
@@ -169,7 +168,7 @@ function reload() {
 function deal(){  
     if(xmlHttp.readyState==4){//当状态值为4时，接收到服务器传输的信息  
         //重新从servlet获得图片资源，并且防止浏览器缓存，加了时间  
-        document.getElementById("validate_code").src = "${pageContext.request.contextPath}/checkImg.action?" + new Date().getTime();  
+        document.getElementById("validate_code").src = "${pageContext.request.contextPath}/checkImgAction?" + new Date().getTime();  
     }  
 }  
 </script>

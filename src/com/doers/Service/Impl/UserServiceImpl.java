@@ -1,6 +1,6 @@
 package com.doers.Service.Impl;
 
-import com.doers.dao.UserDao;
+import com.doers.Dao.UserDao;
 import com.doers.domain.User;
 import com.doers.Service.UserService;
 import org.springframework.transaction.annotation.Transactional;

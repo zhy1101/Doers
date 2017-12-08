@@ -10,7 +10,7 @@
 			name: 完整类名
 			table:数据库表名
 	 -->
-	<class name="production" table="Production" >
+	<class name="Production" table="Production" >
 		<id name="productionId"  >
 			<generator class="native"></generator>
 		</id>
@@ -29,7 +29,7 @@
 		<property name="zan" column="zan" ></property>	
 		<property name="shortcontent" column="shortcontent" ></property>		
 		
-		<many-to-one name="user" column="uid" class="user"  >
+		<many-to-one name="user" column="uid" class="User"  >
 		</many-to-one>
 	</class>
 </hibernate-mapping>

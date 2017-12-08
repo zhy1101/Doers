@@ -8,7 +8,7 @@ public abstract interface ProductionService
 {
   public abstract PageBean getProductList(DetachedCriteria paramDetachedCriteria, Integer paramInteger1, Integer paramInteger2);
 
-  public abstract void addNewProduction(production paramproduction);
+  public abstract void addNewProduction(Production paramproduction);
 
   public abstract Production getProductionById(String paramString);
 }

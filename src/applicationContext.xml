@@ -40,36 +40,36 @@
 
 	
 	<!-- Action -->
-	<bean name="userAction" class="com.doers.web.UserAction" scope="prototype">
+	<bean name="UserAction" class="com.doers.Action.UserAction" scope="prototype">
 		<property name="userService" ref="userService"></property>
 	</bean>
-	<bean name="resignAction" class="com.doers.web.ResignAction" scope="prototype">
+	<bean name="resignAction" class="com.doers.Action.ResignAction" scope="prototype">
 		<property name="userService" ref="userService"></property>
 	</bean>
-	<bean name="checkImgAction" class="com.doers.web.CheckImgAction" scope="prototype"></bean>
-	<bean name="productListAction" class="com.doers.web.ProductListAction" scope="prototype">
+	<bean name="checkImgAction" class="com.doers.Action.CheckImgAction" scope="prototype"></bean>
+	<bean name="productListAction" class="com.doers.Action.ProductListAction" scope="prototype">
 		<property name="productionService" ref="productionService"></property>
 	</bean>
-	<bean name="ueditorAction" class="com.doers.web.UeditorAction" scope="prototype">
+	<bean name="ueditorAction" class="com.doers.Action.UeditorAction" scope="prototype">
 		<property name="productionService" ref="productionService"></property>
 		<property name="userService" ref="userService"></property>
 	</bean>
-	<bean name="productionDetailAction" class="com.doers.web.ProductionDetailAction" scope="prototype">
+	<bean name="productionDetailAction" class="com.doers.Action.ProductionDetailAction" scope="prototype">
 		<property name="productionService" ref="productionService"></property>
 	</bean>
 	
 	<!-- Service -->
-	<bean name="userService" class="com.doers.service.Impl.userServiceImpl">
+	<bean name="userService" class="com.doers.Service.Impl.UserServiceImpl">
 		<property name="userDao" ref="userDao"></property>
 	</bean>
-	<bean name="productionService" class="com.doers.service.Impl.productionServiceImpl">
+	<bean name="productionService" class="com.doers.Service.Impl.ProductionServiceImpl">
 		<property name="productionDao" ref="productionDao"></property>
 	</bean>
 	<!-- Dao -->
-	<bean name="userDao" class ="com.doers.dao.Impl.userDaoImpl" >
+	<bean name="userDao" class ="com.doers.Dao.Impl.UserDaoImpl" >
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
-	<bean name="productionDao" class="com.doers.dao.Impl.productionDaoImpl">
+	<bean name="productionDao" class="com.doers.Dao.Impl.ProductionDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 
