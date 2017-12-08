@@ -12,12 +12,15 @@ import java.util.Date;
 import java.util.Map;
 import javax.mail.MessagingException;
 
+import org.json.JSONObject;
+
 public class ResignAction extends ActionSupport
 {
   private String activeCode;
   private UserService userService;
   private String checkcode;
   private User u;
+  private String user_name;
   private Map<String, Object> resultMap;
   private String checkCode_session = null;
 
@@ -47,13 +50,21 @@ public class ResignAction extends ActionSupport
   public void setCheckCode_session(String checkCode_session) {
     this.checkCode_session = checkCode_session;
   }
+  
+	  public String getUser_name() {
+		return user_name;
+	}
 
-  public void setUserService(UserService userService) {
-    this.userService = userService;
-  }
+	public void setUser_name(String user_name) {
+		this.user_name = user_name;
+	}
+	
+	public void setUserService(UserService userService) {
+	    this.userService = userService;
+	  }
   public String resign() {
     this.checkCode_session = ((String)ActionContext.getContext().getSession().get("checkcode"));
-    if (!this.checkcode.equals(this.checkCode_session)) {
+    if (!this.checkcode.toLowerCase().equals(this.checkCode_session.toLowerCase())) {
       System.out.println(this.checkcode);
       System.out.println(this.checkCode_session);
       return "Faild";
@@ -87,5 +98,14 @@ public class ResignAction extends ActionSupport
   public String active() {
     this.userService.active(this.activeCode);
     return "step3";
+  }
+  public String checkUserName(){
+	  JSONObject j=new JSONObject();  
+	    boolean i=userService.checkUsername(user_name);       
+	    //i==1表示不存在相同的shopCode  
+	    //i==0表示已存在相同的shopCode  
+	    j.put("msg", i);          
+	    String string = net.sf.json.JSONObject.fromObject(j).toString();  
+	  return null;
   }
 }

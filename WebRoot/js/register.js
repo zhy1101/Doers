@@ -108,20 +108,15 @@
 				if (!a && !b) return d
 			},
 			isExist:function(value,params){		
-					//定义一个标志
-					var flag = false;
-					//value:输入的内容
-					//element:被校验的元素对象
-					//params：规则对应的参数值
-					//目的：对输入的username进行ajax校验
 					$.ajax({
 						"async":false,
-						"url":"/Doers/ResignAction_checkUserName",
-						"data":{"user_name":value},
+						"url":"/Doers/resignAction_checkUserName",
+						"data":{"user_name":$("#user_name").val()},
 						"type":"POST",
 						"dataType":"json",
 						"success":function(data){
-							flag = data.isExist;
+							var d = eval("("+data+")");
+	                            $("#chk").text(d.msg);  
 						}
 					});
 					//返回false代表该校验器不通过

@@ -21,7 +21,7 @@ public class UserDaoImpl extends BaseDaoImpl<User> implements UserDao
 
   public void active(String activeCode)
   {
-    String hql = "from com.doers.domain.user u where u.activeCode= ?";
+    String hql = "from com.doers.domain.User u where u.activeCode= ?";
     List list = getHibernateTemplate().find(hql, new Object[] { activeCode });
     if ((list != null) && (list.size() != 0)) {
       ((User)list.get(0)).setStatue(1);

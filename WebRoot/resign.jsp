@@ -124,7 +124,7 @@
                             <input type="text" id="checkcode" name="checkcode" class="text captcha"  maxlength="4" autocomplete="off"> 
                             <span class="ie8 icon-close close hide"></span>
                             <label class="f-size12 c-999 f-fl f-pl10">
-                            	<img src="${pageContext.request.contextPath}/checkImgAction" id="validate_code"/>  
+                            	<img src="${pageContext.request.contextPath}/checkImg.action" id="validate_code"/>  
                             	 <span style="color:red">${info }</span>                              
                             </label>                        
                             <label class="icon-sucessfill blank hide" style="left:380px"></label>
@@ -160,7 +160,7 @@ function reload() {
             }  
         }  
     }  
-    var url="${pageContext.request.contextPath}/checkImgAction";  
+    var url="${pageContext.request.contextPath}/checkImg.action";  
     xmlHttp.onreadystatechange = deal;//该属性为一个函数  
     xmlHttp.open("GET", url, true);//初始化xmlHttp  
     xmlHttp.send(null);//发送  
@@ -168,7 +168,7 @@ function reload() {
 function deal(){  
     if(xmlHttp.readyState==4){//当状态值为4时，接收到服务器传输的信息  
         //重新从servlet获得图片资源，并且防止浏览器缓存，加了时间  
-        document.getElementById("validate_code").src = "${pageContext.request.contextPath}/checkImgAction?" + new Date().getTime();  
+        document.getElementById("validate_code").src = "${pageContext.request.contextPath}/checkImg.action?" + new Date().getTime();  
     }  
 }  
 </script>

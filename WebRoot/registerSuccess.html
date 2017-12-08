@@ -8,6 +8,19 @@
 <link href="css/resign.css" rel="stylesheet">
 <script src="js/jquery-1.10.2.min.js"></script>
 <script src="js/register.js"></script>
+<script type="text/javascript">
+var i = 10;
+var intervalid;
+intervalid = setInterval("fun()", 1000);
+function fun() {
+if (i== 0) {
+window.location.href = "http://localhost:8080/Doers";
+clearInterval(intervalid);
+}
+document.getElementById("times").innerHTML = i;
+i--;
+} 
+</script>
 </head>
 <body>
 <div class="login-box f-mt10 f-pb50">

@@ -2,15 +2,15 @@ package com.doers.Service;
 
 import com.doers.domain.User;
 
-public abstract interface UserService
+public  interface UserService
 {
-  public abstract boolean saveUser(User paramuser);
+  public  boolean saveUser(User paramuser);
 
-  public abstract void active(String paramString);
+  public  void active(String paramString);
 
-  public abstract User getUserByCodePassWord(User paramuser);
+  public  User getUserByCodePassWord(User paramuser);
 
-  public abstract boolean checkUsername(String paramString);
+  public  boolean checkUsername(String paramString);
 
-  public abstract User getUserById(String paramString);
+  public  User getUserById(String paramString);
 }

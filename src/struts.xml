@@ -17,7 +17,7 @@
 			<result name="step2" type="redirect">/registerActive.html</result>
 			<result name="step3" type="redirect">/registerSuccess.html</result>
 	    </action>
-	    <action name="checkImgAction" class="checkImgAction" method="execute"></action> 
+	    <action name="checkImg" class="checkImgAction" ></action> 
 	    <action name="productListAction_*" class="productListAction" method="{1}">
 	    	<result name="gotoUserHome">/userHouse/userHouse.jsp</result>
 	    </action>
