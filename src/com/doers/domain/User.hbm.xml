@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+   <!-- 配置表与实体对象的关系 -->
+   <!-- package属性:填写一个包名.在元素内部凡是需要书写完整类名的属性,可以直接写简答类名了. -->
+<hibernate-mapping package="com.doers.domain" >
+	<class name="user" table="User" >
+		<id name="uid"  >
+			<generator class="native"></generator>
+		</id>
+		<!-- property元素:除id之外的普通属性映射
+				name: 填写属性名
+				column(可选): 填写列名
+				type(可选):填写列(属性)的类型.hibernate会自动检测实体的属性类型.
+						每个类型有三种填法: java类型|hibernate类型|数据库类型
+				not-null(可选):配置该属性(列)是否不能为空. 默认值:false
+				length(可选):配置数据库中列的长度. 默认值:使用数据库类型的最大长度
+		 -->
+		<property name="user_name" column="user_name" >
+			<!--  <column name="cust_name" sql-type="varchar" ></column> -->
+		</property>
+		<property name="password" column="password" >
+			<!--  <column name="cust_name" sql-type="varchar" ></column> -->
+		</property>
+		<property name="email" column="email" ></property>
+		<property name="kind" column="kind" ></property>
+		<property name="real_id" column="real_id" ></property>
+		<property name="activeCode" column="activeCode" ></property>
+		<property name="time" column="time" ></property>
+		<property name="statue" column="statue" ></property>
+		<property name="personImg_path" column="personImg_path" ></property>
+		<property name="birthday" column="birthday" ></property>
+		<property name="address" column="address" ></property>
+		<property name="weiChat" column="weiChat" ></property>
+		<property name="QQ" column="QQ" ></property>
+		<property name="description" column="description" ></property>
+		<property name="skill" column="skill" ></property>
+		
+		<set name="productions" lazy="false">
+			<key column = "uid"></key>
+			<one-to-many class="production"></one-to-many>
+		</set>
+	</class>
+</hibernate-mapping>

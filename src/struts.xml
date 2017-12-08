@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.objectFactory" value="spring"></constant>
+	<package name="default" namespace="/" extends="struts-default">
+		<global-exception-mappings>
+			<exception-mapping result="error" exception="java.lang.RuntimeExcepton"></exception-mapping>
+		</global-exception-mappings>
+		<action name="UserAction_*" class="userAction" method="{1}">		
+			<result name="toHome" type="redirect">/index.jsp</result>
+			<result name="error">/Login.jsp</result>
+		</action>
+		<action name="resignAction_*" class="resignAction" method="{1}">
+			<result name="Faild">/resign.jsp</result>
+			<result name="step2" type="redirect">/registerActive.html</result>
+			<result name="step3" type="redirect">/registerSuccess.html</result>
+	    </action>
+	    <action name="checkImg" class="checkImgAction"></action> 
+	    <action name="productListAction_*" class="productListAction" method="{1}">
+	    	<result name="gotoUserHome">/userHouse/userHouse.jsp</result>
+	    </action>
+	    <action name="ueditorAction_*" class="ueditorAction" method="{1}">
+	    	<result name="handInSuccess" type="redirect">/index.jsp</result>
+	    </action>
+	    <action name="productionDetailAction_*" class="productionDetailAction" method="{1}">
+	    	<result name="gotoProductionDetail" type="redirect">/ProductionPage/ProductionDetail.jsp</result>
+	    </action>
+	</package>
+</struts>

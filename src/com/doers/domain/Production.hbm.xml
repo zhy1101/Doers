@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+   <!-- 配置表与实体对象的关系 -->
+   <!-- package属性:填写一个包名.在元素内部凡是需要书写完整类名的属性,可以直接写简答类名了. -->
+<hibernate-mapping package="com.doers.domain" >
+	<!-- 
+		class元素: 配置实体与表的对应关系的
+			name: 完整类名
+			table:数据库表名
+	 -->
+	<class name="production" table="Production" >
+		<id name="productionId"  >
+			<generator class="native"></generator>
+		</id>
+		<property name="productionTitle" column="productionTitle" >
+			<!--  <column name="cust_name" sql-type="varchar" ></column> -->
+		</property>
+		<property name="content" column="content" >
+			<!--  <column name="cust_name" sql-type="varchar" ></column> -->
+		</property>
+		<property name="big_kind" column="big_kind" >
+		</property>
+		<property name="small_kind" column="small_kind" >
+		</property>
+		<property name="time" column="time" ></property>
+		<property name="coverURL" column="coverURL" ></property>	
+		<property name="zan" column="zan" ></property>	
+		<property name="shortcontent" column="shortcontent" ></property>		
+		
+		<many-to-one name="user" column="uid" class="user"  >
+		</many-to-one>
+	</class>
+</hibernate-mapping>
