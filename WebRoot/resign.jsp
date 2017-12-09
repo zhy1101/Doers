@@ -1,6 +1,8 @@
-<%@ page language="java" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<!DOCTYPE html>
+<%@ taglib uri="/struts-tags" prefix="s" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta charset="utf-8" />
@@ -12,6 +14,7 @@
 <script src="js/jquery-1.10.2.min.js"></script>
 <script src="js/register.js"></script>
 <script src="js/jquery.validate.min.js" type="text/javascript"></script>
+<script src="js/my.js" type="text/javascript"></script>
 </head>
 <body class="bgf4" >
 <div class="login-box f-mt10 f-pb50">
@@ -88,27 +91,9 @@
                     </div>
   						<div class="item col-xs-12">
                         <span class="intelligent-label f-fl"><b class="ftx04">*</b>用户类型：</span>    
-                        <div class="f-fl item-ifo">
-                            <select name ="u.kind" id ="user_kind" onchange="change_num(this.value)">
-							    <option value="3"></option>
-							    <option value="1">学生</option>
-							    <option value="2">教师</option>	
-							    <option value="3">普通用户</option>			    	
-		    					</select>
-                        </div>
-                   		 </div> 
-                <script>
-                   		function change_num(val){
-                   			var Ele = document.getElementById("real_id_name");				
-                   			if(val==1){
-                   				Ele.innerText="学号：";
-                   			}else if(val==2){
-                   				Ele.innerText="教工号：";
-                   			}else{
-                   				Ele.innerText="身份证号：";
-                   			}
-                   			}
-                </script>
+                        <div class="f-fl item-ifo" id="user_kind">
+                   		</div> 
+                   		</div>
                    		<div class="item col-xs-12">
 	                   	<span class="intelligent-label f-fl" id="real_id_name" >身份证号：</span>  
                         <div class="f-fl item-ifo"  >
@@ -135,7 +120,7 @@
                     <div class="item col-xs-12" style="margin-top:20px">
                         <span class="intelligent-label f-fl">&nbsp;</span>    
                         <div class="f-fl item-ifo">
-                           <input href="javascript:;" class="btn btn-blue f-r3" id="btn_part1" type="submit" value="注册"></input>                                   
+                           <input href="javascript:;" class="btn btn-blue f-r3" id="submit-botton" type="button" value="注册"></input>                                   
                         </div>
                     </div> 
                     </form>   
@@ -171,6 +156,27 @@ function deal(){
         document.getElementById("validate_code").src = "${pageContext.request.contextPath}/checkImg.action?" + new Date().getTime();  
     }  
 }  
+$("#submit-botton").click(function(){			
+ 	if(!common.verify.btnClick()) 
+ 		return false;
+ 	else 
+ 	window.location.href="${pageContext.request.contextPath}/resignAction_resign";
+ })
+ $(document).ready(function(){
+	loadSelect("001","user_kind","u.kind" <s:if test="#u.kind!=null">,<s:property value="#u.kind.cust_level.dict_id" /></s:if>);
+	});
+$("#user_kind > select").change(
+	function(this.val){
+	var Ele = document.getElementById("real_id_name");
+	if(val==1){
+    Ele.innerText="学号：";
+    }else if(val==2){
+    Ele.innerText="教工号：";
+    }else{
+    Ele.innerText="身份证号：";
+    }
+
+)
 </script>
 </body>
 </html>

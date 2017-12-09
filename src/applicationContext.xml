@@ -57,13 +57,18 @@
 	<bean name="productionDetailAction" class="com.doers.Action.ProductionDetailAction" scope="prototype">
 		<property name="productionService" ref="productionService"></property>
 	</bean>
-	
+	<bean name="baseDictAction" class="com.doers.Action.BaseDictAction" scope="prototype" >
+		<property name="baseDictService" ref="baseDictService" ></property>
+	</bean>
 	<!-- Service -->
 	<bean name="userService" class="com.doers.Service.Impl.UserServiceImpl">
 		<property name="userDao" ref="userDao"></property>
 	</bean>
 	<bean name="productionService" class="com.doers.Service.Impl.ProductionServiceImpl">
 		<property name="productionDao" ref="productionDao"></property>
+	</bean>
+	<bean name="baseDictService" class="com.doers.Service.Impl.BaseDictServiceImpl" >
+		<property name="baseDictService" ref="baseDictDao" ></property>
 	</bean>
 	<!-- Dao -->
 	<bean name="userDao" class ="com.doers.Dao.Impl.UserDaoImpl" >
@@ -72,5 +77,7 @@
 	<bean name="productionDao" class="com.doers.Dao.Impl.ProductionDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
-
+	<bean name="baseDictDao" class="com.doers.Dao.Impl.BaseDictDaoImpl" >
+		<property name="sessionFactory" ref="sessionFactory" ></property>
+	</bean>
 </beans>

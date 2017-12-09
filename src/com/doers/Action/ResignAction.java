@@ -6,12 +6,15 @@ import com.doers.utils.CommonsUtils;
 import com.doers.utils.MailUtils;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+
+import java.io.IOException;
 import java.io.PrintStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
 import javax.mail.MessagingException;
 
+import org.apache.struts2.ServletActionContext;
 import org.json.JSONObject;
 
 public class ResignAction extends ActionSupport
@@ -99,13 +102,15 @@ public class ResignAction extends ActionSupport
     this.userService.active(this.activeCode);
     return "step3";
   }
-  public String checkUserName(){
+  public String checkUserName() throws Exception{
 	  JSONObject j=new JSONObject();  
 	    boolean i=userService.checkUsername(user_name);       
 	    //i==1表示不存在相同的shopCode  
 	    //i==0表示已存在相同的shopCode  
 	    j.put("msg", i);          
-	    String string = net.sf.json.JSONObject.fromObject(j).toString();  
+	    String result = net.sf.json.JSONObject.fromObject(j).toString();  
+	    ServletActionContext.getResponse().setContentType("application/json;charset=utf-8");
+		ServletActionContext.getResponse().getWriter().write(result);
 	  return null;
   }
 }

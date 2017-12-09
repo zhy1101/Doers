@@ -116,7 +116,7 @@
 						"dataType":"json",
 						"success":function(data){
 							var d = eval("("+data+")");
-	                            $("#chk").text(d.msg);  
+	                           flag=d.msg;  
 						}
 					});
 					//返回false代表该校验器不通过

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="default" location="10,178" size="1015,420">
+    <action name="UserAction_*" location="801,48" size="150,62">
+      <result name="toHome">
+        <resourceEdge source="toHome" routing="0" target="index.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="Login.jsp" />
+      </result>
+    </action>
+    <action name="resignAction_*" location="801,212" size="150,83">
+      <result name="Faild">
+        <resourceEdge source="Faild" routing="0" target="resign.jsp" />
+      </result>
+      <result name="step2">
+        <resourceEdge source="step2" routing="0" target="registerActive.html" />
+      </result>
+      <result name="step3">
+        <resourceEdge source="step3" routing="0" target="registerSuccess.html" />
+      </result>
+    </action>
+    <action name="checkImg" location="556,234" size="150,40" />
+    <action name="productListAction_*" location="556,338" size="150,41">
+      <result name="gotoUserHome">
+        <resourceEdge source="gotoUserHome" routing="0" target="userHouse.jsp" />
+      </result>
+    </action>
+    <action name="ueditorAction_*" location="311,338" size="150,41">
+      <result name="handInSuccess">
+        <resourceEdge source="handInSuccess" routing="0" target="index.jsp" />
+      </result>
+    </action>
+    <action name="productionDetailAction_*" location="66,338" size="150,41">
+      <result name="gotoProductionDetail">
+        <resourceEdge source="gotoProductionDetail" routing="0" target="ProductionDetail.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="index.jsp" path="/index.jsp" location="320,10" size="150,55" />
+  <webResource name="Login.jsp" path="/Login.jsp" location="810,80" size="150,55" />
+  <webResource name="resign.jsp" path="/resign.jsp" location="810,640" size="150,55" />
+  <webResource name="registerActive.html" path="/registerActive.html" location="1090,395" size="150,55" />
+  <webResource name="registerSuccess.html" path="/registerSuccess.html" location="1090,290" size="150,55" />
+  <webResource name="userHouse.jsp" path="/userHouse/userHouse.jsp" location="565,640" size="150,55" />
+  <webResource name="ProductionDetail.jsp" path="/ProductionPage/ProductionDetail.jsp" location="75,80" size="150,55" />
+</Struts2Diagram>
+
