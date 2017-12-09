@@ -28,13 +28,23 @@ public class ResignAction extends ActionSupport
   private UserService userService;
   private String checkcode;
   private User u;
+  private String e_mail;
   private String user_name;
   private Map<String, Object> resultMap;
   private String checkCode_session = null;
 
   public void setResultMap(Map<String, Object> resultMap) { this.resultMap = resultMap; }
+  
+  
+  public String getE_mail() {
+	return e_mail;
+}
 
-  public String getActiveCode() {
+public void setE_mail(String e_mail) {
+	this.e_mail = e_mail;
+}
+
+public String getActiveCode() {
     return this.activeCode;
   }
   public void setActiveCode(String activeCode) {
@@ -108,8 +118,18 @@ public class ResignAction extends ActionSupport
     return "step3";
   }
   public String checkUserName() throws Exception{
-	    boolean i=userService.checkUsername(user_name);  
-	    String result = JSONObject.fromObject(i).toString();
+	  JSONObject j = new  JSONObject();
+	    boolean i=userService.checkUsername(user_name); 
+	    j.put("isExist", i);
+	    String result = JSONObject.fromObject(j).toString();
+		ServletActionContext.getResponse().getWriter().write(result);
+	  return null;
+  }
+  public String checkEmail() throws Exception{
+	  JSONObject j = new  JSONObject();
+	    boolean i=userService.checkEmail(e_mail); 
+	    j.put("isExist", i);
+	    String result = JSONObject.fromObject(j).toString();
 		ServletActionContext.getResponse().getWriter().write(result);
 	  return null;
   }

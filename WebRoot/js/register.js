@@ -108,21 +108,37 @@
 				if (!a && !b) return d
 			},
 			isExist:function(value,params){		
+				var flag= false;
 					$.ajax({
-						"async":false,
-						"url":"${pageContext.request.contextPath}/resignAction_checkUserName",
-						"data":{"user_name":value},
+						"async": false, 
+						"url":"${pageContext.request.contextPath}/resignAction_checkUserName?user_name="+value,
+						"data":{user_name:value},
 						"type":"POST",
 						"contentType": "application/json; charset=utf-8",
 				        "dataType": "json",
 						"success":function(data){
-							var dataObj=eval("("+data+")");
-							var data1=eval("("+dataObj+")");
-							alert(data1.isExist);
-							if(data1.isExist) return params;
+							if(data.isExist){
+								flag=true;}
 						}
-					});	
-				}
+					});		
+					if(flag) return params;
+				},
+			isEmailExist:function(value,params){		
+					var flag= false;
+						$.ajax({
+							"async": false, 
+							"url":"${pageContext.request.contextPath}/resignAction_checkEmail?e_mail="+value,
+							"data":{e_mail:value},
+							"type":"POST",
+							"contentType": "application/json; charset=utf-8",
+					        "dataType": "json",
+							"success":function(data){
+								if(data.isExist){
+									flag=true;}
+							}
+						});		
+						if(flag) return params;
+					}
 		}
 	};
 	require.prototype = {

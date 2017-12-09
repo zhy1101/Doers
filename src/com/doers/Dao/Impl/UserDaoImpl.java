@@ -29,18 +29,32 @@ public class UserDaoImpl extends BaseDaoImpl<User> implements UserDao
     getHibernateTemplate().save(list.get(0));
   }
 
-  public Long findUsername(String username)
+  public boolean findUsername(String username)
   {
     String hql = "from User where user_name = ?";
-    List list = getHibernateTemplate().find(hql, username);
+    List list = getHibernateTemplate().find(hql,username);
     if ((list != null) && (list.size() > 0)) {
-      return Long.valueOf(-1L);
+      return true;
     }
-    return Long.valueOf(1L);
+    return false;
   }
+	@Override
+	public boolean checkEmail(String e_mail) {
+	String hql = "from User where email = ? and statue=1";
+		    List list = getHibernateTemplate().find(hql,e_mail);
+		    if ((list != null) && (list.size() > 0)) {
+		      return true;
+		    }
+		    return false;
+	}
 
-  public User getUserByUserName(final String user_name)
-  {
-   return null;//¼ÇµÃÖØÐ´
-  }
+	@Override
+	public User getUserByUserName(String user_name) {
+		String hql = "from User where user_name = ? ";
+	    List list = getHibernateTemplate().find(hql,user_name);
+	    if ((list != null) && (list.size() > 0)) {
+	      return (User) list.get(0);
+	    }
+	    return null;
+	}
 }

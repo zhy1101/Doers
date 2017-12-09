@@ -52,7 +52,7 @@
                     <div class="item col-xs-12">
                         <span class="intelligent-label f-fl"><b class="ftx04">*</b>Email：</span>    
                         <div class="f-fl item-ifo">
-                            <input type="text" class="txt03 f-r3 required"  tabindex="2" data-valid="isNonEmpty||isEmail" data-error="邮箱不能为空||邮箱格式不正确"  id="email" name="u.email"/> 
+                            <input type="text" class="txt03 f-r3 required"  tabindex="2" data-valid="isNonEmpty||isEmail||isEmailExist" data-error="邮箱不能为空||邮箱格式不正确||邮箱已被注册"  id="email" name="u.email"/> 
                             <span class="ie8 icon-close close hide"></span>                           
                             <label class="icon-sucessfill blank hide"></label>
                             <label class="focus">请填写有效的邮箱地址</label>

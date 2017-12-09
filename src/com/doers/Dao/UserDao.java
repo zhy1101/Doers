@@ -8,7 +8,9 @@ public  interface UserDao extends BaseDao<User>
 
   public  void active(String paramString);
 
-  public Long findUsername(String paramString);
+  public boolean findUsername(String paramString);
 
-  public  User getUserByUserName(String paramString);
+  public boolean checkEmail(String e_mail);
+
+  public User getUserByUserName(String user_name);
 }

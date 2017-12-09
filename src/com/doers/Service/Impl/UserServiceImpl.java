@@ -38,14 +38,16 @@ public class UserServiceImpl implements UserService
   }
 
   public boolean checkUsername(String username) {
-    Long isExist = Long.valueOf(0L);
-    isExist = this.userDao.findUsername(username);
-
-    return isExist.longValue()>0L;
+    return this.userDao.findUsername(username);
   }
 
   public User getUserById(String id)
   {
     return (User)this.userDao.getById(Long.valueOf(id));
   }
+
+	@Override
+	public boolean checkEmail(String e_mail) {
+		return this.userDao.checkEmail(e_mail);
+	}
 }

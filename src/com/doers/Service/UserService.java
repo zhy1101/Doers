@@ -13,4 +13,6 @@ public  interface UserService
   public  boolean checkUsername(String paramString);
 
   public  User getUserById(String paramString);
+
+  public boolean checkEmail(String e_mail);
 }
