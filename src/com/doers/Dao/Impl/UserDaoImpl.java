@@ -31,8 +31,8 @@ public class UserDaoImpl extends BaseDaoImpl<User> implements UserDao
 
   public Long findUsername(String username)
   {
-    String hql = "from User where username = ?";
-    List list = getHibernateTemplate().find(hql, new Object[] { username });
+    String hql = "from User where user_name = ?";
+    List list = getHibernateTemplate().find(hql, username);
     if ((list != null) && (list.size() > 0)) {
       return Long.valueOf(-1L);
     }

@@ -41,7 +41,7 @@ public class UserServiceImpl implements UserService
     Long isExist = Long.valueOf(0L);
     isExist = this.userDao.findUsername(username);
 
-    return isExist.longValue() > 0L;
+    return isExist.longValue()>0L;
   }
 
   public User getUserById(String id)

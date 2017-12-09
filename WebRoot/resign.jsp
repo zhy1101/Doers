@@ -11,10 +11,7 @@
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="css/resign_gloab.css" rel="stylesheet">
 <link href="css/resign.css" rel="stylesheet">
-<script src="js/jquery-1.10.2.min.js"></script>
-<script src="js/register.js"></script>
-<script src="js/jquery.validate.min.js" type="text/javascript"></script>
-<script src="js/my.js" type="text/javascript"></script>
+
 </head>
 <body class="bgf4" >
 <div class="login-box f-mt10 f-pb50">
@@ -46,7 +43,7 @@
                     <div class="item col-xs-12">
                         <span class="intelligent-label f-fl"><b class="ftx04">*</b>用户名：</span>    
                         <div class="f-fl item-ifo">
-                            <input type="text" name="u.user_name" maxlength="20" class="txt03 f-r3 required" tabindex="1" data-valid="isNonEmpty||between:3-20||isUname" data-error="用户名不能为空||用户名长度3-20位||只能输入中文、字母、数字、下划线，且以中文或字母开头" id="user_name" /> <span class="ie8 icon-close close hide"></span>
+                            <input type="text" name="u.user_name" maxlength="20" class="txt03 f-r3 required" tabindex="1" data-valid="isNonEmpty||between:3-20||isUname||isExist" data-error="用户名不能为空||用户名长度3-20位||只能输入中文、字母、数字、下划线，且以中文或字母开头||用户名已存在" id="user_name" /> <span class="ie8 icon-close close hide"></span>
                             <label class="icon-sucessfill blank hide"></label>
                             <label class="focus"><span>3-20位，中文、字母、数字、下划线的组合，以中文或字母开头</span></label>
                             <label class="focus valid"></label>
@@ -125,8 +122,25 @@
                     </div> 
                     </form>   
                 </div>
-                
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/register.js"></script>
+<script src="js/jquery.validate.min.js" type="text/javascript"></script>
+<script src="js/my.js" type="text/javascript"></script>               
 <script type="text/javascript">
+ $(document).ready(function(){
+	loadSelect("001","user_kind","u.kind.dict_id");
+	$("select").change(
+	function(){
+	var Ele = document.getElementById("real_id_name");
+	if($("#user_kind>select").val()==1){
+    Ele.innerText="学号：";
+    }else if($("#user_kind>select").val()==2){
+    Ele.innerText="教工号：";
+    }else{
+    Ele.innerText="身份证号：";
+    }}
+)
+	});
 var xmlHttp;  
 //异步刷新验证码  
 function reload() {  
@@ -162,21 +176,8 @@ $("#submit-botton").click(function(){
  	else 
  	window.location.href="${pageContext.request.contextPath}/resignAction_resign";
  })
- $(document).ready(function(){
-	loadSelect("001","user_kind","u.kind" <s:if test="#u.kind!=null">,<s:property value="#u.kind.cust_level.dict_id" /></s:if>);
-	});
-$("#user_kind > select").change(
-	function(this.val){
-	var Ele = document.getElementById("real_id_name");
-	if(val==1){
-    Ele.innerText="学号：";
-    }else if(val==2){
-    Ele.innerText="教工号：";
-    }else{
-    Ele.innerText="身份证号：";
-    }
 
-)
 </script>
+
 </body>
 </html>

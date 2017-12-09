@@ -5,14 +5,14 @@ public class Production
   private long productionId;
   private String productionTitle;
   private String content;
-  private String big_kind;
-  private String small_kind;
   private String time;
   private String coverURL;
   private int zan;
   private String shortcontent;
   private User user;
-
+  private BaseDict big_kind;
+  private BaseDict small_kind;
+  
   public String getShortcontent()
   {
     return this.shortcontent;
@@ -51,16 +51,16 @@ public class Production
   public void setContent(String content) {
     this.content = content;
   }
-  public String getBig_kind() {
+  public BaseDict getBig_kind() {
     return this.big_kind;
   }
-  public void setBig_kind(String big_kind) {
+  public void setBig_kind(BaseDict big_kind) {
     this.big_kind = big_kind;
   }
-  public String getSmall_kind() {
+  public BaseDict getSmall_kind() {
     return this.small_kind;
   }
-  public void setSmall_kind(String small_kind) {
+  public void setSmall_kind(BaseDict small_kind) {
     this.small_kind = small_kind;
   }
   public String getTime() {

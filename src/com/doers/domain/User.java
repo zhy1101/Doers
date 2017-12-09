@@ -9,7 +9,6 @@ public class User
   private String password;
   private String user_name;
   private String email;
-  private int kind;
   private String real_id;
   private String activeCode;
   private String time;
@@ -21,6 +20,7 @@ public class User
   private String QQ;
   private String description;
   private String skill;
+  private BaseDict kind;
   private Set<Production> productions = new HashSet();
 
   public String getSkill() { return this.skill; }
@@ -88,10 +88,10 @@ public class User
   public void setEmail(String email) {
     this.email = email;
   }
-  public int getKind() {
+  public BaseDict getKind() {
     return this.kind;
   }
-  public void setKind(int kind) {
+  public void setKind(BaseDict kind) {
     this.kind = kind;
   }
   public String getReal_id() {

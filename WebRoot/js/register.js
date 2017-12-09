@@ -110,18 +110,19 @@
 			isExist:function(value,params){		
 					$.ajax({
 						"async":false,
-						"url":"/Doers/resignAction_checkUserName",
-						"data":{"user_name":$("#user_name").val()},
+						"url":"${pageContext.request.contextPath}/resignAction_checkUserName",
+						"data":{"user_name":value},
 						"type":"POST",
-						"dataType":"json",
+						"contentType": "application/json; charset=utf-8",
+				        "dataType": "json",
 						"success":function(data){
-							var d = eval("("+data+")");
-	                           flag=d.msg;  
+							var dataObj=eval("("+data+")");
+							var data1=eval("("+dataObj+")");
+							alert(data1.isExist);
+							if(data1.isExist) return params;
 						}
-					});
-					//返回false代表该校验器不通过
-					if(flag) return params;
-				},
+					});	
+				}
 		}
 	};
 	require.prototype = {

@@ -56,11 +56,11 @@
 </header>
 <section id="container">
         <div id="skippr">
-            <div style="background-image: url(img/activity1.jpg);"></div>
-            <div style="background-image: url(img/activity2.jpg);" ></div>     
-            <div style="background-image: url(img/activity3.jpg);"></div>
-            <div style="background-image: url(img/activity4.jpg);"></div>
-            <div style="background-image: url(img/img5.jpg);"></div>
+            <div style="background-image: url(img/banner1.jpg);"></div>
+            <div style="background-image: url(img/banner2.jpg);" ></div>     
+            <div style="background-image: url(img/banner3.jpg);"></div>
+            <div style="background-image: url(img/banner4.jpg);"></div>
+            <div style="background-image: url(img/banner5.jpg);"></div>
         </div>
 </section>
 <section style="background-color: #f7f7f7;padding: 0px 0px 30px 0px;">

@@ -2,10 +2,12 @@ package com.doers.Service.Impl;
 
 import java.util.List;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import com.doers.Dao.BaseDictDao;
 import com.doers.domain.BaseDict;
 import com.doers.Service.BaseDictService;
-
+@Transactional
 public class BaseDictServiceImpl implements BaseDictService {
 	
 	private BaseDictDao baseDictDao;
@@ -15,7 +17,7 @@ public class BaseDictServiceImpl implements BaseDictService {
 		return baseDictDao.getListByTypeCode(dict_type_code);
 	}
 
-	public void setBdd(BaseDictDao baseDictDaobaseDictDao) {
+	public void setBaseDictDao(BaseDictDao baseDictDaobaseDictDao) {
 		this.baseDictDao = baseDictDaobaseDictDao;
 	}
 

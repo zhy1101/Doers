@@ -27,5 +27,6 @@
 	    <action name="productionDetailAction_*" class="productionDetailAction" method="{1}">
 	    	<result name="gotoProductionDetail" type="redirect">/ProductionPage/ProductionDetail.jsp</result>
 	    </action>
+	    <action name="baseDictAction" class="baseDictAction" method="execute" ></action>
 	</package>
 </struts>

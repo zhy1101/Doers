@@ -20,16 +20,13 @@
 		<property name="content" column="content" >
 			<!--  <column name="cust_name" sql-type="varchar" ></column> -->
 		</property>
-		<property name="big_kind" column="big_kind" >
-		</property>
-		<property name="small_kind" column="small_kind" >
-		</property>
 		<property name="time" column="time" ></property>
 		<property name="coverURL" column="coverURL" ></property>	
 		<property name="zan" column="zan" ></property>	
 		<property name="shortcontent" column="shortcontent" ></property>		
 		
-		<many-to-one name="user" column="uid" class="User"  >
-		</many-to-one>
+		<many-to-one name="user" column="uid" class="User"  ></many-to-one>
+		<many-to-one name="big_kind" column="big_kind" class="BaseDict"></many-to-one>
+		<many-to-one name="small_kind" column="small_kind" class="BaseDict"></many-to-one>
 	</class>
 </hibernate-mapping>
