@@ -277,6 +277,19 @@
   	   <td width="30%" align="center"><img src="${pro.coverURL}" width="165px" height="100px" style="margin-bottom:10px;margin-top:10px;"></td>
   	</tr>
   	</c:forEach>
+  	<span id=pagelink>
+		<div style="LINE-HEIGHT: 20px; HEIGHT: 20px; TEXT-ALIGN: right">
+			共[<B><s:property value="#pageBean.totalCount" /> </B>]条记录,[<B><s:property value="#pageBean.totalPage" /></B>]页,
+			每页显示 
+			<select name="pageSize" onchange="changePageSize($('#pageSizeSelect option:selected').val())" id="pageSizeSelect" >
+			<option value="3" <s:property value="#pageBean.pageSize==3?'selected':''" /> >3</option>
+			<option value="5" <s:property value="#pageBean.pageSize==5?'selected':''" /> >5</option>
+			</select>条[<A href="javaScript:void(0)" onclick="changePage(<s:property value='#pageBean.currentPage-1' />)" >前一页</A>]
+			<B><s:property value="#pageBean.currentPage" /></B>
+			[<A href="javaScript:void(0)" onclick="changePage(<s:property value='#pageBean.currentPage+1' />)"  >后一页</A>] 
+			到<input type="text" size="3" id="page" name="page" value="<s:property value="#pageBean.currentPage" />"  />页
+			<input type="button" value="Go" onclick="changePage($('#page').val())"/></div>
+	</span>
   </table>
 </div>
 
@@ -485,54 +498,18 @@
         <!-- End Switcher -->
 
 
-
-        <!-- jquery | jQuery 1.11.0 -->
-        <!-- Credits: http://jquery.com -->
         <script type="text/javascript" src="js/jquery.min.js"></script>
- 		
-        <!-- Js | bootstrap -->
-        <!-- Credits: http://getbootstrap.com/ -->
         <script type="text/javascript" src="js/bootstrap.min.js"></script> 
-        
-        <!-- Js | jquery.cycle -->
-        <!-- Credits: https://github.com/malsup/cycle2 -->
         <script type="text/javascript" src="js/jquery.cycle2.min.js"></script>
-        
-        <!-- jquery | rotate and portfolio -->
-        <!-- Credits: http://jquery.com -->
         <script type="text/javascript" src="js/jquery.mixitup.min.js"></script> 
         <script type="text/javascript" src="js/HeadImage.js"></script>
-
-        <!-- Js | easyResponsiveTabs -->
-        <!-- Credits: http://webtrendset.com/demo/easy-responsive-tabs/Index.html -->
         <script type="text/javascript" src="js/easyResponsiveTabs.min.js"></script> 
-
-        <!-- Js | jquery.cookie -->
-        <!-- Credits: https://github.com/carhartl/jquery-cookie --> 
         <script type="text/javascript" src="js/jsSwitcher/jquery.cookie.js"></script>	
-
-        <!-- Js | switcher -->
-        <!-- Credits: http://themeforest.net/user/FlexyCodes -->
         <script type="text/javascript" src="js/jsSwitcher/switcher.js"></script>	
-
-        <!-- Js | mCustomScrollbar -->
-        <!-- Credits: http://manos.malihu.gr/jquery-custom-content-scroller -->
         <script type="text/javascript" src="js/jquery.mCustomScrollbar.concat.min.js"></script>		
-
-        <!-- jquery | prettyPhoto -->
-        <!-- Credits: http://www.no-margin-for-errors.com/ -->
         <script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
-        
-        <!-- Js | gmaps -->
-        <!-- Credits: http://maps.google.com/maps/api/js?sensor=true-->
-        
         <script type="text/javascript" src="js/gmaps.min.js"></script>
-
- 		<!-- Js | Js -->
-        <!-- Credits: http://themeforest.net/user/FlexyCodes -->
         <script type="text/javascript" src="js/main.js"></script>
-        
-        <!-- code js for image rotate -->
         <script type="text/javascript">
 
             var mouseX;
@@ -578,6 +555,21 @@
             }
 
         </script>
+        <script language=javascript>
+	function changePage(pageNum){
+			//1 将页码的值放入对应表单隐藏域中
+				$("#currentPageInput").val(pageNum);
+			//2 提交表单
+				$("#pageForm").submit();
+	};
+	
+	function changePageSize(pageSize){
+			//1 将页码的值放入对应表单隐藏域中
+			$("#pageSizeInput").val(pageSize);
+			//2 提交表单
+			$("#pageForm").submit();
+	};
+</script>
 
     </body>
 </html>

@@ -40,8 +40,9 @@
 
 	
 	<!-- Action -->
-	<bean name="UserAction" class="com.doers.Action.UserAction" scope="prototype">
+	<bean name="userAction" class="com.doers.Action.UserAction" scope="prototype">
 		<property name="userService" ref="userService"></property>
+		<property name="productionService" ref="productionService"></property>
 	</bean>
 	<bean name="resignAction" class="com.doers.Action.ResignAction" scope="prototype">
 		<property name="userService" ref="userService"></property>

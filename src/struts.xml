@@ -8,7 +8,7 @@
 		<global-exception-mappings>
 			<exception-mapping result="error" exception="java.lang.RuntimeExcepton"></exception-mapping>
 		</global-exception-mappings>
-		<action name="UserAction_*" class="userAction" method="{1}">		
+		<action name="userAction_*" class="userAction" method="{1}">		
 			<result name="toHome" type="redirect">/index.jsp</result>
 			<result name="error">/Login.jsp</result>
 		</action>

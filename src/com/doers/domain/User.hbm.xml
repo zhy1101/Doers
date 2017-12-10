@@ -32,6 +32,18 @@
 			<key column = "uid"></key>
 			<one-to-many class="Production"></one-to-many>
 		</set>
+		<set name="myLeaveMessage">
+			<key column="fromUser" ></key>
+			<one-to-many class="LeaveMessage" />
+		</set>
+		<set name="toMeLeaveMessage">
+			<key column="toUser" ></key>
+			<one-to-many class="LeaveMessage" />
+		</set>
+		<set name="myZan">
+			<key column="zan_user" ></key>
+			<one-to-many class="Zan" />
+		</set>
 		<many-to-one name="kind" column="kind" class="BaseDict"></many-to-one>
 	</class>
 </hibernate-mapping>

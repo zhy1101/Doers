@@ -1,6 +1,6 @@
-ï»¿/* Light Way Admin Bootstrap Theme by PrepBootstrap - http://www.prepbootstrap.com */
+/* Light Way Admin Bootstrap Theme by PrepBootstrap - http://www.prepbootstrap.com */
 html {
-  font-family: "Lantinghei SC", "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "å¾®è½¯é›…é»‘", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;
+  font-family: "Lantinghei SC", "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "Î¢ÈíÑÅºÚ", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -3928,7 +3928,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-default {
-  background-color: #7fc31c;
+  background-color: #37e3f7;
   /*border-color: #6ca618;*/
   border-radius: 0px;
   padding-left: 5%;
@@ -3957,7 +3957,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
   color: #ffffff;
-  background-color: #6ca618;
+  background-color: #53c9f0;
 }
 .navbar-default .navbar-nav > .disabled > a,
 .navbar-default .navbar-nav > .disabled > a:hover,
@@ -3982,8 +3982,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
-  background-color: #6ca618;
-  color: #a3ce57;
+  background-color: #80ffff;
+  color: #d6f7fa;
 }
 @media (max-width: 767px) {
     .navbar-default {

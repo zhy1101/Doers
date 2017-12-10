@@ -20,7 +20,7 @@
 			</div>
 			<h1>Doers ~ 登录</h1>
 			<div class="login-top">
-			<form action="${pageContext.request.contextPath}/UserAction_login" method="post">
+			<form action="${pageContext.request.contextPath}/userAction_login" method="post">
 				<div class="login-ic">
 					<i ></i>
 					<input type="text"  value="用户" name="user_name"/>

@@ -1,5 +1,7 @@
 package com.doers.domain;
 
+import java.util.Set;
+
 public class Production
 {
   private long productionId;
@@ -12,8 +14,16 @@ public class Production
   private User user;
   private BaseDict big_kind;
   private BaseDict small_kind;
+  private Set<Zan> zanlist;
   
-  public String getShortcontent()
+  
+	public Set<Zan> getZanlist() {
+		return zanlist;
+	}
+	public void setZanlist(Set<Zan> zanlist) {
+		this.zanlist = zanlist;
+	}
+	public String getShortcontent()
   {
     return this.shortcontent;
   }

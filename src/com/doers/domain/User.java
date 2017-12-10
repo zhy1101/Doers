@@ -21,13 +21,22 @@ public class User
   private String description;
   private String skill;
   private BaseDict kind;
-  private Set<Production> productions = new HashSet();
+  private Set<Production> productions;
+  private Set<LeaveMessage> myLeaveMessage;
+  private Set<LeaveMessage> toMeLeaveMessage;
+  private Set<Zan> myZan;
+  
+	  public Set<Zan> getMyZan() {
+		return myZan;
+	}
+	public void setMyZan(Set<Zan> myZan) {
+		this.myZan = myZan;
+	}
+	public String getSkill() { return this.skill; }
 
-  public String getSkill() { return this.skill; }
-
-  public void setSkill(String skill) {
-    this.skill = skill;
-  }
+	  public void setSkill(String skill) {
+	    this.skill = skill;
+	  }
   public String getDescription() {
     return this.description;
   }
@@ -124,4 +133,21 @@ public class User
   public void setProductions(Set<Production> productions) {
     this.productions = productions;
   }
+
+	public Set<LeaveMessage> getMyLeaveMessage() {
+		return myLeaveMessage;
+	}
+	
+	public void setMyLeaveMessage(Set<LeaveMessage> myLeaveMessage) {
+		this.myLeaveMessage = myLeaveMessage;
+	}
+	
+	public Set<LeaveMessage> getToMeLeaveMessage() {
+		return toMeLeaveMessage;
+	}
+	
+	public void setToMeLeaveMessage(Set<LeaveMessage> toMeLeaveMessage) {
+		this.toMeLeaveMessage = toMeLeaveMessage;
+	}
+  
 }
