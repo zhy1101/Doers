@@ -51,10 +51,11 @@
 		</section>
 		<div class="layout-footer">@2017 v0.1</div>
 	</div>
-	<script type="text/javascript" src="common/lib/jquery-1.9.0.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
 	<script type="text/javascript" src="common/js/sccl.js"></script>
 	<script type="text/javascript" src="common/js/sccl-util.js"></script>
-   	<script type="text/javascript" charset="utf-8" src="../utf8-jsp/ueditor.config.js"></script>
+	<script type="text/javascript" charset="utf-8" src="../utf8-jsp/ueditor.config.js"></script>
    	<script type="text/javascript" charset="utf-8" src="../utf8-jsp/ueditor.all.js"> </script>
+   	
   </body>
 </html>

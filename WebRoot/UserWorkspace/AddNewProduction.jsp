@@ -5,12 +5,16 @@
 <html>
 <head>
 <title></title>
+<script type="text/javascript" src="../../Doers/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../Doers/utf8-jsp/ueditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../Doers/utf8-jsp/ueditor.all.js"> </script>
+<script type="text/javascript" charset="utf-8" src="../../Doers/utf8-jsp/lang/zh-cn/zh-cn.js"></script>
 </head>
 <body>
-<h1 class="h-bloc">继续 - 发布新作</h1><br> 
+<h3 class="h-bloc">发布新作</h3><br> 
     <form action="/Doers/ueditorAction_addNewProduction" method="post" enctype="multipart/form-data" id="newProduct">
     	<input name="user" type="hidden" value="${user}">
-              标题：<input name="productionTitle" type="text" style="width:300px">
+              标题：<input name="productionTitle" type="text" style="width:300px">&nbsp;&nbsp;
               类别：<select name="big_kind" onchange="changebig_kind(this.value)" >
           <option value="0">--请选择--</option>
           <option value="1">计算机/编码</option>
@@ -55,25 +59,26 @@
 	<select name ="small_kind" id ="small_kind">
 	<option value="">--请选择--</option>
 	</select>
+	   &nbsp;&nbsp;封面：<input name="cover" type="file" name="cover">
 	<br>
-	   封面：<input name="cover" type="file" name="cover">
-	<br>
-	简介（100字内）：<textarea name="shortcontent" form="newProduct" rows="2" cols="50" maxlength="100" style="resize:none"></textarea>
+	简介（100字内）：<br>
+	<textarea name="shortcontent" form="newProduct" rows="2" cols="50" maxlength="100" style="resize:none"></textarea>
     <br><br>
-    <input name="content" id="input_content"/>
+    <input name="content" type="hidden" id="input_content"/>
     <script id="editor" type="text/plain"></script>
     <Button type="submit" style="margin-left:340px;margin-top:30px" onclick="checkProductionForm()">提交</Button> 
     <script type="text/javascript">
     //实例化编辑器
     //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
-    var ue = UE.getEditor("editor");  
+    var ue = UE.getEditor('editor',{
+        initialFrameWidth : 1000,
+        initialFrameHeight: 500
+    });  
     function checkProductionForm(){
     	document.getElementById("input_content").value =UE.getEditor('editor').getContent();	
     }
 	</script>    
     </form>
-		<script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
-    	<script type="text/javascript" charset="utf-8" src="../utf8-jsp/ueditor.config.js"></script>
-    	<script type="text/javascript" charset="utf-8" src="../utf8-jsp/ueditor.all.js"> </script>
+
 </body>
 </html>
