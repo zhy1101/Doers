@@ -266,7 +266,7 @@ $(function(){
 	/*菜单json*/
 	var menu = [{"id":"1","name":"我的工作空间","parentId":"0","url":"","icon":"&#xe612;","order":"1","isHeader":"1","childMenus":[
 					{"id":"9","name":"信息管理","parentId":"1","url":"","icon":"&#xe612;","order":"1","isHeader":"0","childMenus":[
-						{"id":"10","name":"个人基础信息","parentId":"9","url":"test1.html","icon":"&#xe612;","order":"1","isHeader":"0","childMenus":""},
+						{"id":"10","name":"个人基础信息","parentId":"9","url":"UserInfo.jsp","icon":"&#xe612;","order":"1","isHeader":"0","childMenus":""},
 						{"id":"11","name":"悄悄话信箱","parentId":"9","url":"test2.html","icon":"&#xe612;","order":"1","isHeader":"0","childMenus":""}
 					]},
 					{"id":"3","name":"Do My交易","parentId":"1","url":"","icon":"&#xe612;","order":"1","isHeader":"0","childMenus":[
@@ -274,7 +274,7 @@ $(function(){
 						{"id":"5","name":"分类管理","parentId":"3","url":"test2.html","icon":"","order":"1","isHeader":"0","childMenus":""}
 					]},
 					{"id":"6","name":"Do My作品","parentId":"1","url":"","icon":"&#xe602;","order":"1","isHeader":"0","childMenus":[
-						{"id":"7","name":"新作发布","parentId":"6","url":"home3.html","icon":"","order":"1","isHeader":"0","childMenus":""},
+						{"id":"7","name":"新作发布","parentId":"6","url":"AddNewProduction.jsp","icon":"","order":"1","isHeader":"0","childMenus":""},
 						{"id":"8","name":"查看历程","parentId":"6","url":"home4.html","icon":"","order":"1","isHeader":"0","childMenus":""}
 					]},
 					{"id":"12","name":"Do 赞&推","parentId":"1","url":"","icon":"&#xe602;","order":"1","isHeader":"0","childMenus":[

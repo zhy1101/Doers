@@ -1,14 +1,20 @@
 package com.doers.Service;
 
 import com.doers.domain.Production;
+import com.doers.domain.User;
 import com.doers.utils.PageBean;
+
+import java.util.List;
+
 import org.hibernate.criterion.DetachedCriteria;
 
-public abstract interface ProductionService
+public  interface ProductionService
 {
-  public abstract PageBean getProductList(DetachedCriteria paramDetachedCriteria, Integer paramInteger1, Integer paramInteger2);
+  public  PageBean getProductList(DetachedCriteria paramDetachedCriteria, Integer paramInteger1, Integer paramInteger2);
 
-  public abstract void addNewProduction(Production paramproduction);
+  public  void addNewProduction(Production paramproduction);
 
-  public abstract Production getProductionById(String paramString);
+  public  Production getProductionById(String paramString);
+
+public  List<Production> getUserProductionList(User u);
 }

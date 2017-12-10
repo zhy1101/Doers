@@ -15,4 +15,8 @@ public  interface UserService
   public  User getUserById(String paramString);
 
   public boolean checkEmail(String e_mail);
+
+public void save(User u);
+
+public void update(User u);
 }

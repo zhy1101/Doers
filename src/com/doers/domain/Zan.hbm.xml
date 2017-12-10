@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.doers.domain" >
+	<class name="Zan" table="ZanList" >
+		<id name="zan_id"  >
+			<generator class="uuid"></generator>
+		</id>
+		<many-to-one name="zan_pro" column="zan_pro" class="Production" ></many-to-one>
+		<many-to-one name="zan_user" column="zan_user" class="User" ></many-to-one>
+	</class>
+</hibernate-mapping>

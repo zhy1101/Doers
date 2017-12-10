@@ -15,37 +15,15 @@
    			 <!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
     		<!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
     	<script type="text/javascript" charset="utf-8" src="../utf8-jsp/lang/zh-cn/zh-cn.js"></script>
-        <!-- CSS | bootstrap -->
-        <!-- Credits: http://getbootstrap.com/ -->
         <link  rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
-
-        <!-- CSS | font-awesome -->
-        <!-- Credits: http://fortawesome.github.io/Font-Awesome/icons/ -->
         <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
-
-        <!-- CSS | animate -->
-        <!-- Credits: http://daneden.github.io/animate.css/ -->
         <link rel="stylesheet" type="text/css" href="css/animate.min.css" />
-
-        <!-- CSS | Normalize -->
-        <!-- Credits: http://manos.malihu.gr/jquery-custom-content-scroller -->
         <link rel="stylesheet" type="text/css" href="css/jquery.mCustomScrollbar.css" />
-       	
-        <!-- CSS | Colors -->
         <link rel="stylesheet" type="text/css" href="css/colors/DarkBlue.css" id="colors-style" />
         <link rel="stylesheet" type="text/css" href="css/switcher.css" />
-        
-        <!-- CSS | Style -->
-        <!-- Credits: http://themeforest.net/user/FlexyCodes -->
         <link rel="stylesheet" type="text/css" href="css/main.css" />
-
-        <!-- CSS | prettyPhoto -->
-        <!-- Credits: http://www.no-margin-for-errors.com/ -->
         <link rel="stylesheet" type="text/css" href="css/prettyPhoto.css"/> 
-
-		<!-- CSS | Google Fonts -->
         <link href='http://fonts.useso.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
-        <!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="userHouse/images/favicon/favicon.ico">
 
 
@@ -251,14 +229,6 @@
    </div>
 </form>
 </div>
-
-    <div class="clear"></div>
-
-    <div class="clear"></div>
-    <div class="border-list"></div>
-	
-    <div class="row">  </div>
-    <div class="clear"></div>
 </div>
                                            
 <!-- ============================================================================ -->

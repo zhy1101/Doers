@@ -33,7 +33,7 @@
                     <li><a href="hiview.html">Do 服务</a></li>
                     <li><a href="hiview.html">Do 活动</a></li>
                     <li><a href="hiview.html">Do 交易</a></li>
-                    <li><a href="/Doers/userHouse/userHouse.jsp">Do Myself</a></li>
+                    <li><a href="/Doers/UserWorkspace/UserWorkSpace.jsp">Do Myself</a></li>
                 </ul>
                 <form class="navbar-form navbar-left">
                     <input type="text" class="form-control col-lg-8" placeholder="搜索">

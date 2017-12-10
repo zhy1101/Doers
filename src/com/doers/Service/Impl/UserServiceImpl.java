@@ -50,4 +50,15 @@ public class UserServiceImpl implements UserService
 	public boolean checkEmail(String e_mail) {
 		return this.userDao.checkEmail(e_mail);
 	}
+
+	@Override
+	public void save(User u) {
+		userDao.save(u);
+	}
+
+	@Override
+	public void update(User u) {
+		userDao.update(u);
+		
+	}
 }

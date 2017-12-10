@@ -11,6 +11,7 @@
 		<action name="userAction_*" class="userAction" method="{1}">		
 			<result name="toHome" type="redirect">/index.jsp</result>
 			<result name="error">/Login.jsp</result>
+			<result name="toUserWorkspace" type="redirect">/UserWorkspace/UserInfo.jsp</result>
 		</action>
 		<action name="resignAction_*" class="resignAction" method="{1}">
 			<result name="Faild">/resign.jsp</result>

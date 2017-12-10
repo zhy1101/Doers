@@ -6,7 +6,7 @@
    <!-- package属性:填写一个包名.在元素内部凡是需要书写完整类名的属性,可以直接写简答类名了. -->
 <hibernate-mapping package="com.doers.domain" >
 	<class name="User" table="User" >
-		<id name="uid"  >
+		<id name="uid" >
 			<generator class="native"></generator>
 		</id>
 		<property name="user_name" column="user_name" >
@@ -28,7 +28,7 @@
 		<property name="description" column="description" ></property>
 		<property name="skill" column="skill" ></property>
 		
-		<set name="productions">
+		<set name="productions" >
 			<key column = "uid"></key>
 			<one-to-many class="Production"></one-to-many>
 		</set>
@@ -44,6 +44,6 @@
 			<key column="zan_user" ></key>
 			<one-to-many class="Zan" />
 		</set>
-		<many-to-one name="kind" column="kind" class="BaseDict"></many-to-one>
+		<many-to-one name="kind" column="kind" class="BaseDict" ></many-to-one>
 	</class>
 </hibernate-mapping>
