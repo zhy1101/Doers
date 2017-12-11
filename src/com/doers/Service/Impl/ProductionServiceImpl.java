@@ -31,7 +31,6 @@ public class ProductionServiceImpl implements ProductionService
 
   public void addNewProduction(Production p)
   {
-    p.getUser().getProductions().add(p);
     this.productionDao.addNewProduction(p);
   }
 

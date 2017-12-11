@@ -232,36 +232,7 @@
 </div>
                                            
 <!-- ============================================================================ -->
- <div id="resume" class="content_2">
-<h1 class="h-bloc">历程 - 我的发布</h1> 
-  <table id="ProductionHistory"
-		style="WIDTH: 100%; WORD-BREAK: break-all;  WORD-WRAP: break-word">
-	<c:forEach items="${user.productions}" var="pro" varStatus="vs">
-  	<tr style="BORDER-BOTTOM: gray 1px solid; ">
-  	   <td width="60%">
-  	   	<table>
-  	      <tr style="font-size: 15pt;height: 30px;margin-top:20px;"><td style="padding-left:25px;"><a href="${pageContext.request.contextPath}/productionDetailAction_showProductionDetail?productionId=${pro.productionId}">${pro.productionTitle}</a></td></tr>
-  	      <tr style="font-size: 8pt;height: 30px;margin-top:12px;margin-left:10px;"><td style="padding-left:25px;"><p>${pro.shortcontent}</p></td></tr>
-  	    </table>
-  	   </td>
-  	   <td width="30%" align="center"><img src="${pro.coverURL}" width="165px" height="100px" style="margin-bottom:10px;margin-top:10px;"></td>
-  	</tr>
-  	</c:forEach>
-  	<span id=pagelink>
-		<div style="LINE-HEIGHT: 20px; HEIGHT: 20px; TEXT-ALIGN: right">
-			共[<B><s:property value="#pageBean.totalCount" /> </B>]条记录,[<B><s:property value="#pageBean.totalPage" /></B>]页,
-			每页显示 
-			<select name="pageSize" onchange="changePageSize($('#pageSizeSelect option:selected').val())" id="pageSizeSelect" >
-			<option value="3" <s:property value="#pageBean.pageSize==3?'selected':''" /> >3</option>
-			<option value="5" <s:property value="#pageBean.pageSize==5?'selected':''" /> >5</option>
-			</select>条[<A href="javaScript:void(0)" onclick="changePage(<s:property value='#pageBean.currentPage-1' />)" >前一页</A>]
-			<B><s:property value="#pageBean.currentPage" /></B>
-			[<A href="javaScript:void(0)" onclick="changePage(<s:property value='#pageBean.currentPage+1' />)"  >后一页</A>] 
-			到<input type="text" size="3" id="page" name="page" value="<s:property value="#pageBean.currentPage" />"  />页
-			<input type="button" value="Go" onclick="changePage($('#page').val())"/></div>
-	</span>
-  </table>
-</div>
+ 
 
 <!-- ============================================================================ -->
 <div id="portfolio" class="content_2">
