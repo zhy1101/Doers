@@ -95,6 +95,11 @@ public void setUserService(UserService userService)
 	  ActionContext.getContext().getSession().put("user",u);
 	  return "toUserWorkspace";
   }
+  public String loadMyProduction(){
+	  User u=(User) ActionContext.getContext().getSession().get("user");
+	   ActionContext.getContext().put("ProductionList", u.getProductions());
+	   return "toUserProductionList";
+  }
   public User getModel() {
     return this.user;
   }

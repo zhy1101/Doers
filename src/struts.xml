@@ -12,6 +12,7 @@
 			<result name="toHome" type="redirect">/index.jsp</result>
 			<result name="error">/Login.jsp</result>
 			<result name="toUserWorkspace" type="redirect">/UserWorkspace/UserInfo.jsp</result>
+			<result name="toUserProductionList">/UserWorkspace/UserProductionList.jsp</result>
 		</action>
 		<action name="resignAction_*" class="resignAction" method="{1}">
 			<result name="Faild">/resign.jsp</result>
@@ -23,7 +24,9 @@
 	    	<result name="gotoUserHome">/userHouse/userHouse.jsp</result>
 	    </action>
 	    <action name="ueditorAction_*" class="ueditorAction" method="{1}">
-	    	<result name="handInSuccess" type="redirect">/index.jsp</result>
+	    	<result name="handInSuccess" type="redirectAction">
+	    		<param name="actionName">userAction_loadMyProduction</param>
+	    	</result>
 	    </action>
 	    <action name="productionDetailAction_*" class="productionDetailAction" method="{1}">
 	    	<result name="gotoProductionDetail" type="redirect">/ProductionPage/ProductionDetail.jsp</result>
