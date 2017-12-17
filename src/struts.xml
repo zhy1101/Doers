@@ -20,16 +20,16 @@
 			<result name="step3" type="redirect">/registerSuccess.html</result>
 	    </action>
 	    <action name="checkImg" class="checkImgAction" ></action> 
-	    <action name="productListAction_*" class="productListAction" method="{1}">
-	    	<result name="gotoUserHome">/userHouse/userHouse.jsp</result>
-	    </action>
 	    <action name="ueditorAction_*" class="ueditorAction" method="{1}">
 	    	<result name="handInSuccess" type="redirectAction">
 	    		<param name="actionName">userAction_loadMyProduction</param>
 	    	</result>
 	    </action>
 	    <action name="productionDetailAction_*" class="productionDetailAction" method="{1}">
-	    	<result name="gotoProductionDetail" type="redirect">/ProductionPage/ProductionDetail.jsp</result>
+	    	<result name="gotoProductionDetail">/ProductionPage/ProductionDetail.jsp</result>
+	    </action>
+	    <action name="productionListAction_*" class="productionListAction" method="{1}">
+	    	<result name="toListPage">/ProductionPage/ProductionList.jsp</result>
 	    </action>
 	    <action name="baseDictAction" class="baseDictAction" method="execute" ></action>
 	</package>

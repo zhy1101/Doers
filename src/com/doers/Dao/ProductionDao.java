@@ -1,8 +1,12 @@
 package com.doers.Dao;
 
+import java.util.List;
+
 import com.doers.domain.Production;
 
-public abstract interface ProductionDao extends BaseDao<Production>
+public  interface ProductionDao extends BaseDao<Production>
 {
-  public abstract void addNewProduction(Production paramproduction);
+  public  void addNewProduction(Production paramproduction);
+
+  public  List<Production> getAllProductions();
 }

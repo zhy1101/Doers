@@ -19,17 +19,12 @@
 <header>
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
                 <a class="navbar-brand" href="hiview.html">Doers</a>
             </div>
             <div class="navbar-collapse collapse navbar-responsive-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">首页</a></li>
-                    <li><a href="hiview.html">Do 博物</a></li>
+                    <li><a href="${pageContext.request.contextPath}/productionListAction_getAllProductions">Do 博物</a></li>
                     <li><a href="hiview.html">Do 服务</a></li>
                     <li><a href="hiview.html">Do 活动</a></li>
                     <li><a href="hiview.html">Do 交易</a></li>
@@ -52,7 +47,6 @@
                </ul>
             </div>
         </nav>
-        <div id="gray"></div>
 </header>
 <section id="container">
         <div id="skippr">

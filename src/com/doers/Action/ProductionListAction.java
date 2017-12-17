@@ -4,14 +4,17 @@ import com.doers.Service.ProductionService;
 import com.doers.utils.PageBean;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+
+import java.util.List;
+
 import org.apache.commons.lang.StringUtils;
 import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Restrictions;
 
-public class ProductListAction extends ActionSupport
+public class ProductionListAction extends ActionSupport
 {
   private Production production;
-  private ProductionService productService;
+  private ProductionService productionService;
   private Integer currentPage;
   private Integer pageSize;
 
@@ -31,8 +34,8 @@ public class ProductListAction extends ActionSupport
     this.currentPage = currentPage;
   }
 
-  public void setProductService(ProductionService productService) {
-    this.productService = productService;
+  public void setProductionService(ProductionService productService) {
+    this.productionService = productService;
   }
 
   public String list() throws Exception {
@@ -41,7 +44,7 @@ public class ProductListAction extends ActionSupport
       dc.add(Restrictions.like("productionTitle", "%" + this.production.getProductionTitle() + "%"));
     }
 
-    PageBean pb = this.productService.getProductList(dc, this.currentPage, this.pageSize);
+    PageBean pb = this.productionService.getProductList(dc, this.currentPage, this.pageSize);
     ActionContext.getContext().put("ProductList", pb);
     return "list";
   }
@@ -52,5 +55,10 @@ public class ProductListAction extends ActionSupport
 
   public void setPageSize(Integer pageSize) {
     this.pageSize = pageSize;
+  }
+  public String getAllProductions(){
+	  List<Production> productionList = productionService.getAllProductions();
+	  ActionContext.getContext().put("productionList", productionList);
+	  return "toListPage";
   }
 }

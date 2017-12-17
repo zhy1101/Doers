@@ -16,5 +16,7 @@ public  interface ProductionService
 
   public  Production getProductionById(String paramString);
 
-public  List<Production> getUserProductionList(User u);
+  public  List<Production> getUserProductionList(User u);
+
+  public List<Production> getAllProductions();
 }

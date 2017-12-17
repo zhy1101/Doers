@@ -39,9 +39,14 @@ public class ProductionServiceImpl implements ProductionService
     return (Production)this.productionDao.getById(Long.valueOf(id));
   }
 
-@Override
-public List<Production> getUserProductionList(User u) {
-	// TODO Auto-generated method stub
-	return null;
-}
+	@Override
+	public List<Production> getUserProductionList(User u) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Production> getAllProductions() {
+		return productionDao.getAllProductions();
+	}
 }
