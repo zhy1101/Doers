@@ -19,4 +19,6 @@ public  interface ProductionService
   public  List<Production> getUserProductionList(User u);
 
   public List<Production> getAllProductions();
+
+  public List<Production> getProductionsByBigkind(String bigkindId);
 }

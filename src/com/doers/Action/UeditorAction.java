@@ -64,7 +64,7 @@ public class UeditorAction extends ActionSupport
     String pdate = format.format(new Date());
     this.p.setTime(pdate);
     this.cover.renameTo(new File("D:/DoersWorks/ProductionCoverPage/" + UUID.randomUUID() + "_" + this.coverFileName));
-    this.p.setCoverURL("D:/DoersWorks/ProductionCoverPage/" + UUID.randomUUID() + "_" + this.coverFileName);
+    this.p.setCoverURL("/productionCovers/" + UUID.randomUUID() + "_" + this.coverFileName);
     this.p.setUser(user);
     this.productionService.addNewProduction(this.p);
     return "handInSuccess";

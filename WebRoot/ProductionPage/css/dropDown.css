@@ -1,0 +1,16 @@
+*{margin:0;padding:0;list-style-type:none;}
+a,img{border:0;text-decoration:none;}
+body{font:12px/150% Arial, Helvetica, sans-serif, "微软雅黑";}
+#page-wrap{width:840px;margin:25px auto;border-radius: 15px;} 
+/* 一级 */
+ul.dropdown{position:relative;width:100%;border-radius: 15px}
+ul.dropdown li{float:left;width:120px;background:#e4fcfe;position:relative;}
+ul.dropdown a:hover{color:#000;}
+ul.dropdown li a{display:block;padding:20px 8px;color:#222;position:relative;z-index:2000;}
+ul.dropdown li a:hover,
+ul.dropdown li a.hover{background:#bcf5fc;}
+/* 二级 */
+ul.dropdown ul{display:none;position:absolute;top:0;left:0;width:120px;z-index:1000;}
+ul.dropdown ul li{font-weight:normal;background:#f6f6f6;color:#000;border-bottom:1px solid #ccc;}
+ul.dropdown ul li a{display:block;background:#eee !important;} 
+ul.dropdown ul li a:hover{display:block;background:#bcf5fc!important;} 
