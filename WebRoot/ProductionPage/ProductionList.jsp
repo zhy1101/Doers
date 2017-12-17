@@ -40,7 +40,7 @@
 			<a href="${pageContext.request.contextPath}/productionListAction_getProductionsByBigkind?bigkindId=4">技术编码</a>
 			<ul class="sub_menu">
 				<c:forEach items="${CodeSmallKindList }" var="kind1">
-				<li><a href="http://www.17sucai.com/">${kind1.dict_item_name }</a></li>
+				<li><a href="${pageContext.request.contextPath}/productionListAction_getProductionsBySmallkind?smallkindId=${kind1.dict_id}">${kind1.dict_item_name }</a></li>
 				</c:forEach>
 			</ul>
 		</li>
@@ -48,7 +48,7 @@
 			<a href="${pageContext.request.contextPath}/productionListAction_getProductionsByBigkind?bigkindId=5">动态影音</a>
 			<ul class="sub_menu">
 				<c:forEach items="${VideoSmallKindList }" var="kind2">
-				<li><a href="http://www.17sucai.com/">${kind2.dict_item_name }</a></li>
+				<li><a href="${pageContext.request.contextPath}/productionListAction_getProductionsBySmallkind?smallkindId=${kind2.dict_id}">${kind2.dict_item_name }</a></li>
 				</c:forEach>
 			</ul>
 		</li>
@@ -56,7 +56,7 @@
 			<a href="${pageContext.request.contextPath}/productionListAction_getProductionsByBigkind?bigkindId=6">文字编写</a>
 			<ul class="sub_menu">
 				<c:forEach items="${WordSmallKindList }" var="kind3">
-				<li><a href="http://www.17sucai.com/">${kind3.dict_item_name }</a></li>
+				<li><a href="${pageContext.request.contextPath}/productionListAction_getProductionsBySmallkind?smallkindId=${kind3.dict_id}">${kind3.dict_item_name }</a></li>
 				</c:forEach>
 			</ul>
 		</li>
@@ -64,7 +64,7 @@
 			<a href="${pageContext.request.contextPath}/productionListAction_getProductionsByBigkind?bigkindId=7">图像模板</a>
 			<ul class="sub_menu">
 				<c:forEach items="${PicSmallKindList }" var="kind4">
-				<li><a href="http://www.17sucai.com/">${kind4.dict_item_name }</a></li>
+				<li><a href="${pageContext.request.contextPath}/productionListAction_getProductionsBySmallkind?smallkindId=${kind4.dict_id}">${kind4.dict_item_name }</a></li>
 				</c:forEach>
 			</ul>
 		</li>
@@ -72,7 +72,7 @@
 			<a href="${pageContext.request.contextPath}/productionListAction_getProductionsByBigkind?bigkindId=8">创意其他</a>
 			<ul class="sub_menu">
 				<c:forEach items="${OtherSmallKindList }" var="kind5">
-				<li><a href="http://www.17sucai.com/">${kind5.dict_item_name }</a></li>
+				<li><a href="${pageContext.request.contextPath}/productionListAction_getProductionsBySmallkind?smallkindId=${kind5.dict_id}">${kind5.dict_item_name }</a></li>
 				</c:forEach>
 			</ul>
 		</li>

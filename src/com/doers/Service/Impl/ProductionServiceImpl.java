@@ -54,4 +54,9 @@ public class ProductionServiceImpl implements ProductionService
 	public List<Production> getProductionsByBigkind(String bigkindId) {
 		return productionDao.getProductionsByBigkind(bigkindId);
 	}
+
+	@Override
+	public List<Production> getProductionsBySmallkind(String smallkindId) {
+		return productionDao.getProductionsBySmallkind(smallkindId);
+	}
 }

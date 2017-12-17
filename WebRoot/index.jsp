@@ -379,9 +379,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-4">
-                    <h4>
-             Doers家族
-                    </h4>
+                    <h4>Doers家族</h4>
                     <ul>
                         <li><a href="index.html">关于Doers</a></li>
                         <li><a>联系我们</a></li>
@@ -389,23 +387,11 @@
                         <li><a>其他</a></li>
                     </ul>
                 </div>
-                <div class="col-sm-4">
-                    <h4>
-                        合作伙伴
-                    </h4>
-
-                </div>
-                <div class="col-sm-4">
-                    <i class="fa fa-weibo"></i>
-                    <i class="fa fa-qq"></i>
-                    <i class="fa fa-weixin"></i>
-                </div>
             </div>
-
         </div>
     </div>
     <div class="footerbot">
-       made by 5Doers
+       made by YU
     </div>
 </footer>
 <script src="js/jquery-1.10.2.min.js"></script> 
@@ -413,9 +399,7 @@
 	$(function(){
     	$('#skippr').skippr({
     	navType: 'block',
-        autoPlay: true
-        
-    	});
+        autoPlay: true});
 	});
 		//窗口效果
 		//点击登录class为tc 显示

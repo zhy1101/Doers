@@ -23,4 +23,10 @@ public class ProductionDaoImpl extends BaseDaoImpl<Production> implements Produc
 		String hqlString = "from Production where big_kind.dict_id=?";
 		return (List<Production>) getHibernateTemplate().find(hqlString,bigkindId);
 	}
+
+	@Override
+	public List<Production> getProductionsBySmallkind(String smallkindId) {
+		String hqlString = "from Production where small_kind.dict_id=?";
+		return (List<Production>) getHibernateTemplate().find(hqlString,smallkindId);
+	}
 }

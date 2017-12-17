@@ -18,6 +18,7 @@ public class ProductionListAction extends ActionSupport
 {
   private Production production;
   private String bigkindId;
+  private String smallkindId;
   private ProductionService productionService;
   private Integer currentPage;
   private Integer pageSize;
@@ -31,7 +32,7 @@ public class ProductionListAction extends ActionSupport
   public void setBaseDictService(BaseDictService baseDictService) {
 	this.baseDictService = baseDictService;
   }
-
+  
   public void setProduction(Production production) {
     this.production = production;
   }
@@ -52,6 +53,13 @@ public class ProductionListAction extends ActionSupport
 	
 	public void setBigkindId(String bigkindId) {
 		this.bigkindId = bigkindId;
+	}
+	public String getSmallkindId() {
+		return smallkindId;
+	}
+
+	public void setSmallkindId(String smallkindId) {
+		this.smallkindId = smallkindId;
 	}
 
 public String list() throws Exception {
@@ -80,6 +88,12 @@ public String list() throws Exception {
   }
   public String getProductionsByBigkind(){
 	  List<Production> productionList = productionService.getProductionsByBigkind(bigkindId);
+	  ActionContext.getContext().put("productionList", productionList);
+	  this.loadDropDownList();
+	  return "toListPage";
+  }
+  public String getProductionsBySmallkind(){
+	  List<Production> productionList = productionService.getProductionsBySmallkind(smallkindId);
 	  ActionContext.getContext().put("productionList", productionList);
 	  this.loadDropDownList();
 	  return "toListPage";

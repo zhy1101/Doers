@@ -19,6 +19,23 @@
 <link href="../../Doers/ProductionPage/css/detail_jiathis_share.css"
 	rel="stylesheet" type="text/css">
 </head>
+<style type="text/css">
+.button, .button:visited {
+	background: #33CCFF repeat-x;
+	display: inline-block;
+	padding: 5px 10px 6px;
+	color: #fff;
+	text-decoration: none;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.6);
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.6);
+	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+	border-bottom: 1px solid rgba(0,0,0,0.25);
+	position: relative;
+	cursor: pointer
+}
+</style>
 <body>
 	<header> 
 	<nav class="navbar navbar-default navbar-fixed-top">
@@ -49,13 +66,9 @@
 							<p>发布时间：<s:property value="#production.time"/></p>
 							<div class="work-head-box">
 								<div class="head-left">
-									<span class="head-index"> <span><s:property value="#production.big_kind.dict_item_name"/></span><i>/</i><span><s:property value="#production.small_kind.dict_item_name"/></span>
-									</span>
-									<div class="copy-con">
-										<span class="copy-icon"> <i class="copy-tips">作品版权由桥小树解释,禁止匿名转载；禁止商业使用；禁止个人使用。
-												临摹作品，同人作品原型版权归原作者所有。</i>
-										</span>
-									</div>
+									<span class="head-index"> <span><s:property value="#production.big_kind.dict_item_name"/></span><i>/</i><span><s:property value="#production.small_kind.dict_item_name"/></span></span>
+									<br>
+									<span style="color:blue">作品简介：</span><span class="head-index"><s:property value="#production.shortcontent"/></span>
 								</div>
 							</div>
 						</div>
@@ -94,23 +107,8 @@
 							<span><s:property value="#production.user.skill"/></span>
 						</div>
 						<div class="btn-area">
-							<button type="button">liuyan</button>
+							<button class="button"  onclick="window.open('${pageContext.request.contextPath}/ProductionPage/LeaveMessageWindow.jsp','','width=1000,height=650,toolbar=no, menubar=no, scrollbars=no, resizable=no')" >与Doers说悄悄话</button>
 						</div>
-					</div>
-				</div>
-
-				<div class="infomation-work">
-					<div class="rightbar-titlebox">
-						<h3 class="rightbar-title left">作品信息</h3>
-					</div>
-					<div class="info-first js-a-team-info"></div>
-					<p class="info-list-title">创作时间</p>
-					<div class="info-list-decra creat-time-box">
-						<p><s:property value="#production.time"/></p>
-					</div>
-					<p class="info-list-title">作品简介</p>
-					<div class="info-list-decra creat-time-box">
-						<p><s:property value="#production.shortcontent"/></p>
 					</div>
 				</div>
 			</div>
@@ -123,8 +121,26 @@
 				</div>
 			</div>
 		</div>
-		</div>
-	</div>
 </div>
+<footer class="hi-footer">
+    <div class="footertop">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <h4>Doers家族</h4>
+                    <ul>
+                        <li><a href="index.html">关于Doers</a></li>
+                        <li><a>联系我们</a></li>
+                        <li><a>其他</a></li>
+                        <li><a>其他</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footerbot">
+       made by YU
+    </div>
+</footer>
 </body>
 </html>

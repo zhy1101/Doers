@@ -21,4 +21,6 @@ public  interface ProductionService
   public List<Production> getAllProductions();
 
   public List<Production> getProductionsByBigkind(String bigkindId);
+
+  public List<Production> getProductionsBySmallkind(String smallkindId);
 }
