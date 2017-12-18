@@ -26,7 +26,7 @@ public class ProductionDetailAction extends ActionSupport
 
   public String showProductionDetail() {
     Production p = this.productionService.getProductionById(this.productionId);
-    ActionContext.getContext().put("production", p);
+    ActionContext.getContext().getSession().put("production", p);
     return "gotoProductionDetail";
   }
 }

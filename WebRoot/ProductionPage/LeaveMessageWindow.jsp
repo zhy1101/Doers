@@ -17,15 +17,19 @@
     </style>
   </head>
   <body background="../img/leaveMsg.jpg" >
+  <form action="leaveMessageAction_makeAMessage" method="post" id="leaveMsg">
+  <input type="hidden" name="toUser.uid" value=${production.user.uid }/>
+  <input type="hidden" name="fromUser.uid" value=${user.uid }/>
   <div style="text-align:center">
    	<div style="margin-top: 200px;width:360px;text-align:right">
    		<span>To</span>&nbsp;<span>${production.user.user_name}</span>
    	</div>
-   	<textarea></textarea>
+   	<textarea form="leaveMsg" name="content"></textarea>
    	<div style="margin-top:20px;width:360px;text-align:right">
    		<span>From</span>&nbsp;<span>${user.user_name}</span>
    	</div>
-   	   		<button>传递悄悄话</button>
+   	   		<button type="submit">传递悄悄话</button>
+   	 </form>
    	</div>
   </body>
 </html>

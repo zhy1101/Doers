@@ -32,5 +32,8 @@
 	    	<result name="toListPage">/ProductionPage/ProductionList.jsp</result>
 	    </action>
 	    <action name="baseDictAction" class="baseDictAction" method="execute" ></action>
+	    <action name="leaveMessageAction_*" class="leaveMessageAction" method="{1}">
+	    	<result name="passSuccess">/ProductionPage/passSuccess.html</result>
+	    </action>
 	</package>
 </struts>

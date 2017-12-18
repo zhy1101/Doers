@@ -62,13 +62,13 @@
 				<div class="work-details-box-wrap">
 					<div class="left-details-head">
 						<div class="details-contitle-box">
-							<h2><s:property value="#production.productionTitle"/></h2>
-							<p>发布时间：<s:property value="#production.time"/></p>
+							<h2><s:property value="#session.production.productionTitle"/></h2>
+							<p>发布时间：<s:property value="#session.production.time"/></p>
 							<div class="work-head-box">
 								<div class="head-left">
-									<span class="head-index"> <span><s:property value="#production.big_kind.dict_item_name"/></span><i>/</i><span><s:property value="#production.small_kind.dict_item_name"/></span></span>
+									<span class="head-index"> <span><s:property value="#session.production.big_kind.dict_item_name"/></span><i>/</i><span><s:property value="#production.small_kind.dict_item_name"/></span></span>
 									<br>
-									<span style="color:blue">作品简介：</span><span class="head-index"><s:property value="#production.shortcontent"/></span>
+									<span style="color:blue">作品简介：</span><span class="head-index"><s:property value="#session.production.shortcontent"/></span>
 								</div>
 							</div>
 						</div>
@@ -96,15 +96,15 @@
 					<div class="card-media designer-card" >
 						<div class="avatar-container-80 center">
 							<a href="#">
-								<img src="<s:property value="#production.user.personImg_path"/>" width="80" height="80">
+								<img src="<s:property value="#session.production.user.personImg_path"/>" width="80" height="80">
 							</a>
 						</div>
 						<br>
 						<div class="presonal-info">
-							<a href="#" class="author-name"><s:property value="#production.user.user_name"/></a>
+							<a href="#" class="author-name"><s:property value="#session.production.user.user_name"/></a>
 						</div>
 						<div class="position-info">
-							<span><s:property value="#production.user.skill"/></span>
+							<span><s:property value="#session.production.user.skill"/></span>
 						</div>
 						<div class="btn-area">
 							<button class="button"  onclick="window.open('${pageContext.request.contextPath}/ProductionPage/LeaveMessageWindow.jsp','','width=1000,height=650,toolbar=no, menubar=no, scrollbars=no, resizable=no')" >与Doers说悄悄话</button>
