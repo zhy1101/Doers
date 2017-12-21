@@ -17,7 +17,7 @@
     </style>
   </head>
   <body background="../img/leaveMsg.jpg" >
-  <form action="leaveMessageAction_makeAMessage" method="post" id="leaveMsg">
+  <form action="${pageContext.request.contextPath}/leaveMessageAction_makeAMessage" method="post" id="leaveMsg">
   <input type="hidden" name="toUser.uid" value=${production.user.uid }/>
   <input type="hidden" name="fromUser.uid" value=${user.uid }/>
   <div style="text-align:center">

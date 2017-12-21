@@ -66,7 +66,7 @@
 							<p>发布时间：<s:property value="#session.production.time"/></p>
 							<div class="work-head-box">
 								<div class="head-left">
-									<span class="head-index"> <span><s:property value="#session.production.big_kind.dict_item_name"/></span><i>/</i><span><s:property value="#production.small_kind.dict_item_name"/></span></span>
+									<span class="head-index"> <span><s:property value="#session.production.big_kind.dict_item_name"/></span><i>/</i><span><s:property value="#session.production.small_kind.dict_item_name"/></span></span>
 									<br>
 									<span style="color:blue">作品简介：</span><span class="head-index"><s:property value="#session.production.shortcontent"/></span>
 								</div>

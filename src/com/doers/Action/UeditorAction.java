@@ -63,8 +63,9 @@ public class UeditorAction extends ActionSupport
     SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     String pdate = format.format(new Date());
     this.p.setTime(pdate);
-    this.cover.renameTo(new File("D:/DoersWorks/ProductionCoverPage/" + UUID.randomUUID() + "_" + this.coverFileName));
-    this.p.setCoverURL("/productionCovers/" + UUID.randomUUID() + "_" + this.coverFileName);
+    String uuid=UUID.randomUUID().toString();
+    this.cover.renameTo(new File("D:/DoersWorks/ProductionCoverPage/" + uuid+ "_" + this.coverFileName));
+    this.p.setCoverURL("/productionCovers/" + uuid + "_" + this.coverFileName);
     this.p.setUser(user);
     this.productionService.addNewProduction(this.p);
     return "handInSuccess";

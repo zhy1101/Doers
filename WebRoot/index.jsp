@@ -109,7 +109,7 @@
         <div class="uphi-header">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="pull-left">Do 影音</h1>
+                    <h1 class="pull-left">Do 影音 & 另类创意</h1>
                     <span class="pull-right"><a href="index.html">更多</a> </span>
                 </div>
             </div>
