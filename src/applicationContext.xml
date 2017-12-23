@@ -64,6 +64,9 @@
 	<bean name="leaveMessageAction" class="com.doers.Action.LeaveMessageAction" scope="prototype" >
 		<property name="leaveMessageService" ref="leaveMessageService" ></property>
 	</bean>
+	<bean name="loadMainPageAction" class="com.doers.Action.LoadMainPageAction" scope="prototype" >
+		<property name="productionService" ref="productionService"></property>
+	</bean>
 	
 	<!-- Service -->
 	<bean name="userService" class="com.doers.Service.Impl.UserServiceImpl">

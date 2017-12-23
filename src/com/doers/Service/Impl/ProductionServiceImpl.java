@@ -8,6 +8,7 @@ import com.doers.utils.PageBean;
 import java.util.List;
 import java.util.Set;
 import org.hibernate.criterion.DetachedCriteria;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.transaction.annotation.Transactional;
 
 @Transactional
@@ -58,5 +59,25 @@ public class ProductionServiceImpl implements ProductionService
 	@Override
 	public List<Production> getProductionsBySmallkind(String smallkindId) {
 		return productionDao.getProductionsBySmallkind(smallkindId);
+	}
+
+	@Override
+	public List<Production> getTopCodeProductionList() {
+		return productionDao.getTopCodeProductionList();
+	}
+
+	@Override
+	public List<Production> getTopVideoProductionList() {
+		return productionDao.getTopVideoProductionList();
+	}
+
+	@Override
+	public List<Production> getTopOtherProductionList() {
+		return productionDao.getTopOtherProductionList();
+	}
+
+	@Override
+	public List<Production> getTopWordAndPicProductionList() {
+		return productionDao.getTopWordAndPicProductionList();
 	}
 }

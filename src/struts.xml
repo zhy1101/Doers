@@ -35,5 +35,8 @@
 	    <action name="leaveMessageAction_*" class="leaveMessageAction" method="{1}">
 	    	<result name="passSuccess">/ProductionPage/passSuccess.html</result>
 	    </action>
+	    <action name="loadMainPageAction_*" class="loadMainPageAction" method="{1}">
+	    	<result name="gotoIndexPage">/index.jsp</result>
+	    </action>
 	</package>
 </struts>

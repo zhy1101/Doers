@@ -13,4 +13,12 @@ public  interface ProductionDao extends BaseDao<Production>
   public List<Production> getProductionsByBigkind(String bigkindId);
 
   public List<Production> getProductionsBySmallkind(String smallkindId);
+
+	public List<Production> getTopCodeProductionList();
+	
+	public List<Production> getTopVideoProductionList();
+	
+	public List<Production> getTopOtherProductionList();
+	
+	public List<Production> getTopWordAndPicProductionList();
 }

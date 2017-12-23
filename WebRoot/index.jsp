@@ -63,44 +63,22 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="pull-left">Do 编码</h1>
-                    <span class="pull-right"><a href="index.html">更多</a> </span>
+                    <span class="pull-right"><a href="${pageContext.request.contextPath}/productionListAction_getProductionsByBigkind?bigkindId=4">更多</a> </span>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-4 animated" data-animation="bounceIn" data-delay="0">
-                <a href="index.html">
+        	<c:forEach items="${topCodeProductionList }" var="codePro" varStatus="vs">
+            <div class="col-sm-4 animated" data-animation="bounceIn" data-delay="${vs.index}*200">
+                <a href="${pageContext.request.contextPath}/productionDetailAction_showProductionDetail?productionId=${codePro.productionId}">
                     <div class="walkhi">
-                        <img src="img/img1.jpg" class="img-responsive">
-                        <h4>走着嗨活动标题</h4>
-                        <p>
-                            2015-7-15
-                        </p>
+                        <img src="${codePro.coverURL}" class="img-responsive" width="330" height="200" >
+                        <h4>${codePro.productionTitle}</h4>
+                        <p>${codePro.time}</p>
                     </div>
                 </a>
             </div>
-            <div class="col-sm-4 animated" data-animation="bounceIn" data-delay="200">
-                <a href="index.html">
-                    <div class="walkhi">
-                        <img src="img/img2.jpg" class="img-responsive">
-                        <h4>走着嗨活动标题</h4>
-                        <p>
-                            2015-7-15
-                        </p>
-                    </div>
-                </a>
-            </div>
-            <div class="col-sm-4 animated" data-animation="bounceIn" data-delay="400">
-                <a href="index.html">
-                    <div class="walkhi">
-                        <img src="img/img3.jpg" class="img-responsive">
-                        <h4>走着嗨活动标题</h4>
-                        <p>
-                            2015-7-15
-                        </p>
-                    </div>
-                </a>
-            </div>
+            </c:forEach>
         </div>
     </div>
 </section>
@@ -109,53 +87,46 @@
         <div class="uphi-header">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="pull-left">Do 影音 & 另类创意</h1>
-                    <span class="pull-right"><a href="index.html">更多</a> </span>
+                    <h1 class="pull-left">Do 影音</h1>
+                    <span class="pull-right"><a href="${pageContext.request.contextPath}/productionListAction_getProductionsByBigkind?bigkindId=5">更多</a> </span>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-8 gallery-item animated" data-animation="bounceIn" data-delay="0">
-                <a href="index.html">
+                <a href="${pageContext.request.contextPath}/productionDetailAction_showProductionDetail?productionId=${topVideoProductionList[0].productionId}">
                     <div class="gallery-item">
-                        <img src="img/img4.jpg" class="img-responsive">
+                        <img src="${topVideoProductionList[0].coverURL}" class="img-responsive" width="750" height="500" >
                         <div class="img-caption">
-                            <h4>走着嗨活动标题</h4>
-                            <p>
-                                2015-7-15
-                            </p>
+                            <h4>${topVideoProductionList[0].productionTitle}</h4>
+                            <p>${topVideoProductionList[0].time}</p>
                         </div>
                     </div>
                 </a>
             </div>
             <div class="col-sm-4 animated" data-animation="bounceIn" data-delay="400">
                 <div class="col-sm-12" style="margin: 0px; padding: 0px;">
-                    <a href="index.html">
+                    <a href="${pageContext.request.contextPath}/productionDetailAction_showProductionDetail?productionId=${topVideoProductionList[1].productionId}">
                         <div class="gallery-item">
-                            <img src="img/img1.jpg" class="img-responsive">
+                            <img src="${topVideoProductionList[1].coverURL}" class="img-responsive" width="360" height="230" onload="javascript:DrawImage(this,360,230);">
                             <div class="img-caption">
-                                <h4>走着嗨活动标题</h4>
-                                <p>
-                                    2015-7-15
-                                </p>
+                                <h4>${topVideoProductionList[1].productionTitle}</h4>
+                                <p>${topVideoProductionList[1].time}</p>
                             </div>
                         </div>
                     </a>
                 </div>
                 <div class="col-sm-12" style="margin: 0px; padding: 0px;">
-                    <a href="index.html">
+                    <a href="${pageContext.request.contextPath}/productionDetailAction_showProductionDetail?productionId=${topVideoProductionList[2].productionId}">
                         <div class="gallery-item">
-                            <img src="img/img3.jpg" class="img-responsive">
+                            <img src="${topVideoProductionList[2].coverURL}" class="img-responsive" width="360" height="230" onload="javascript:DrawImage(this,360,230);">
                             <div class="img-caption">
-                                <h4>走着嗨活动标题</h4>
-                                <p>
-                                    2015-7-15
-                                </p>
+                                <h4>${topVideoProductionList[2].productionTitle}</h4>
+                                <p>${topVideoProductionList[2].time}</p>
                             </div>
                         </div>
                     </a>
                 </div>
-
             </div>
         </div>
     </div>
@@ -165,92 +136,49 @@
         <div class="hithing-header">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="pull-left">Do 文字&模板</h1>
-                    <span class="pull-right"><a href="index.html">更多</a> </span>
+                    <h1 class="pull-left">Do 文字&模板&创意其他</h1>
+                    <span class="pull-right"><a href="${pageContext.request.contextPath}/productionListAction_getProductionsByBigkind?bigkindId=7">更多</a> </span>
                 </div>
             </div>
         </div>
         <div class="row" style="padding:0px 15px;">
             <div class="col-sm-8 clear-lr gallery-item animated" data-animation="bounceIn" data-delay="0">
-                <a href="index.html">
+                <a href="${pageContext.request.contextPath}/productionDetailAction_showProductionDetail?productionId=${topOtherProductionList[0].productionId}">
                     <div class="gallery-item" style="height: 253px; overflow: hidden;">
-                        <img src="img/img4.jpg" class="img-responsive">
+                        <img src="${topOtherProductionList[0].coverURL}" class="img-responsive" width="760" height="250" onload="javascript:DrawImage(this,760,250);">
                         <div class="img-caption">
-                            <h4>走着嗨活动标题</h4>
-                            <p>
-                                2015-7-15
-                            </p>
+                            <h4>${topOtherProductionList[0].productionTitle}</h4>
+                            <p>${topOtherProductionList[0].time}</p>
                         </div>
                     </div>
                 </a>
             </div>
             <div class="col-sm-4 clear-lr animated" data-animation="bounceIn" data-delay="400">
-                <a href="index.html">
+                <a href="${pageContext.request.contextPath}/productionDetailAction_showProductionDetail?productionId=${topOtherProductionList[1].productionId}">
                     <div class="gallery-item">
-                        <img src="img/img1.jpg" class="img-responsive">
+                        <img src="${topOtherProductionList[1].coverURL}" class="img-responsive" width="380" height="250" onload="javascript:DrawImage(this,380,250);">
                         <div class="img-caption">
-                            <h4>走着嗨活动标题</h4>
-                            <p>
-                                2015-7-15
-                            </p>
+                            <h4>${topOtherProductionList[1].productionTitle}</h4>
+                            <p>${topOtherProductionList[1].time}</p>
                         </div>
                     </div>
                 </a>
             </div>
         </div>
         <div class="row" style="padding:0px 15px;">
+        	<c:forEach items="${topWordAndPicProductionList }" var="wpPro" >
             <div class="col-sm-3 clear-lr animated" data-animation="bounceIn" data-delay="400" style="margin: 0px;">
-                <a href="index.html">
+                <a href="${pageContext.request.contextPath}/productionDetailAction_showProductionDetail?productionId=${wpPro.productionId}">
                     <div class="gallery-item" >
-                        <img src="img/img1.jpg" class="img-responsive">
+                        <img src="${wpPro.coverURL}" class="img-responsive" width="285" height="250" onload="javascript:DrawImage(this,285,250);">
                         <div class="img-caption">
-                            <h4>走着嗨活动标题</h4>
-                            <p>
-                                2015-7-15
-                            </p>
+                            <h4>${wpPro.productionTitle}</h4>
+                            <p>${wpPro.time}</p>
                         </div>
                     </div>
                 </a>
             </div>
-            <div class="col-sm-3 clear-lr  animated" data-animation="bounceIn" data-delay="400" style="margin: 0px;">
-                <a href="index.html">
-                    <div class="gallery-item">
-                        <img src="img/img2.jpg" class="img-responsive">
-                        <div class="img-caption">
-                            <h4>走着嗨活动标题</h4>
-                            <p>
-                                2015-7-15
-                            </p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-sm-3 clear-lr animated" data-animation="bounceIn" data-delay="400" style="margin: 0px;">
-                <a href="index.html">
-                    <div class="gallery-item">
-                        <img src="img/img3.jpg" class="img-responsive">
-                        <div class="img-caption">
-                            <h4>走着嗨活动标题</h4>
-                            <p>
-                                2015-7-15
-                            </p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-sm-3 clear-lr animated" data-animation="bounceIn" data-delay="400" style="margin: 0px;">
-                <a href="index.html">
-                    <div class="gallery-item">
-                        <img src="img/img4.jpg" class="img-responsive">
-                        <div class="img-caption">
-                            <h4>走着嗨活动标题</h4>
-                            <p>
-                                2015-7-15
-                            </p>
-                        </div>
-                    </div>
-                </a>
-            </div>
+            </c:forEach>
         </div>
     </div>
 </section>
@@ -265,60 +193,33 @@
             </div>
         </div>
         <div class="row">
+        		<!-- 重复4次 -->
             <div class="col-sm-3 animated" data-animation="bounceIn" data-delay="0" style="text-align: center;">
                 <img src="img/img3.jpg" >
                 <div class="hgs-content">
-                    <h4>
-                        这是标题或者嗨客名称
-                    </h4>
-                    <p>
-                        这里是嗨客说的话，可以是很多，或者是嗨客的座右铭。可以很长很长很长很长
-
-                    </p>
-                    <p style="text-align: right;">---签名</p>
-
+                    <h4>这是Doers名称</h4>
+                    <p>这里是Doers的座右铭。可以很长很长很长很长</p>
                 </div>
             </div>
             <div class="col-sm-3 animated" data-animation="bounceIn" data-delay="200"  style="text-align: center;">
                 <img src="img/img2.jpg" >
                 <div class="hgs-content">
-                    <h4>
-                        这是标题或者嗨客名称
-                    </h4>
-                    <p>
-                        这里是嗨客说的话，可以是很多，或者是嗨客的座右铭。可以很长很长很长很长
-
-                    </p>
-                    <p style="text-align: right;">---签名</p>
-
+					<h4>这是Doers名称</h4>
+                    <p>这里是Doers的座右铭。可以很长很长很长很长</p>
                 </div>
             </div>
             <div class="col-sm-3 animated" data-animation="bounceIn" data-delay="400" style="text-align: center;">
                 <img src="img/img1.jpg" >
                 <div class="hgs-content">
-                    <h4>
-                        这是标题或者嗨客名称
-                    </h4>
-                    <p>
-                        这里是嗨客说的话，可以是很多，或者是嗨客的座右铭。可以很长很长很长很长
-
-                    </p>
-                    <p style="text-align: right;">---签名</p>
-
+					<h4>这是Doers名称</h4>
+                    <p>这里是Doers的座右铭。可以很长很长很长很长</p>
                 </div>
             </div>
             <div class="col-sm-3 animated" data-animation="bounceIn" data-delay="600" style="text-align: center;">
                 <img src="img/img4.jpg" >
                 <div class="hgs-content">
-                    <h4>
-                        这是标题或者嗨客名称
-                    </h4>
-                    <p>
-                        这里是嗨客说的话，可以是很多，或者是嗨客的座右铭。可以很长很长很长很长
-
-                    </p>
-                    <p style="text-align: right;">---签名</p>
-
+					<h4>这是Doers名称</h4>
+                    <p>这里是Doers的座右铭。可以很长很长很长很长</p>
                 </div>
             </div>
         </div>
@@ -453,6 +354,31 @@
 			});
 		}) 
 		</script>
+		<script language="javascript" type="text/javascript">
+		function DrawImage(ImgD,FitWidth,FitHeight)
+		{
+			var image=new Image();
+			image.src=ImgD.src;
+		  if(image.width>0 && image.height>0){
+		    if(image.width/image.height>= FitWidth/FitHeight){
+		        if(image.width>FitWidth){
+		            ImgD.width=FitWidth;
+		            ImgD.height=(image.height*FitWidth)/image.width;}
+		else{
+				ImgD.width=image.width;
+				ImgD.height=image.height;}
+		}
+		else{
+		if(image.height>FitHeight){
+			ImgD.height=FitHeight;
+			ImgD.width=(image.width*FitHeight)/image.height;
+		}else{
+			ImgD.width=image.width;
+			ImgD.height=image.height;}
+			}
+			}
+		}
+</script>
 <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
 <script src="js/jquery.skippr.js"></script>
 <script src="js/jquery.scrollto.min.js"></script>
