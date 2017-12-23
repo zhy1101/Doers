@@ -11,7 +11,7 @@
 	<meta http-equiv="Cache-Control" content="no-siteapp" />
     <title>个人工作中心</title>	
 	<link rel="stylesheet" href="common/css/sccl.css">
-	<link rel="stylesheet" type="text/css" href="common/skin.css" />
+	<link rel="stylesheet" type="text/css" href="common/css/skin.css" />
 	<link rel="stylesheet" type="text/css" href="../bootstrap/css/candy-box.css" />
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../css/demo.css">	

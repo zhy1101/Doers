@@ -9,7 +9,7 @@
 			<exception-mapping result="error" exception="java.lang.RuntimeExcepton"></exception-mapping>
 		</global-exception-mappings>
 		<action name="userAction_*" class="userAction" method="{1}">		
-			<result name="toHome" type="redirect">/index.jsp</result>
+			<result name="toHome" type="redirect">/index.html</result>
 			<result name="error">/Login.jsp</result>
 			<result name="toUserWorkspace" type="redirect">/UserWorkspace/UserInfo.jsp</result>
 			<result name="toUserProductionList">/UserWorkspace/UserProductionList.jsp</result>
@@ -33,7 +33,7 @@
 	    </action>
 	    <action name="baseDictAction" class="baseDictAction" method="execute" ></action>
 	    <action name="leaveMessageAction_*" class="leaveMessageAction" method="{1}">
-	    	<result name="passSuccess">/ProductionPage/passSuccess.html</result>
+	    	<result name="passSuccess" type="redirect">/ProductionPage/passSuccess.html</result>
 	    </action>
 	    <action name="loadMainPageAction_*" class="loadMainPageAction" method="{1}">
 	    	<result name="gotoIndexPage">/index.jsp</result>

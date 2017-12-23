@@ -40,27 +40,34 @@ public class ProductionDaoImpl extends BaseDaoImpl<Production> implements Produc
 	public List<Production> getTopCodeProductionList() {
 		String hqlString = "from Production where big_kind.dict_id=4 order by zan desc ";
 		getHibernateTemplate().setMaxResults(3);
-		return (List<Production>)getHibernateTemplate().find(hqlString);
+		List<Production> list = (List<Production>) getHibernateTemplate().find(hqlString);
+		getHibernateTemplate().setMaxResults(0);
+		return list;
 	}
 
 	@Override
 	public List<Production> getTopVideoProductionList() {
 		String hqlString = "from Production where big_kind.dict_id=5 order by zan desc ";
 		getHibernateTemplate().setMaxResults(3);
-		return (List<Production>) getHibernateTemplate().find(hqlString);
-	}
+		List<Production> list = (List<Production>) getHibernateTemplate().find(hqlString);
+		getHibernateTemplate().setMaxResults(0);
+		return list;}
 
 	@Override
 	public List<Production> getTopOtherProductionList() {
 		String hqlString = "from Production where big_kind.dict_id=8 order by zan desc ";
 		getHibernateTemplate().setMaxResults(2);
-		return (List<Production>) getHibernateTemplate().find(hqlString);
+		List<Production> list = (List<Production>) getHibernateTemplate().find(hqlString);
+		getHibernateTemplate().setMaxResults(0);
+		return list;
 	}
 
 	@Override
 	public List<Production> getTopWordAndPicProductionList() {
 		String hqlString = "from Production where big_kind.dict_id=6 or big_kind.dict_id=7 order by zan desc ";
 		getHibernateTemplate().setMaxResults(4);
-		return (List<Production>) getHibernateTemplate().find(hqlString);
+		List<Production> list = (List<Production>) getHibernateTemplate().find(hqlString);
+		getHibernateTemplate().setMaxResults(0);
+		return list;
 	}
 }

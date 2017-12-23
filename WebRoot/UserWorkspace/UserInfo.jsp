@@ -6,7 +6,7 @@
 <head>
 <title></title>
 <link rel="stylesheet" href="common/css/main.css">
-<link rel="stylesheet" href="common/css/style.css">
+<link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="common/css/personalProfile.css">
 </head>
 <body>

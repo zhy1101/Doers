@@ -27,11 +27,11 @@ pre{white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -pre-wrap; w
 
 /** 鍥炬爣瀛椾綋 **/
 @font-face {font-family: 'icon-font';
-  src: url('../iconfont/1.0.1/iconfont.eot');
-  src: url('../iconfont/1.0.1/iconfont.eot?#iefix') format('embedded-opentype'),
-  url('../iconfont/1.0.1/iconfont.woff') format('woff'),
-  url('../iconfont/1.0.1/iconfont.ttf') format('truetype'),
-  url('../iconfont/1.0.1/iconfont.svg#iconfont') format('svg');
+  src: url('../../iconfont/1.0.1/iconfont.eot');
+  src: url('../../iconfont/1.0.1/iconfont.eot?#iefix') format('embedded-opentype'),
+  url('../../iconfont/1.0.1/iconfont.woff') format('woff'),
+  url('../../iconfont/1.0.1/iconfont.ttf') format('truetype'),
+  url('../../iconfont/1.0.1/iconfont.svg#iconfont') format('svg');
 }
                     
 .icon-font{

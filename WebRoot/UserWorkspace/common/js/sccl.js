@@ -273,11 +273,11 @@ $(function(){
 						{"id":"4","name":"品牌管理","parentId":"3","url":"test1.html","icon":"&#xe612;","order":"1","isHeader":"0","childMenus":""},
 						{"id":"5","name":"分类管理","parentId":"3","url":"test2.html","icon":"","order":"1","isHeader":"0","childMenus":""}
 					]},
-					{"id":"6","name":"Do My作品","parentId":"1","url":"","icon":"&#xe602;","order":"1","isHeader":"0","childMenus":[
+					{"id":"6","name":"Do My作品","parentId":"1","url":"","icon":"&#xe612;","order":"1","isHeader":"0","childMenus":[
 						{"id":"7","name":"新作发布","parentId":"6","url":"AddNewProduction.jsp","icon":"","order":"1","isHeader":"0","childMenus":""},
 						{"id":"8","name":"查看历程","parentId":"6","url":"${pageContext.request.contextPath}/userAction_loadMyProduction","icon":"","order":"1","isHeader":"0","childMenus":""}
 					]},
-					{"id":"12","name":"Do 赞&推","parentId":"1","url":"","icon":"&#xe602;","order":"1","isHeader":"0","childMenus":[
+					{"id":"12","name":"Do 赞&推","parentId":"1","url":"","icon":"&#xe612;","order":"1","isHeader":"0","childMenus":[
 						{"id":"7","name":"赞过的东西","parentId":"12","url":"home3.html","icon":"","order":"1","isHeader":"0","childMenus":""},
 						{"id":"8","name":"推过的文章","parentId":"12","url":"home4.html","icon":"","order":"1","isHeader":"0","childMenus":""}
 					]}

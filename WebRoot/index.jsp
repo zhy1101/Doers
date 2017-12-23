@@ -11,7 +11,6 @@
     <link rel="stylesheet" type="text/css" href="css/animate.min.css" />
     <link rel="stylesheet" type="text/css" href="css/jquery.skippr.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="css/demo.css">	
 </head>
@@ -72,7 +71,7 @@
             <div class="col-sm-4 animated" data-animation="bounceIn" data-delay="${vs.index}*200">
                 <a href="${pageContext.request.contextPath}/productionDetailAction_showProductionDetail?productionId=${codePro.productionId}">
                     <div class="walkhi">
-                        <img src="${codePro.coverURL}" class="img-responsive" width="330" height="200" >
+                        <img src="${codePro.coverURL}"    class="img1">
                         <h4>${codePro.productionTitle}</h4>
                         <p>${codePro.time}</p>
                     </div>
@@ -96,7 +95,7 @@
             <div class="col-sm-8 gallery-item animated" data-animation="bounceIn" data-delay="0">
                 <a href="${pageContext.request.contextPath}/productionDetailAction_showProductionDetail?productionId=${topVideoProductionList[0].productionId}">
                     <div class="gallery-item">
-                        <img src="${topVideoProductionList[0].coverURL}" class="img-responsive" width="750" height="500" >
+                        <img src="${topVideoProductionList[0].coverURL}"  class="videoBigImg">
                         <div class="img-caption">
                             <h4>${topVideoProductionList[0].productionTitle}</h4>
                             <p>${topVideoProductionList[0].time}</p>
@@ -108,7 +107,7 @@
                 <div class="col-sm-12" style="margin: 0px; padding: 0px;">
                     <a href="${pageContext.request.contextPath}/productionDetailAction_showProductionDetail?productionId=${topVideoProductionList[1].productionId}">
                         <div class="gallery-item">
-                            <img src="${topVideoProductionList[1].coverURL}" class="img-responsive" width="360" height="230" onload="javascript:DrawImage(this,360,230);">
+                            <img src="${topVideoProductionList[1].coverURL}" class="videoImg"  >
                             <div class="img-caption">
                                 <h4>${topVideoProductionList[1].productionTitle}</h4>
                                 <p>${topVideoProductionList[1].time}</p>
@@ -119,7 +118,7 @@
                 <div class="col-sm-12" style="margin: 0px; padding: 0px;">
                     <a href="${pageContext.request.contextPath}/productionDetailAction_showProductionDetail?productionId=${topVideoProductionList[2].productionId}">
                         <div class="gallery-item">
-                            <img src="${topVideoProductionList[2].coverURL}" class="img-responsive" width="360" height="230" onload="javascript:DrawImage(this,360,230);">
+                            <img src="${topVideoProductionList[2].coverURL}" class="videoImg"  >
                             <div class="img-caption">
                                 <h4>${topVideoProductionList[2].productionTitle}</h4>
                                 <p>${topVideoProductionList[2].time}</p>
@@ -145,7 +144,7 @@
             <div class="col-sm-8 clear-lr gallery-item animated" data-animation="bounceIn" data-delay="0">
                 <a href="${pageContext.request.contextPath}/productionDetailAction_showProductionDetail?productionId=${topOtherProductionList[0].productionId}">
                     <div class="gallery-item" style="height: 253px; overflow: hidden;">
-                        <img src="${topOtherProductionList[0].coverURL}" class="img-responsive" width="760" height="250" onload="javascript:DrawImage(this,760,250);">
+                        <img src="${topOtherProductionList[0].coverURL}" class="wpBigImg1">
                         <div class="img-caption">
                             <h4>${topOtherProductionList[0].productionTitle}</h4>
                             <p>${topOtherProductionList[0].time}</p>
@@ -156,7 +155,7 @@
             <div class="col-sm-4 clear-lr animated" data-animation="bounceIn" data-delay="400">
                 <a href="${pageContext.request.contextPath}/productionDetailAction_showProductionDetail?productionId=${topOtherProductionList[1].productionId}">
                     <div class="gallery-item">
-                        <img src="${topOtherProductionList[1].coverURL}" class="img-responsive" width="380" height="250" onload="javascript:DrawImage(this,380,250);">
+                        <img src="${topOtherProductionList[1].coverURL}" class="wpBigImg2">
                         <div class="img-caption">
                             <h4>${topOtherProductionList[1].productionTitle}</h4>
                             <p>${topOtherProductionList[1].time}</p>
@@ -170,7 +169,7 @@
             <div class="col-sm-3 clear-lr animated" data-animation="bounceIn" data-delay="400" style="margin: 0px;">
                 <a href="${pageContext.request.contextPath}/productionDetailAction_showProductionDetail?productionId=${wpPro.productionId}">
                     <div class="gallery-item" >
-                        <img src="${wpPro.coverURL}" class="img-responsive" width="285" height="250" onload="javascript:DrawImage(this,285,250);">
+                        <img src="${wpPro.coverURL}" class="wpImg img-response" >
                         <div class="img-caption">
                             <h4>${wpPro.productionTitle}</h4>
                             <p>${wpPro.time}</p>
@@ -251,7 +250,7 @@
             <div class="col-sm-4 animated" data-animation="bounceIn" data-delay="200">
                 <a href="index.html">
                     <div class="walkhi2">
-                        <img src="img/img2.jpg" class="img-responsive">
+                        <img src="img/img2.jpg" class="img-responsive ">
                         <h4>走着嗨活动标题</h4>
                         <p>
                             2015-7-15
@@ -296,6 +295,7 @@
     </div>
 </footer>
 <script src="js/jquery-1.10.2.min.js"></script> 
+<script src="js/jqthumb.js"></script>
 <script type="text/javascript">
 	$(function(){
     	$('#skippr').skippr({
@@ -354,30 +354,37 @@
 			});
 		}) 
 		</script>
-		<script language="javascript" type="text/javascript">
-		function DrawImage(ImgD,FitWidth,FitHeight)
-		{
-			var image=new Image();
-			image.src=ImgD.src;
-		  if(image.width>0 && image.height>0){
-		    if(image.width/image.height>= FitWidth/FitHeight){
-		        if(image.width>FitWidth){
-		            ImgD.width=FitWidth;
-		            ImgD.height=(image.height*FitWidth)/image.width;}
-		else{
-				ImgD.width=image.width;
-				ImgD.height=image.height;}
-		}
-		else{
-		if(image.height>FitHeight){
-			ImgD.height=FitHeight;
-			ImgD.width=(image.width*FitHeight)/image.height;
-		}else{
-			ImgD.width=image.width;
-			ImgD.height=image.height;}
-			}
-			}
-		}
+<script language="javascript" type="text/javascript">
+		$('.img1').jqthumb({
+ 		classname: 'jqthumb',  
+        width          : 330,  
+        height         : 200,  
+        showoncomplete : true  });
+        $('.videoBigImg').jqthumb({
+ 		classname: 'jqthumb',  
+        width          : 750,  
+        height         : 500,  
+        showoncomplete : true  });
+        $('.videoImg').jqthumb({
+ 		classname: 'jqthumb',  
+        width          : 360,  
+        height         : 230,  
+        showoncomplete : true  });
+        $('.wpBigImg1').jqthumb({
+ 		classname: 'jqthumb',  
+        width          : 760,  
+        height         : 258,  
+        showoncomplete : true  });
+        $('.wpBigImg2').jqthumb({
+ 		classname: 'jqthumb',  
+        width          : 380,  
+        height         : 255,  
+        showoncomplete : true  });
+        $('.wpImg').jqthumb({
+ 		classname: 'jqthumb',  
+        width          : 285,  
+        height         : 250,  
+        showoncomplete : true  });
 </script>
 <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
 <script src="js/jquery.skippr.js"></script>
