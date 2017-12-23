@@ -18,6 +18,8 @@
 	href="../../Doers/ProductionPage/css/detail_work.css">
 <link href="../../Doers/ProductionPage/css/detail_jiathis_share.css"
 	rel="stylesheet" type="text/css">
+<link href="../../Doers/ProductionPage/css/detail_dianzan.css"
+	rel="stylesheet" type="text/css">
 </head>
 <style type="text/css">
 .button, .button:visited {
@@ -79,9 +81,10 @@
 					<section style="display:block">${production.content }</section></div>
 				</div>
 				<div class="recommend-box">
-					<div id="detail-recommend-div" class="recommend-works normal"
-						style="background-image: url(../img/zan.png)">
-						<i class="recommend-number">774</i>
+					<div class="praise">
+					<span id="praise"><img src="../../Doers/img/zan.png" id="praise-img" /></span>
+					<span id="praise-txt">${production.zan }</span>
+					<span id="add-num"><em>+1</em></span>
 					</div>
 				</div>
 			</div>
@@ -142,5 +145,42 @@
        made by YU
     </div>
 </footer>
+
+<script>
+	/* 动态点赞
+	 * 此效果包含css3，部分浏览器不兼容（如：IE10以下的版本）
+	*/
+	$(function(){
+		$("#praise").click(function(){
+			var praise_img = $("#praise-img");
+			var text_box = $("#add-num");
+			var praise_txt = $("#praise-txt");
+			var num=parseInt(praise_txt.text());
+			if(praise_img.attr("src") == ("../../Doers/img/yizan.png")){
+				$(this).html("<img src='../../Doers/img/zan.png' id='praise-img' class='animation' />");
+				praise_txt.removeClass("hover");
+				text_box.show().html("<em class='add-animation'>-1</em>");
+				$(".add-animation").removeClass("hover");
+				num -=1;
+				praise_txt.text(num)
+				$.ajax({
+					type:"POST",
+					url: "/Doers/zanAction_removeZan",
+				});
+			}else{
+				$(this).html("<img src='../../Doers/img/yizan.png' id='praise-img' class='animation' />");
+				praise_txt.addClass("hover");
+				text_box.show().html("<em class='add-animation'>+1</em>");
+				$(".add-animation").addClass("hover");
+				num +=1;
+				praise_txt.text(num)
+				$.ajax({
+					type:"POST",
+					url: "/Doers/zanAction_addZan",
+				});
+			}
+		});
+	})
+</script>
 </body>
 </html>

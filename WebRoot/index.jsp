@@ -373,7 +373,7 @@
         $('.wpBigImg1').jqthumb({
  		classname: 'jqthumb',  
         width          : 760,  
-        height         : 258,  
+        height         : 260,  
         showoncomplete : true  });
         $('.wpBigImg2').jqthumb({
  		classname: 'jqthumb',  

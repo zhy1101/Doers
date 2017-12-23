@@ -1,0 +1,31 @@
+package com.doers.Action;
+
+import com.doers.Service.ZanService;
+import com.doers.domain.Production;
+import com.doers.domain.User;
+import com.doers.domain.Zan;
+import com.opensymphony.xwork2.ActionContext;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class ZanAction extends ActionSupport {
+	
+	private ZanService zanService;
+
+	public void setZanService(ZanService zanService) {
+		this.zanService = zanService;
+	}
+	public String addZan(){
+		Zan zan =new Zan();
+		zan.setZan_user((User) ActionContext.getContext().getSession().get("user"));
+		zan.setZan_pro((Production) ActionContext.getContext().getSession().get("production"));
+		zanService.addZan(zan);
+		return NONE;
+	}
+	public String removeZan(){
+		long uid = ((User)ActionContext.getContext().getSession().get("user")).getUid();
+		long pid=((Production) ActionContext.getContext().getSession().get("production")).getProductionId();
+		Zan zan =zanService.findZanByCondition(uid,pid);
+		zanService.removeZan(zan);
+		return NONE;
+	}
+}
