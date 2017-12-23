@@ -145,8 +145,8 @@
        made by YU
     </div>
 </footer>
-
-<script>
+<script src="../../Doers/js/jquery-1.10.2.min.js"></script> 
+<script type="text/javascript">
 	/* 动态点赞
 	 * 此效果包含css3，部分浏览器不兼容（如：IE10以下的版本）
 	*/
@@ -164,7 +164,7 @@
 				num -=1;
 				praise_txt.text(num)
 				$.ajax({
-					type:"POST",
+					type:"GET",
 					url: "/Doers/zanAction_removeZan",
 				});
 			}else{
@@ -175,7 +175,7 @@
 				num +=1;
 				praise_txt.text(num)
 				$.ajax({
-					type:"POST",
+					type:"GET",
 					url: "/Doers/zanAction_addZan",
 				});
 			}

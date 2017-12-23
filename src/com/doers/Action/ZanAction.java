@@ -21,9 +21,9 @@ public class ZanAction extends ActionSupport {
 		zanService.addZan(zan);
 		return NONE;
 	}
-	public String removeZan(){
-		long uid = ((User)ActionContext.getContext().getSession().get("user")).getUid();
-		long pid=((Production) ActionContext.getContext().getSession().get("production")).getProductionId();
+	public String removeZan() throws Exception{
+		Long uid = ((User)ActionContext.getContext().getSession().get("user")).getUid();
+		Long pid=((Production) ActionContext.getContext().getSession().get("production")).getProductionId();
 		Zan zan =zanService.findZanByCondition(uid,pid);
 		zanService.removeZan(zan);
 		return NONE;

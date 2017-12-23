@@ -38,5 +38,6 @@
 	    <action name="loadMainPageAction_*" class="loadMainPageAction" method="{1}">
 	    	<result name="gotoIndexPage">/index.jsp</result>
 	    </action>
+	    <action name="zanAction_*" class="zanAction" method="{1}"></action>
 	</package>
 </struts>

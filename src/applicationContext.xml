@@ -67,6 +67,9 @@
 	<bean name="loadMainPageAction" class="com.doers.Action.LoadMainPageAction" scope="prototype" >
 		<property name="productionService" ref="productionService"></property>
 	</bean>
+	<bean name="zanAction" class="com.doers.Action.ZanAction" scope="prototype" >
+		<property name="zanService" ref="zanService"></property>
+	</bean>
 	
 	<!-- Service -->
 	<bean name="userService" class="com.doers.Service.Impl.UserServiceImpl">
@@ -81,6 +84,9 @@
 	<bean name="leaveMessageService" class="com.doers.Service.Impl.LeaveMessageServiceImpl" >
 		<property name="leaveMessageDao" ref="leaveMessageDao" ></property>
 	</bean>
+	<bean name="zanService" class="com.doers.Service.Impl.ZanServiceImpl" >
+		<property name="zanDao" ref="zanDao" ></property>
+	</bean>
 	<!-- Dao -->
 	<bean name="userDao" class ="com.doers.Dao.Impl.UserDaoImpl" >
 		<property name="sessionFactory" ref="sessionFactory"></property>
@@ -92,6 +98,9 @@
 		<property name="sessionFactory" ref="sessionFactory" ></property>
 	</bean>
 	<bean name="leaveMessageDao" class="com.doers.Dao.Impl.LeaveMessageDaoImpl" >
+		<property name="sessionFactory" ref="sessionFactory" ></property>
+	</bean>
+	<bean name="zanDao" class="com.doers.Dao.Impl.ZanDaoImpl" >
 		<property name="sessionFactory" ref="sessionFactory" ></property>
 	</bean>
 </beans>

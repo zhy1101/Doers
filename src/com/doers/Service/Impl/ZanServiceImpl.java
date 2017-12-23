@@ -24,7 +24,7 @@ public class ZanServiceImpl implements ZanService {
 	}
 
 	@Override
-	public Zan findZanByCondition(long uid, long pid) {
+	public Zan findZanByCondition(Long uid, Long pid) throws Exception {
 		return zanDao.findZanByCondition(uid, pid);
 	}
 

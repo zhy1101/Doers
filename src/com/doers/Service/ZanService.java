@@ -8,5 +8,5 @@ public interface ZanService {
 	
 	void removeZan(Zan zan);
 
-	Zan findZanByCondition(long uid, long pid);
+	Zan findZanByCondition(Long uid, Long pid) throws Exception;
 }

@@ -4,7 +4,7 @@ import com.doers.domain.Zan;
 
 public interface ZanDao extends BaseDao<Zan> {
 
-	Zan findZanByCondition(long uid, long pid);
+	Zan findZanByCondition(Long uid, Long pid) throws Exception;
 
 
 }

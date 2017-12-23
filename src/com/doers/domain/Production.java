@@ -4,7 +4,7 @@ import java.util.Set;
 
 public class Production
 {
-  private long productionId;
+  private Long productionId;
   private String productionTitle;
   private String content;
   private String time;
@@ -42,10 +42,10 @@ public class Production
   public void setCoverURL(String coverURL) {
     this.coverURL = coverURL;
   }
-  public long getProductionId() {
+  public Long getProductionId() {
     return this.productionId;
   }
-  public void setProductionId(long showId) {
+  public void setProductionId(Long showId) {
     this.productionId = showId;
   }
 
