@@ -31,7 +31,7 @@ public class Production
     this.shortcontent = shortcontent;
   }
   public int getZan() {
-    return this.zan;
+    return this.zanlist.size();
   }
   public void setZan(int zan) {
     this.zan = zan;

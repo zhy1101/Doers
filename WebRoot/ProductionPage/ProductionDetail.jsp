@@ -147,10 +147,26 @@
 </footer>
 <script src="../../Doers/js/jquery-1.10.2.min.js"></script> 
 <script type="text/javascript">
+	$(document).ready(
+	function(){
+	$.ajax({ 		type:"POST",
+					async: false,
+					url: "/Doers/zanAction_checkZan",
+					dataType:"json",
+					success:function(data){
+						if(data.isZan){
+						$("#praise-img").attr("src","../../Doers/img/yizan.png");
+						}else{
+						$("#praise-img").attr("src","../../Doers/img/zan.png");
+						}
+					}
+		});
+		});
 	/* 动态点赞
 	 * 此效果包含css3，部分浏览器不兼容（如：IE10以下的版本）
 	*/
 	$(function(){
+		
 		$("#praise").click(function(){
 			var praise_img = $("#praise-img");
 			var text_box = $("#add-num");
