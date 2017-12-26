@@ -42,6 +42,7 @@
 	<bean name="userAction" class="com.doers.Action.UserAction" scope="prototype">
 		<property name="userService" ref="userService"></property>
 		<property name="productionService" ref="productionService"></property>
+		<property name="leaveMessageService" ref="leaveMessageService" ></property>
 	</bean>
 	<bean name="resignAction" class="com.doers.Action.ResignAction" scope="prototype">
 		<property name="userService" ref="userService"></property>

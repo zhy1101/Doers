@@ -267,7 +267,7 @@ $(function(){
 	var menu = [{"id":"1","name":"我的工作空间","parentId":"0","url":"","icon":"&#xe612;","order":"1","isHeader":"1","childMenus":[
 					{"id":"9","name":"信息管理","parentId":"1","url":"","icon":"&#xe612;","order":"1","isHeader":"0","childMenus":[
 						{"id":"10","name":"个人基础信息","parentId":"9","url":"UserInfo.jsp","icon":"&#xe612;","order":"1","isHeader":"0","childMenus":""},
-						{"id":"11","name":"悄悄话信箱","parentId":"9","url":"test2.html","icon":"&#xe612;","order":"1","isHeader":"0","childMenus":""}
+						{"id":"11","name":"悄悄话信箱","parentId":"9","url":"${pageContext.request.contextPath}/userAction_loadToMeMsg","icon":"&#xe612;","order":"1","isHeader":"0","childMenus":""}
 					]},
 					{"id":"3","name":"Do My交易","parentId":"1","url":"","icon":"&#xe612;","order":"1","isHeader":"0","childMenus":[
 						{"id":"4","name":"品牌管理","parentId":"3","url":"test1.html","icon":"&#xe612;","order":"1","isHeader":"0","childMenus":""},

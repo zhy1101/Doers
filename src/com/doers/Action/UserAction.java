@@ -1,7 +1,9 @@
 package com.doers.Action;
 
 import com.doers.domain.User;
+import com.doers.domain.LeaveMessage;
 import com.doers.domain.Production;
+import com.doers.Service.LeaveMessageService;
 import com.doers.Service.ProductionService;
 import com.doers.Service.UserService;
 import com.opensymphony.xwork2.ActionContext;
@@ -23,8 +25,12 @@ public class UserAction extends ActionSupport implements ModelDriven<User>
   
   UserService userService;
   private ProductionService productionService;
+  private LeaveMessageService leaveMessageService;
   
-
+  
+public void setLeaveMessageService(LeaveMessageService leaveMessageService) {
+	this.leaveMessageService = leaveMessageService;
+}
 public String getCaddress() {
 	return Caddress;
 }
@@ -106,6 +112,12 @@ public void setUserService(UserService userService)
 	  ActionContext.getContext().getSession().put("production", null);
 	  return "toHome";
   } 
+  public String loadToMeMsg(){
+	  User u=(User) ActionContext.getContext().getSession().get("user");
+	  List<LeaveMessage> myLeaveMsg = leaveMessageService.getMsgByUser(u);
+	  ActionContext.getContext().put("myLeaveMsg", myLeaveMsg);
+	  return "toUserMsgList";  
+  }
   public User getModel() {
     return this.user;
   }
