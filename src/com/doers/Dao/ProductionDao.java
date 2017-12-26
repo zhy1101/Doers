@@ -3,6 +3,7 @@ package com.doers.Dao;
 import java.util.List;
 
 import com.doers.domain.Production;
+import com.doers.domain.User;
 
 public  interface ProductionDao extends BaseDao<Production>
 {
@@ -21,4 +22,6 @@ public  interface ProductionDao extends BaseDao<Production>
 	public List<Production> getTopOtherProductionList();
 	
 	public List<Production> getTopWordAndPicProductionList();
+
+	public List<Production> getUserProductionList(User u);
 }

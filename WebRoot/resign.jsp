@@ -11,9 +11,40 @@
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="css/resign_gloab.css" rel="stylesheet">
 <link href="css/resign.css" rel="stylesheet">
-
 </head>
 <body class="bgf4" >
+<header>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="hiview.html">Doers</a>
+            </div>
+            <div class="navbar-collapse collapse navbar-responsive-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="${pageContext.request.contextPath}/index.html">首页</a></li>
+                    <li><a href="${pageContext.request.contextPath}/productionListAction_getAllProductions">Do 博物</a></li>
+                    <li><a href="hiview.html">Do 服务</a></li>
+                    <li><a href="hiview.html">Do 活动</a></li>
+                    <li><a href="hiview.html">Do 交易</a></li>
+                    <li><a href="/Doers/UserWorkspace/UserWorkSpace.jsp">Do Myself</a></li>
+                </ul>
+                <form class="navbar-form navbar-left">
+                    <input type="text" class="form-control col-lg-8" placeholder="搜索">
+                </form>
+               <lable id ="ready_login" style="display:none">欢迎你，<a>${user.user_name}</a></lable>
+                <ul class="nav navbar-nav navbar-right" id = "no_login" style="display:block">
+                	
+                	<c:if test="${empty user }">
+                		<li><a  href=/Doers/Login.jsp >登录</a></li>
+                    	<li><a href="/Doers/resign.jsp">注册</a></li>
+                	</c:if>
+                	<c:if test="${!empty user }">
+                		<li><a href=java:void(0)>欢迎您 ，${user.user_name }</a></li>
+                		<li><a href="${pageContext.request.contextPath}/userAction_dropout" >退出</a></li>
+                	</c:if>
+               </ul>
+            </div>
+        </nav>
+</header>
 <div class="login-box f-mt10 f-pb50">
 	<div class="main bgf">    
     	<div class="reg-box-pan display-inline">  

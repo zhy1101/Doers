@@ -22,7 +22,7 @@
             </div>
             <div class="navbar-collapse collapse navbar-responsive-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">首页</a></li>
+                    <li class="active"><a href="${pageContext.request.contextPath}/index.html">首页</a></li>
                     <li><a href="${pageContext.request.contextPath}/productionListAction_getAllProductions">Do 博物</a></li>
                     <li><a href="hiview.html">Do 服务</a></li>
                     <li><a href="hiview.html">Do 活动</a></li>
@@ -41,7 +41,7 @@
                 	</c:if>
                 	<c:if test="${!empty user }">
                 		<li><a href=java:void(0)>欢迎您 ，${user.user_name }</a></li>
-                		<li><a href="#" >退出</a></li>
+                		<li><a href="${pageContext.request.contextPath}/userAction_dropout" >退出</a></li>
                 	</c:if>
                </ul>
             </div>

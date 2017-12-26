@@ -42,8 +42,7 @@ public class ProductionServiceImpl implements ProductionService
 
 	@Override
 	public List<Production> getUserProductionList(User u) {
-		// TODO Auto-generated method stub
-		return null;
+		return productionDao.getUserProductionList(u);
 	}
 
 	@Override

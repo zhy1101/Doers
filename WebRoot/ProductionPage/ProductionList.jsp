@@ -15,23 +15,26 @@
 	<script src="../../Doers/ProductionPage/js/modernizr-2.6.2.min.js"></script>	
 </head>
 <body>
-	<header> 
-	<nav class="navbar navbar-default navbar-fixed-top">
-	<div class="navbar-header">
-		<a class="navbar-brand" href="hiview.html">Doers</a>
-	</div>
-	<div class="navbar-collapse collapse navbar-responsive-collapse">
-		<ul class="nav navbar-nav">
-			<li><a href="/index.jsp">首页</a></li>
-			<li class="active"><a href="${pageContext.request.contextPath}/productionListAction_getAllProductions">Do 博物</a></li>
-			<li><a href="hiview.html">Do 服务</a></li>
-			<li><a href="hiview.html">Do 活动</a></li>
-			<li><a href="hiview.html">Do 交易</a></li>
-			<li><a href="/Doers/UserWorkspace/UserWorkSpace.jsp">Do Myself</a></li>
-		</ul>		
-	</div>
-	</nav> 
-	</header>
+<header>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="hiview.html">Doers</a>
+            </div>
+            <div class="navbar-collapse collapse navbar-responsive-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="${pageContext.request.contextPath}/index.html">首页</a></li>
+                    <li class="active"><a href="${pageContext.request.contextPath}/productionListAction_getAllProductions">Do 博物</a></li>
+                    <li><a href="hiview.html">Do 服务</a></li>
+                    <li><a href="hiview.html">Do 活动</a></li>
+                    <li><a href="hiview.html">Do 交易</a></li>
+                    <li><a href="/Doers/UserWorkspace/UserWorkSpace.jsp">Do Myself</a></li>
+                </ul>
+                <form class="navbar-form navbar-left">
+                    <input type="text" class="form-control col-lg-8" placeholder="搜索">
+                </form>
+            </div>
+        </nav>
+</header>
 	<br><br>
 	<div id="page-wrap">   
 	<ul class="dropdown">

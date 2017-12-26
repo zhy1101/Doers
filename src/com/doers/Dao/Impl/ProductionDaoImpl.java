@@ -10,6 +10,7 @@ import org.springframework.orm.hibernate5.HibernateCallback;
 
 import com.doers.Dao.ProductionDao;
 import com.doers.domain.Production;
+import com.doers.domain.User;
 
 public class ProductionDaoImpl extends BaseDaoImpl<Production> implements ProductionDao
 {
@@ -69,5 +70,11 @@ public class ProductionDaoImpl extends BaseDaoImpl<Production> implements Produc
 		List<Production> list = (List<Production>) getHibernateTemplate().find(hqlString);
 		getHibernateTemplate().setMaxResults(0);
 		return list;
+	}
+
+	@Override
+	public List<Production> getUserProductionList(User u) {
+		String hqlString = "from Production where user.uid=?";
+		return (List<Production>) getHibernateTemplate().find(hqlString, u.getUid());	
 	}
 }

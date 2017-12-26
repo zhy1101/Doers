@@ -97,9 +97,15 @@ public void setUserService(UserService userService)
   }
   public String loadMyProduction(){
 	  User u=(User) ActionContext.getContext().getSession().get("user");
-	   ActionContext.getContext().put("ProductionList", u.getProductions());
-	   return "toUserProductionList";
+	  List<Production> myProductionList= productionService.getUserProductionList(u);
+	  ActionContext.getContext().put("myProductionList", myProductionList);
+	  return "toUserProductionList";
   }
+  public String dropout(){
+	  ActionContext.getContext().getSession().put("user", null);
+	  ActionContext.getContext().getSession().put("production", null);
+	  return "toHome";
+  } 
   public User getModel() {
     return this.user;
   }

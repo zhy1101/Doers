@@ -17,26 +17,26 @@
 	<link rel="stylesheet" type="text/css" href="../css/demo.css">	
   </head>
   <body>
-   <nav class="navbar navbar-default navbar-fixed-top">
+<header>
+        <nav class="navbar navbar-default navbar-fixed-top">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
                 <a class="navbar-brand" href="hiview.html">Doers</a>
             </div>
             <div class="navbar-collapse collapse navbar-responsive-collapse">
                 <ul class="nav navbar-nav">
-                    <li ><a href="/Doers/index.jsp">首页</a></li>
-                    <li><a href="hiview.html">Do 博物</a></li>
+                    <li><a href="${pageContext.request.contextPath}/index.html">首页</a></li>
+                    <li><a href="${pageContext.request.contextPath}/productionListAction_getAllProductions">Do 博物</a></li>
                     <li><a href="hiview.html">Do 服务</a></li>
                     <li><a href="hiview.html">Do 活动</a></li>
                     <li><a href="hiview.html">Do 交易</a></li>
-                    <li class="active"><a href="/Doers/userHouse/index.jsp">Do Myself</a></li>
+                    <li class="active"><a href="/Doers/UserWorkspace/UserWorkSpace.jsp">Do Myself</a></li>
                 </ul>
-		</div>
-		</nav>
+                <form class="navbar-form navbar-left">
+                    <input type="text" class="form-control col-lg-8" placeholder="搜索">
+                </form>
+            </div>
+        </nav>
+</header>
     <div class="layout-admin">
 		<aside class="layout-side">
 		    <br>
