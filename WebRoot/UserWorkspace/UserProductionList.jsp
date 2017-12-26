@@ -5,33 +5,32 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<link rel="stylesheet" href="../../Doers/ProductionPage/css/main.css">
+	<link rel="stylesheet" href="../../UserWorkspace/common/css/main.css">
 </HEAD>
 <BODY>
-<c:forEach items="myProductionList" var="pro">
+<c:forEach items="${myProductionList}" var="pro">
 <div class="card-box">
     <div class="card-img">
-        <a href="" class="card-img-hover" title="${pro.productionTitle }"
-           target="_blank" z-st="home_main_card_cover">
-            <img src="${pro.coverURL }" title="${pro.productionTitle }">
+        <a href="" class="card-img-hover" target="_blank" z-st="home_main_card_cover">
+            <img src="${pro.coverURL }">
         </a>
     </div>
     <div class="card-info">
         <p class="card-info-title">
-            <a href="${pageContext.request.contextPath}/productionDetailAction_showProductionDetail?productionId=<s:property value="#production.productionId" /> " class="title-content" target="_blank" z-st="home_main_card_title">${pro.productionTitle }</a>    
+            <a href="${pageContext.request.contextPath}/productionDetailAction_showProductionDetail?productionId=${pro.productionId} " class="title-content" target="_blank" z-st="home_main_card_title">${pro.productionTitle }</a>    
         </p>
-        <p class="card-info-type" ><span><s:property value="#session.production.big_kind.dict_item_name"/></span><i>/</i><span><s:property value="#session.production.small_kind.dict_item_name"/></span></span></p>
+        <p class="card-info-type" ><span>${pro.big_kind.dict_item_name}-<span>${pro.small_kind.dict_item_name}</p>
         <p class="card-info-item">      
-           <span class="statistics-tuijian" title="共201推荐">201</span>          
+           	共<span style="color:blue;">${pro.zan}</span>人 赞过          
         </p>
     </div>
      <div class="card-item">
         <span class="user-avatar showMemberCard">
             <a href=""  target="_blank" z-st="home_main_card_user">
-    		<button>预览编辑</button>
+    		<button>重新编辑</button>
         	</a>
         </span>
-        <span class="time">删除</span>
+        <span class="time" ><button style="margin-top:3px">删除</button></span>
     </div>
 </div> 
 </c:forEach>
