@@ -5,6 +5,19 @@
 <struts>
 	<constant name="struts.objectFactory" value="spring"></constant>
 	<package name="default" namespace="/" extends="struts-default">
+		<interceptors>
+			<interceptor name="privilegeInterceptor" class="com.doers.Interceptor.PrivilegeInterceptor"></interceptor>
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="privilegeInterceptor">
+					<param name="excludeMethods">login,resign,loadIndexPage</param>
+				</interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="myStack"></default-interceptor-ref>
+		<global-results>
+			<result name="toLogin">/Login.jsp</result>
+		</global-results>
 		<global-exception-mappings>
 			<exception-mapping result="error" exception="java.lang.RuntimeExcepton"></exception-mapping>
 		</global-exception-mappings>
