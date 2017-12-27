@@ -43,6 +43,7 @@
 		<property name="userService" ref="userService"></property>
 		<property name="productionService" ref="productionService"></property>
 		<property name="leaveMessageService" ref="leaveMessageService" ></property>
+		<property name="zanService" ref="zanService"></property>
 	</bean>
 	<bean name="resignAction" class="com.doers.Action.ResignAction" scope="prototype">
 		<property name="userService" ref="userService"></property>

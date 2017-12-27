@@ -6,6 +6,7 @@ import com.doers.domain.Production;
 import com.doers.Service.LeaveMessageService;
 import com.doers.Service.ProductionService;
 import com.doers.Service.UserService;
+import com.doers.Service.ZanService;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
@@ -26,8 +27,12 @@ public class UserAction extends ActionSupport implements ModelDriven<User>
   UserService userService;
   private ProductionService productionService;
   private LeaveMessageService leaveMessageService;
+  private ZanService zanService;
   
   
+public void setZanService(ZanService zanService) {
+	this.zanService = zanService;
+}
 public void setLeaveMessageService(LeaveMessageService leaveMessageService) {
 	this.leaveMessageService = leaveMessageService;
 }
@@ -118,7 +123,29 @@ public void setUserService(UserService userService)
 	  ActionContext.getContext().put("myLeaveMsg", myLeaveMsg);
 	  return "toUserMsgList";  
   }
+  public String loadMyFavor(){
+	  User u=(User) ActionContext.getContext().getSession().get("user");
+	  List<Production> myFavorProductions = zanService.getMyZanPro(u);
+	  ActionContext.getContext().put("myFavorProductionList", myFavorProductions);
+	  return "toMyFavorList";
+  }
   public User getModel() {
     return this.user;
   }
+  public void addActionError(String anErrorMessage) {
+	    String s = anErrorMessage;
+	    System.out.println(s);
+	  }
+	  public void addActionMessage(String aMessage) {
+	    String s = aMessage;
+	    System.out.println(s);
+	  }
+
+	  public void addFieldError(String fieldName, String errorMessage) {
+	    String s = errorMessage;
+	    String f = fieldName;
+	    System.out.println(s);
+	    System.out.println(f);
+	  }
+
 }
