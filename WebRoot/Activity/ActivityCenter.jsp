@@ -188,10 +188,10 @@
                         <div class="view-content-right">
                             <h1>最新赛事</h1>
                             <div class="aside-top">
-                            <a href="hiview-info.html"><img src="../../Doers/img/img1.jpg" style="float:left;height: 40px;width: 40px;border-radius: 50%;margin-right: 15px">2015应该学习的前端语言与框架</a>
-                            <a href="hiview-info.html"><img src="../../Doers/img/img2.jpg" style="float:left;height: 40px;width: 40px;border-radius: 50%;margin-right: 15px">看看硅谷的科技企业是如何开除员工的</a>
-                            <a href="hiview-info.html"><img src="../../Doers/img/img3.jpg" style="float:left;height: 40px;width: 40px;border-radius: 50%;margin-right: 15px">大圣归来 三里屯优衣库试衣间是怎么刷爆朋友圈的</a>
-                            <a href="hiview-info.html"><img src="../../Doers/img/img4.jpg" style="float:left;height: 40px;width: 40px;border-radius: 50%;margin-right: 15px">不要被VR的火热骗了 至少现在它还真没什么卵用</a>
+                            <a href="hiview-info.html"><img src="../../Doers/img/img1.jpg" style="float:left;height: 40px;width: 40px;border-radius: 50%;margin-right: 15px">赛事活动1</a>
+                            <a href="hiview-info.html"><img src="../../Doers/img/img2.jpg" style="float:left;height: 40px;width: 40px;border-radius: 50%;margin-right: 15px">赛事活动2</a>
+                            <a href="hiview-info.html"><img src="../../Doers/img/img3.jpg" style="float:left;height: 40px;width: 40px;border-radius: 50%;margin-right: 15px">赛事活动3</a>
+                            <a href="hiview-info.html"><img src="../../Doers/img/img4.jpg" style="float:left;height: 40px;width: 40px;border-radius: 50%;margin-right: 15px">赛事活动4</a>
                             </div>
                         </div>
                         <div class="view-content-right" style="margin: 20px 0;">
@@ -201,10 +201,10 @@
                         <div class="view-content-right">
                             <h1>热门培训</h1>
                             <div class="aside-top">
-                            <a href="hiview-info.html"><img src="../../Doers/img/img1.jpg" style="height: 40px;width: 40px;border-radius: 50%;margin-right: 15px">2015应该学习的前端语言与框架</a>
-                            <a href="hiview-info.html"><img src="../../Doers/img/img2.jpg" style="height: 40px;width: 40px;border-radius: 50%;margin-right: 15px">2015应该学习的前端语言与框架</a>
-                            <a href="hiview-info.html"><img src="../../Doers/img/img3.jpg" style="height: 40px;width: 40px;border-radius: 50%;margin-right: 15px">2015应该学习的前端语言与框架</a>
-                            <a href="hiview-info.html"><img src="../../Doers/img/img4.jpg" style="height: 40px;width: 40px;border-radius: 50%;margin-right: 15px">2015应该学习的前端语言与框架</a>
+                            <a href="hiview-info.html"><img src="../../Doers/img/img1.jpg" style="height: 40px;width: 40px;border-radius: 50%;margin-right: 15px">学习的前端语言与框架培训</a>
+                            <a href="hiview-info.html"><img src="../../Doers/img/img2.jpg" style="height: 40px;width: 40px;border-radius: 50%;margin-right: 15px">学习的后台语言与框架培训</a>
+                            <a href="hiview-info.html"><img src="../../Doers/img/img3.jpg" style="height: 40px;width: 40px;border-radius: 50%;margin-right: 15px">学习的大数据培训</a>
+                            <a href="hiview-info.html"><img src="../../Doers/img/img4.jpg" style="height: 40px;width: 40px;border-radius: 50%;margin-right: 15px">学习PHP培训</a>
                             </div>
                         </div>
             </div>

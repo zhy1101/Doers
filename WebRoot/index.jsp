@@ -240,10 +240,8 @@
                 <a href="index.html">
                     <div class="walkhi2">
                         <img src="img/img1.jpg" class="img-responsive">
-                        <h4>走着嗨活动标题</h4>
-                        <p>
-                            2015-7-15
-                        </p>
+                        <h4>活动标题</h4>
+                        <p>2015-7-15</p>
                     </div>
                 </a>
             </div>
@@ -251,10 +249,8 @@
                 <a href="index.html">
                     <div class="walkhi2">
                         <img src="img/img2.jpg" class="img-responsive ">
-                        <h4>走着嗨活动标题</h4>
-                        <p>
-                            2015-7-15
-                        </p>
+                        <h4>活动标题</h4>
+                        <p>2015-7-15</p>
                     </div>
                 </a>
             </div>
@@ -262,10 +258,8 @@
                 <a href="index.html">
                     <div class="walkhi2">
                         <img src="img/img3.jpg" class="img-responsive">
-                        <h4>走着嗨活动标题</h4>
-                        <p>
-                            2015-7-15
-                        </p>
+                        <h4>活动标题</h4>
+                        <p>2015-7-15</p>
                     </div>
                 </a>
             </div>

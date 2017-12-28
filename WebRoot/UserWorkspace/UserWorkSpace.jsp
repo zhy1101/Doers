@@ -45,7 +45,7 @@
 		</aside>
 		<section class="layout-main">
 			<div class="layout-main-body">
-				<iframe class="body-iframe" name="iframe0" width="100%" height="99%" src="../registerActive.html" frameborder="0" data-id="home.html" seamless></iframe>
+				<iframe class="body-iframe" name="iframe0" width="100%" height="99%" src="../WelcomePage.html" frameborder="0" data-id="home.html" seamless></iframe>
 			</div>
 		</section>
 		<div class="layout-footer">@2017 v0.1</div>
