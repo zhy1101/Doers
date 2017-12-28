@@ -11,8 +11,10 @@ import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
+import java.io.File;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 public class UserAction extends ActionSupport implements ModelDriven<User>
 {
@@ -23,6 +25,8 @@ public class UserAction extends ActionSupport implements ModelDriven<User>
   private String CQQ;
   private String Cskill;
   private String Cdescription;
+  private File avatar_file;
+  private String avatar_fileFileName;
   
   UserService userService;
   private ProductionService productionService;
@@ -36,11 +40,23 @@ public void setZanService(ZanService zanService) {
 public void setLeaveMessageService(LeaveMessageService leaveMessageService) {
 	this.leaveMessageService = leaveMessageService;
 }
+public String getAvatar_fileFileName() {
+	return avatar_fileFileName;
+}
+public void setAvatar_fileFileName(String avatar_fileFileName) {
+	this.avatar_fileFileName = avatar_fileFileName;
+}
 public String getCaddress() {
 	return Caddress;
 }
 public void setCaddress(String caddress) {
 	Caddress = caddress;
+}
+public File getAvatar_file() {
+	return avatar_file;
+}
+public void setAvatar_file(File avatar_file) {
+	this.avatar_file = avatar_file;
 }
 public String getCbirthday() {
 	return Cbirthday;
@@ -96,15 +112,20 @@ public void setUserService(UserService userService)
   }
   public String save(){
 	  User u = (User) ActionContext.getContext().getSession().get("user");
-	  u.setAddress(Caddress);
-	  u.setBirthday(Cbirthday);
-	  u.setDescription(Cdescription);
-	  u.setQQ(CQQ);
-	  u.setSkill(Cskill);
-	  u.setWeiChat(CweiChat);
-	  userService.update(u);
+	  userService.updateByCondition(Caddress,Cbirthday,CweiChat,CQQ,Cskill,Cdescription,u.getUid());
+	  u=userService.getUserById(String.valueOf(u.getUid()));
 	  ActionContext.getContext().getSession().put("user",u);
-	  return "toUserWorkspace";
+	  return "toUserInfo";
+  }
+  public String changePersonalPic(){
+	  User u = (User) ActionContext.getContext().getSession().get("user");
+	  String uuid=UUID.randomUUID().toString();
+	  this.avatar_file.renameTo(new File("D:/DoersWorks/PersonImg/" + uuid+ "_" + this.avatar_fileFileName));
+	  String urlString = "/personImg/" + uuid + "_" + this.avatar_fileFileName;
+	  userService.updatePersonImg(urlString,u.getUid());
+	  u.setPersonImg_path(urlString);
+	  u=userService.getUserById(String.valueOf(u.getUid()));
+	  return "toUserInfo";	  
   }
   public String loadMyProduction(){
 	  User u=(User) ActionContext.getContext().getSession().get("user");
@@ -132,6 +153,5 @@ public void setUserService(UserService userService)
   public User getModel() {
     return this.user;
   }
-
 
 }

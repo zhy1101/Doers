@@ -1,5 +1,6 @@
 package com.doers.Dao.Impl;
 
+import com.doers.Dao.BaseDao;
 import com.doers.Dao.UserDao;
 import com.doers.domain.User;
 import java.io.Serializable;
@@ -56,5 +57,26 @@ public class UserDaoImpl extends BaseDaoImpl<User> implements UserDao
 	      return (User) list.get(0);
 	    }
 	    return null;
+	}
+
+	@Override
+	public void updateByCondition(String caddress, String cbirthday, String cweiChat, String cQQ, String cskill,
+			String cdescription, Long uid) {
+		User user = getHibernateTemplate().get(User.class,uid);
+		user.setAddress(caddress);
+		user.setBirthday(cbirthday);
+		user.setDescription(cdescription);
+		user.setQQ(cQQ);
+		user.setSkill(cskill);
+		user.setWeiChat(cweiChat);
+		user.setUid(uid);
+		getHibernateTemplate().update(user);	
+	}
+
+	@Override
+	public void updatePersonImg(String urlString, Long uid) {
+		User user = getHibernateTemplate().get(User.class,uid);
+		user.setPersonImg_path(urlString);
+		getHibernateTemplate().update(user);		
 	}
 }

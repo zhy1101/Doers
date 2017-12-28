@@ -61,4 +61,15 @@ public class UserServiceImpl implements UserService
 		userDao.update(u);
 		
 	}
+
+	@Override
+	public void updateByCondition(String caddress, String cbirthday, String cweiChat, String cQQ, String cskill,
+			String cdescription, Long uid) {
+			userDao.updateByCondition(caddress, cbirthday,cweiChat, cQQ, cskill,cdescription, uid);
+	}
+
+	@Override
+	public void updatePersonImg(String urlString, Long uid) {
+		userDao.updatePersonImg(urlString,uid) ;
+	}
 }

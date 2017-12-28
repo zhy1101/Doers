@@ -9,7 +9,7 @@
 			<interceptor name="privilegeInterceptor" class="com.doers.Interceptor.PrivilegeInterceptor"></interceptor>
 			<interceptor-stack name="myStack">
 				<interceptor-ref name="privilegeInterceptor">
-					<param name="excludeMethods">login,resign,loadIndexPage</param>
+					<param name="excludeMethods">login,resign,loadIndexPage,dropout</param>
 				</interceptor-ref>
 				<interceptor-ref name="defaultStack"></interceptor-ref>
 			</interceptor-stack>
@@ -24,7 +24,7 @@
 		<action name="userAction_*" class="userAction" method="{1}">		
 			<result name="toHome" type="redirect">/index.html</result>
 			<result name="error">/Login.jsp</result>
-			<result name="toUserWorkspace" type="redirect">/UserWorkspace/UserInfo.jsp</result>
+			<result name="toUserInfo" type="redirect">/UserWorkspace/UserInfo.jsp</result>
 			<result name="toUserProductionList">/UserWorkspace/UserProductionList.jsp</result>
 			<result name="toUserMsgList">/UserWorkspace/LeaveMessageCase.jsp</result>
 			<result name="toMyFavorList">/UserWorkspace/MyFavorList.jsp</result>

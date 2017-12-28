@@ -19,4 +19,9 @@ public  interface UserService
 public void save(User u);
 
 public void update(User u);
+
+public void updateByCondition(String caddress, String cbirthday, String cweiChat, String cQQ, String cskill,
+		String cdescription, Long uid);
+
+public void updatePersonImg(String urlString, Long uid);
 }
