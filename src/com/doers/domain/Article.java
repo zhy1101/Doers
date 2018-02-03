@@ -8,8 +8,8 @@ public class Article {
 	private String content;
 	private String time;
 	private String coverURL;
-	private Set<Zan> zanlist;
-	private int zan;
+	private Set<Push> pushlist;
+	private int push;
 	private User user;
 	private String word1;
 	private String word2;
@@ -44,17 +44,17 @@ public class Article {
 	public void setCoverURL(String coverURL) {
 		this.coverURL = coverURL;
 	}
-	public Set<Zan> getZanlist() {
-		return zanlist;
+	public Set<Push> getPushlist() {
+		return pushlist;
 	}
-	public void setZanlist(Set<Zan> zanlist) {
-		this.zanlist = zanlist;
+	public void setPushlist(Set<Push> pushlist) {
+		this.pushlist = pushlist;
 	}
-	public int getZan() {
-		return this.zanlist.size();
+	public int getPush() {
+		return this.pushlist.size();
 	}
-	public void setZan(int zan) {
-		this.zan = zan;
+	public void setPush(int zan) {
+		this.push = zan;
 	}
 	public User getUser() {
 		return user;

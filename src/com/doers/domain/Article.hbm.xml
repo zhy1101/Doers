@@ -17,9 +17,9 @@
 		<property name="word3" column="word3" ></property>		
 		
 		<many-to-one name="user" column="uid" class="User"  ></many-to-one>
-		<set name="zanlist">
-			<key column="zan_pro" ></key>
-			<one-to-many class="Zan" />
+		<set name="pushlist">
+			<key column="push_article" ></key>
+			<one-to-many class="Push" />
 		</set>
 	</class>
 </hibernate-mapping>
