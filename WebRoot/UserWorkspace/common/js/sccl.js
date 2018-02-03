@@ -275,11 +275,12 @@ $(function(){
 					]},
 					{"id":"6","name":"Do My作品","parentId":"1","url":"","icon":"&#xe612;","order":"1","isHeader":"0","childMenus":[
 						{"id":"7","name":"新作发布","parentId":"6","url":"AddNewProduction.jsp","icon":"&#xe612","order":"1","isHeader":"0","childMenus":""},
+						{"id":"15","name":"分享文章","parentId":"6","url":"AddNewArticle.jsp","icon":"&#xe612","order":"1","isHeader":"0","childMenus":""},
 						{"id":"8","name":"查看历程","parentId":"6","url":"${pageContext.request.contextPath}/userAction_loadMyProduction","icon":"&#xe612","order":"1","isHeader":"0","childMenus":""}
 					]},
 					{"id":"12","name":"Do 赞&活动","parentId":"1","url":"","icon":"&#xe612;","order":"1","isHeader":"0","childMenus":[
-						{"id":"7","name":"赞过的东西","parentId":"12","url":"${pageContext.request.contextPath}/userAction_loadMyFavor","icon":"&#xe612","order":"1","isHeader":"0","childMenus":""},
-						{"id":"8","name":"参与的活动","parentId":"12","url":"home4.html","icon":"&#xe612","order":"1","isHeader":"0","childMenus":""}
+						{"id":"13","name":"赞过的东西","parentId":"12","url":"${pageContext.request.contextPath}/userAction_loadMyFavor","icon":"&#xe612","order":"1","isHeader":"0","childMenus":""},
+						{"id":"14","name":"参与的活动","parentId":"12","url":"home4.html","icon":"&#xe612","order":"1","isHeader":"0","childMenus":""}
 					]}
 				]}];
 	initMenu(menu,$(".side-menu"));
