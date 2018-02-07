@@ -73,6 +73,7 @@
 	</bean>
 	<bean name="zanAction" class="com.doers.Action.ZanAction" scope="prototype" >
 		<property name="zanService" ref="zanService"></property>
+		<property name="pushService" ref="pushService"></property>
 	</bean>
 	<bean name="addArticleAction" class="com.doers.Action.AddArticleAction" scope="prototype" >
 		<property name="articleService" ref="articleService"></property>
@@ -96,6 +97,9 @@
 	<bean name="zanService" class="com.doers.Service.Impl.ZanServiceImpl" >
 		<property name="zanDao" ref="zanDao" ></property>
 	</bean>
+	<bean name="pushService" class="com.doers.Service.Impl.PushServiceImpl" >
+		<property name="pushDao" ref="pushDao" ></property>
+	</bean>
 	<bean name="articleService" class="com.doers.Service.Impl.ArticleServiceImpl" >
 		<property name="articleDao" ref="articleDao" ></property>
 	</bean>
@@ -115,6 +119,9 @@
 		<property name="sessionFactory" ref="sessionFactory" ></property>
 	</bean>
 	<bean name="zanDao" class="com.doers.Dao.Impl.ZanDaoImpl" >
+		<property name="sessionFactory" ref="sessionFactory" ></property>
+	</bean>
+	<bean name="pushDao" class="com.doers.Dao.Impl.PushDaoImpl" >
 		<property name="sessionFactory" ref="sessionFactory" ></property>
 	</bean>
 	<bean name="articleDao" class="com.doers.Dao.Impl.ArticleDaoImpl" >

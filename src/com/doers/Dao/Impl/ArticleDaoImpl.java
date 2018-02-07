@@ -25,7 +25,7 @@ public class ArticleDaoImpl extends BaseDaoImpl<Article>  implements ArticleDao 
 
 	@Override
 	public Article getArticleById(String articleId) {
-		return super.getById(articleId);
+		return super.getById(Long.valueOf(articleId));
 	}
 
 }

@@ -41,7 +41,7 @@
 <c:forEach items="${myArticleList}" var="art">
 <div class="card-box">
     <div class="card-img">
-        <a href="" class="card-img-hover" target="_blank" z-st="home_main_card_cover">
+        <a href="javascript:void(0)" class="card-img-hover" target="_blank" z-st="home_main_card_cover">
             <img src="${art.coverURL }">
         </a>
     </div>
@@ -59,9 +59,7 @@
             <a href=""  target="_blank" z-st="home_main_card_user">
     		<button>重新编辑</button>
         	</a>
-        </span>
-        <span class="user-avatar showMemberCard">
-            <a href=""  target="_blank" z-st="home_main_card_user">
+        	<a href=""  target="_blank" z-st="home_main_card_user">
     		<button>删除</button>
         	</a>
         </span>

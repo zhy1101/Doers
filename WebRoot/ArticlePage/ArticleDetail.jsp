@@ -7,11 +7,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${article.articleTitle}</title>
-    <link rel="stylesheet" type="text/css" href="../Doers/bootstrap/css/candy-box.css" />
-    <link rel="stylesheet" type="text/css" href="../Doers/css/font-awesome.min.css" />
-    <link rel="stylesheet" type="text/css" href="../Doers/css/animate.min.css" />
-    <link rel="stylesheet" type="text/css" href="../Doers/css/style.css" />
-
+    <link rel="stylesheet" type="text/css" href="../Doers/bootstrap/css/candy-box.css"/>
+    <link rel="stylesheet" type="text/css" href="../Doers/css/font-awesome.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../Doers/css/animate.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../Doers/css/style.css"/>
+    <link href="../Doers/ProductionPage/css/detail_dianzan.css"
+	rel="stylesheet" type="text/css">
 </head>
 <body>
 <header> 
@@ -36,8 +37,8 @@
         <div class="row">
             <div class="col-sm-12">
                 <ul class="breadcrumb">
-                    <li><a href="#">首页</a></li>
-                    <li><a href="#">Do 博物</a></li>
+                    <li><a href="${pageContext.request.contextPath}/index.html">首页</a></li>
+                    <li><a href="${pageContext.request.contextPath}/productionListAction_getAllProductions">Do 博物</a></li>
                     <li><a href="#">交流文章</a></li>
                     <li class="active">${article.articleTitle}</li>
                 </ul>
@@ -54,10 +55,16 @@
                         <h2>${article.articleTitle}</h2>
                         <span><a href="hiview-info.html"><img src="${article.user.personImg_path }" style="float:left;height: 25px;width: 25px;border-radius: 50%;margin-right: 5px">${article.user.user_name}</a> <i class="fa fa-clock-o"></i>${article.time}</span>
                     </div>
-                    <p></p>
-                    <span>${article.content}</span>
-                    <hr />
-                    <span class="pull-left">点赞：</span>
+					<section class="article"><div>${article.content}</div></section>
+                    <hr/>
+                    <div class="recommend-box">
+						<div class="praise">
+						<span id="praise"><img src="../../Doers/img/zan.png" id="praise-img" /></span>
+						<span id="praise-txt">${article.push }</span>
+						<span id="add-num"><em>+1</em></span>
+						</div>
+					</div>
+                    <div class="clearfix"></div>
                 </div>
             </div>
             <div class="col-sm-3">
@@ -113,9 +120,74 @@
 </footer>
 <script type="text/javascript" src="../Doers/js/jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="../Doers/bootstrap/js/bootstrap.min.js"></script>
-<script src="../Doers/js/jquery.scrollto.min.js"></script>
-<script src="../Doers/js/jquery.easing.min.js"></script>
+<script src="../Doers/js/jquery.scrollto.min.js" type="text/javascript"></script>
+<script src="../Doers/js/jquery.easing.min.js" type="text/javascript"></script>
 <script src="../Doers/js/jquery.parallax-1.1.3.js" type="text/javascript"></script>
 <script type="text/javascript" src="../Doers/js/main.js"></script>
+<script type="text/javascript">
+$(window).load(function() {  //容器内所有图片超过宽度等比例缩小，不能用$(document).ready( 
+    $(".article img").each( function() {
+			var maxwidth = 800;
+			var _height=parseInt($(this).height()/$(this).width()*800);
+			//alert(_height);
+		  if ($(this).width() > maxwidth) {
+				$(this).css("width",800+"px");
+				$(this).css("height",_height+"px");
+		  }	
+	});  
+});
+</script>
+<script type="text/javascript">
+	$(document).ready(
+	function(){
+	$.ajax({ 		type:"POST",
+					async: false,
+					url: "/Doers/zanAction_checkPush",
+					dataType:"json",
+					success:function(data){
+						if(data.isPush){
+						$("#praise-img").attr("src","../../Doers/img/yizan.png");
+						}else{
+						$("#praise-img").attr("src","../../Doers/img/zan.png");
+						}
+					}
+		});
+		});
+	/* 动态点赞
+	 * 此效果包含css3，部分浏览器不兼容（如：IE10以下的版本）
+	*/
+	$(function(){
+		
+		$("#praise").click(function(){
+			var praise_img = $("#praise-img");
+			var text_box = $("#add-num");
+			var praise_txt = $("#praise-txt");
+			var num=parseInt(praise_txt.text());
+			if(praise_img.attr("src") == ("../../Doers/img/yizan.png")){
+				$(this).html("<img src='../../Doers/img/zan.png' id='praise-img' class='animation' />");
+				praise_txt.removeClass("hover");
+				text_box.show().html("<em class='add-animation'>-1</em>");
+				$(".add-animation").removeClass("hover");
+				num -=1;
+				praise_txt.text(num)
+				$.ajax({
+					type:"GET",
+					url: "/Doers/zanAction_removePush",
+				});
+			}else{
+				$(this).html("<img src='../../Doers/img/yizan.png' id='praise-img' class='animation' />");
+				praise_txt.addClass("hover");
+				text_box.show().html("<em class='add-animation'>+1</em>");
+				$(".add-animation").addClass("hover");
+				num +=1;
+				praise_txt.text(num)
+				$.ajax({
+					type:"GET",
+					url: "/Doers/zanAction_addPush",
+				});
+			}
+		});
+	})
+</script>
 </body>
 </html>

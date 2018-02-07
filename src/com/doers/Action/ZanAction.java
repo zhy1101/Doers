@@ -2,8 +2,11 @@ package com.doers.Action;
 
 import org.apache.struts2.ServletActionContext;
 
+import com.doers.Service.PushService;
 import com.doers.Service.ZanService;
+import com.doers.domain.Article;
 import com.doers.domain.Production;
+import com.doers.domain.Push;
 import com.doers.domain.User;
 import com.doers.domain.Zan;
 import com.opensymphony.xwork2.ActionContext;
@@ -15,7 +18,12 @@ import net.sf.json.JSONObject;
 public class ZanAction extends ActionSupport {
 	
 	private ZanService zanService;
-
+	private PushService pushService;
+	
+	
+	public void setPushService(PushService pushService) {
+		this.pushService = pushService;
+	}
 	public void setZanService(ZanService zanService) {
 		this.zanService = zanService;
 	}
@@ -26,11 +34,25 @@ public class ZanAction extends ActionSupport {
 		zanService.addZan(zan);
 		return NONE;
 	}
+	public String addPush(){
+		Push push =new Push();
+		push.setPush_user((User) ActionContext.getContext().getSession().get("user"));
+		push.setPush_article((Article) ActionContext.getContext().getSession().get("article"));
+		pushService.addPush(push);
+		return NONE;
+	}
 	public String removeZan() throws Exception{
 		Long uid = ((User)ActionContext.getContext().getSession().get("user")).getUid();
 		Long pid=((Production) ActionContext.getContext().getSession().get("production")).getProductionId();
 		Zan zan =zanService.findZanByCondition(uid,pid);
 		zanService.removeZan(zan);
+		return NONE;
+	}
+	public String removePush() throws Exception{
+		Long uid = ((User)ActionContext.getContext().getSession().get("user")).getUid();
+		Long aid=((Article) ActionContext.getContext().getSession().get("article")).getArticleId();
+		Push push =pushService.findPushByCondition(uid,aid);
+		pushService.removePush(push);
 		return NONE;
 	}
 	public String checkZan() throws Exception{
@@ -41,6 +63,18 @@ public class ZanAction extends ActionSupport {
 		if(zan!=null) isZan=true;
 		JSONObject j = new  JSONObject();
 		j.put("isZan", isZan);
+	    String result = JSONObject.fromObject(j).toString();
+		ServletActionContext.getResponse().getWriter().write(result);
+		return null;
+	}
+	public String checkPush() throws Exception{
+		Long uid = ((User)ActionContext.getContext().getSession().get("user")).getUid();
+		Long aid=((Article) ActionContext.getContext().getSession().get("article")).getArticleId();
+		Push push =pushService.findPushByCondition(uid,aid);
+		boolean isPush = false;
+		if(push!=null) isPush=true;
+		JSONObject j = new  JSONObject();
+		j.put("isPush", isPush);
 	    String result = JSONObject.fromObject(j).toString();
 		ServletActionContext.getResponse().getWriter().write(result);
 		return null;
