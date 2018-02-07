@@ -56,6 +56,7 @@
 	</bean>
 	<bean name="productionDetailAction" class="com.doers.Action.ProductionDetailAction" scope="prototype">
 		<property name="productionService" ref="productionService"></property>
+		<property name="articleService" ref="articleService"></property>
 	</bean>
 	<bean name="baseDictAction" class="com.doers.Action.BaseDictAction" scope="prototype" >
 		<property name="baseDictService" ref="baseDictService" ></property>

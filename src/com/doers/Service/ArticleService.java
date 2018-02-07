@@ -11,4 +11,6 @@ public interface ArticleService {
 
 	List<Article> getUserArticleList(User u);
 
+	Article getArticleById(String articleId);
+
 }

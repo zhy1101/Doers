@@ -11,4 +11,6 @@ public interface ArticleDao extends BaseDao<Article> {
 
 	List<Article> getUserArticleList(User u);
 
+	Article getArticleById(String articleId);
+
 }

@@ -23,4 +23,9 @@ public class ArticleDaoImpl extends BaseDaoImpl<Article>  implements ArticleDao 
 		return (List<Article>) getHibernateTemplate().find(hqlString, u.getUid());	
 	}
 
+	@Override
+	public Article getArticleById(String articleId) {
+		return super.getById(articleId);
+	}
+
 }
