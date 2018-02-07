@@ -1,8 +1,10 @@
 package com.doers.Action;
 
 import com.doers.domain.User;
+import com.doers.domain.Article;
 import com.doers.domain.LeaveMessage;
 import com.doers.domain.Production;
+import com.doers.Service.ArticleService;
 import com.doers.Service.LeaveMessageService;
 import com.doers.Service.ProductionService;
 import com.doers.Service.UserService;
@@ -32,8 +34,11 @@ public class UserAction extends ActionSupport implements ModelDriven<User>
   private ProductionService productionService;
   private LeaveMessageService leaveMessageService;
   private ZanService zanService;
-  
-  
+  private ArticleService articleService;
+   
+public void setArticleService(ArticleService articleService) {
+	this.articleService = articleService;
+}
 public void setZanService(ZanService zanService) {
 	this.zanService = zanService;
 }
@@ -131,6 +136,8 @@ public void setUserService(UserService userService)
 	  User u=(User) ActionContext.getContext().getSession().get("user");
 	  List<Production> myProductionList= productionService.getUserProductionList(u);
 	  ActionContext.getContext().put("myProductionList", myProductionList);
+	  List<Article> myArticleList = articleService.getUserArticleList(u);
+	  ActionContext.getContext().put("myArticleList", myArticleList);
 	  return "toUserProductionList";
   }
   public String dropout(){

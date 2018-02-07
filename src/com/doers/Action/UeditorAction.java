@@ -41,21 +41,6 @@ public class UeditorAction extends ActionSupport
   public void setCoverFileName(String coverFileName) {
     this.coverFileName = coverFileName;
   }
-  public void addActionError(String anErrorMessage) {
-    String s = anErrorMessage;
-    System.out.println(s);
-  }
-  public void addActionMessage(String aMessage) {
-    String s = aMessage;
-    System.out.println(s);
-  }
-
-  public void addFieldError(String fieldName, String errorMessage) {
-    String s = errorMessage;
-    String f = fieldName;
-    System.out.println(s);
-    System.out.println(f);
-  }
 
   public String addNewProduction() throws Exception
   {

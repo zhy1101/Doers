@@ -8,7 +8,37 @@
 	<link rel="stylesheet" href="../../UserWorkspace/common/css/main.css">
 </HEAD>
 <BODY>
+<img src="/Doers/img/ProBanner.png">
+<br>
 <c:forEach items="${myProductionList}" var="pro">
+<div class="card-box">
+    <div class="card-img">
+        <a href="" class="card-img-hover" target="_blank" z-st="home_main_card_cover">
+            <img src="${pro.coverURL }">
+        </a>
+    </div>
+    <div class="card-info">
+        <p class="card-info-title">
+            <a href="${pageContext.request.contextPath}/productionDetailAction_showProductionDetail?productionId=${pro.productionId} " class="title-content" target="_blank" z-st="home_main_card_title">${pro.productionTitle }</a>    
+        </p>
+        <p class="card-info-type" ><span>${pro.big_kind.dict_item_name}-<span>${pro.small_kind.dict_item_name}</p>
+        <p class="card-info-item">      
+           	共<span style="color:blue;">${pro.zan}</span>人 赞过          
+        </p>
+    </div>
+     <div class="card-item">
+        <span class="user-avatar showMemberCard">
+            <a href=""  target="_blank" z-st="home_main_card_user">
+    		<button>重新编辑</button>
+        	</a>
+        </span>
+        <span class="time" ><button style="margin-top:3px">删除</button></span>
+    </div>
+</div> 
+</c:forEach>
+<br>
+<img src="/Doers/img/articleBanner.png">
+<c:forEach items="${myArticleList}" var="art">
 <div class="card-box">
     <div class="card-img">
         <a href="" class="card-img-hover" target="_blank" z-st="home_main_card_cover">

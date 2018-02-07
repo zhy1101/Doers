@@ -51,10 +51,10 @@ public class Article {
 		this.pushlist = pushlist;
 	}
 	public int getPush() {
-		return this.pushlist.size();
+		return this.push;
 	}
 	public void setPush(int zan) {
-		this.push = zan;
+		this.push = this.pushlist.size();
 	}
 	public User getUser() {
 		return user;

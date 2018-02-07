@@ -14,9 +14,8 @@
 <body>
 <h3 class="h-bloc">分享文章</h3>
 <h6 class="h-bloc" style="color:#B0C4DE"> "Do家族 感谢你每一次无偿的技能知识共享     共同付出收获快乐"</h6>
-    <form action="/Doers/ueditorAction_addNewArticle" method="post" enctype="multipart/form-data" id="newProduct">
-    	<input name="user" type="hidden" value="${user}">
-              标题：<input name="productionTitle" type="text" style="width:300px">&nbsp;&nbsp;
+    <form action="/Doers/addArticleAction_addNewArticle" method="post" enctype="multipart/form-data" id="newProduct">
+              标题：<input name="articleTitle" type="text" >&nbsp;&nbsp;
              关键词：<input name="word1" placeholder="关键词1">&nbsp;<input name="word2" placeholder="关键词2">&nbsp;<input name="word3" placeholder="关键词3">
     <br>封面选择：<input name="cover" type="file" name="cover">
 	<br>
@@ -31,16 +30,13 @@
         initialFrameHeight: 500,
         toolbars: [[
            'source', '|',
-            'bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'superscript', 'subscript', 'removeformat', 'formatmatch', 'autotypeset', 'blockquote',  '|',
-            'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist', 'selectall', '|',
-            'lineheight', '|',
+            'bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'superscript', 'subscript','|',
+            'forecolor', 'backcolor', 'lineheight', '|',
             'customstyle', 'paragraph', 'fontfamily', 'fontsize', '|',
             'justifyleft', 'justifycenter', 'justifyright', 'justifyjustify', '|',
-            'link', 'unlink', 'anchor', '|', 
-            'imagenone', 'imageleft', 'imageright', 'imagecenter', '|',
-            'insertimage', 'emotion', '|',
-            'horizontal', 'date', 'time', 'spechars', 'snapscreen', 'wordimage', '|',
-            'preview', 'help'
+            'simpleupload', 'emotion', '|',
+            'horizontal', 'date', 'time', 'spechars',  '|',
+            'preview'
         ]]
     });  
     function checkProductionForm(){

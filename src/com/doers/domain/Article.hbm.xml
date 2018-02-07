@@ -11,7 +11,7 @@
 		<property name="content" column="content" ></property>
 		<property name="time" column="time" ></property>
 		<property name="coverURL" column="coverURL" ></property>	
-		<property name="zan" column="zan" ></property>	
+		<property name="push" column="push" ></property>	
 		<property name="word1" column="word1" ></property>	
 		<property name="word2" column="word2" ></property>	
 		<property name="word3" column="word3" ></property>		

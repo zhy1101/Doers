@@ -54,5 +54,10 @@
 	    	<result name="gotoIndexPage">/index.jsp</result>
 	    </action>
 	    <action name="zanAction_*" class="zanAction" method="{1}"></action>
+	    <action name="addArticleAction_*" class="addArticleAction" method="{1}">
+	    	<result name="handInSuccess" type="redirectAction">
+	    		<param name="actionName">userAction_loadMyProduction</param>
+	    	</result>
+	    </action>
 	</package>
 </struts>

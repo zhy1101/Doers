@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.doers.domain" >
+	<class name="Push" table="PushList" >
+		<id name="push_id"  >
+			<generator class="uuid"></generator>
+		</id>
+		<many-to-one name="push_article" column="push_article" class="Article" ></many-to-one>
+		<many-to-one name="push_user" column="push_user" class="User" ></many-to-one>
+	</class>
+</hibernate-mapping>
