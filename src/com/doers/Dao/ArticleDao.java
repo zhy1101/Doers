@@ -13,4 +13,6 @@ public interface ArticleDao extends BaseDao<Article> {
 
 	Article getArticleById(String articleId);
 
+	List<Article> getHotArticle();
+
 }

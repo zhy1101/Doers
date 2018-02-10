@@ -26,5 +26,24 @@
     </div>
 </div> 
 </c:forEach>
+<hr/>
+<c:forEach items="${myFavorArticleList}" var="art">
+<div class="card-box">
+    <div class="card-img">
+        <a href="" class="card-img-hover" target="_blank" z-st="home_main_card_cover">
+            <img src="${art.coverURL}">
+        </a>
+    </div>
+    <div class="card-info">
+        <p class="card-info-title">
+            <a href="${pageContext.request.contextPath}/productionDetailAction_showArticleDetail?articleId=${art.articleId} " class="title-content" target="_blank" z-st="home_main_card_title">${art.articleTitle }</a>    
+        </p>
+        <p class="card-info-type" ><span>${art.word1}&nbsp;${art.word2}&nbsp;${art.word3}</p>
+        <p class="card-info-item">      
+           	共<span style="color:blue;">${art.push}</span>人 赞过          
+        </p>
+    </div>
+</div> 
+</c:forEach>
 </BODY>
 </HTML>

@@ -1,6 +1,8 @@
 package com.doers.Action;
+import com.doers.domain.Article;
 import com.doers.domain.BaseDict;
 import com.doers.domain.Production;
+import com.doers.Service.ArticleService;
 import com.doers.Service.BaseDictService;
 import com.doers.Service.ProductionService;
 import com.doers.utils.PageBean;
@@ -23,8 +25,14 @@ public class ProductionListAction extends ActionSupport
   private Integer currentPage;
   private Integer pageSize;
   private BaseDictService baseDictService;
+  private ArticleService articleService;
+  
+  
+  public void setArticleService(ArticleService articleService) {
+	this.articleService = articleService;
+}
 
-  public Production getProduction()
+public Production getProduction()
   {
     return this.production;
   }
@@ -97,6 +105,13 @@ public String list() throws Exception {
 	  ActionContext.getContext().put("productionList", productionList);
 	  this.loadDropDownList();
 	  return "toListPage";
+  }
+  public String getHotArticle(){
+	  List<Article> articleList = articleService.getHotArticle();
+	  ActionContext.getContext().put("hotArticleList", articleList);
+	  this.loadDropDownList();
+	  return "toListPage1";
+	  
   }
   public void loadDropDownList(){
 	  List<BaseDict> CodeSmallKindList=baseDictService.getListByTypeCode("003");

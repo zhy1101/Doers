@@ -45,6 +45,7 @@
 		<property name="leaveMessageService" ref="leaveMessageService" ></property>
 		<property name="zanService" ref="zanService"></property>
 		<property name="articleService" ref="articleService"></property>
+		<property name="pushService" ref="pushService"></property>
 	</bean>
 	<bean name="resignAction" class="com.doers.Action.ResignAction" scope="prototype">
 		<property name="userService" ref="userService"></property>
@@ -64,6 +65,7 @@
 	<bean name="productionListAction" class="com.doers.Action.ProductionListAction" scope="prototype">
 		<property name="productionService" ref="productionService"></property>
 		<property name="baseDictService" ref="baseDictService" ></property>
+		<property name="articleService" ref="articleService"></property>
 	</bean>
 	<bean name="leaveMessageAction" class="com.doers.Action.LeaveMessageAction" scope="prototype" >
 		<property name="leaveMessageService" ref="leaveMessageService" ></property>
@@ -73,6 +75,8 @@
 	</bean>
 	<bean name="zanAction" class="com.doers.Action.ZanAction" scope="prototype" >
 		<property name="zanService" ref="zanService"></property>
+	</bean>
+	<bean name="pushAction" class="com.doers.Action.PushAction" scope="prototype" >
 		<property name="pushService" ref="pushService"></property>
 	</bean>
 	<bean name="addArticleAction" class="com.doers.Action.AddArticleAction" scope="prototype" >

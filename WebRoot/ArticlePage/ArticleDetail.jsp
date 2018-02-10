@@ -60,11 +60,10 @@
                     <div class="recommend-box">
 						<div class="praise">
 						<span id="praise"><img src="../../Doers/img/zan.png" id="praise-img" /></span>
-						<span id="praise-txt">${article.push }</span>
+						<span id="praise-txt">${article.push}</span>
 						<span id="add-num"><em>+1</em></span>
 						</div>
 					</div>
-                    <div class="clearfix"></div>
                 </div>
             </div>
             <div class="col-sm-3">
@@ -123,32 +122,18 @@
 <script src="../Doers/js/jquery.scrollto.min.js" type="text/javascript"></script>
 <script src="../Doers/js/jquery.easing.min.js" type="text/javascript"></script>
 <script src="../Doers/js/jquery.parallax-1.1.3.js" type="text/javascript"></script>
-<script type="text/javascript" src="../Doers/js/main.js"></script>
 <script type="text/javascript">
-$(window).load(function() {  //容器内所有图片超过宽度等比例缩小，不能用$(document).ready( 
-    $(".article img").each( function() {
-			var maxwidth = 800;
-			var _height=parseInt($(this).height()/$(this).width()*800);
-			//alert(_height);
-		  if ($(this).width() > maxwidth) {
-				$(this).css("width",800+"px");
-				$(this).css("height",_height+"px");
-		  }	
-	});  
-});
-</script>
-<script type="text/javascript">
-	$(document).ready(
-	function(){
-	$.ajax({ 		type:"POST",
+	$(function(){
+	$.ajax({ 		
+					type:"POST",
 					async: false,
-					url: "/Doers/zanAction_checkPush",
+					url: "/Doers/pushAction_checkPush",
 					dataType:"json",
-					success:function(data){
+					success:function(data){	
 						if(data.isPush){
 						$("#praise-img").attr("src","../../Doers/img/yizan.png");
 						}else{
-						$("#praise-img").attr("src","../../Doers/img/zan.png");
+						$("#praise-img").attr("src","../../Doers/img/yizan.png");
 						}
 					}
 		});
@@ -156,8 +141,7 @@ $(window).load(function() {  //容器内所有图片超过宽度等比例缩小�
 	/* 动态点赞
 	 * 此效果包含css3，部分浏览器不兼容（如：IE10以下的版本）
 	*/
-	$(function(){
-		
+	$(function(){		
 		$("#praise").click(function(){
 			var praise_img = $("#praise-img");
 			var text_box = $("#add-num");
@@ -172,7 +156,7 @@ $(window).load(function() {  //容器内所有图片超过宽度等比例缩小�
 				praise_txt.text(num)
 				$.ajax({
 					type:"GET",
-					url: "/Doers/zanAction_removePush",
+					url: "/Doers/pushAction_removePush",
 				});
 			}else{
 				$(this).html("<img src='../../Doers/img/yizan.png' id='praise-img' class='animation' />");
@@ -183,11 +167,22 @@ $(window).load(function() {  //容器内所有图片超过宽度等比例缩小�
 				praise_txt.text(num)
 				$.ajax({
 					type:"GET",
-					url: "/Doers/zanAction_addPush",
+					url: "/Doers/pushAction_addPush",
 				});
 			}
 		});
-	})
+	});
+	$(window).load(function() {  //容器内所有图片超过宽度等比例缩小，不能用$(document).ready( 
+    $(".article img").each( function() {
+			var maxwidth = 800;
+			var _height=parseInt($(this).height()/$(this).width()*800);
+			//alert(_height);
+		  if ($(this).width() > maxwidth) {
+				$(this).css("width",800+"px");
+				$(this).css("height",_height+"px");
+		  }	
+	});  
+});
 </script>
 </body>
 </html>

@@ -7,6 +7,7 @@ import com.doers.domain.Production;
 import com.doers.Service.ArticleService;
 import com.doers.Service.LeaveMessageService;
 import com.doers.Service.ProductionService;
+import com.doers.Service.PushService;
 import com.doers.Service.UserService;
 import com.doers.Service.ZanService;
 import com.opensymphony.xwork2.ActionContext;
@@ -35,7 +36,11 @@ public class UserAction extends ActionSupport implements ModelDriven<User>
   private LeaveMessageService leaveMessageService;
   private ZanService zanService;
   private ArticleService articleService;
+  private PushService pushService;
    
+public void setPushService(PushService pushService) {
+	this.pushService = pushService;
+}
 public void setArticleService(ArticleService articleService) {
 	this.articleService = articleService;
 }
@@ -154,7 +159,9 @@ public void setUserService(UserService userService)
   public String loadMyFavor(){
 	  User u=(User) ActionContext.getContext().getSession().get("user");
 	  List<Production> myFavorProductions = zanService.getMyZanPro(u);
+	  List<Article> myFavorArticles = pushService.getMyPushPro(u);
 	  ActionContext.getContext().put("myFavorProductionList", myFavorProductions);
+	  ActionContext.getContext().put("myFavorArticleList", myFavorArticles);
 	  return "toMyFavorList";
   }
   public User getModel() {

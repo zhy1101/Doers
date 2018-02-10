@@ -4,7 +4,9 @@ import java.util.List;
 
 import org.springframework.transaction.annotation.Transactional;
 
+import com.doers.Dao.PushDao;
 import com.doers.Service.PushService;
+import com.doers.domain.Article;
 import com.doers.domain.Production;
 import com.doers.domain.Push;
 import com.doers.domain.User;
@@ -22,7 +24,7 @@ public class PushServiceImpl implements PushService {
 	}
 
 	@Override
-	public Push findPushByCondition(Long uid, Long aid) {
+	public Push findPushByCondition(Long uid, Long aid) throws Exception {
 		return pushDao.findPushByCondition(uid, aid);
 	}
 
@@ -30,8 +32,9 @@ public class PushServiceImpl implements PushService {
 	public void removePush(Push push) {
 		pushDao.delete(push);
 	}
-	public List<Production> getMyZanPro(User u) {
+	public List<Article> getMyPushPro(User u) {
 		return pushDao.getMyPushArt(u);
 	}
+
 
 }

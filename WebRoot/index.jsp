@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" type="text/css" href="css/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="css/demo.css">	
+	<link rel="shortcut icon" href="favicon.ico" />
 </head>
 <body>
 <header>

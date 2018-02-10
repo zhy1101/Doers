@@ -34,4 +34,9 @@ public class ArticleServiceImpl implements ArticleService {
 		return this.articleDao.getArticleById(articleId);
 	}
 
+	@Override
+	public List<Article> getHotArticle() {
+		return this.articleDao.getHotArticle();
+	}
+
 }

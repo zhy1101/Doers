@@ -28,4 +28,10 @@ public class ArticleDaoImpl extends BaseDaoImpl<Article>  implements ArticleDao 
 		return super.getById(Long.valueOf(articleId));
 	}
 
+	@Override
+	public List<Article> getHotArticle() {
+		String hqlString = "from Article order by push desc";
+		return (List<Article>) getHibernateTemplate().find(hqlString);	
+	}
+
 }
