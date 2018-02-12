@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.doers.domain" >
+	<class name="Server" table="Server" >
+		<id name="serverId"  >
+			<generator class="native"></generator>
+		</id>
+		<property name="serverName" column="serverName" ></property>
+		<property name="serverDescribtion" column="serverDescribtion" ></property>
+		<property name="talkTime" column="talkTime" ></property>
+		<property name="serverCover" column="serverCover" ></property>	
+		<property name="lowLine" column="lowLine" ></property>	
+		
+		<many-to-one name="user" column="uid" class="User"  ></many-to-one>
+	</class>
+</hibernate-mapping>
