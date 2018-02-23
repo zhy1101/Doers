@@ -1,5 +1,9 @@
 package com.doers.domain;
 
+import java.util.Set;
+
+import org.omg.CORBA.PRIVATE_MEMBER;
+
 public class Server {
 	private String serverId;
 	private String serverName;
@@ -8,6 +12,15 @@ public class Server {
 	private String serverCover;
 	private Double lowLine;
 	private User user;
+	private Set<Production> connectedProductions;
+	
+	
+	public Set<Production> getConnectedProductions() {
+		return connectedProductions;
+	}
+	public void setConnectedProductions(Set<Production> connectedProductions) {
+		this.connectedProductions = connectedProductions;
+	}
 	public String getServerId() {
 		return serverId;
 	}

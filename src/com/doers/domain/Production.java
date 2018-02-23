@@ -15,8 +15,15 @@ public class Production
   private BaseDict big_kind;
   private BaseDict small_kind;
   private Set<Zan> zanlist;
+  private Server belongeServer;
+ 
   
-  
+	public Server getBelongeServer() {
+	return belongeServer;
+}
+public void setBelongeServer(Server belongeServer) {
+	this.belongeServer = belongeServer;
+}
 	public Set<Zan> getZanlist() {
 		return zanlist;
 	}
