@@ -25,8 +25,15 @@ public class User
   private Set<LeaveMessage> myLeaveMessage;
   private Set<LeaveMessage> toMeLeaveMessage;
   private Set<Zan> myZan;
+  private Set<Server> servers;
   
-	  public Set<Zan> getMyZan() {
+	  public Set<Server> getServers() {
+	return servers;
+}
+public void setServers(Set<Server> servers) {
+	this.servers = servers;
+}
+	public Set<Zan> getMyZan() {
 		return myZan;
 	}
 	public void setMyZan(Set<Zan> myZan) {
