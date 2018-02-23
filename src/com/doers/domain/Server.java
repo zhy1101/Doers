@@ -2,10 +2,8 @@ package com.doers.domain;
 
 import java.util.Set;
 
-import org.omg.CORBA.PRIVATE_MEMBER;
-
 public class Server {
-	private String serverId;
+	private Long serverId;
 	private String serverName;
 	private String serverDescribtion;
 	private Integer talkTime;
@@ -21,10 +19,11 @@ public class Server {
 	public void setConnectedProductions(Set<Production> connectedProductions) {
 		this.connectedProductions = connectedProductions;
 	}
-	public String getServerId() {
+	
+	public Long getServerId() {
 		return serverId;
 	}
-	public void setServerId(String serverId) {
+	public void setServerId(Long serverId) {
 		this.serverId = serverId;
 	}
 	public String getServerName() {

@@ -17,7 +17,7 @@
 		<many-to-one name="user" column="uid" class="User"  ></many-to-one>
 		<many-to-one name="big_kind" column="big_kind" class="BaseDict"></many-to-one>
 		<many-to-one name="small_kind" column="small_kind" class="BaseDict"></many-to-one>
-		<many-to-one name="belongeServer" column="serverId" class="Server"  ></many-to-one>
+		<many-to-one name="belongeServer" column="belongeServer" class="Server"  ></many-to-one>
 		<set name="zanlist">
 			<key column="zan_pro" ></key>
 			<one-to-many class="Zan" />

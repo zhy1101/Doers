@@ -46,7 +46,7 @@
 		</set>
 		<set name="servers" >
 			<key column = "uid"></key>
-			<one-to-many class="Servers"></one-to-many>
+			<one-to-many class="Server"></one-to-many>
 		</set>
 		<many-to-one name="kind" column="kind" class="BaseDict" ></many-to-one>
 	</class>
