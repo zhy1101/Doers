@@ -79,7 +79,7 @@ font {
 			<div class="col-md-2"></div>
 			<div class="col-md-8"
 				style="background: #fff; padding: 40px 80px; margin: 30px; border: 7px solid #ccc;">
-				<font>新增个人服务</font>
+				<font>新增个人服务   >> <span style="color:red;"><b>Step One 基本信息</b></span> >>Step Two 关联相关样本作品</font>
 				<form id="myform" class="form-horizontal" action="${pageContext.request.contextPath }/" method="post" style="margin-top: 5px;">
 					<div class="form-group">
 						<label for="serverName" class="col-sm-2 control-label">服务项名称</label>
@@ -92,14 +92,15 @@ font {
 						<label for="serverDescribtion" class="col-sm-2 control-label">内容描述</label>
 						<div class="col-sm-6">
 							<input type="text" class="form-control" id="serverDescribtion" name="serverDescribtion"
-								placeholder="简洁又清奇地描述一下自己get的奇特技能吧~~">
+								placeholder="清奇地描述一下自己get的奇特技能吧~~">
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="talkTime" class="col-sm-2 control-label">协约期</label>
 						<div class="col-sm-6">
-							至多 <input type="email" class="form-control" id="talkTime" name="talkTime"
-								placeholder="设定在服务开启前的协商时间长度，默认为3天，最长为10天"> 天
+							<input class="form-control" id="talkTime" name="talkTime" pattern="[3-10]" style="width:100px;"
+								size="2"> 
+							<br><span style="color:grey;size:10px">（设定在服务开启前的协商时间长度，默认为3天，最长为10天.单位：天）</span>
 						</div>
 					</div>
 					<div class="form-group">
@@ -113,8 +114,8 @@ font {
 						<label for="lowLine" class="col-sm-2 control-label">价格底线</label>
 						<div class="col-sm-6">
 							<input type="text" class="form-control" id="lowLine" name="lowLine"
-								placeholder="设定在服务交易的最低酬劳"> 元
-								（我们将根据设定酬劳为您筛选合适的交易对象）
+								placeholder="设定交易的最低酬劳"> 元
+								<br><span style="color:grey;size:10px">（我们将根据设定酬劳为您筛选合适的交易对象）</span>
 						</div>
 					</div>
 					<div class="form-group">

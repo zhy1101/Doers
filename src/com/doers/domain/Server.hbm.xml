@@ -14,9 +14,9 @@
 		<property name="lowLine" column="lowLine" ></property>	
 		
 		<many-to-one name="user" column="uid" class="User"  ></many-to-one>
-		<set name="connectedProductions" >
-			<key column = "belongeServer"></key>
-			<one-to-many class="Production"></one-to-many>
+		<set name="connectedProductions">
+			<key column="server_id" ></key>
+			<one-to-many class="Server_production" />
 		</set>
 	</class>
 </hibernate-mapping>

@@ -10,15 +10,8 @@ public class Server {
 	private String serverCover;
 	private Double lowLine;
 	private User user;
-	private Set<Production> connectedProductions;
+	private Set<Server_production> connectedProductions;
 	
-	
-	public Set<Production> getConnectedProductions() {
-		return connectedProductions;
-	}
-	public void setConnectedProductions(Set<Production> connectedProductions) {
-		this.connectedProductions = connectedProductions;
-	}
 	
 	public Long getServerId() {
 		return serverId;
@@ -62,4 +55,11 @@ public class Server {
 	public void setUser(User user) {
 		this.user = user;
 	}
+	public Set<Server_production> getConnectedProductions() {
+		return connectedProductions;
+	}
+	public void setConnectedProductions(Set<Server_production> connectedProductions) {
+		this.connectedProductions = connectedProductions;
+	}
+	
 }
