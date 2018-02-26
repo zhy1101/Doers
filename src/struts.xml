@@ -62,5 +62,10 @@
 	    		<param name="actionName">userAction_loadMyProduction</param>
 	    	</result>
 	    </action>
+	    <action name="addServerAction_*" class="addServerAction" method="{1}">
+	    	<result name="finishStepOne" type="redirectAction">
+	    		<param name="actionName">addServerAction_connectServer</param>
+	    	</result>
+	    </action>
 	</package>
 </struts>
