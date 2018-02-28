@@ -3,7 +3,7 @@ package com.doers.domain;
 import java.util.Set;
 
 public class Server {
-	private Long serverId;
+	private String serverId;
 	private String serverName;
 	private String serverDescribtion;
 	private Integer talkTime;
@@ -13,10 +13,10 @@ public class Server {
 	private Set<Server_production> connectedProductions;
 	
 	
-	public Long getServerId() {
+	public String getServerId() {
 		return serverId;
 	}
-	public void setServerId(Long serverId) {
+	public void setServerId(String serverId) {
 		this.serverId = serverId;
 	}
 	public String getServerName() {

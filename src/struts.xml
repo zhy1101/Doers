@@ -63,9 +63,12 @@
 	    	</result>
 	    </action>
 	    <action name="addServerAction_*" class="addServerAction" method="{1}">
-	    	<result name="finishStepOne" type="redirectAction">
-	    		<param name="actionName">addServerAction_connectServer</param>
+	    	<result name="finishStepOne" type="chain">
+	    		<param name="actionName">serverConnectProductionAction_loadingPro</param>
 	    	</result>
+	    </action>
+	    <action name="serverConnectProductionAction_*" class="serverConnectProductionAction" method="{1}">
+	   		 <result name="gotoConnect" >/ServerPage/UserProList.jsp</result>
 	    </action>
 	</package>
 </struts>
