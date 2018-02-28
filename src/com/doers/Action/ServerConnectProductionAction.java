@@ -53,6 +53,7 @@ public class ServerConnectProductionAction extends ActionSupport {
 			server_production.setProduction(production);
 			serverService.addConnectPro(server_production);
 		}
+		List<Server> list = serverService.getServersByUser((User)ActionContext.getContext().getSession().get("user"));
 		return "gotoHistoryServer";
 	}
 	public void addActionError(String anErrorMessage) {

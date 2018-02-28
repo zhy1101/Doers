@@ -1,5 +1,7 @@
 package com.doers.Service.Impl;
 
+import java.util.List;
+
 import org.springframework.transaction.annotation.Transactional;
 
 import com.doers.Dao.ServerDao;
@@ -7,6 +9,7 @@ import com.doers.Dao.Server_ProDao;
 import com.doers.Service.ServerService;
 import com.doers.domain.Server;
 import com.doers.domain.Server_production;
+import com.doers.domain.User;
 
 @Transactional
 public class ServerServiceImpl implements ServerService{
@@ -36,6 +39,12 @@ public class ServerServiceImpl implements ServerService{
 	public void addConnectPro(Server_production server_production) {
 		server_ProDao.save(server_production);
 	}
+
+	@Override
+	public List<Server> getServersByUser(User uid) {
+		return serverDao.getServersByUser(uid);
+	}
+
 	
 	
 
