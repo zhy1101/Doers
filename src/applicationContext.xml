@@ -88,6 +88,7 @@
 	</bean>
 	<bean name="serverConnectProductionAction" class="com.doers.Action.ServerConnectProductionAction" scope="prototype" >
 		<property name="productionService" ref="productionService"></property>
+		<property name="serverService" ref="serverService"></property>
 	</bean>
 	
 	
@@ -115,6 +116,7 @@
 	</bean>
 	<bean name="serverService" class="com.doers.Service.Impl.ServerServiceImpl" >
 		<property name="serverDao" ref="serverDao" ></property>
+		<property name="server_ProDao" ref="server_ProDao" ></property>
 	</bean>
 	
 	
@@ -141,6 +143,9 @@
 		<property name="sessionFactory" ref="sessionFactory" ></property>
 	</bean>
 	<bean name="serverDao" class="com.doers.Dao.Impl.ServerDaoImpl" >
+		<property name="sessionFactory" ref="sessionFactory" ></property>
+	</bean>
+	<bean name="server_ProDao" class="com.doers.Dao.Impl.Server_ProDaoImpl" >
 		<property name="sessionFactory" ref="sessionFactory" ></property>
 	</bean>
 </beans>

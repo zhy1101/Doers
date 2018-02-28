@@ -69,6 +69,7 @@
 	    </action>
 	    <action name="serverConnectProductionAction_*" class="serverConnectProductionAction" method="{1}">
 	   		 <result name="gotoConnect" >/ServerPage/UserProList.jsp</result>
+	   		 <result name="gotoHistoryServer" >/ServerPage/HistoryServerList.jsp</result>
 	    </action>
 	</package>
 </struts>
