@@ -44,7 +44,7 @@
               标题：<input name="productionTitle" type="text" style="width:300px">&nbsp;&nbsp;
               类别：<span class="f-fl item-ifo" id="big_kind"></span> 
 	     <span class="f-fl item-ifo" id="small_kind"></span>
-	   &nbsp;&nbsp;封面：<input name="cover" type="file" name="cover">
+	   &nbsp;&nbsp;封面：<input name="cover" type="file" >
 	<br>
 	简介（100字内）：<br>
 	<textarea name="shortcontent" form="newProduct" rows="2" cols="50" maxlength="100" style="resize:none"></textarea>

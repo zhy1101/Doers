@@ -9,6 +9,12 @@ import com.doers.domain.Server;
 @Transactional
 public class ServerServiceImpl implements ServerService{
 	private ServerDao serverDao;
+	
+
+	public void setServerDao(ServerDao serverDao) {
+		this.serverDao = serverDao;
+	}
+
 
 	@Override
 	public void addNewServer(Server s) {

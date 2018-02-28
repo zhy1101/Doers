@@ -83,6 +83,12 @@
 		<property name="articleService" ref="articleService"></property>
 		<property name="userService" ref="userService"></property>
 	</bean>
+	<bean name="addServerAction" class="com.doers.Action.AddServerAction" scope="prototype" >
+		<property name="serverService" ref="serverService"></property>
+	</bean>
+	<bean name="serverConnectProductionAction" class="com.doers.Action.ServerConnectProductionAction" scope="prototype" >
+		<property name="productionService" ref="productionService"></property>
+	</bean>
 	
 	
 	<!-- Service -->
@@ -107,6 +113,9 @@
 	<bean name="articleService" class="com.doers.Service.Impl.ArticleServiceImpl" >
 		<property name="articleDao" ref="articleDao" ></property>
 	</bean>
+	<bean name="serverService" class="com.doers.Service.Impl.ServerServiceImpl" >
+		<property name="serverDao" ref="serverDao" ></property>
+	</bean>
 	
 	
 	<!-- Dao -->
@@ -129,6 +138,9 @@
 		<property name="sessionFactory" ref="sessionFactory" ></property>
 	</bean>
 	<bean name="articleDao" class="com.doers.Dao.Impl.ArticleDaoImpl" >
+		<property name="sessionFactory" ref="sessionFactory" ></property>
+	</bean>
+	<bean name="serverDao" class="com.doers.Dao.Impl.ServerDaoImpl" >
 		<property name="sessionFactory" ref="sessionFactory" ></property>
 	</bean>
 </beans>

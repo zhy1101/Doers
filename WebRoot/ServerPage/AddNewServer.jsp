@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<%@ page language="java" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="/struts-tags" prefix="s"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
   <head>
     <title>新增我的服务</title>
@@ -80,7 +83,7 @@ font {
 			<div class="col-md-8"
 				style="background: #fff; padding: 40px 80px; margin: 30px; border: 7px solid #ccc;">
 				<font>新增个人服务   >> <span style="color:red;"><b>Step One 基本信息</b></span> >>Step Two 关联相关样本作品</font>
-				<form class="form-horizontal" action="/Doers/addServerAction_addNewServer" method="post" style="margin-top: 5px;">
+				<form class="form-horizontal" action="/Doers/addServerAction_addNewServer" method="post" style="margin-top: 5px;" enctype="multipart/form-data">
 					<div class="form-group">
 						<label for="serverName" class="col-sm-2 control-label">服务项名称</label>
 						<div class="col-sm-6">

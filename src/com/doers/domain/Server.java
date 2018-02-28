@@ -8,7 +8,7 @@ public class Server {
 	private String serverDescribtion;
 	private Integer talkTime;
 	private String serverCover;
-	private Double lowLine;
+	private Integer lowLine;
 	private User user;
 	private Set<Server_production> connectedProductions;
 	
@@ -43,10 +43,10 @@ public class Server {
 	public void setServerCover(String serverCover) {
 		this.serverCover = serverCover;
 	}
-	public Double getLowLine() {
+	public Integer getLowLine() {
 		return lowLine;
 	}
-	public void setLowLine(Double lowLine) {
+	public void setLowLine(Integer lowLine) {
 		this.lowLine = lowLine;
 	}
 	public User getUser() {
