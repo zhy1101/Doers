@@ -39,7 +39,6 @@ font {
 </style>
 </head>
 <body>
-
 	<div class="container"
 		style="width: 100%; background: url('../img/addNew_bg.jpg');">
 		<div class="row">
@@ -48,18 +47,14 @@ font {
 				style="background: #fff; padding: 40px 80px; margin: 30px; border: 7px solid #ccc;">
 				<font>新增个人服务   >> Step One 基本信息 >> <span style="color:red;"><b>Step Two 关联相关样本作品</b></span></font>
 				<form id="myform" class="form-horizontal" action="${pageContext.request.contextPath }/" method="post" style="margin-top: 5px;">
-				   <div style="width:600px; height:700px; overflow:scroll; overflow-x:hidden;">
-				   <table id="dataList" width="200" align="center" border="1">
-				   	<tr>
-				   	<td></td>
-					<td align="center"> 请选择与之相关的个人作品 </td>
-					</tr>
+				   <div style="width:700px; height:400px; overflow:scroll; overflow-x:hidden;">
+				   <table width="600px" align="center" >
 					<c:forEach items="${userProList}" var="selectingPro">
 						<tr>
-						<td><input type="checkbox" name="no" value="${selectingPro.productionId }" >
+						<td style="width:20%"><input type="checkbox" name="no" value="${selectingPro.productionId }" >
 						</td>
-						<td><img src="${selectingPro.coverURL}" width="50px" height="50px"></td>
-						<td>${selectingPro.productionTitle}</td>
+						<td style="width:30%"><img src="${selectingPro.coverURL}" width="80px" height="80px"></td>
+						<td style="width:50%">${selectingPro.productionTitle}</td>
 						</tr>	
 					</c:forEach>
 					</table>

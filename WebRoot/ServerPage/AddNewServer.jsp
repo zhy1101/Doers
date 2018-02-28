@@ -116,7 +116,7 @@ font {
 						<label for="lowLine" class="col-sm-2 control-label">价格底线</label>
 						<div class="col-sm-6">
 							<input type="text" class="form-control" id="lowLine" name="lowLine"
-								placeholder="设定交易的最低酬劳"> 元
+								placeholder="设定交易的最低酬劳,单位：元"> 
 								<br><span style="color:grey;size:10px">（我们将根据设定酬劳为您筛选合适的交易对象）</span>
 						</div>
 					</div>
