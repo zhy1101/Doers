@@ -32,7 +32,7 @@ public class ServerServiceImpl implements ServerService{
 
 	@Override
 	public Server findServiceById(String server_id) {
-		return serverDao.getById(server_id);
+		return (Server)serverDao.getById(server_id);
 	}
 
 	@Override

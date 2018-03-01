@@ -40,9 +40,11 @@ public class BaseDaoImpl<T> extends HibernateDaoSupport implements BaseDao<T>
     getHibernateTemplate().update(t);
   }
 
-  public T getById(Serializable id)
+  public T getById(Serializable id) 
   {
+	if(id!=null)
     return (T) getHibernateTemplate().get(this.clazz, id);
+	else return null;
   }
 
   public Integer getTotalCount(DetachedCriteria dc)

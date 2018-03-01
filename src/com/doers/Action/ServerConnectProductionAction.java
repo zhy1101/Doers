@@ -17,6 +17,7 @@ public class ServerConnectProductionAction extends ActionSupport {
 	private ProductionService productionService;
 	private ServerService serverService;
 	private String[] no;
+	private String server_id;
 	
 	public String[] getNo() {
 		return no;
@@ -28,6 +29,14 @@ public class ServerConnectProductionAction extends ActionSupport {
 
 	public void setServerService(ServerService serverService) {
 		this.serverService = serverService;
+	}
+
+	public String getServer_id() {
+		return server_id;
+	}
+
+	public void setServer_id(String server_id) {
+		this.server_id = server_id;
 	}
 
 	public void setProductionService(ProductionService productionService) {
@@ -44,7 +53,6 @@ public class ServerConnectProductionAction extends ActionSupport {
 		return "gotoConnect";
 	}
 	public String connectingPro(){
-		String server_id = (String) ActionContext.getContext().get("server_id");
 		Server server = serverService.findServiceById(server_id);
 		for(int i=0;i<no.length;i++){
 			Server_production server_production = new Server_production();

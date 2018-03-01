@@ -46,8 +46,9 @@ font {
 			<div class="col-md-8"
 				style="background: #fff; padding: 40px 80px; margin: 30px; border: 7px solid #ccc;">
 				<font>新增个人服务   >> Step One 基本信息 >> <span style="color:red;"><b>Step Two 关联相关样本作品</b></span></font>
-				<form id="myform" class="form-horizontal" action="${pageContext.request.contextPath }/" method="post" style="margin-top: 5px;">
+				<form id="myform" class="form-horizontal" action="${pageContext.request.contextPath }/serverConnectProductionAction_connectingPro" method="post" style="margin-top: 5px;">
 				   <div style="width:700px; height:400px; overflow:scroll; overflow-x:hidden;">
+				   <input name="server_id" type="hidden" value="${server_id}">
 				   <table width="600px" align="center" >
 					<c:forEach items="${userProList}" var="selectingPro">
 						<tr>
