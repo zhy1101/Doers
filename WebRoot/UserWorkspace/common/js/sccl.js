@@ -271,7 +271,7 @@ $(function(){
 					]},
 					{"id":"3","name":"Do My交易","parentId":"1","url":"","icon":"&#xe612;","order":"1","isHeader":"0","childMenus":[
 						{"id":"4","name":"发布服务项目","parentId":"3","url":"../ServerPage/AddNewServer.jsp","icon":"&#xe612;","order":"1","isHeader":"0","childMenus":""},
-						{"id":"5","name":"分类管理","parentId":"3","url":"test2.html","icon":"&#xe612","order":"1","isHeader":"0","childMenus":""}
+						{"id":"5","name":"我的服务项目","parentId":"3","url":"${pageContext.request.contextPath}/serverDetailAction_showMyServers","icon":"&#xe612","order":"1","isHeader":"0","childMenus":""}
 					]},
 					{"id":"6","name":"Do My作品","parentId":"1","url":"","icon":"&#xe612;","order":"1","isHeader":"0","childMenus":[
 						{"id":"7","name":"新作发布","parentId":"6","url":"AddNewProduction.jsp","icon":"&#xe612","order":"1","isHeader":"0","childMenus":""},

@@ -45,6 +45,11 @@ public class ServerServiceImpl implements ServerService{
 		return serverDao.getServersByUser(uid);
 	}
 
+	@Override
+	public Server getServerById(String serverId) {
+		return serverDao.getById(serverId);
+	}
+
 	
 	
 

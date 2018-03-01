@@ -71,5 +71,9 @@
 	   		 <result name="gotoConnect" >/ServerPage/UserProList.jsp</result>
 	   		 <result name="gotoHistoryServer" >/ServerPage/HistoryServerList.jsp</result>
 	    </action>
+	     <action name="serverDetailAction_*" class="serverDetailAction" method="{1}">
+	   		 <result name="gotoServerDetail" >/ServerPage/ServerDetailPage.jsp</result>
+	   		 <result name="gotoHistoryServer" >/ServerPage/HistoryServerList.jsp</result>
+	    </action>
 	</package>
 </struts>

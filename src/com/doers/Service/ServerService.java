@@ -16,4 +16,6 @@ public interface ServerService {
 
 	List<Server> getServersByUser(User user);
 
+	Server getServerById(String serverId);
+
 }
