@@ -71,6 +71,7 @@ body {
 .myrow .no-left-border{
 	border-left:0px;
 }
+.main{ margin:0 auto; width:300px; height:100px; border:1px solid #F00} 
 </style>
 </head>
 <body>
@@ -94,9 +95,18 @@ body {
             </div>
         </nav>
 </header>
-	<br><br><br>
-	<div>
-	</div>
+	<br><br><br><br>
+	<div >
+		<form action="/search" id="search-form" class="form" method="GET">
+        <div class="form-group">
+               <span style="margin-left:110px;color:grey"> 搜索服务：</span><input type="text" id="home-searchInput" name="" value="">
+                    <button type="submit" id="" name="" class="btn btn-primary">
+                        <i class="iconfont icon-sousuo"></i>搜索
+                    </button>
+                    </div>
+                    </form>
+        <span style="margin-left:110px;color:grey">热门服务：</span>&nbsp;&nbsp;<a>ppt定制</a>&nbsp;&nbsp;<a>图标设计</a>&nbsp;&nbsp;<a>小程序制作</a>&nbsp;&nbsp;<a>活动策划编写</a>
+   </div>
 	<hr>
 		<div class="row" style="width: 1210px; margin: 0 auto;">		
 		<c:forEach items="${pageBean.list }" var="ser">		

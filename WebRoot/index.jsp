@@ -48,6 +48,7 @@
             </div>
         </nav>
 </header>
+<br><br>
 <section id="container">
         <div id="skippr">
             <div style="background-image: url(img/banner1.jpg);"></div>

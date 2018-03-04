@@ -85,11 +85,8 @@ body {
 							<a href="javascript:void(0);" onclick="addCart()">
 							 <input style="background: url('./images/product.gif') no-repeat scroll 0 -600px rgba(0, 0, 0, 0); height: 36px; width: 127px;"
 								value="加入购物车" type="button">
-							</a> &nbsp;收藏商品
+							</a>
 						</div>
-					</div>
-					<div>
-						<a href="${pageContext.request.contextPath}/product?method=productList&cid=${cid }&currentPage=${currentPage}">返回列表页面</a>
 					</div>
 				</div>
 			</div>
