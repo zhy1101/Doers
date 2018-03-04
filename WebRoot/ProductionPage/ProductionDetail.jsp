@@ -37,6 +37,11 @@
 	position: relative;
 	cursor: pointer
 }
+.hotlist{width:936px;height:80px;margin:15px auto 0}
+.hotlist li{float:left;width:70px;height:80px;overflow:hidden;text-align:center;line-height:2.5;font-family:sinsum;font-size:12px;margin:0 4px;display:inline}
+.hotlist li img{display:block;width:58px;height:58px;margin:0 auto;border-radius:5px}
+.hotlist li a{color:#333;}
+.hotlist li a:hover{color:#6082b6}
 </style>
 <body>
 	<header> 
@@ -120,6 +125,15 @@
 					<div class="show-list-title-box border-bottom js-tab-module">
 						<span class="show-tab-title current">关联服务</span> 
 						<a href="#" class="view-more zcool-link-color">TA的主页</a>
+					</div>
+					<div class="show-list-title-box border-bottom js-tab-module">
+						<div>
+							<ul class="hotlist cf">
+								<c:forEach items="${proServersList }" var="ser">
+								<li><a href="${pageContext.request.contextPath}/serverDetailAction_showServerDetail?serverId=${ser.server.serverId}"><img src="${ser.server.serverCover }" />${ser.server.serverName }</a></li>
+								</c:forEach>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>

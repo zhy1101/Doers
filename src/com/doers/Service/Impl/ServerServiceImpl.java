@@ -7,6 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.doers.Dao.ServerDao;
 import com.doers.Dao.Server_ProDao;
 import com.doers.Service.ServerService;
+import com.doers.domain.Production;
 import com.doers.domain.Server;
 import com.doers.domain.Server_production;
 import com.doers.domain.User;
@@ -48,6 +49,11 @@ public class ServerServiceImpl implements ServerService{
 	@Override
 	public Server getServerById(String serverId) {
 		return serverDao.getById(serverId);
+	}
+
+	@Override
+	public List<Server> getConnectedServersByPro(Production p) {
+		return server_ProDao.getConnectedServersByPro(p);
 	}
 
 	
