@@ -74,6 +74,7 @@
 	     <action name="serverDetailAction_*" class="serverDetailAction" method="{1}">
 	   		 <result name="gotoServerDetail" >/ServerPage/ServerDetailPage.jsp</result>
 	   		 <result name="gotoHistoryServer" >/ServerPage/HistoryServerList.jsp</result>
+	   		 <result name="gotoSeverList" >/ServerPage/ServerList.jsp</result>
 	    </action>
 	</package>
 </struts>

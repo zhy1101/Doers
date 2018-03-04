@@ -2,6 +2,7 @@ package com.doers.Service;
 
 import java.util.List;
 
+import com.doers.domain.PageBean;
 import com.doers.domain.Production;
 import com.doers.domain.Server;
 import com.doers.domain.Server_production;
@@ -20,5 +21,7 @@ public interface ServerService {
 	Server getServerById(String serverId);
 
 	List<Server> getConnectedServersByPro(Production p);
+
+	PageBean<Server> getAllServersByPage(int currentPage);
 
 }

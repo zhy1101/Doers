@@ -11,4 +11,8 @@ public interface ServerDao extends BaseDao<Server>{
 
 	List<Server> getServersByUser(User uid);
 
+	int getCount();
+
+	List<Server> findProductByPage(int index, int currentCount) throws Exception;
+
 }

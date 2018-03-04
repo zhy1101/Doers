@@ -3,6 +3,7 @@ package com.doers.Action;
 import java.util.List;
 
 import com.doers.Service.ServerService;
+import com.doers.domain.PageBean;
 import com.doers.domain.Server;
 import com.doers.domain.User;
 import com.opensymphony.xwork2.ActionContext;
@@ -11,9 +12,18 @@ import com.opensymphony.xwork2.ActionSupport;
 public class ServerDetailAction extends ActionSupport {
 	private String serverId;
 	private ServerService serverService;
+	private String currentPage;
 
 	public String getServerId() {
 		return serverId;
+	}
+	
+	public String getCurrentPage() {
+		return currentPage;
+	}
+
+	public void setCurrentPage(String currentPage) {
+		this.currentPage = currentPage;
 	}
 
 	public void setServerId(String serverId) {
@@ -36,5 +46,12 @@ public class ServerDetailAction extends ActionSupport {
 		ActionContext.getContext().put("MyServersList", list);
 		return "gotoHistoryServer";
 	}
-
+	public String loadingAllServers(){
+		if(currentPage==null) currentPage="1";
+		int currentPage1 = Integer.parseInt(currentPage);
+		PageBean<Server> pageBean =serverService.getAllServersByPage(currentPage1);
+		ActionContext.getContext().put("pageBean",pageBean);
+		return "gotoSeverList";
+		
+	}
 }
