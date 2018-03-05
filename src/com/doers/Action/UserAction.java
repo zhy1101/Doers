@@ -30,6 +30,7 @@ public class UserAction extends ActionSupport implements ModelDriven<User>
   private String Cdescription;
   private File avatar_file;
   private String avatar_fileFileName;
+  private Long userId;
   
   UserService userService;
   private ProductionService productionService;
@@ -37,7 +38,14 @@ public class UserAction extends ActionSupport implements ModelDriven<User>
   private ZanService zanService;
   private ArticleService articleService;
   private PushService pushService;
-   
+  
+  
+public Long getUserId() {
+	return userId;
+}
+public void setUserId(Long userId) {
+	this.userId = userId;
+}
 public void setPushService(PushService pushService) {
 	this.pushService = pushService;
 }
@@ -163,6 +171,11 @@ public void setUserService(UserService userService)
 	  ActionContext.getContext().put("myFavorProductionList", myFavorProductions);
 	  ActionContext.getContext().put("myFavorArticleList", myFavorArticles);
 	  return "toMyFavorList";
+  }
+  public String openDoerSpace(){
+	  User user = userService.getUserById(userId.toString());
+	  ActionContext.getContext().put("doer", user);
+	  return "gotoDoerSpace";
   }
   public User getModel() {
     return this.user;

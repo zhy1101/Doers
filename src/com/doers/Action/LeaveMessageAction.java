@@ -17,13 +17,25 @@ public class LeaveMessageAction extends ActionSupport implements ModelDriven<Lea
 	
 	LeaveMessage leaveMessage =new LeaveMessage();
 	private LeaveMessageService leaveMessageService;
+	private String vision;
 	
+	
+	public String getVision() {
+		return vision;
+	}
+
+	public void setVision(String vision) {
+		this.vision = vision;
+	}
+
 	public String makeAMessage(){
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd hh:mm");
 		String date = format.format(new Date());
 		leaveMessage.setTime(date);
 		leaveMessageService.makeAMessage(leaveMessage);
+		if (vision==null)
 		return "passSuccess";
+		else return NONE;
 	}
 	
 	@Override

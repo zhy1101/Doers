@@ -103,13 +103,13 @@
 				<div class="author-card follow-box">
 					<div class="card-media designer-card" >
 						<div class="avatar-container-80 center">
-							<a href="#">
+							<a href="${pageContext.request.contextPath}/userAction_openDoerSpace?userId=<s:property value="#session.production.user.uid"/>">
 								<img src="<s:property value="#session.production.user.personImg_path"/>" width="80" height="80">
 							</a>
 						</div>
 						<br>
 						<div class="presonal-info">
-							<a href="#" class="author-name"><s:property value="#session.production.user.user_name"/></a>
+							<a href="" class="author-name"><s:property value="#session.production.user.user_name"/></a>
 						</div>
 						<div class="position-info">
 							<span><s:property value="#session.production.user.skill"/></span>

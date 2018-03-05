@@ -28,6 +28,7 @@
 			<result name="toUserProductionList">/UserWorkspace/UserProductionList.jsp</result>
 			<result name="toUserMsgList">/UserWorkspace/LeaveMessageCase.jsp</result>
 			<result name="toMyFavorList">/UserWorkspace/MyFavorList.jsp</result>
+			<result name="gotoDoerSpace">/PersonalSpace/UserSpaceInClientView.jsp</result>
 		</action>
 		<action name="resignAction_*" class="resignAction" method="{1}">
 			<result name="Faild">/resign.jsp</result>

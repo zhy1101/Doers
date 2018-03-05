@@ -48,6 +48,10 @@
 			<key column = "uid"></key>
 			<one-to-many class="Server"></one-to-many>
 		</set>
+		<set name="myArticles" >
+			<key column = "uid"></key>
+			<one-to-many class="Article"></one-to-many>
+		</set>
 		<many-to-one name="kind" column="kind" class="BaseDict" ></many-to-one>
 	</class>
 </hibernate-mapping>
