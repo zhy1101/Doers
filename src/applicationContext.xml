@@ -94,6 +94,9 @@
 	<bean name="serverDetailAction" class="com.doers.Action.ServerDetailAction" scope="prototype" >
 		<property name="serverService" ref="serverService"></property>
 	</bean>
+	<bean name="activityAction" class="com.doers.Action.ActivityAction" scope="prototype" >
+		<property name="activityService" ref="activityService"></property>
+	</bean>
 	
 	
 	<!-- Service -->
@@ -121,6 +124,10 @@
 	<bean name="serverService" class="com.doers.Service.Impl.ServerServiceImpl" >
 		<property name="serverDao" ref="serverDao" ></property>
 		<property name="server_ProDao" ref="server_ProDao" ></property>
+	</bean>
+	<bean name="activityService" class="com.doers.Service.Impl.ActivityServiceImpl" >
+		<property name="activityDao" ref="activityDao" ></property>
+		<property name="activity_userDao" ref="activity_userDao" ></property>
 	</bean>
 	
 	
@@ -150,6 +157,12 @@
 		<property name="sessionFactory" ref="sessionFactory" ></property>
 	</bean>
 	<bean name="server_ProDao" class="com.doers.Dao.Impl.Server_ProDaoImpl" >
+		<property name="sessionFactory" ref="sessionFactory" ></property>
+	</bean>
+	<bean name="activityDao" class="com.doers.Dao.Impl.ActivityDaoImpl" >
+		<property name="sessionFactory" ref="sessionFactory" ></property>
+	</bean>
+	<bean name="activity_userDao" class="com.doers.Dao.Impl.Activity_UserDaoImpl" >
 		<property name="sessionFactory" ref="sessionFactory" ></property>
 	</bean>
 </beans>

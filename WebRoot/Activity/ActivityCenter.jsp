@@ -34,53 +34,53 @@
     <div class="container">
         <div class="row">
              <div class="col-sm-8" style="margin: 0;padding: 0px 0px 0px 15px;">
-                 <a href="hiview-info.html">
+                 <a href="${pageContext.request.contextPath}/activityAction_gotoActivityPassPage?activityId=1">
                  <div class="gallery-item" style="height: 400px; overflow: hidden;">
-                     <img src="../../Doers/img/img3.jpg" class="img-responsive">
+                     <img src="../../Doers/img/activity1.jpg" class="img-responsive">
                      <div class="info">
                          <div class="info-con">
-                             <h3>置顶活动标题</h3>
-                             <p>活动摘要内容，可只显示指定字节的内容</p>
+                             <h3>狗年晒汪——门外狗粮三两箱，不及汪汪遛我情</h3>
+                             <p>晒出你与汪星人日常，分享生活中它遛你的点滴温暖。戊戌狗年，祝大家百事兴旺！</p>
                          </div>
                      </div>
                      <div class="img-caption">
-                         <h3>活动标题</h3>
-                         <p>2015-7-15</p>
+                         <h3>狗年晒汪——门外狗粮三两箱，不及汪汪遛我情</h3>
+                         <p>2018-2-15</p>
                      </div>
                  </div>
                  </a>
              </div>
             <div class="col-sm-4" style="margin: 0;padding: 0px 15px 0px 0px;">
                 <div class="col-sm-12" style="margin: 0;padding: 0px;">
-                    <a href="hiview-info.html">
+                    <a href="${pageContext.request.contextPath}/activityAction_gotoActivityPassPage?activityId=2">
                     <div class="gallery-item" style="height: 200px; overflow: hidden;">
-                        <img src="../../Doers/img/img2.jpg" class="img-responsive">
+                        <img src="../../Doers/img/banner2.jpg" class="img-responsive">
                         <div class="info">
                             <div class="info-con">
-                                <h3>置顶活动标题</h3>
-                                <p> 摘要内容，可只显示指定字节的内容</p>
+                                <h3>2017最据匠心的美好工艺之作</h3>
+                                <p> 第二届谭木匠创意产品设计征集公选</p>
                             </div>
                         </div>
                         <div class="img-caption">
-                            <h3>活动标题</h3>
-                            <p>2015-7-15</p>
+                            <h3>延续你的创作力量</h3>
+                            <p>2017-11-10</p>
                         </div>
                     </div>
                     </a>
                 </div>
                 <div class="col-sm-12" style="margin: 0;padding: 0px;">
-                    <a href="hiview-info.html">
+                    <a href="${pageContext.request.contextPath}/activityAction_gotoActivityPassPage?activityId=3">
                     <div class="gallery-item" style="height: 200px; overflow: hidden;">
-                        <img src="../../Doers/img/img1.jpg" class="img-responsive">
+                        <img src="../../Doers/img/banner6.jpg" class="img-responsive">
                         <div class="info">
                             <div class="info-con">
-                                <h3>置顶活动标题</h3>
-                                <p> 摘要内容，可只显示指定字节的内容</p>
+                                <h3>颜值担当，皮肤有责</h3>
+                                <p> 搜狗输入法手机皮肤创意大赛</p>
                             </div>
                         </div>
                         <div class="img-caption">
-                            <h3>活动标题</h3>
-                            <p>2015-7-15</p>
+                            <h3>颜值担当，皮肤有责</h3>
+                            <p>2017-12-18</p>
                         </div>
                     </div>
                     </a>
@@ -94,94 +94,27 @@
         <div class="row">
             <div class="col-sm-8">
                 <h1>活动列表</h1>
+                <c:forEach items="${activityList }" var="activity">
                 <div class="view-content-left animated" data-animation="bounceIn" data-delay="0">
-                    <a href="hiview-info.html">
+                    <a href="${pageContext.request.contextPath}/activityAction_gotoActivityPassPage?activityId=${activity.activityId}">
                         <div class="gallery-item">
-                            <img src="../../Doers/img/img3.jpg" class="img-responsive">
+                            <img src="${activity.activityCoverURL }" class="img-responsive">
                             <div class="info">
-                                <div class="info-con"> 所属栏目</div>
+                                <div class="info-con">${activity.activityType.dict_item_name }</div>
                             </div>
                         </div>
                     </a>
                     <div class="content1">
-                        <h4><a href="hiview-info.html">活动标题</a></h4>
-                        <p>活动活动活动活动摘要</p>
-                        <span class="pull-left"><i class="fa fa-clock-o"></i>2015-7-18</span>
-                        <span class="pull-right">n人参与</span>
+                        <h4><a href="hiview-info.html">${activity.activityTitle}</a></h4>
+                        <p>${activity.activityContent}</p>
+                        <span class="pull-left"><i class="fa fa-clock-o"></i>${activity.startTime}</span>
                     </div>
                     <div class="clearfix"></div>
                 </div>
-                <div class="view-content-left animated" data-animation="bounceIn" data-delay="0">
-                    <a href="hiview-info.html">
-                        <div class="gallery-item">
-                            <img src="../../Doers/img/img1.jpg" class="img-responsive">
-                            <div class="info">
-                                <div class="info-con"> 所属栏目</div>
-                            </div>
-                        </div>
-                    </a>
-                    <div class="content1">
-                        <h4><a href="hiview-info.html">活动标题</a></h4>
-                        <p>文章摘要文章摘要文章摘要文章摘要文章摘要</p>
-                        <span class="pull-left"><i class="fa fa-clock-o"></i>2015-7-18</span>
-                        <span class="pull-right">3条评论</span>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-                <div class="view-content-left animated" data-animation="bounceIn" data-delay="0">
-                    <a href="hiview-info.html">
-                        <div class="gallery-item">
-                            <img src="../../Doers/img/img2.jpg" class="img-responsive">
-                            <div class="info">
-                                <div class="info-con">所属栏目</div>
-                            </div>
-                        </div>
-                    </a>
-                    <div class="content1">
-                        <h4><a href="hiview-info.html">活动标题</a></h4>
-                        <p>文章摘要文章摘要文章摘要文章摘要文章摘要</p>
-                        <span class="pull-left"><i class="fa fa-clock-o"></i>2015-7-18</span>
-                        <span class="pull-right">3条评论</span>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-                <div class="view-content-left animated" data-animation="bounceIn" data-delay="0">
-                    <a href="hiview-info.html">
-                        <div class="gallery-item">
-                            <img src="../../Doers/img/img5.jpg" class="img-responsive">
-                            <div class="info">
-                                <div class="info-con">所属栏目</div>
-                            </div>
-                        </div>
-                    </a>
-                    <div class="content1">
-                        <h4><a href="hiview-info.html">活动标题</a></h4>
-                        <p>文章摘要文章摘要文章摘要文章摘要文章摘要</p>
-                        <span class="pull-left"><i class="fa fa-clock-o"></i>2015-7-18</span>
-                        <span class="pull-right">3条评论</span>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-                <div class="view-content-left animated" data-animation="bounceIn" data-delay="0">
-                    <a href="hiview-info.html">
-                        <div class="gallery-item">
-                            <img src="../../Doers/img/img4.jpg" class="img-responsive">
-                            <div class="info">
-                                <div class="info-con">所属栏目</div>
-                            </div>
-                        </div>
-                    </a>
-                    <div class="content1">
-                        <h4><a href="hiview-info.html">活动标题</a></h4>
-                        <p>文章摘要文章摘要文章摘要文章摘要文章摘要</p>
-                        <span class="pull-left"><i class="fa fa-clock-o"></i>2015-7-18</span>
-                        <span class="pull-right">3条评论</span>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
+                </c:forEach>
                 <ul class="pager">
                     <li class="previous disabled"><a href="#">&larr; 上一页</a></li>
-                    <li class="next"><a href="#">下一页 &rarr;</a></li>
+                    <li class="next"><a href="javascript:void(0);">下一页 &rarr;</a></li>
                 </ul>
             </div>
             <div class="col-sm-4">

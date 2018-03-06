@@ -27,9 +27,16 @@ public class User
   private Set<Zan> myZan;
   private Set<Server> servers;
   private Set<Article> myArticles;
+  private Set<Activity_User> activity_user_con;
   
   
-	  public Set<Article> getMyArticles() {
+	  public Set<Activity_User> getActivity_user_con() {
+	return activity_user_con;
+}
+public void setActivity_user_con(Set<Activity_User> activity_user_con) {
+	this.activity_user_con = activity_user_con;
+}
+	public Set<Article> getMyArticles() {
 	return myArticles;
 }
 public void setMyArticles(Set<Article> myArticles) {
