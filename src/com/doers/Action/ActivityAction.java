@@ -27,7 +27,12 @@ public class ActivityAction extends ActionSupport {
 
 	public String loadingActivityCenter(){
 		List<Activity> activityList = activityService.loadingActivityCenter();
+		List<Activity> competList = activityService. loadingCompetActivity();
+		List<Activity> classList  = activityService.loadingClassActivity();
 		ActionContext.getContext().put("activityList",  activityList);
+		ActionContext.getContext().put("competitionlist", competList);
+		ActionContext.getContext().put("classlist", classList);
+		
 		return "gotoActivityCenter";
 	}
 	public String gotoActivityPassPage(){

@@ -8,4 +8,8 @@ public interface ActivityDao extends BaseDao<Activity> {
 
 	List<Activity> loadingActivityCenter();
 
+	List<Activity> loadingCompetActivity();
+
+	List<Activity> loadingClassActivity();
+
 }

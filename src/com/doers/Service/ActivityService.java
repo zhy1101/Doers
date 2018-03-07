@@ -13,4 +13,8 @@ public interface ActivityService {
 
 	void userTakeActivity(Activity_User au);
 
+	List<Activity> loadingCompetActivity();
+
+	List<Activity> loadingClassActivity();
+
 }

@@ -9,6 +9,7 @@ import com.doers.Dao.Activity_UserDao;
 import com.doers.Service.ActivityService;
 import com.doers.domain.Activity;
 import com.doers.domain.Activity_User;
+import com.sun.org.apache.bcel.internal.generic.NEW;
 @Transactional
 public class ActivityServiceImpl implements ActivityService{
 
@@ -28,10 +29,16 @@ public class ActivityServiceImpl implements ActivityService{
 	public List<Activity> loadingActivityCenter() {
 		return activityDao.loadingActivityCenter();
 	}
+	public List<Activity> loadingCompetActivity() {
+		return activityDao.loadingCompetActivity();
+	}
+	public List<Activity> loadingClassActivity() {
+		return activityDao.loadingClassActivity();
+	}
 
 	@Override
 	public Activity getActivityById(String activityId) {
-		return activityDao.getById(activityId);
+		return activityDao.getById(Long.valueOf(activityId));
 	}
 
 	@Override

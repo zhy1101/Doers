@@ -11,6 +11,8 @@
     <link rel="stylesheet" type="text/css" href="../../Doers/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="../../Doers/css/animate.min.css" />
     <link rel="stylesheet" type="text/css" href="../../Doers/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../Doers/Activity/css/activemedia.css" />
+
 </head>
 <body>
 <header>
@@ -30,15 +32,17 @@
             </div>
         </nav>
 </header>
+<br><br><br>
+  <main class="main-wrapper">
   <div class="content-wrap">
             <div class="activity-content-top">
                 <div class="content-center-box">
                     <div class="content-details-box">
-                        <span class="details-picture"><img src="http://img.zcool.cn/community/035476758da004600000140717d34e8.jpg@440w_330h_1c_1e_2o"></span>
+                        <span class="details-picture"><img class="imgw" src="${activity.activityCoverURL } "></span>
                         <h2 class="details-title">${activity.activityTitle }</h2>
 
                         <div class="activity-lie">
-                            活动时间 : <span class="other-color">${activity.startTime }&nbsp;至&nbsp;${activity.endTime }</span>
+                                                                        活动时间 : <span class="other-color">${activity.startTime }&nbsp;至&nbsp;${activity.endTime }</span>
                             <br/> 活动类型 : <a href="javascript:void(0);">${activity.activityType.dict_item_name }</a>
                             <br/> 活动策划 : <a href="javascript:void(0);">${activity.holdGroup}</a>
                         </div>
@@ -51,7 +55,7 @@
                         </c:if>
                         <c:if test="${activity.activityType.dict_id !=54 }">
                         <div class="details-main-btn" >     
-                                <a href="javascript:void(0);" title="参与活动" id="takePartInActivity('${activity.activityId}','${activity.activityType.dict_id}')"
+                                <a href="javascript:void(0);" title="参与活动" onclick="takePartInActivity('${activity.activityId}','${activity.activityType.dict_id}')"
                                    class="btn-default-main details-btn upload-active-work">参与活动</a>
                         </div>
                         </c:if>
@@ -59,6 +63,8 @@
                 </div>
             </div>
         </div>
+    </main>
+
 <footer class="hi-footer">
     <div class="footertop">
         <div class="container">
@@ -88,12 +94,13 @@
 <script src="../../Doers/js/jquery.easing.min.js"></script>
 <script src="../../Doers/js/jquery.parallax-1.1.3.js" type="text/javascript"></script>
 <script type="text/javascript" src="../../Doers/js/main.js"></script>
-<script type="text/javascript">			
+<script type="text/javascript" src="../../Doers/js/jqthumb.js"></script>
+<script type="text/javascript" language="javascript">			
 			function takePartInActivity(activityId,typeId){
 				var isTakeIn = confirm("您确认要参与该活动吗？");
 				if(isTakeIn){
 					//要参与
-					location.href = "${pageContext.request.contextPath}/ActivityAction_takePartInActivity?activityId="+activityId;
+					reload(activityId);
 					if(typeId == 54){
 					window.open('${pageContext.request.contextPath}/UserWorkspace/AddNewProduction.jsp','_blank','');				
 					}else{
@@ -101,6 +108,33 @@
 					}				
 				}
 			}
+     function reload(activityId){
+     //针对不同浏览器，不同的方式生成xmlHttp对象  
+    try{  
+        xmlHttp=new XMLHttpRequest();  
+    }catch(e){  
+        try{  
+            xmlHttp=new ActiveXObject("Msxml2.XMLHttp");  
+        }catch(e){  
+            try{  
+                xmlHttp=new ActiveXObject("Microsoft.XMLHttp");  
+            }catch(e){  
+                alert("你的浏览器不支持AJAX")   ;  
+                return false;  
+            }  
+        }  
+    }  
+    var url="${pageContext.request.contextPath}/activityAction_takePartInActivity?activityId="+activityId;  
+    xmlHttp.open("GET", url, true);//初始化xmlHttp  
+    xmlHttp.send(null);//发送  
+     }
 		</script>
+<script language="javascript" type="text/javascript">
+		$('.imgw').jqthumb({
+ 		classname: 'jqthumb',  
+        width          : 440,  
+        height         : 300,  
+        showoncomplete : true  });
+</script>
 </body>
 </html>

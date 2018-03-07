@@ -34,9 +34,9 @@
     <div class="container">
         <div class="row">
              <div class="col-sm-8" style="margin: 0;padding: 0px 0px 0px 15px;">
-                 <a href="${pageContext.request.contextPath}/activityAction_gotoActivityPassPage?activityId=1">
+                 <a href="${pageContext.request.contextPath}/activityAction_gotoActivityPassPage?activityId=1" target="_blank">
                  <div class="gallery-item" style="height: 400px; overflow: hidden;">
-                     <img src="../../Doers/img/activity1.jpg" class="img-responsive">
+                     <img src="../../Doers/img/activity1.jpg" class="img-responsive imgbig">
                      <div class="info">
                          <div class="info-con">
                              <h3>狗年晒汪——门外狗粮三两箱，不及汪汪遛我情</h3>
@@ -52,9 +52,9 @@
              </div>
             <div class="col-sm-4" style="margin: 0;padding: 0px 15px 0px 0px;">
                 <div class="col-sm-12" style="margin: 0;padding: 0px;">
-                    <a href="${pageContext.request.contextPath}/activityAction_gotoActivityPassPage?activityId=2">
+                    <a href="${pageContext.request.contextPath}/activityAction_gotoActivityPassPage?activityId=2" target="_blank">
                     <div class="gallery-item" style="height: 200px; overflow: hidden;">
-                        <img src="../../Doers/img/banner2.jpg" class="img-responsive">
+                        <img src="../../Doers/img/banner2.jpg" class="img-responsive imgsmall">
                         <div class="info">
                             <div class="info-con">
                                 <h3>2017最据匠心的美好工艺之作</h3>
@@ -69,9 +69,9 @@
                     </a>
                 </div>
                 <div class="col-sm-12" style="margin: 0;padding: 0px;">
-                    <a href="${pageContext.request.contextPath}/activityAction_gotoActivityPassPage?activityId=3">
+                    <a href="${pageContext.request.contextPath}/activityAction_gotoActivityPassPage?activityId=3" target="_blank">
                     <div class="gallery-item" style="height: 200px; overflow: hidden;">
-                        <img src="../../Doers/img/banner6.jpg" class="img-responsive">
+                        <img src="../../Doers/img/banner6.jpg" class="img-responsive imgsmall">
                         <div class="info">
                             <div class="info-con">
                                 <h3>颜值担当，皮肤有责</h3>
@@ -96,16 +96,16 @@
                 <h1>活动列表</h1>
                 <c:forEach items="${activityList }" var="activity">
                 <div class="view-content-left animated" data-animation="bounceIn" data-delay="0">
-                    <a href="${pageContext.request.contextPath}/activityAction_gotoActivityPassPage?activityId=${activity.activityId}">
+                    <a href="${pageContext.request.contextPath}/activityAction_gotoActivityPassPage?activityId=${activity.activityId}" target="_blank">
                         <div class="gallery-item">
-                            <img src="${activity.activityCoverURL }" class="img-responsive">
+                            <img src="${activity.activityCoverURL }" class="img-responsive imglist">
                             <div class="info">
                                 <div class="info-con">${activity.activityType.dict_item_name }</div>
                             </div>
                         </div>
                     </a>
                     <div class="content1">
-                        <h4><a href="hiview-info.html">${activity.activityTitle}</a></h4>
+                        <h4><a href="${pageContext.request.contextPath}/activityAction_gotoActivityPassPage?activityId=${activity.activityId}" target="_blank">${activity.activityTitle}</a></h4>
                         <p>${activity.activityContent}</p>
                         <span class="pull-left"><i class="fa fa-clock-o"></i>${activity.startTime}</span>
                     </div>
@@ -121,10 +121,9 @@
                         <div class="view-content-right">
                             <h1>最新赛事</h1>
                             <div class="aside-top">
-                            <a href="hiview-info.html"><img src="../../Doers/img/img1.jpg" style="float:left;height: 40px;width: 40px;border-radius: 50%;margin-right: 15px">赛事活动1</a>
-                            <a href="hiview-info.html"><img src="../../Doers/img/img2.jpg" style="float:left;height: 40px;width: 40px;border-radius: 50%;margin-right: 15px">赛事活动2</a>
-                            <a href="hiview-info.html"><img src="../../Doers/img/img3.jpg" style="float:left;height: 40px;width: 40px;border-radius: 50%;margin-right: 15px">赛事活动3</a>
-                            <a href="hiview-info.html"><img src="../../Doers/img/img4.jpg" style="float:left;height: 40px;width: 40px;border-radius: 50%;margin-right: 15px">赛事活动4</a>
+                            <c:forEach items="${competitionlist }" var="compet">
+                            <a href="${pageContext.request.contextPath}/activityAction_gotoActivityPassPage?activityId=${compet.activityId}" target="_blank"><img src="${compet.activityCoverURL }" style="float:left;height: 40px;width: 40px;border-radius: 50%;margin-right: 15px">${compet.activityTitle}</a>
+                     		</c:forEach>
                             </div>
                         </div>
                         <div class="view-content-right" style="margin: 20px 0;">
@@ -134,10 +133,9 @@
                         <div class="view-content-right">
                             <h1>热门培训</h1>
                             <div class="aside-top">
-                            <a href="hiview-info.html"><img src="../../Doers/img/img1.jpg" style="height: 40px;width: 40px;border-radius: 50%;margin-right: 15px">学习的前端语言与框架培训</a>
-                            <a href="hiview-info.html"><img src="../../Doers/img/img2.jpg" style="height: 40px;width: 40px;border-radius: 50%;margin-right: 15px">学习的后台语言与框架培训</a>
-                            <a href="hiview-info.html"><img src="../../Doers/img/img3.jpg" style="height: 40px;width: 40px;border-radius: 50%;margin-right: 15px">学习的大数据培训</a>
-                            <a href="hiview-info.html"><img src="../../Doers/img/img4.jpg" style="height: 40px;width: 40px;border-radius: 50%;margin-right: 15px">学习PHP培训</a>
+                            <c:forEach items="${classlist }" var="lesson">
+                            <a href="${pageContext.request.contextPath}/activityAction_gotoActivityPassPage?activityId=${lesson.activityId}" target="_blank""><img src="${lesson.activityCoverURL }" style="height: 40px;width: 40px;border-radius: 50%;margin-right: 15px">${lesson.activityTitle}</a>
+                           </c:forEach>
                             </div>
                         </div>
             </div>
@@ -174,5 +172,23 @@
 <script src="../../Doers/js/jquery.easing.min.js"></script>
 <script src="../../Doers/js/jquery.parallax-1.1.3.js" type="text/javascript"></script>
 <script type="text/javascript" src="../../Doers/js/main.js"></script>
+<script type="text/javascript" src="../../Doers/js/jqthumb.js"></script>
+<script language="javascript" type="text/javascript">
+		$('.imgbig').jqthumb({
+ 		classname: 'jqthumb',  
+        width          : 765,  
+        height         : 400,  
+        showoncomplete : true  });
+        $('.imgsmall').jqthumb({
+ 		classname: 'jqthumb',  
+        width          : 377,  
+        height         : 200,  
+        showoncomplete : true  });
+         $('.imglist').jqthumb({
+ 		classname: 'jqthumb',  
+        width          : 220,  
+        height         : 160,  
+        showoncomplete : true  });
+</script>
 </body>
 </html>
