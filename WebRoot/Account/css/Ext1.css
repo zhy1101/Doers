@@ -1,0 +1,35 @@
+@CHARSET "UTF-8";
+.statichead h3 {
+    padding: 0 0 18px;
+    font-size: 28px;
+    line-height: 1.1em;
+    font-weight: 400;
+    color: #524d4d;
+    text-shadow: 0 1px rgba(255, 255, 255, .9);
+    display: inline-block;
+    margin: 0 40px 0 0;
+    float: left;
+    width: 170px;
+    text-align: right;
+}
+.staticon li {
+    padding: 15px 20px;
+    color: #8c7e7e;
+    text-shadow: 0 1px rgba(255, 255, 255, .9);
+    border-top: 1px solid #fbfafa;
+    border-bottom: 1px solid #dddbda;
+    font-size: 18px;
+}
+.staticon .btnbox {
+    padding: 24px 0 20px 190px;
+    border-top: 1px solid rgba(255, 255, 255, .7);
+}
+.alipaybtn {
+    width: 150px;
+    height: 40px;
+    text-indent: 999em;
+    overflow: hidden;
+    background: url(../../img/alipay-btn.png) no-repeat;
+    border: 0;
+    cursor: pointer;
+}
