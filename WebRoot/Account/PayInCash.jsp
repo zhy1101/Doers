@@ -13,6 +13,10 @@
     <link rel="stylesheet" type="text/css" href="../../Doers/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="../../Doers/css/animate.min.css" />
     <link rel="stylesheet" type="text/css" href="../../Doers/css/style.css" />
+    <style>
+    a:hover{color:red}
+    
+    </style>
 </head>
 <body>
 <header>
@@ -60,9 +64,9 @@
 					<h3 class="ListTitle">账户基本管理</h3>
 				</div>
 				<div class="menuList">
-					<a href="#">我的账户</a>
-					<a href="#">充值Do币</a>
-					<a href="#" style="color:#3366cc;background:#D1EEEE">劳务提现</a>
+					<a href="${pageContext.request.contextPath}/accountAction_loadingMyAccount">我的账户</a>
+					<a href="${pageContext.request.contextPath}/Account/AddDoMoney.jsp">充值Do币</a>
+					<a href="javascript:void(0);" style="color:#3366cc;background:#D1EEEE">劳务提现</a>
 				</div>
 			</div>
 		</div>
@@ -76,8 +80,8 @@
 						class="red">（10 Do币=6元）</span></div>
 				<div class="red" style="padding:10px 20px 0 20px;">ps：满足100金币，才能申请提现。一个工作日内完成提现。</div>
 				<div class="tx-title">
-					<div class="left text">当前金币：<b class="blue amount"> 2 </b>
-						<span style="margin:0 50px;">可提现金额：<b class="yellow">1元</b></span>
+					<div class="left text">当前金币：<b class="blue amount">${myAccount.wallet1 + myAccount.wallet2 } </b>
+						<span style="margin:0 50px;">可提现金额：<b class="yellow">${(myAccount.wallet1 + myAccount.wallet2)/10*6} 元</b></span>
 					</div>
 				</div>
 			</div>
@@ -92,7 +96,7 @@
 					<input type="text" name="" value="" placeholder="只支持支付宝用户，认证后才能申请提现。">
 					<em>*(必填)</em>
 				</p>
-				<a href="#" class="finance-content-middle-form-btn">申请提现</a>
+				<a href="javascript:void(0);" class="finance-content-middle-form-btn" hover=red>申请提现</a>
 			</div>
 		</div>
 	</div>

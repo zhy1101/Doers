@@ -8,4 +8,6 @@ public interface BaseDictService {
 
 	List<BaseDict> getListByTypeCode(String dict_type_code);
 
+	BaseDict getByItemCode(String string);
+
 }

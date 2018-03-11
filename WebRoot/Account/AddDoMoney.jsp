@@ -62,9 +62,9 @@
 					<h3 class="ListTitle">账户基本管理</h3>
 				</div>
 				<div class="menuList">
-					<a >我的账户</a>
+					<a href="${pageContext.request.contextPath}/accountAction_loadingMyAccount">我的账户</a>
 					<a href="javascript:void(0);" style="color:#3366cc;background:#D1EEEE">充值Do币</a>
-					<a href="#">劳务提现</a>
+					<a href="${pageContext.request.contextPath}//accountAction_payInCash">劳务提现</a>
 				</div>
 			</div>
 		</div>
@@ -73,49 +73,53 @@
 	<div class="finance-content-middle-title">
 		<h4>Do 币充值</h4>
 	</div>
-	<strong class="m-right">参商渐暖</strong>
-            当前金币：2</span>
     </div><!--statichead end-->
 <div class="finance-content-middle-form">
     <div class="staticon" style="width:800px;margin-left:100px" >
-        <form id="w0" action="/payment/pay" method="post">
             <ul>
                 <li class="clear"><span class="label" style="color:#ff6600;margin-left:10px">Do 币单价</span><span style="color:#ff6600;">1金币/元</span></li>
+  <div id="paypanel" style="width:210px;height:290px;border:1px solid black;margin-left:150px;display:none">
+	<div style="width:100%;height:40px;padding:5px;border-bottom:1px solid black;">支付详情</div>
+	<div style="width:100%; margin:5px auto;border-bottom:1px solid black;">
+		<img src="../../Doers/img/erweima.png" style="width:200px;height:200px">
+	</div>
+	<div style="width:100%; margin:0 auto">
+	<button id="btn1" onclick="confirmMoney()" style="padding-left:10px">确认</button>&nbsp;&nbsp;<button id="btn2" onclick="hiddenEle()">取消</button>
+	</div>
+</div>
                 <li class="clear"><span class="label" style="color:#000;margin-left:10px">充值金额</span>
-                    <div class="recharge" style="margin-left:40px" >
+                    <div class="recharge" style="margin-left:42px" >
                         <span>
-                            <input type="radio" id="jf_0" name="pid" value="12" checked data-price="5.00">                            <label for="jf_0">5.00元<b>/</b>5金币</label>
+                            <input type="radio" id="jf_0" name="doneMoney" value="5" checked data-price="5.00"><label for="jf_0">5.00元<b>/</b>5金币</label>
                         </span>
                                                 <span>
-                            <input type="radio" id="jf_1" name="pid" value="13" data-price="10.00">                            <label for="jf_1">10.00元<b>/</b>10金币</label>
+                            <input type="radio" id="jf_1" name="doneMoney" value="10" data-price="10.00"><label for="jf_1">10.00元<b>/</b>10金币</label>
                         </span>
                                                 <span>
-                            <input type="radio" id="jf_2" name="pid" value="14" data-price="20.00">                            <label for="jf_2">20.00元<b>/</b>22金币</label>
+                            <input type="radio" id="jf_2" name="doneMoney" value="20" data-price="20.00"><label for="jf_2">20.00元<b>/</b>22金币</label>
                         </span>
                                                 <span>
-                            <input type="radio" id="jf_3" name="pid" value="15" data-price="30.00">                            <label for="jf_3">30.00元<b>/</b>33金币</label>
+                            <input type="radio" id="jf_3" name="doneMoney" value="30" data-price="30.00"><label for="jf_3">30.00元<b>/</b>33金币</label>
                         </span>
                                                 <span>
-                            <input type="radio" id="jf_4" name="pid" value="16" data-price="40.00">                            <label for="jf_4">40.00元<b>/</b>44金币</label>
+                            <input type="radio" id="jf_4" name="doneMoney" value="40" data-price="40.00"><label for="jf_4">40.00元<b>/</b>44金币</label>
+                        </span>
+                                                <br><span >
+                            <input type="radio" id="jf_5" name="doneMoney" value="50" data-price="50.00"><label for="jf_5">50.00元<b>/</b>55金币</label>
                         </span>
                                                 <span>
-                            <input type="radio" id="jf_5" name="pid" value="17" data-price="50.00">                            <label for="jf_5">50.00元<b>/</b>55金币</label>
-                        </span>
-                                                <span>
-                            <input type="radio" id="jf_6" name="pid" value="18" data-price="100.00">                            <label for="jf_6">100.00元<b>/</b>110金币</label>
+                            <input type="radio" id="jf_6" name="doneMoney" value="100" data-price="100.00"><label for="jf_6">100.00元<b>/</b>110金币</label>
                         </span>
                         
                     </div>
                 </li>
-                <li class="clear"><span class="label" style="color:#000;margin-left:10px">支付</span><span style="margin:7px 0 0 0;color:#ff6600;" id="payment">5.00元</span></li>
+                <li class="clear"><span class="label" style="color:#000;margin-left:10px">支付</span><span style="margin:7px 0 0 0;color:#ff6600;" id="payment">5.00</span>元</li>
             </ul>
 
 
             <div class="btnbox">
-                <input class="alipaybtn" value="支付宝付款" id="btnSubmit" type="submit">
+                <input class="alipaybtn" value="支付宝付款" id="btnSubmit" onclick="payMoeny()">
             </div>
-
-            </form>
     </div>
 	</div>
 	</div>
@@ -157,6 +161,49 @@
             });
         });
     });
+</script>
+<script type="text/javascript">
+  $(function(){
+
+ $("input:radio[name='doneMoney']").change(function(){
+
+   var v = $(this).val();
+
+   if (v =="5"){
+
+    $("#payment").text("5.00");
+
+   }else if (v =="10"){
+	$("#payment").text("10.00");
+} else if (v =="20"){
+	$("#payment").text("20.00");
+} else if (v =="30"){
+	$("#payment").text("30.00");
+} else if (v =="40"){
+	$("#payment").text("40.00");
+} else if (v =="50"){
+	$("#payment").text("50.00");
+}else if (v =="100"){
+	$("#payment").text("100.00");
+}
+
+});
+
+          });
+</script>
+<script type="text/javascript">
+function payMoeny(){
+	var ui = document.getElementById("paypanel");
+	ui.style.display="";
+}
+function hiddenEle(){
+	document.getElementById("paypanel").style.display="none";
+}
+function confirmMoney(){
+   var v = $("input:radio[name='doneMoney']").val();
+   var url= "${pageContext.request.contextPath}/accountAction_addDoMoeny?doneMoney="+v;
+	window.open(url);
+}
 </script>
 </body>
 </html>

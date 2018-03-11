@@ -21,5 +21,9 @@ public class BaseDictServiceImpl implements BaseDictService {
 		this.baseDictDao = baseDictDaobaseDictDao;
 	}
 
+	@Override
+	public BaseDict getByItemCode(String string) {
+		return (BaseDict) baseDictDao.getByItemCode(string);
+	}
 	
 }

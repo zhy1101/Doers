@@ -83,6 +83,8 @@
 	    </action>
 	    <action name="accountAction_*" class="accountAction" method="{1}">
 	   		 <result name="toMyAccountBase" >/Account/MyAccountBase.jsp</result>
+	   		 <result name="toPayInCash" >/Account/PayInCash.jsp</result>
+	   		 
 	    </action>
 	</package>
 </struts>

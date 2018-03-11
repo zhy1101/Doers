@@ -17,4 +17,11 @@ public class BaseDictDaoImpl extends BaseDaoImpl<BaseDict> implements BaseDictDa
 		dc.add(Restrictions.eq("dict_type_code", dict_type_code));
 		List<BaseDict> list = (List<BaseDict>) getHibernateTemplate().findByCriteria(dc);
 		return list;
+	}
+
+	@Override
+	public BaseDict getByItemCode(String string) {
+		DetachedCriteria dc = DetachedCriteria.forClass(BaseDict.class);
+		dc.add(Restrictions.eq("dict_id", string));
+		return (BaseDict) getHibernateTemplate().findByCriteria(dc).get(0);	
 	}}
