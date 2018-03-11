@@ -6,11 +6,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>${server.serverName} - 服务页详情 -</title>
-<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
-<script src="../js/jquery-1.11.3.min.js" type="text/javascript"></script>
-<script src="../bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+
 <!-- 引入自定义css文件 style.css -->
-<link rel="stylesheet" href="../css/style.css" type="text/css" />
+<link rel="stylesheet" href="../Doers/css/style.css" type="text/css" />
 <link rel="stylesheet"
 	href="../../Doers/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet"
@@ -21,10 +19,6 @@
 	href="../../Doers/ProductionPage/css/detail_commentWidget.css">
 <link rel="stylesheet"
 	href="../../Doers/ProductionPage/css/detail_work.css">
-<link href="../../Doers/ProductionPage/css/detail_jiathis_share.css"
-	rel="stylesheet" type="text/css">
-<link href="../../Doers/ProductionPage/css/detail_dianzan.css"
-	rel="stylesheet" type="text/css">
 <style>
 body {
 	margin-top: 20px;
@@ -36,6 +30,8 @@ body {
 	height: 300px;
 }
 </style>
+<script src="../Doers/js/jquery-1.11.3.min.js" type="text/javascript"></script>
+<script src="../Doers/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 </head>
 <body>
 <nav class="navbar navbar-default navbar-fixed-top">
@@ -60,7 +56,7 @@ body {
 		<div class="row">
 			<div style="border: 1px solid #e4e4e4; width: 930px; margin-bottom: 10px; margin: 0 auto; padding: 10px; margin-bottom: 10px;">
 				<a href="./index.htm">首页&nbsp;&nbsp;&gt;</a> <a href="./蔬菜分类.htm">Do 服务&nbsp;&nbsp;&gt;</a>
-				<a>无公害蔬菜</a>
+				<a>${server.serverName}</a>
 			</div>
 
 			<div style="margin: 0 auto; width: 950px;">
@@ -76,28 +72,24 @@ body {
 					</div>
 
 					<div style="margin: 10px 0 10px 0;">
-						预估价: <strong style="color: #ef0101;">￥：${server.lowLine}元</strong> 
+						预估价: <strong style="color: #ef0101;"  >￥：${server.lowLine}&nbsp;~&nbsp;${server.lowLine*2}&nbsp;Do币</strong> 
 					</div>
-
-					<div
-						style="padding: 10px; border: 1px solid #e7dbb1; width: 330px; margin: 15px 0 10px 0;; background-color: #fffee6;">
-						<div style="margin: 20px 0 10px 0;; text-align: center;">
-							<a href="javascript:void(0);" onclick="addCart()">
+						<div style="margin: 20px 0 10px 0;border: 1px solid #e7dbb1;background-color: #fffee6; text-align: center;" onclick="addCart()">
+							<a href="${pageContext.request.contextPath}/accountAction_addInMyCart?serverId=${server.serverId}">
 							 <input style="background: url('./images/product.gif') no-repeat scroll 0 -600px rgba(0, 0, 0, 0); height: 36px; width: 127px;"
-								value="加入购物车" type="button">
+								value="加入购物车" type="button" onclick="addCart()">
 							</a>
 						</div>
-					</div>
-				</div>
+						<div style="background-color: #F8F8FF;padding: 10px 10px; margin: 10px 0 10px 0;">
+							<strong>服务介绍</strong>
+							<div style="margin-top: 10px; width: 400px;">
+								<p>${server.serverDescribtion }</p>
+							</div>
+						</div>
 			</div>
 			<div class="clear"></div>
 			<div style="width: 950px; margin: 0 auto;">
-				<div style="background-color: #d3d3d3; width: 930px; padding: 10px 10px; margin: 10px 0 10px 0;">
-					<strong>服务介绍</strong>
-				</div>
-				<div style="margin-top: 10px; width: 900px;">
-					<p>${server.serverDescribtion }</p>
-				</div>
+
 
 				<div style="background-color: #d3d3d3; width: 900px;">
 					<table class="table table-bordered">

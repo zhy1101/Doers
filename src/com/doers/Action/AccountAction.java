@@ -2,14 +2,18 @@ package com.doers.Action;
 
 
 import java.util.Date;
+import java.util.List;
 import java.text.SimpleDateFormat;
 
 import com.doers.Dao.BaseDictDao;
 import com.doers.Service.AccountService;
 import com.doers.Service.BaseDictService;
+import com.doers.Service.ServerService;
 import com.doers.domain.Account;
 import com.doers.domain.AccountOperate;
 import com.doers.domain.BaseDict;
+import com.doers.domain.Cart;
+import com.doers.domain.Server;
 import com.doers.domain.User;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
@@ -18,8 +22,15 @@ public class AccountAction extends ActionSupport {
 	private AccountService accountService;
 	private Integer doneMoney;
 	private BaseDictService baseDictService;
-
+	private String serverId;
+	private ServerService serverService;
 	
+
+	public void setServerService(ServerService serverService) {
+		this.serverService = serverService;
+	}
+
+
 	public void setBaseDictService(BaseDictService baseDictService) {
 		this.baseDictService = baseDictService;
 	}
@@ -37,6 +48,16 @@ public class AccountAction extends ActionSupport {
 
 	public void setAccountService(AccountService accountService) {
 		this.accountService = accountService;
+	}
+	
+
+	public String getServerId() {
+		return serverId;
+	}
+
+
+	public void setServerId(String serverId) {
+		this.serverId = serverId;
 	}
 
 
@@ -67,9 +88,8 @@ public class AccountAction extends ActionSupport {
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 	    String pdate = format.format(new Date());
 	    aOperate.setTime(pdate);
-	    BaseDict baseDict = new BaseDict();
-	    baseDict.setDict_id("58");
-	    aOperate.setBehave(baseDict);
+        BaseDict behave = baseDictService.getByItemCode("58");
+        aOperate.setBehave(behave);
 	    accountService.addAccountOperate(aOperate);
 	    return loadingMyAccount();		
 	}
@@ -78,5 +98,20 @@ public class AccountAction extends ActionSupport {
 		Account a = accountService.getAccountByUser(user);
 		ActionContext.getContext().put("myAccount", a);
 		return "toPayInCash";
+	}
+	public String addInMyCart(){
+		User user = (User) ActionContext.getContext().getSession().get("user");
+		Server server = serverService.findServiceById(serverId);
+		Cart cart = new Cart();
+		cart.setCart_item(server);
+		cart.setCart_user(user);
+		accountService.addInMyCart(cart);
+		return OpenMyCart();
+	}
+	public String OpenMyCart(){
+		User user = (User) ActionContext.getContext().getSession().get("user");
+		List<Server> myCart = accountService.OpenMyCart(user);
+		ActionContext.getContext().put("myCart", myCart);
+		return "toMyCart";
 	}
 }

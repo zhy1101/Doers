@@ -38,14 +38,7 @@
 					location.href="${pageContext.request.contextPath }/product?method=delProFromCart&pid="+pid;
 				}
 			}
-			
-			function clearCart(){
-				if(confirm("您是否要清空购物车？")){
-					location.href="${pageContext.request.contextPath }/product?method=clearCart";
-				}
-			}
-		
-		</script>
+</script>
 
 </head>
 <body>
@@ -75,7 +68,7 @@
 		<div class="finance-content-nav menu">
 			<div class="menuParent">
 				<div class="ListTitlePanel">
-					<h3 class="ListTitle">Do 购买</h3>
+				<h3 class="ListTitle">Do 购买</h3>
 				</div>
 				<div class="menuList">
 					<a href="javascript:void(0);" style="color:#3366cc;background:#D1EEEE">我的购物车</a>
@@ -121,16 +114,17 @@
 								<th>预估价格</th>
 								<th>操作</th>
 							</tr>
+					<c:forEach items="${myCart }" var="item"  varStatus="num">
 							<tr>
-								<td>1</td>
-								<td>首页轮播广告</td>
-								<td><img src="themes/img/app-banner-log.jpg" alt=""></td>
-								<td>2017-10-10 12:30至2017-10-11 12:29</td>
-								<td>1</td>
-								<td>进行中</td>
+								<td>${num.count }</td>
+								<td>${item.cart_item.serverName }</td>
+								<td><img src="${item.cart_item.serverCover }" width=100px height=80px ></td>
+								<td>${item.cart_item.talkTime }</td>
+								<td>${item.cart_user.user_name }</td>
+								<td>${item.cart_item.lowLine }~${item.cart_item.lowLine*2}Do 币</td>
 								<td><a href="#">开始预约</a> 丨 <a href="#">删除</a></td>
 							</tr>
-
+					</c:forEach>
 						</tbody>
 					</table>
 				</div>
