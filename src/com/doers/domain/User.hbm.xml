@@ -56,6 +56,10 @@
 			<key column = "user_id"></key>
 			<one-to-many class="Activity_User"></one-to-many>
 		</set>
+		<set name="myCartItems">
+			<key column="cart_user" ></key>
+			<one-to-many class="Cart" />
+		</set>
 		<many-to-one name="kind" column="kind" class="BaseDict" ></many-to-one>
 	</class>
 </hibernate-mapping>

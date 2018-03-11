@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.doers.domain" >
+	<class name="Account" table="Account" >
+		<id name="account_id"  >
+			<generator class="native"></generator>
+		</id>
+		<property name="account_user_id" column="account_user_id" ></property>
+		<property name="wallet1" column="wallet1" ></property>
+		<property name="wallet2" column="wallet2" ></property>
+		
+		<set name="behaveList">
+			<key column="account" ></key>
+			<one-to-many class="AccountOperate" />
+		</set>
+
+	</class>
+</hibernate-mapping>

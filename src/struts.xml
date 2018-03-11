@@ -81,5 +81,8 @@
 	   		 <result name="gotoActivityCenter" >/Activity/ActivityCenter.jsp</result>
 	   		 <result name="gotoActivityPassStation" >/Activity/ActivityPassStation.jsp</result>
 	    </action>
+	    <action name="accountAction_*" class="accountAction" method="{1}">
+	   		 <result name="toMyAccountBase" >/Account/MyAccountBase.jsp</result>
+	    </action>
 	</package>
 </struts>

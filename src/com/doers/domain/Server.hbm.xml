@@ -18,5 +18,9 @@
 			<key column="server_id" ></key>
 			<one-to-many class="Server_production" />
 		</set>
+		<set name="addInCartList">
+			<key column="cart_item" ></key>
+			<one-to-many class="Cart" />
+		</set>
 	</class>
 </hibernate-mapping>

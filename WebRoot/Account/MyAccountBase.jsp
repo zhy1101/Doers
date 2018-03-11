@@ -77,52 +77,16 @@
 					<ul class="finance-content-middle-form-list clearfix">
 						<li>
 							<span class="finance-step">基本信息</span>
-						</li>
-						<li>
-							<span class="finance-step">钱包充值记录</span>
 							<p>
-								<a href="#">查看全部</a>
+								<label>账户总余额：</label><label>${myAccount.wallet1 + myAccount.wallet2 } Do 币</label>
+								<br><br>
+								<label>充值钱包余额：</label><label style="color:#ff6600">${myAccount.wallet1} Do 币</label>
+								<br><br>
+								<label>劳务所得余额：</label><label style="color:#ff6600">${myAccount.wallet2} Do 币</label>
 							</p>
 						</li>
 						<li>
-							<span class="finance-step">劳务提现记录</span>
-							<p>
-								<label>步骤名称：</label>
-								<input type="text" placeholder="资料齐全" class="finance-step-name">
-							</p>
-							<p>
-								<label>审核角色：</label>
-								<select>
-									<option>银行驻点人员</option>
-									<option>银行驻点人员</option>
-								</select>
-							</p>
-							<p>
-								<label>是否允许拒绝操作：</label>
-								<input type="checkbox" name=""> 否
-								<input type="checkbox" checked="checked" name=""> 是
-							</p>
-							<p>
-								<label>是否选择金融机构：</label>
-								<input type="checkbox" name=""> 否
-								<input type="checkbox" checked="checked" name=""> 是
-							</p>
-							<p>
-								<label>是否需要填写备注：</label>
-								<input type="checkbox" name=""> 否
-								<input type="checkbox" checked="checked" name=""> 是
-							</p>
-							<p>
-								<label>是否发送消息推送：</label>
-								<input type="checkbox" name=""> 否
-								<input type="checkbox" checked="checked" name=""> 是
-								<em>（推送消息中含备注内容）</em>
-							</p>
-							<p>
-								<label>是否客户可见流程：</label>
-								<input type="checkbox" name=""> 否
-								<input type="checkbox" checked="checked" name=""> 是
-							</p>
+							<span class="finance-step">账户变动记录</span>
 							<p>
 								<a href="#">查看全部</a>
 							</p>
@@ -130,7 +94,6 @@
 
 					</ul>
 				</div>
-				<a href="#" class="finance-content-middle-form-btn">提交</a>
 			</div>
 		</div>
 	</div>

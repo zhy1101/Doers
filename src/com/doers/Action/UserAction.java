@@ -38,8 +38,6 @@ public class UserAction extends ActionSupport implements ModelDriven<User>
   private ZanService zanService;
   private ArticleService articleService;
   private PushService pushService;
-  
-  
 public Long getUserId() {
 	return userId;
 }

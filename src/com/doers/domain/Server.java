@@ -11,8 +11,15 @@ public class Server {
 	private Integer lowLine;
 	private User user;
 	private Set<Server_production> connectedProductions;
+	private Set<Cart> addInCartList;
 	
 	
+	public Set<Cart> getAddInCartList() {
+		return addInCartList;
+	}
+	public void setAddInCartList(Set<Cart> addInCartList) {
+		this.addInCartList = addInCartList;
+	}
 	public String getServerId() {
 		return serverId;
 	}

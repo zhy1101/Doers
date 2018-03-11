@@ -28,9 +28,16 @@ public class User
   private Set<Server> servers;
   private Set<Article> myArticles;
   private Set<Activity_User> activity_user_con;
+  private Set<Cart> myCartItems;
   
   
-	  public Set<Activity_User> getActivity_user_con() {
+	  public Set<Cart> getMyCartItems() {
+	return myCartItems;
+}
+public void setMyCartItems(Set<Cart> myCartItems) {
+	this.myCartItems = myCartItems;
+}
+	public Set<Activity_User> getActivity_user_con() {
 	return activity_user_con;
 }
 public void setActivity_user_con(Set<Activity_User> activity_user_con) {
