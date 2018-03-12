@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.doers.domain" >
+	<class name="Contract" table="ContractList" >
+		<id name="id"  >
+			<generator class="native"></generator>
+		</id>
+		<property name="serverTimeStart"></property>
+		<property name="serverTimeEnd"></property>
+		<property name="realName"></property>
+		<property name="price"></property>
+		<property name="conveyStyle"></property>
+		<property name="content"></property>
+		<property name="addFileURL"></property>		
+		
+		<many-to-one name="belongToOder" column="belongToOder" class="Order" ></many-to-one>
+	</class>
+</hibernate-mapping>

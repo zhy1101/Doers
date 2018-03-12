@@ -18,6 +18,13 @@ public class CartDaoImpl extends BaseDaoImpl<Cart> implements CartDao {
 		return (List<Server>) getHibernateTemplate().find(hqlString, user.getUid());
 	}
 
+	@Override
+	public void deleteInCartByServerId(User user, String serverId) {
+		String hqlString="delete from Cart where cart_user.uid=? and cart_item.serverId=?";
+		getHibernateTemplate().find(hqlString, user.getUid(),serverId);
+		
+	}
+
 
 
 }

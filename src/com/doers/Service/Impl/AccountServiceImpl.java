@@ -63,4 +63,10 @@ public class AccountServiceImpl implements AccountService {
 		return cartDao.getCartsByUser(user);
 	}
 
+
+	@Override
+	public void deleteInCartByServerId(User user, String serverId) {
+		cartDao.deleteInCartByServerId(user,serverId);
+	}
+
 }

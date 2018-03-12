@@ -119,10 +119,10 @@
 								<td>${num.count }</td>
 								<td>${item.cart_item.serverName }</td>
 								<td><img src="${item.cart_item.serverCover }" width=100px height=80px ></td>
-								<td>${item.cart_item.talkTime }</td>
-								<td>${item.cart_user.user_name }</td>
+								<td>${item.cart_item.talkTime } 天</td>
+								<td><a href="${pageContext.request.contextPath}/userAction_openDoerSpace?userId=${item.cart_item.user.uid }">${item.cart_item.user.user_name }</a></td>
 								<td>${item.cart_item.lowLine }~${item.cart_item.lowLine*2}Do 币</td>
-								<td><a href="#">开始预约</a> 丨 <a href="#">删除</a></td>
+								<td><a href="${pageContext.request.contextPath}/orderAction_startTalk?serId=${item.cart_item.serverId }">开始预约</a> 丨 <a href="${pageContext.request.contextPath}/accountAction_deleteInCartByServerId?serverId=${item.cart_item.serverId }">删除</a></td>
 							</tr>
 					</c:forEach>
 						</tbody>

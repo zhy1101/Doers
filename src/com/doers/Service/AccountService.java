@@ -19,4 +19,6 @@ public interface AccountService {
 
 	List<Server> OpenMyCart(User user);
 
+	void deleteInCartByServerId(User user, String serverId);
+
 }

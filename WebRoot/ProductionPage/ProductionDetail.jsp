@@ -124,7 +124,7 @@
 				<div class="show-list-box">
 					<div class="show-list-title-box border-bottom js-tab-module">
 						<span class="show-tab-title current">关联服务</span> 
-						<a href="#" class="view-more zcool-link-color">TA的主页</a>
+						<a href="${pageContext.request.contextPath}/userAction_openDoerSpace?userId=<s:property value="#session.production.user.uid"/>" target="_Blank" class="view-more zcool-link-color">TA的主页</a>
 					</div>
 					<div class="show-list-title-box border-bottom js-tab-module">
 						<div>

@@ -10,4 +10,6 @@ public interface CartDao extends BaseDao<Cart>{
 
 	List<Server> getCartsByUser(User user);
 
+	void deleteInCartByServerId(User user, String serverId);
+
 }

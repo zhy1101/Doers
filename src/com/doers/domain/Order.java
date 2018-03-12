@@ -7,9 +7,8 @@ public class Order {
 	private Server server;
 	private String talkTimeStart;
 	private String talkTimeEnd;
-	private String serverTimeStart;
-	private String serverTimeEnd;
 	private BaseDict orderState;
+	private Contract orderContract;
 	public String getOrderId() {
 		return orderId;
 	}
@@ -46,22 +45,17 @@ public class Order {
 	public void setTalkTimeEnd(String talkTimeEnd) {
 		this.talkTimeEnd = talkTimeEnd;
 	}
-	public String getServerTimeStart() {
-		return serverTimeStart;
-	}
-	public void setServerTimeStart(String serverTimeStart) {
-		this.serverTimeStart = serverTimeStart;
-	}
-	public String getServerTimeEnd() {
-		return serverTimeEnd;
-	}
-	public void setServerTimeEnd(String serverTimeEnd) {
-		this.serverTimeEnd = serverTimeEnd;
-	}
 	public BaseDict getOrderState() {
 		return orderState;
 	}
 	public void setOrderState(BaseDict orderState) {
 		this.orderState = orderState;
 	}
+	public Contract getOrderContract() {
+		return orderContract;
+	}
+	public void setOrderContract(Contract orderContract) {
+		this.orderContract = orderContract;
+	}
+	
 }

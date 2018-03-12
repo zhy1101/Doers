@@ -114,4 +114,9 @@ public class AccountAction extends ActionSupport {
 		ActionContext.getContext().put("myCart", myCart);
 		return "toMyCart";
 	}
+	public String deleteInCartByServerId(){
+		User user = (User) ActionContext.getContext().getSession().get("user");
+		accountService.deleteInCartByServerId(user,serverId);
+		return OpenMyCart();	
+	}
 }

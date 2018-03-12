@@ -12,21 +12,6 @@
     <link rel="stylesheet" type="text/css" href="../../Doers/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="../../Doers/css/animate.min.css" />
     <link rel="stylesheet" type="text/css" href="../../Doers/css/style.css" />
-		
-		<script type="text/javascript">
-			function delProFromCart(pid){
-				if(confirm("您是否要删除该项？")){
-					location.href="${pageContext.request.contextPath }/product?method=delProFromCart&pid="+pid;
-				}
-			}
-			
-			function clearCart(){
-				if(confirm("您是否要清空购物车？")){
-					location.href="${pageContext.request.contextPath }/product?method=clearCart";
-				}
-			}
-		
-		</script>
 
 </head>
 <body>
@@ -102,16 +87,24 @@
 								<th>订单状态</th>
 								<th>操作</th>
 							</tr>
+						<c:forEach items="${myBuyingList }" var="orderItem">
 							<tr>
-								<td>18301226993</td>
-								<td>郑爽</td>
-								<td>2017-11-11 12:00</td>
-								<td>按揭房贷款</td>
-								<td>¥5000000.00</td>
+								<td>${orderItem.orderId }</td>
+								<td><a href="${pageContext.request.contextPath}/userAction_openDoerSpace?userId=${orderItem.serverUser.uid}">${orderItem.serverUser.user_name}</a></td>
+								<td>${orderItem.talkTimeStart}&nbsp;至&nbsp;${orderItem.talkTimeEnd} </td>
+								<c:if test="${orderItem.orderState != 50}">
+								<td>${orderItem.orderContract.serverTimeStart}&nbsp;至&nbsp;${orderItem.orderContract.serverTimeEnd} </td>
+								<td>${orderItem.orderContract.price}</td>
+								</c:if>
+								<c:if test="${orderItem.orderState=50}">
+								<td>处于协商期，服务商还未上传合约，请与协商期内尽快与服务商达成合约</td>
+								<td>暂无信息</td>
+								</c:if>
 								<td>订单提交</td>
 								<td><a href="#">查看协约</a> | <a href="#">确认付款</a> | <a href="#">服务完成</a></td>
 							</tr>
 							<tr><td> 服务商联系方式：</td></tr>
+						</c:forEach>
 						</tbody>
 					</table>
 				</div>

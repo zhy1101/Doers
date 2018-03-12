@@ -27,7 +27,7 @@
 									<th >服务商联系方式</th>
 									<th colspan="1">姓名</th>
 									<th colspan="1">截至日期</th>
-									<th colspan="2">城市</th>
+									<th colspan="2">成交价</th>
 								</tr>
 								<tr>
 									<td>18301226993</td>
@@ -65,17 +65,15 @@
 											<option>10</option>
 										</select>日
 									</td>
-									<td colspan="2">河南省 郑州市</td>
+									<td colspan="2">XX Do币</td>
 								</tr>
 								<tr>
 									<th>用户账户名称</th>
-									<th>订单号</th>
 									<th>服务项目名称</th>
 									<th>交货方式</th>
 								</tr>
 								<tr>
 									<td>万龙花园</td>
-									<td>金水 广电南路30号</td>
 									<td>130m²</td>
 									<td>4号楼4单元6层01号</td>
 								</tr>
