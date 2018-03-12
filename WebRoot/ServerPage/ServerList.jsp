@@ -78,7 +78,7 @@ body {
 <header>
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="navbar-header">
-                <a class="navbar-brand" href="hiview.html">Doers</a>
+                <a class="navbar-brand" href="${pageContext.request.contextPath}/index.html">Doers</a>
             </div>
             <div class="navbar-collapse collapse navbar-responsive-collapse">
                 <ul class="nav navbar-nav">

@@ -18,15 +18,15 @@
 <header> 
 	<nav class="navbar navbar-default navbar-fixed-top">
 	<div class="navbar-header">
-		<a class="navbar-brand" href="hiview.html">Doers</a>
+		<a class="navbar-brand" href="${pageContext.request.contextPath}/index.html">Doers</a>
 	</div>
 	<div class="navbar-collapse collapse navbar-responsive-collapse">
 		<ul class="nav navbar-nav">
 			<li><a href="${pageContext.request.contextPath}/index.html">首页</a></li>
             <li><a href="${pageContext.request.contextPath}/productionListAction_getAllProductions">Do 博物</a></li>
-            <li><a href="hiview.html">Do 服务</a></li>
+            <li><a href="${pageContext.request.contextPath}/index.html">Do 服务</a></li>
             <li><a href="/Doers/Activity/ActivityCenter.jsp">Do 活动</a></li>
-            <li><a href="hiview.html">Do 交易</a></li>
+            <li><a href="${pageContext.request.contextPath}/index.html">Do 交易</a></li>
             <li><a href="/Doers/UserWorkspace/UserWorkSpace.jsp">Do Myself</a></li>
 		</ul>		
 	</div>
