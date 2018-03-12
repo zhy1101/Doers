@@ -27,6 +27,7 @@
 		<property name="QQ" column="QQ" ></property>
 		<property name="description" column="description" ></property>
 		<property name="skill" column="skill" ></property>
+		<property name="phone" column="phone" ></property>
 		
 		<set name="productions" >
 			<key column = "uid"></key>

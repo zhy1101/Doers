@@ -5,7 +5,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>我的购物车</title>
+	<title>订单列表 - 正在进行中</title>
 	<link rel="stylesheet" type="text/css" href="../../Doers/Account/css/base.css">
 	<link rel="stylesheet" type="text/css" href="../../Doers/Account/css/home.css">
     <link rel="stylesheet" type="text/css" href="../../Doers/bootstrap/css/candy-box.css" />
@@ -94,16 +94,32 @@
 								<td>${orderItem.talkTimeStart}&nbsp;至&nbsp;${orderItem.talkTimeEnd} </td>
 								<c:if test="${orderItem.orderState != 50}">
 								<td>${orderItem.orderContract.serverTimeStart}&nbsp;至&nbsp;${orderItem.orderContract.serverTimeEnd} </td>
-								<td>${orderItem.orderContract.price}</td>
+								<td>${orderItem.orderContract.price} Do币</td>
 								</c:if>
 								<c:if test="${orderItem.orderState=50}">
-								<td>处于协商期，服务商还未上传合约，请与协商期内尽快与服务商达成合约</td>
+								<td>暂无信息</td>
 								<td>暂无信息</td>
 								</c:if>
-								<td>订单提交</td>
-								<td><a href="#">查看协约</a> | <a href="#">确认付款</a> | <a href="#">服务完成</a></td>
+							<c:if test="${orderItem.orderState=50}">
+								<td>协约期中，未上传合约</td>
+								<td>处于协商期，服务商还未上传合约，请与协商期内尽快与服务商达成合约</td>
+							</c:if>
+							<c:if test="${orderItem.orderState=51}">
+								<td>协约期中，已上传上传合约，未付款</td>
+								<td><a href="#">查看协约</a> | <a href="#">确认付款</a></td>
+							</c:if>
+							<c:if test="${orderItem.orderState=52}">
+								<td>已付款,服务期开始</td>
+								<td><a href="#">查看协约</a></td>
+							</c:if>
+							<c:if test="${orderItem.orderState=53}">
+								<td>服务器结束，验收确认</td>
+							</c:if>
+								<td><a href="#">确认完成</a> | <a href="#">申请延期</a></td>
 							</tr>
-							<tr><td> 服务商联系方式：</td></tr>
+							<tr><td> 服务商联系方式：<br>电话:${orderItem.serverUser.phone}<br>Email:${orderItem.serverUser.email}
+												<br>QQ:${orderItem.serverUser.QQ}<br>微信:${orderItem.serverUser.weiChat}
+												<br>地址:${orderItem.serverUser.address}</td></tr>
 						</c:forEach>
 						</tbody>
 					</table>

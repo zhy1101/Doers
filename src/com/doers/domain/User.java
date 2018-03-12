@@ -21,6 +21,7 @@ public class User
   private String description;
   private String skill;
   private BaseDict kind;
+  private String phone;
   private Set<Production> productions;
   private Set<LeaveMessage> myLeaveMessage;
   private Set<LeaveMessage> toMeLeaveMessage;
@@ -33,7 +34,13 @@ public class User
   private Set<Order> myServerList;
   
   
-	  public Set<Order> getMyBuyList() {
+	  public String getPhone() {
+	return phone;
+}
+public void setPhone(String phone) {
+	this.phone = phone;
+}
+	public Set<Order> getMyBuyList() {
 	return myBuyList;
 }
 public void setMyBuyList(Set<Order> myBuyList) {
