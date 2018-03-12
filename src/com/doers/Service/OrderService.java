@@ -11,4 +11,8 @@ public interface OrderService {
 
 	void createAndStartTalk(Order o);
 
+	List<Order> getBuyingHistoryByUser(User u);
+
+	List<Order> getServeringHistoryByUser(User u);
+
 }

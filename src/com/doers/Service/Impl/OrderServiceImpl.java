@@ -27,4 +27,14 @@ public class OrderServiceImpl implements OrderService {
 		orderDao.save(o);
 	}
 
+	@Override
+	public List<Order> getBuyingHistoryByUser(User u) {
+		return orderDao.getBuyingHistoryByUser(u);
+	}
+
+	@Override
+	public List<Order> getServeringHistoryByUser(User u) {
+		return orderDao.getServeringHistoryByUser(u);
+	}
+
 }

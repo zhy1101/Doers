@@ -68,8 +68,16 @@ public class OrderAction extends ActionSupport {
 	}
 	public String loadBuyingHistory(){
 		User u = (User) ActionContext.getContext().getSession().get("user");
-		List<Order> myBuyingHistory = orderService.getBuyingHistoryByUsre(u);
+		List<Order> myBuyingHistory = orderService.getBuyingHistoryByUser(u);
 		ActionContext.getContext().put("myBuyingHistory", myBuyingHistory);
+		ActionContext.getContext().put("state", 1);
+		return "toHistoryPage";
+	}
+	public String loadServeringHistory(){
+		User u = (User) ActionContext.getContext().getSession().get("user");
+		List<Order> myServeringHistory = orderService.getServeringHistoryByUser(u);
+		ActionContext.getContext().put("myServeringHistory", myServeringHistory);
+		ActionContext.getContext().put("state", 0);
 		return "toHistoryPage";
 	}
 

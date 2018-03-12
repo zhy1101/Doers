@@ -16,4 +16,16 @@ public class OrderDaoImpl extends BaseDaoImpl<Order> implements OrderDao {
 		return (List<Order>) getHibernateTemplate().find(hqlString, u.getUid());
 	}
 
+	@Override
+	public List<Order> getBuyingHistoryByUser(User u) {
+		String hqlString="from Order where customerUser.uid=? and orderState.dict_id=?";
+		return (List<Order>) getHibernateTemplate().find(hqlString, u.getUid(),"53");
+	}
+
+	@Override
+	public List<Order> getServeringHistoryByUser(User u) {
+		String hqlString="from Order where serverUser.uid=? and orderState.dict_id=?";
+		return (List<Order>) getHibernateTemplate().find(hqlString, u.getUid(),"53");
+	}
+
 }

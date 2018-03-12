@@ -12,21 +12,6 @@
     <link rel="stylesheet" type="text/css" href="../../Doers/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="../../Doers/css/animate.min.css" />
     <link rel="stylesheet" type="text/css" href="../../Doers/css/style.css" />
-		
-		<script type="text/javascript">
-			function delProFromCart(pid){
-				if(confirm("您是否要删除该项？")){
-					location.href="${pageContext.request.contextPath }/product?method=delProFromCart&pid="+pid;
-				}
-			}
-			
-			function clearCart(){
-				if(confirm("您是否要清空购物车？")){
-					location.href="${pageContext.request.contextPath }/product?method=clearCart";
-				}
-			}
-		
-		</script>
 
 </head>
 <body>
@@ -87,7 +72,12 @@
 		
 		<div class="finance-content-middle">
 			<div class="finance-content-middle-title">
-				<h4>正在进行订单列表</h4>
+				<c:if test="${state == 1 }">
+				<h4>购买历史</h4>
+				</c:if>
+				<c:if test="${state == 0 }">
+				<h4>我完成的服务</h4>
+				</c:if>
 			</div>
 			<div class="finance-content-middle-form">
 				<div class="finance-add-agent finance-add-agent-color">
@@ -95,20 +85,41 @@
 						<tbody>
 							<tr>
 								<th>订单编号</th>
-								<th>服务商/客户</th>
+								<c:if test="${state == 1 }">
+								<th>服务商</th>
+								</c:if>
+								<c:if test="${state == 0 }">
+								<th>客户</th>
+								</c:if>
 								<th>协商时间</th>
 								<th>服务时间</th>
 								<th>成交价格</th>
 								<th>操作</th>
 							</tr>
-							<tr>
-								<td>18301226993</td>
-								<td>郑爽</td>
-								<td>2017-11-11 12:00</td>
-								<td>按揭房贷款</td>
-								<td>¥5000000.00</td>
-								<td><a href="#">查看合约</a></td>
-							</tr>
+							<c:if test="${state == 1 }">
+								<c:forEach items="${myBuyingHistory }" var="items">
+									<tr>
+										<td>${items.orderId }</td>
+										<td>${items.serverUser.user_name }</td>
+										<td>${items.talkTimeStart }&nbsp;至&nbsp;${items.talkTimeEnd }</td>
+										<td>${items.orderContract.serverTimeStart }&nbsp;至&nbsp;${items.orderContract.serverTimeEnd }</td>
+										<td>${items.orderContract.price } Do币</td>
+										<td><a href="#">查看合约</a></td>
+									</tr>
+								</c:forEach>
+							</c:if>
+							<c:if test="${state == 0 }">
+								<c:forEach items="${myBuyingHistory }" var="items">
+									<tr>
+										<td>${items.orderId }</td>
+										<td>${items.serverUser.user_name }</td>
+										<td>${items.talkTimeStart }&nbsp;至&nbsp;${items.talkTimeEnd }</td>
+										<td>${items.orderContract.serverTimeStart }&nbsp;至&nbsp;${items.orderContract.serverTimeEnd }</td>
+										<td>${items.orderContract.price } Do币</td>
+										<td><a href="#">查看合约</a></td>
+									</tr>
+								</c:forEach>
+							</c:if>
 						</tbody>
 					</table>
 				</div>

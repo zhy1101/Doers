@@ -9,4 +9,8 @@ public interface OrderDao extends BaseDao<Order> {
 
 	List<Order> getBuyingListByUser(User u);
 
+	List<Order> getBuyingHistoryByUser(User u);
+
+	List<Order> getServeringHistoryByUser(User u);
+
 }
