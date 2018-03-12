@@ -102,6 +102,11 @@
 		<property name="baseDictService" ref="baseDictService" ></property>
 		<property name="serverService" ref="serverService"></property>
 	</bean>
+	<bean name="orderAction" class="com.doers.Action.OrderAction" scope="prototype" >
+		<property name="orderService" ref="orderService"></property>
+		<property name="baseDictService" ref="baseDictService" ></property>
+		<property name="serverService" ref="serverService"></property>
+	</bean>
 	
 	
 	<!-- Service -->
@@ -139,6 +144,9 @@
 		<property name="accountDao" ref="accountDao" ></property>
 		<property name="accountOperateDao" ref="accountOperateDao" ></property>
 		<property name="cartDao" ref="cartDao" ></property>	
+	</bean>
+	<bean name="orderService" class="com.doers.Service.Impl.OrderServiceImpl" >
+		<property name="orderDao" ref="orderDao" ></property>
 	</bean>
 	
 	
@@ -183,6 +191,9 @@
 		<property name="sessionFactory" ref="sessionFactory" ></property>
 	</bean>
 	<bean name="cartDao" class="com.doers.Dao.Impl.CartDaoImpl" >
+		<property name="sessionFactory" ref="sessionFactory" ></property>
+	</bean>
+	<bean name="orderDao" class="com.doers.Dao.Impl.OrderDaoImpl" >
 		<property name="sessionFactory" ref="sessionFactory" ></property>
 	</bean>
 </beans>

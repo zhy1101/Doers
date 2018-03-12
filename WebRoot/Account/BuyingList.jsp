@@ -89,36 +89,36 @@
 							</tr>
 						<c:forEach items="${myBuyingList }" var="orderItem">
 							<tr>
-								<td>${orderItem.orderId }</td>
-								<td><a href="${pageContext.request.contextPath}/userAction_openDoerSpace?userId=${orderItem.serverUser.uid}">${orderItem.serverUser.user_name}</a></td>
-								<td>${orderItem.talkTimeStart}&nbsp;至&nbsp;${orderItem.talkTimeEnd} </td>
-								<c:if test="${orderItem.orderState != 50}">
-								<td>${orderItem.orderContract.serverTimeStart}&nbsp;至&nbsp;${orderItem.orderContract.serverTimeEnd} </td>
-								<td>${orderItem.orderContract.price} Do币</td>
+								<td width="15%">${orderItem.orderId }</td>
+								<td width="10%"><a href="${pageContext.request.contextPath}/userAction_openDoerSpace?userId=${orderItem.serverUser.uid}">${orderItem.serverUser.user_name}</a></td>
+								<td width="15%">${orderItem.talkTimeStart}&nbsp;至&nbsp;${orderItem.talkTimeEnd} </td>
+								<c:if test="${orderItem.orderState.dict_id != 50}">
+								<td width="20%">${orderItem.orderContract.serverTimeStart}&nbsp;至&nbsp;${orderItem.orderContract.serverTimeEnd} </td>
+								<td width="10%">${orderItem.orderContract.price} Do币</td>
 								</c:if>
-								<c:if test="${orderItem.orderState=50}">
-								<td>暂无信息</td>
-								<td>暂无信息</td>
+								<c:if test="${orderItem.orderState.dict_id == 50}">
+								<td width="20%">暂无信息</td>
+								<td width="10%">暂无信息</td>
 								</c:if>
-							<c:if test="${orderItem.orderState=50}">
-								<td>协约期中，未上传合约</td>
-								<td>处于协商期，服务商还未上传合约，请与协商期内尽快与服务商达成合约</td>
+							<c:if test="${orderItem.orderState.dict_id==50}">
+								<td width="20%">协约期中，未上传合约</td>
+								<td width="10%">请于协商期内尽快与服务商达成合约</td>
 							</c:if>
-							<c:if test="${orderItem.orderState=51}">
-								<td>协约期中，已上传上传合约，未付款</td>
-								<td><a href="#">查看协约</a> | <a href="#">确认付款</a></td>
+							<c:if test="${orderItem.orderState.dict_id==51}">
+								<td width="20%">协约期中，已上传上传合约，未付款</td>
+								<td width="10%"><a href="#">查看协约</a> | <a href="#">确认付款</a></td>
 							</c:if>
-							<c:if test="${orderItem.orderState=52}">
-								<td>已付款,服务期开始</td>
-								<td><a href="#">查看协约</a></td>
+							<c:if test="${orderItem.orderState.dict_id==52}">
+								<td width="20%">已付款,服务期开始</td>
+								<td width="10%"><a href="#">查看协约</a></td>
 							</c:if>
-							<c:if test="${orderItem.orderState=53}">
-								<td>服务器结束，验收确认</td>
+							<c:if test="${orderItem.orderState.dict_id==53}">
+								<td width="20%">服务期结束，验收确认</td>
+								<td width="10%"><a href="#">确认完成</a></td>
 							</c:if>
-								<td><a href="#">确认完成</a> | <a href="#">申请延期</a></td>
 							</tr>
-							<tr><td> 服务商联系方式：<br>电话:${orderItem.serverUser.phone}<br>Email:${orderItem.serverUser.email}
-												<br>QQ:${orderItem.serverUser.QQ}<br>微信:${orderItem.serverUser.weiChat}
+							<tr><td colspan="7" style="border-bottom:1px solid #000;"> 服务商联系方式：<br>电话:${orderItem.serverUser.phone}&nbsp;&nbsp;&nbsp;Email:${orderItem.serverUser.email}
+												<br>QQ:${orderItem.serverUser.QQ}&nbsp;&nbsp;&nbsp;微信:${orderItem.serverUser.weiChat}
 												<br>地址:${orderItem.serverUser.address}</td></tr>
 						</c:forEach>
 						</tbody>
@@ -128,6 +128,28 @@
 		</div>
 	</div>
 </section>
+<footer class="hi-footer">
+    <div class="footertop">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <h4>Doers家族</h4>
+                    <ul>
+                        <li><a href="index.html">关于Doers</a></li>
+                        <li><a>联系我们</a></li>
+                        <li><a>其他</a></li>
+                        <li><a>其他</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footerbot">
+       made by YU
+    </div>
+</footer>
+
+
 <script src="../../Doers/Account/js/jquery-3.2.1.min.js"></script>
 <script src="../../Doers/Account/js/address.js"></script>
 <script>
