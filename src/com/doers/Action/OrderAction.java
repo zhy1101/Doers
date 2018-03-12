@@ -5,9 +5,11 @@ import java.util.List;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import com.doers.Service.AccountService;
 import com.doers.Service.BaseDictService;
 import com.doers.Service.OrderService;
 import com.doers.Service.ServerService;
+import com.doers.domain.Account;
 import com.doers.domain.BaseDict;
 import com.doers.domain.Order;
 import com.doers.domain.Server;
@@ -17,9 +19,16 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class OrderAction extends ActionSupport {
 	private String serId;
+	private String orderId;
 	private ServerService serverService;
 	private BaseDictService baseDictService;
 	private OrderService orderService;
+	private AccountService accountService;
+	
+	
+	public void setAccountService(AccountService accountService) {
+		this.accountService = accountService;
+	}
 
 	public String getSerId() {
 		return serId;
@@ -40,6 +49,15 @@ public class OrderAction extends ActionSupport {
 
 	public void setOrderService(OrderService orderService) {
 		this.orderService = orderService;
+	}
+	
+
+	public String getOrderId() {
+		return orderId;
+	}
+
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
 	}
 
 	public String startTalk(){
@@ -85,6 +103,41 @@ public class OrderAction extends ActionSupport {
 		List<Order> myserveringList = orderService.getServeringListByUser(u);
 		ActionContext.getContext().put("myServingingList",myserveringList);
 		return "toMyServeringList";
+	}
+	public String payMoney(){
+		Order order = orderService.getOrderById(orderId);
+		Integer price = order.getOrderContract().getPrice();
+		BaseDict baseDict =baseDictService.getByItemCode("52");
+		User u = (User) ActionContext.getContext().getSession().get("user");
+		Account account  = accountService.getAccountByUser(u);
+		if(account.getWallet1()+account.getWallet2()<price){
+			return "noMoney";
+		}else if(account.getWallet1()<price){
+			account.setWallet1(0);
+			account.setWallet2(account.getWallet2()-(price-account.getWallet1()));	
+			order.setOrderState(baseDict);
+		}else{
+			account.setWallet1(account.getWallet1()-price);
+			order.setOrderState(baseDict);
+		}
+		return loadBuyingList();
+	}
+	
+	public String receiveOrder(){
+		Order order = orderService.getOrderById(orderId);
+		Integer price = order.getOrderContract().getPrice();
+		BaseDict baseDict =baseDictService.getByItemCode("62");
+		order.setOrderState(baseDict);
+		User u =order.getServerUser();
+		Account account = accountService.getAccountByUser(u);
+		account.setWallet2(account.getWallet2()+price);
+		return loadBuyingHistory();
+	}
+	public String finishWork(){
+		Order order = orderService.getOrderById(orderId);
+		BaseDict baseDict =baseDictService.getByItemCode("53");
+		order.setOrderState(baseDict);
+		return loadServeringList();
 	}
 
 

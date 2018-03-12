@@ -29,8 +29,17 @@ public class ContractAction extends ActionSupport implements ModelDriven<Contrac
 	private String predict_month;
 	private String predict_day;
 	private BaseDictService baseDictService;
+	private Long cId;
 	
 	
+	public Long getcId() {
+		return cId;
+	}
+
+	public void setcId(Long cId) {
+		this.cId = cId;
+	}
+
 	public void setBaseDictService(BaseDictService baseDictService) {
 		this.baseDictService = baseDictService;
 	}
@@ -115,6 +124,11 @@ public class ContractAction extends ActionSupport implements ModelDriven<Contrac
 	    this.contract.setAddFileURL("/ContractFile/" +"con_"+ orderId +"."+typeString);
 	    contractService.addANewContract(contract);
 	    return "toMyServeringList";
+	}
+	public String checkContract(){
+		Contract c = contractService.getContractById(cId);
+		ActionContext.getContext().put("contract", c);
+		return "showContract";
 	}
 
 }

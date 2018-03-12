@@ -90,12 +90,14 @@
 	   		 <result name="toMyBuyingList" >/Account/BuyingList.jsp</result>
 	   		 <result name="toHistoryPage" >/Account/History.jsp</result>
 	   		 <result name="toMyServeringList" >/Account/ServeringList.jsp</result>
+	   		 <result name="noMoney" >/Account/TipsToAddMoney.html</result>
 	    </action>
 	    <action name="contractAction_*" class="contractAction" method="{1}">
 	   		 <result name="toContractPage" >/Account/Contract.jsp</result>
 	   		 <result name="toMyServeringList" type="chain">
 	   		 	<param name="actionName">orderAction_loadServeringList</param>
 	   		 </result>
+	   		 <result name="showContract" >/Account/showContract.jsp</result>
 	    </action>
 	</package>
 </struts>

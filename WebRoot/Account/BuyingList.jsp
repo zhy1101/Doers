@@ -106,7 +106,7 @@
 							</c:if>
 							<c:if test="${orderItem.orderState.dict_id==51}">
 								<td width="20%">协约期中，已上传上传合约，未付款</td>
-								<td width="10%"><a href="#">查看协约</a> | <a href="#">确认付款</a></td>
+								<td width="10%"><a href="#">查看协约</a> | <a href="javascript:void(0)" onclink="payMoney()">确认付款</a></td>
 							</c:if>
 							<c:if test="${orderItem.orderState.dict_id==52}">
 								<td width="20%">已付款,服务期开始</td>
@@ -114,7 +114,7 @@
 							</c:if>
 							<c:if test="${orderItem.orderState.dict_id==53}">
 								<td width="20%">服务期结束，验收确认</td>
-								<td width="10%"><a href="#">确认完成</a></td>
+								<td width="10%"><a href="javascript:void(0)" onclink="reciveOrder()">确认完成</a> | <a href="javascript:void(0)">服务异常,联系客服</a></td>
 							</c:if>
 							</tr>
 							<tr><td colspan="7" style="border-bottom:1px solid #000;"> 服务商联系方式：<br>电话:${orderItem.serverUser.phone}&nbsp;&nbsp;&nbsp;Email:${orderItem.serverUser.email}
@@ -188,6 +188,20 @@
             });
         });
     });
+    function payMoeny(){
+    	var isTakeIn = confirm("您确认要支付吗？将会从您的账户余额中扣除"+${orderItem.orderContract.price}+"个Do币");
+    			var url = "${pageContext.request.contextPath}/orderAction_payMoney?orderId="+${orderItem.orderId}
+				if(isTakeIn){
+					window.open(url);				
+					}			
+				}
+    function reciveOrder(){
+    	    	var isTakeIn = confirm("您确认服务完成吗？酬劳将会到达为您服务的Doer账户中。");
+    			var url = "${pageContext.request.contextPath}/orderAction_receiveOrder?orderId="+${orderItem.orderId};
+				if(isTakeIn){
+					window.open(url);				
+			}	
+    }
 </script>
 </body>
 </html>

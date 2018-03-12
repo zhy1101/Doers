@@ -12,5 +12,9 @@ public class ContractServiceImpl implements ContractService {
 	public void addANewContract(Contract contract) {
 		contractDao.save(contract);
 	}
+	@Override
+	public Contract getContractById(Long cId) {
+		return contractDao.getById(cId);
+	}
 
 }
