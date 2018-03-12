@@ -37,4 +37,14 @@ public class OrderServiceImpl implements OrderService {
 		return orderDao.getServeringHistoryByUser(u);
 	}
 
+	@Override
+	public List<Order> getServeringListByUser(User u) {
+		return orderDao.getServeringListByUser(u);
+	}
+
+	@Override
+	public Order getOrderById(String orderId) {
+		return orderDao.getById(orderId);
+	}
+
 }

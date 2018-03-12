@@ -35,8 +35,10 @@ public class AddServerAction extends ActionSupport implements ModelDriven<Server
 		User user = (User) ActionContext.getContext().getSession().get("user");
 		s.setUser(user);
 	    String uuid=UUID.randomUUID().toString();
-	    this.cover.renameTo(new File("D:/DoersWorks/ProductionCoverPage/" +"ser_"+ uuid));
-	    this.s.setServerCover("/productionCovers/" +"ser_"+ uuid);
+	    String typeString = this.cover.getName();
+	    typeString = typeString.substring(typeString.indexOf("."));
+	    this.cover.renameTo(new File("D:/DoersWorks/AddContractFile/" +"ser_"+ uuid+"."+typeString));
+	    this.s.setServerCover("/productionCovers/" +"ser_"+ uuid+"."+typeString);
 	    s.setServerId(uuid);
 	    ActionContext.getContext().put("server_id", uuid);
 	    this.serverService.addNewServer(this.s);

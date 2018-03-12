@@ -63,7 +63,6 @@ public class Contract {
 	}
 	public void setPrice(Integer price) {
 		this.price = price;
-	}
-	
+	}	
 
 }

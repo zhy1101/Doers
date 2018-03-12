@@ -80,6 +80,12 @@ public class OrderAction extends ActionSupport {
 		ActionContext.getContext().put("state", 0);
 		return "toHistoryPage";
 	}
+	public String loadServeringList(){
+		User u = (User) ActionContext.getContext().getSession().get("user");
+		List<Order> myserveringList = orderService.getServeringListByUser(u);
+		ActionContext.getContext().put("myServingingList",myserveringList);
+		return "toMyServeringList";
+	}
 
 
 

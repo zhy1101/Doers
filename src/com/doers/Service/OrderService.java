@@ -15,4 +15,8 @@ public interface OrderService {
 
 	List<Order> getServeringHistoryByUser(User u);
 
+	List<Order> getServeringListByUser(User u);
+
+	Order getOrderById(String orderId);
+
 }

@@ -76,8 +76,10 @@ public class AddArticleAction extends ActionSupport implements ModelDriven<Artic
 	    String pdate = format.format(new Date());
 	    this.article.setTime(pdate);
 	    String uuid=UUID.randomUUID().toString();
-	    this.cover.renameTo(new File("D:/DoersWorks/ProductionCoverPage/" +"art_"+ uuid));
-	    this.article.setCoverURL("/productionCovers/" +"art_"+ uuid );
+	    String typeString = this.cover.getName();
+	    typeString = typeString.substring(typeString.indexOf("."));
+	    this.cover.renameTo(new File("D:/DoersWorks/ProductionCoverPage/" +"art_"+ uuid+"."+typeString));
+	    this.article.setCoverURL("/productionCovers/" +"art_"+ uuid +"."+typeString);
 	    this.article.setUser(user);
 	    this.articleService.addNewArticle(this.article);
 	    return "handInSuccess";

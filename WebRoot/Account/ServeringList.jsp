@@ -5,29 +5,13 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>我的购物车</title>
+	<title>服务中 - 列表</title>
 	<link rel="stylesheet" type="text/css" href="../../Doers/Account/css/base.css">
 	<link rel="stylesheet" type="text/css" href="../../Doers/Account/css/home.css">
     <link rel="stylesheet" type="text/css" href="../../Doers/bootstrap/css/candy-box.css" />
     <link rel="stylesheet" type="text/css" href="../../Doers/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="../../Doers/css/animate.min.css" />
     <link rel="stylesheet" type="text/css" href="../../Doers/css/style.css" />
-		
-		<script type="text/javascript">
-			function delProFromCart(pid){
-				if(confirm("您是否要删除该项？")){
-					location.href="${pageContext.request.contextPath }/product?method=delProFromCart&pid="+pid;
-				}
-			}
-			
-			function clearCart(){
-				if(confirm("您是否要清空购物车？")){
-					location.href="${pageContext.request.contextPath }/product?method=clearCart";
-				}
-			}
-		
-		</script>
-
 </head>
 <body>
 
@@ -95,23 +79,47 @@
 						<tbody>
 							<tr>
 								<th>订单编号</th>
-								<th>服务商</th>
+								<th>客户</th>
 								<th>协商时间</th>
 								<th>服务时间</th>
 								<th>服务议后价</th>
 								<th>订单状态</th>
 								<th>操作</th>
 							</tr>
+						<c:forEach items="${myServereringList }" var="orderItem"  >
 							<tr>
-								<td>18301226993</td>
-								<td>郑爽</td>
-								<td>2017-11-11 12:00</td>
-								<td>按揭房贷款</td>
-								<td>¥5000000.00</td>
-								<td>订单提交</td>
-								<td><a href="#">填写协约模板</a> | <a href="#">确认完工</a></td>
+								<td width="15%">${orderItem.orderId }</td>
+								<td width="10%"><a href="${pageContext.request.contextPath}/userAction_openDoerSpace?userId=${orderItem.customerUser.uid}" target="_blank">${orderItem.customerUser.user_name}</a></td>
+								<td width="15%">${orderItem.talkTimeStart}&nbsp;至&nbsp;${orderItem.talkTimeEnd} </td>
+								<c:if test="${orderItem.orderState.dict_id != 50}">
+								<td width="20%">${orderItem.orderContract.serverTimeStart}&nbsp;至&nbsp;${orderItem.orderContract.serverTimeEnd} </td>
+								<td width="10%">${orderItem.orderContract.price} Do币</td>
+								</c:if>
+								<c:if test="${orderItem.orderState.dict_id == 50}">
+								<td width="20%">暂无信息</td>
+								<td width="10%">暂无信息</td>
+								</c:if>
+							<c:if test="${orderItem.orderState.dict_id==50}">
+								<td width="20%">协约期中，未上传合约</td>
+								<td width="10%"><a href="${pageContext.request.contextPath}/contractAction_openABlankContract?orderId=${orderItem.orderId }">填写合约</a></td>
+							</c:if>
+							<c:if test="${orderItem.orderState.dict_id==51}">
+								<td width="20%">协约期中，已上传上传合约，未付款</td>
+								<td width="10%"><a href="#">查看协约</a> | <a href="#">提醒付款</a></td>
+							</c:if>
+							<c:if test="${orderItem.orderState.dict_id==52}">
+								<td width="20%">已付款,服务期开始</td>
+								<td width="10%"><a href="#">查看协约</a> | <a href="#">已完成服务</a></td>
+							</c:if>
+							<c:if test="${orderItem.orderState.dict_id==53}">
+								<td width="20%">服务期结束，待客户验收确认</td>
+								<td width="10%"><a href="#">查看协约</a> | <a href="#">提醒验收</a></td>
+							</c:if>
 							</tr>
-							<tr><td> 客户联系方式：</td></tr>
+							<tr><td colspan="7" style="border-bottom:1px solid #000;"> 客户联系方式：<br>电话:${orderItem.customerUser.phone}&nbsp;&nbsp;&nbsp;Email:${orderItem.customerUser.email}
+												<br>QQ:${orderItem.customerUser.QQ}&nbsp;&nbsp;&nbsp;微信:${orderItem.customerUser.weiChat}
+												<br>地址:${orderItem.customerUser.address}</td></tr>
+						</c:forEach>
 						</tbody>
 					</table>
 				</div>

@@ -89,6 +89,13 @@
 	    <action name="orderAction_*" class="orderAction" method="{1}">
 	   		 <result name="toMyBuyingList" >/Account/BuyingList.jsp</result>
 	   		 <result name="toHistoryPage" >/Account/History.jsp</result>
+	   		 <result name="toMyServeringList" >/Account/ServeringList.jsp</result>
+	    </action>
+	    <action name="contractAction_*" class="contractAction" method="{1}">
+	   		 <result name="toContractPage" >/Account/Contract.jsp</result>
+	   		 <result name="toMyServeringList" type="chain">
+	   		 	<param name="actionName">orderAction_loadServeringList</param>
+	   		 </result>
 	    </action>
 	</package>
 </struts>
