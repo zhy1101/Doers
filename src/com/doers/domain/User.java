@@ -29,9 +29,23 @@ public class User
   private Set<Article> myArticles;
   private Set<Activity_User> activity_user_con;
   private Set<Cart> myCartItems;
+  private Set<Order> myBuyList;
+  private Set<Order> myServerList;
   
   
-	  public Set<Cart> getMyCartItems() {
+	  public Set<Order> getMyBuyList() {
+	return myBuyList;
+}
+public void setMyBuyList(Set<Order> myBuyList) {
+	this.myBuyList = myBuyList;
+}
+public Set<Order> getMyServerList() {
+	return myServerList;
+}
+public void setMyServerList(Set<Order> myServerList) {
+	this.myServerList = myServerList;
+}
+	public Set<Cart> getMyCartItems() {
 	return myCartItems;
 }
 public void setMyCartItems(Set<Cart> myCartItems) {
