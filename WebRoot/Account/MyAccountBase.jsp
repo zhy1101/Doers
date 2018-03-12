@@ -23,11 +23,11 @@
             <div class="navbar-collapse collapse navbar-responsive-collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="${pageContext.request.contextPath}/index.html">首页</a></li>
-                    <li><a href="${pageContext.request.contextPath}/productionListAction_getAllProductions">Do 博物</a></li>
-                    <li><a href="hiview.html">Do 服务</a></li>
-                    <li><a href="/Doers/Activity/ActivityCenter.jsp">Do 活动</a></li>
-                    <li  class="active"><a href="hiview.html">Do 交易</a></li>
-                    <li><a href="/Doers/UserWorkspace/UserWorkSpace.jsp">Do Myself</a></li>
+		             <li><a href="${pageContext.request.contextPath}/productionListAction_getAllProductions">Do 博物</a></li>
+		             <li><a href="${pageContext.request.contextPath}/serverDetailAction_loadingAllServers">Do 服务</a></li>
+		             <li><a href="${pageContext.request.contextPath}/activityAction_loadingActivityCenter">Do 活动</a></li>
+		             <li  class="active"><a href="${pageContext.request.contextPath}/accountAction_OpenMyCart">Do 交易</a></li>
+		             <li><a href="/Doers/UserWorkspace/UserWorkSpace.jsp">Do Myself</a></li>
                 </ul>
             </div>
         </nav>
@@ -42,9 +42,9 @@
 					<h3 class="ListTitle">Do 购买</h3>
 				</div>
 				<div class="menuList">
-					<a>我的购物车</a>
-					<a>交易中的订单</a>
-					<a>购买记录</a>
+					<a href="${pageContext.request.contextPath}/accountAction_OpenMyCart">我的购物车</a>
+					<a href="${pageContext.request.contextPath}/orderAction_loadBuyingList">交易中的订单</a>
+					<a href="${pageContext.request.contextPath}/orderAction_loadBuyingHistory">购买记录</a>
 				</div>
 			</div>
 			<div class="menuParent">
@@ -52,8 +52,8 @@
 					<h3 class="ListTitle">Do 服务</h3>
 				</div>
 				<div class="menuList">
-					<a href="#">服务中 列表</a>
-					<a href="#">我的功勋簿</a>
+					<a href="${pageContext.request.contextPath}/orderAction_loadServeringList">服务中 列表</a>
+					<a href="${pageContext.request.contextPath}/orderAction_loadServeringHistory">我的功勋簿</a>
 				</div>
 			</div>
 			<div class="menuParent">
@@ -62,8 +62,8 @@
 				</div>
 				<div class="menuList">
 					<a href="javascript:void(0);" style="color:#3366cc;background:#D1EEEE">我的账户</a>
-					<a href="#">充值Do币</a>
-					<a href="#">劳务提现</a>
+					<a href="${pageContext.request.contextPath}/Account/AddDoMoney.jsp">充值Do币</a>
+					<a href="${pageContext.request.contextPath}/accountAction_payInCash">劳务提现</a>
 				</div>
 			</div>
 		</div>

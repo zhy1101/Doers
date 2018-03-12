@@ -5,7 +5,13 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>我的购物车</title>
+	<title></title>
+	<c:if test="${state == 1 }">
+	<title>购买历史</title>
+	</c:if>
+	<c:if test="${state == 0 }">
+	<title>我的功勋簿</title>
+	</c:if>
 	<link rel="stylesheet" type="text/css" href="../../Doers/Account/css/base.css">
 	<link rel="stylesheet" type="text/css" href="../../Doers/Account/css/home.css">
     <link rel="stylesheet" type="text/css" href="../../Doers/bootstrap/css/candy-box.css" />
@@ -25,11 +31,11 @@
             <div class="navbar-collapse collapse navbar-responsive-collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="${pageContext.request.contextPath}/index.html">首页</a></li>
-                    <li><a href="${pageContext.request.contextPath}/productionListAction_getAllProductions">Do 博物</a></li>
-                    <li><a href="hiview.html">Do 服务</a></li>
-                    <li><a href="/Doers/Activity/ActivityCenter.jsp">Do 活动</a></li>
-                    <li  class="active"><a href="hiview.html">Do 交易</a></li>
-                    <li><a href="/Doers/UserWorkspace/UserWorkSpace.jsp">Do Myself</a></li>
+		             <li ><a href="${pageContext.request.contextPath}/productionListAction_getAllProductions">Do 博物</a></li>
+		             <li><a href="${pageContext.request.contextPath}/serverDetailAction_loadingAllServers">Do 服务</a></li>
+		             <li><a href="${pageContext.request.contextPath}/activityAction_loadingActivityCenter">Do 活动</a></li>
+		             <li  class="active"><a href="${pageContext.request.contextPath}/accountAction_OpenMyCart">Do 交易</a></li>
+		             <li><a href="/Doers/UserWorkspace/UserWorkSpace.jsp">Do Myself</a></li>
                 </ul>
             </div>
         </nav>
@@ -39,44 +45,78 @@
 <section id="finance-content">
 	<div class="finance-content clearfix">
 		<div class="finance-content-nav menu">
-			<div class="menuParent">
-				<div class="ListTitlePanel">
-					<h3 class="ListTitle">Do 购买</h3>
-				</div>
-				<div class="menuList">
-					<a>我的购物车</a>
-					<a>交易中的订单</a>
-					<a href="javascript:void(0);" style="color:#3366cc;background:#D1EEEE">购买记录</a>
-				</div>
-			</div>
-			<div class="menuParent">
-				<div class="ListTitlePanel">
-					<h3 class="ListTitle">Do 服务</h3>
-				</div>
-				<div class="menuList">
-					<a href="#">服务中 列表</a>
-					<a href="#">我的功勋簿</a>
-				</div>
-			</div>
-			<div class="menuParent">
-				<div class="ListTitlePanel">
-					<h3 class="ListTitle">账户基本管理</h3>
-				</div>
-				<div class="menuList">
-					<a href="#">我的账户</a>
-					<a href="#">充值Do币</a>
-					<a href="#">劳务提现</a>
-				</div>
-			</div>
+			<c:if test="${state == 1 }">
+			<title>购买历史</title>
+			</c:if>
+			<c:if test="${state == 0 }">
+			<title>我的功勋簿</title>
+			</c:if>
+			
 		</div>
 		
 		<div class="finance-content-middle">
 			<div class="finance-content-middle-title">
 				<c:if test="${state == 1 }">
-				<h4>购买历史</h4>
+					<div class="menuParent">
+						<div class="ListTitlePanel">
+							<h3 class="ListTitle">Do 购买</h3>
+						</div>
+						<div class="menuList">
+							<a href="${pageContext.request.contextPath}/accountAction_OpenMyCart">我的购物车</a>
+							<a href="${pageContext.request.contextPath}/orderAction_loadBuyingList">交易中的订单</a>
+							<a href="javascript:void(0);" style="color:#3366cc;background:#D1EEEE">购买记录</a>
+						</div>
+					</div>
+					<div class="menuParent">
+						<div class="ListTitlePanel">
+							<h3 class="ListTitle">Do 服务</h3>
+						</div>
+						<div class="menuList">
+							<a href="${pageContext.request.contextPath}/orderAction_loadServeringList">服务中 列表</a>
+							<a href="${pageContext.request.contextPath}/orderAction_loadServeringHistory">我的功勋簿</a>
+						</div>
+					</div>
+					<div class="menuParent">
+						<div class="ListTitlePanel">
+							<h3 class="ListTitle">账户基本管理</h3>
+						</div>
+						<div class="menuList">
+							<a href="${pageContext.request.contextPath}/accountAction_loadingMyAccount">我的账户</a>
+							<a href="${pageContext.request.contextPath}/Account/AddDoMoney.jsp">充值Do币</a>
+							<a href="${pageContext.request.contextPath}/accountAction_payInCash">劳务提现</a>
+						</div>
+					</div>
 				</c:if>
 				<c:if test="${state == 0 }">
-				<h4>我完成的服务</h4>
+				<div class="menuParent">
+						<div class="ListTitlePanel">
+							<h3 class="ListTitle">Do 购买</h3>
+						</div>
+						<div class="menuList">
+							<a href="${pageContext.request.contextPath}/accountAction_OpenMyCart">我的购物车</a>
+							<a href="${pageContext.request.contextPath}/orderAction_loadBuyingList">交易中的订单</a>
+							<a href="${pageContext.request.contextPath}/orderAction_loadBuyingHistory">购买记录</a>
+						</div>
+					</div>
+					<div class="menuParent">
+						<div class="ListTitlePanel">
+							<h3 class="ListTitle">Do 服务</h3>
+						</div>
+						<div class="menuList">
+							<a href="${pageContext.request.contextPath}/orderAction_loadServeringList">服务中 列表</a>
+							<a href="javascript:void(0);" style="color:#3366cc;background:#D1EEEE">我的功勋簿</a>
+						</div>
+					</div>
+					<div class="menuParent">
+						<div class="ListTitlePanel">
+							<h3 class="ListTitle">账户基本管理</h3>
+						</div>
+						<div class="menuList">
+							<a href="${pageContext.request.contextPath}/accountAction_loadingMyAccount">我的账户</a>
+							<a href="${pageContext.request.contextPath}/Account/AddDoMoney.jsp">充值Do币</a>
+							<a href="${pageContext.request.contextPath}/accountAction_payInCash">劳务提现</a>
+						</div>
+					</div>
 				</c:if>
 			</div>
 			<div class="finance-content-middle-form">

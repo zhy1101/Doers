@@ -30,15 +30,6 @@
 				padding: 0 10px;
 			}
 		</style>
-		
-		
-		<script type="text/javascript">
-			function delProFromCart(pid){
-				if(confirm("您是否要删除该项？")){
-					location.href="${pageContext.request.contextPath }/product?method=delProFromCart&pid="+pid;
-				}
-			}
-</script>
 
 </head>
 <body>
@@ -51,12 +42,12 @@
             </div>
             <div class="navbar-collapse collapse navbar-responsive-collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="${pageContext.request.contextPath}/index.html">首页</a></li>
-                    <li><a href="${pageContext.request.contextPath}/productionListAction_getAllProductions">Do 博物</a></li>
-                    <li><a href="hiview.html">Do 服务</a></li>
-                    <li><a href="/Doers/Activity/ActivityCenter.jsp">Do 活动</a></li>
-                    <li  class="active"><a href="hiview.html">Do 交易</a></li>
-                    <li><a href="/Doers/UserWorkspace/UserWorkSpace.jsp">Do Myself</a></li>
+                  	 <li><a href="${pageContext.request.contextPath}/index.html">首页</a></li>
+		             <li><a href="${pageContext.request.contextPath}/productionListAction_getAllProductions">Do 博物</a></li>
+		             <li><a href="${pageContext.request.contextPath}/serverDetailAction_loadingAllServers">Do 服务</a></li>
+		             <li><a href="${pageContext.request.contextPath}/activityAction_loadingActivityCenter">Do 活动</a></li>
+		             <li  class="active"><a href="${pageContext.request.contextPath}/accountAction_OpenMyCart">Do 交易</a></li>
+		             <li><a href="/Doers/UserWorkspace/UserWorkSpace.jsp">Do Myself</a></li>
                 </ul>
             </div>
         </nav>
@@ -81,7 +72,7 @@
 					<h3 class="ListTitle">Do 服务</h3>
 				</div>
 				<div class="menuList">
-					<a href="#">服务中 列表</a>
+					<a href="${pageContext.request.contextPath}/orderAction_loadServeringList">服务中 列表</a>
 					<a href="${pageContext.request.contextPath}/orderAction_loadServeringingHistory">我的功勋簿</a>
 				</div>
 			</div>
@@ -90,9 +81,9 @@
 					<h3 class="ListTitle">账户基本管理</h3>
 				</div>
 				<div class="menuList">
-					<a href="#">我的账户</a>
-					<a href="#">充值Do币</a>
-					<a href="#">劳务提现</a>
+					<a href="${pageContext.request.contextPath}/accountAction_loadingMyAccount">我的账户</a>
+					<a href="${pageContext.request.contextPath}/Account/AddDoMoney.jsp">充值Do币</a>
+					<a href="${pageContext.request.contextPath}/accountAction_payInCash">劳务提现</a>
 				</div>
 			</div>
 		</div>

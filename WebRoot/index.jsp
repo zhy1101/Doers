@@ -38,7 +38,7 @@
                 	
                 	<c:if test="${empty user }">
                 		<li><a  href=/Doers/Login.jsp >登录</a></li>
-                    	<li><a href="/Doers/resign.jsp">注册</a></li>
+                    	<li><a href="/Doers/resign.jsp" target="_blank">注册</a></li>
                 	</c:if>
                 	<c:if test="${!empty user }">
                 		<li><a href=java:void(0)>欢迎您 ，${user.user_name }</a></li>

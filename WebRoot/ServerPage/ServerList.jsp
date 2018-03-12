@@ -85,8 +85,8 @@ body {
                     <li><a href="${pageContext.request.contextPath}/index.html">首页</a></li>
                     <li><a href="${pageContext.request.contextPath}/productionListAction_getAllProductions">Do 博物</a></li>
                     <li class="active"><a href="${pageContext.request.contextPath}/serverDetailAction_loadingAllServers">Do 服务</a></li>
-                    <li><a href="hiview.html">Do 活动</a></li>
-                    <li><a href="hiview.html">Do 交易</a></li>
+                    <li><a href="${pageContext.request.contextPath}/activityAction_loadingActivityCenter">Do 活动</a></li>
+                    <li><a href="${pageContext.request.contextPath}/accountAction_OpenMyCart">Do 交易</a></li>
                     <li><a href="/Doers/UserWorkspace/UserWorkSpace.jsp">Do Myself</a></li>
                 </ul>
                 <form class="navbar-form navbar-left">
