@@ -109,8 +109,8 @@ public class ContractAction extends ActionSupport implements ModelDriven<Contrac
 		return this.contract;
 	}
 	public String uploadContract(){
-		String pdateString = predict_day +":"+predict_month+":"+predict_day+"日";
-		SimpleDateFormat format =new SimpleDateFormat("yyyy:MM:dd");
+		String pdateString = predict_day +"年"+predict_month+"月"+predict_day+"日";
+		SimpleDateFormat format =new SimpleDateFormat("yyyy年 MM月dd日");
 		String startTime = format.format(new Date());
 		contract.setServerTimeStart(startTime);
 		contract.setServerTimeEnd(pdateString);
