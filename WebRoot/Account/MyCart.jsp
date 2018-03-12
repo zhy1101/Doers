@@ -72,8 +72,8 @@
 				</div>
 				<div class="menuList">
 					<a href="javascript:void(0);" style="color:#3366cc;background:#D1EEEE">我的购物车</a>
-					<a href="#">交易中的订单</a>
-					<a href="#">购买记录</a>
+					<a href="${pageContext.request.contextPath}/orderAction_loadBuyingList">交易中的订单</a>
+					<a href="${pageContext.request.contextPath}/orderAction_loadBuyingHistory">购买记录</a>
 				</div>
 			</div>
 			<div class="menuParent">
@@ -82,7 +82,7 @@
 				</div>
 				<div class="menuList">
 					<a href="#">服务中 列表</a>
-					<a href="#">我的功勋簿</a>
+					<a href="${pageContext.request.contextPath}/orderAction_loadServeringingHistory">我的功勋簿</a>
 				</div>
 			</div>
 			<div class="menuParent">

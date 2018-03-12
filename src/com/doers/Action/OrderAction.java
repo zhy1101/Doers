@@ -66,6 +66,12 @@ public class OrderAction extends ActionSupport {
 		ActionContext.getContext().put("myBuyingList",myBuyingList);
 		return "toMyBuyingList";
 	}
+	public String loadBuyingHistory(){
+		User u = (User) ActionContext.getContext().getSession().get("user");
+		List<Order> myBuyingHistory = orderService.getBuyingHistoryByUsre(u);
+		ActionContext.getContext().put("myBuyingHistory", myBuyingHistory);
+		return "toHistoryPage";
+	}
 
 
 

@@ -86,8 +86,9 @@
 	   		 <result name="toPayInCash" >/Account/PayInCash.jsp</result>
 	   		 <result name="toMyCart" >/Account/MyCart.jsp</result> 
 	    </action>
-	    	    <action name="orderAction_*" class="orderAction" method="{1}">
+	    <action name="orderAction_*" class="orderAction" method="{1}">
 	   		 <result name="toMyBuyingList" >/Account/BuyingList.jsp</result>
+	   		 <result name="toHistoryPage" >/Account/History.jsp</result>
 	    </action>
 	</package>
 </struts>

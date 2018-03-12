@@ -90,7 +90,7 @@
 						<c:forEach items="${myBuyingList }" var="orderItem">
 							<tr>
 								<td width="15%">${orderItem.orderId }</td>
-								<td width="10%"><a href="${pageContext.request.contextPath}/userAction_openDoerSpace?userId=${orderItem.serverUser.uid}">${orderItem.serverUser.user_name}</a></td>
+								<td width="10%"><a href="${pageContext.request.contextPath}/userAction_openDoerSpace?userId=${orderItem.serverUser.uid}" target="_blank">${orderItem.serverUser.user_name}</a></td>
 								<td width="15%">${orderItem.talkTimeStart}&nbsp;至&nbsp;${orderItem.talkTimeEnd} </td>
 								<c:if test="${orderItem.orderState.dict_id != 50}">
 								<td width="20%">${orderItem.orderContract.serverTimeStart}&nbsp;至&nbsp;${orderItem.orderContract.serverTimeEnd} </td>
@@ -128,7 +128,7 @@
 		</div>
 	</div>
 </section>
-<footer class="hi-footer">
+<footer class="hi-footer" style="margin-top:20px">
     <div class="footertop">
         <div class="container">
             <div class="row">
