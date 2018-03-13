@@ -87,7 +87,7 @@
 								<th>订单状态</th>
 								<th>操作</th>
 							</tr>
-						<c:forEach items="${myServereringList }" var="orderItem"  >
+						<c:forEach items="${myServingingList }" var="orderItem"  >
 							<tr>
 								<td width="15%">${orderItem.orderId }</td>
 								<td width="10%"><a href="${pageContext.request.contextPath}/userAction_openDoerSpace?userId=${orderItem.customerUser.uid}" target="_blank">${orderItem.customerUser.user_name}</a></td>

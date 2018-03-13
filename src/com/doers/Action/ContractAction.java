@@ -108,7 +108,7 @@ public class ContractAction extends ActionSupport implements ModelDriven<Contrac
 	public Contract getModel() {
 		return this.contract;
 	}
-	public String uploadContract(){
+	public String uploadContract() throws Exception{
 		String pdateString = predict_day +"年"+predict_month+"月"+predict_day+"日";
 		SimpleDateFormat format =new SimpleDateFormat("yyyy年 MM月dd日");
 		String startTime = format.format(new Date());
@@ -116,13 +116,16 @@ public class ContractAction extends ActionSupport implements ModelDriven<Contrac
 		contract.setServerTimeEnd(pdateString);
 		Order order = orderService.getOrderById(orderId);
 		contract.setBelongToOder(order);
-		BaseDict baseDict = baseDictService.getByItemCode("51");
-		order.setOrderState(baseDict);
+		BaseDict state = baseDictService.getByItemCode("51");
+		order.setOrderState(state);
+		order.getOrderState().setDict_id("51");
+		if(file!=null){
 		String typeString = this.file.getName();
 	    typeString = typeString.substring(typeString.indexOf("."));
 	    this.file.renameTo(new File("D:\\DoersWorks" +"\\"+"con_"+ orderId+"."+typeString));
-	    this.contract.setAddFileURL("/savePath/" +"con_"+ orderId +"."+typeString);
+	    this.contract.setAddFileURL("/savePath/" +"con_"+ orderId +"."+typeString);}
 	    contractService.addANewContract(contract);
+	    order.setOrderContract(contract);
 	    return "toMyServeringList";
 	}
 	public String checkContract(){
@@ -130,5 +133,20 @@ public class ContractAction extends ActionSupport implements ModelDriven<Contrac
 		ActionContext.getContext().put("contract", c);
 		return "showContract";
 	}
+	 public void addActionError(String anErrorMessage) {
+		    String s = anErrorMessage;
+		    System.out.println(s);
+		  }
+		  public void addActionMessage(String aMessage) {
+		    String s = aMessage;
+		    System.out.println(s);
+		  }
+
+		  public void addFieldError(String fieldName, String errorMessage) {
+		    String s = errorMessage;
+		    String f = fieldName;
+		    System.out.println(s);
+		    System.out.println(f);
+		  }
 
 }

@@ -24,7 +24,7 @@
 
 					<div class="finance-news-table">
 						<table>
-						<form action="${pageContext.request.contextPath}/contractAction_uploadContract" method="post">
+						<form action="${pageContext.request.contextPath}/contractAction_uploadContract" method="post" id="cfrom">
 												<input name="orderId" type="hidden" value="${order.orderId }">
 							<tbody>
 								<tr>
@@ -143,7 +143,7 @@
 									<th colspan="4">服务详细条约（请详细写明与用户协商好的服务事项，既是诚实口碑，也是维权基础）</th>
 								</tr>
 								<tr>
-									<td colspan="4"><input type="text" name="content"/></td>
+									<td colspan="4"><textarea type="text"  wrap="physical" form="cfrom" name="content"  style="width:800px;height:200px;resize: none;"></textarea></td>
 								</tr>
 							</tbody>
 						</table>
@@ -160,7 +160,7 @@
 								<tr>
 									<td>
 										<div class="finance-up-img">
-											<img src="themes/img/upImg.jpg" style="width:148px;height:63px">
+											<img src="../../Doers/Account/themes/img/upImg.jpg" style="width:148px;height:63px">
 											<input type="file" name="file"/>
 										</div>
 									</td>
@@ -169,7 +169,7 @@
 						</table>
 					</div>
 				</div>
-				<a href="${pageContext.request.contextPath}/contractAction_uploadContrct" class="finance-content-middle-form-btn "><input type="submit">提交</input></a>
+				<input type="submit" value="提交" class="finance-content-middle-form-btn "/>
 			</form>
 			</div>
 		</div>
