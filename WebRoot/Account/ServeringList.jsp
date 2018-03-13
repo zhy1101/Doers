@@ -91,30 +91,30 @@
 							<tr>
 								<td width="15%">${orderItem.orderId }</td>
 								<td width="10%"><a href="${pageContext.request.contextPath}/userAction_openDoerSpace?userId=${orderItem.customerUser.uid}" target="_blank">${orderItem.customerUser.user_name}</a></td>
-								<td width="15%">${orderItem.talkTimeStart}&nbsp;至&nbsp;${orderItem.talkTimeEnd} </td>
+								<td width="17%">${orderItem.talkTimeStart}<br>至<br>${orderItem.talkTimeEnd} </td>
 								<c:if test="${orderItem.orderState.dict_id != 50}">
-								<td width="20%">${orderItem.orderContract.serverTimeStart}&nbsp;至&nbsp;${orderItem.orderContract.serverTimeEnd} </td>
-								<td width="10%">${orderItem.orderContract.price} Do币</td>
+								<td width="20%">${orderItem.orderContract.serverTimeStart}<br>至<br>${orderItem.orderContract.serverTimeEnd} </td>
+								<td width="8%">${orderItem.orderContract.price} Do币</td>
 								</c:if>
 								<c:if test="${orderItem.orderState.dict_id == 50}">
 								<td width="20%">暂无信息</td>
-								<td width="10%">暂无信息</td>
+								<td width="8%">暂无信息</td>
 								</c:if>
 							<c:if test="${orderItem.orderState.dict_id==50}">
-								<td width="20%">协约期中，未上传合约</td>
-								<td width="10%"><a href="${pageContext.request.contextPath}/contractAction_openABlankContract?orderId=${orderItem.orderId }">填写合约</a></td>
+								<td width="15%">协约期中，未上传合约</td>
+								<td width="15%"><a href="${pageContext.request.contextPath}/contractAction_openABlankContract?orderId=${orderItem.orderId }">填写合约</a></td>
 							</c:if>
 							<c:if test="${orderItem.orderState.dict_id==51}">
-								<td width="20%">协约期中，已上传上传合约，未付款</td>
-								<td width="10%"><a href="${pageContext.request.contextPath}/contractAction_checkContract?orderId=${orderItem.orderId }">查看协约</a> | <a href="javascript:void(0)" onclink="Tips1()">提醒付款</a></td>
+								<td width="15%">协约期中，已上传上传合约，未付款</td>
+								<td width="15%"><a href="${pageContext.request.contextPath}/contractAction_checkContract?orderId=${orderItem.orderId }">查看协约</a><br><a href="javascript:void(0)" onclick="alet('提醒付款消息已发送');">提醒付款</a></td>
 							</c:if>
 							<c:if test="${orderItem.orderState.dict_id==52}">
-								<td width="20%">已付款,服务期开始</td>
-								<td width="10%"><a href="${pageContext.request.contextPath}/contractAction_checkContract?orderId=${orderItem.orderId }">查看协约</a> | <a href="${pageContext.request.contextPath}/orderAction_finishWork?orderId=${orderItem.orderId }">已完成服务</a> | <a href="javascript:void(0)">申请终止服务</a></td>
+								<td width="15%">已付款,服务期开始</td>
+								<td width="15%"><a href="${pageContext.request.contextPath}/contractAction_checkContract?orderId=${orderItem.orderId }">查看协约</a><br><a href="${pageContext.request.contextPath}/orderAction_finishWork?orderId=${orderItem.orderId }">已完成服务</a><br><a href="javascript:void(0)">申请终止服务</a></td>
 							</c:if>
 							<c:if test="${orderItem.orderState.dict_id==53}">
-								<td width="20%">服务期结束，待客户验收确认</td>
-								<td width="10%"><a href="${pageContext.request.contextPath}/contractAction_checkContract?orderId=${orderItem.orderId }">查看协约</a> | <a href="javascript:void(0)" onclink="Tips2()">提醒验收</a></td>
+								<td width="15%">服务期结束，待客户验收确认</td>
+								<td width="15%"><a href="${pageContext.request.contextPath}/contractAction_checkContract?orderId=${orderItem.orderId }">查看协约</a> | <a href="javascript:void(0)" onclick="alet('提醒验收消息已发送');">提醒验收</a></td>
 							</c:if>
 							</tr>
 							<tr><td colspan="7" style="border-bottom:1px solid #000;"> 客户联系方式：<br>电话:${orderItem.customerUser.phone}&nbsp;&nbsp;&nbsp;Email:${orderItem.customerUser.email}
@@ -166,12 +166,6 @@
             });
         });
     });
-    function Tips1(){
-    	alet("提醒付款消息已发送");
-    }
-    function Tips2(){
-    	alet("提醒验收消息已发送");
-    }
 </script>
 </body>
 </html>
