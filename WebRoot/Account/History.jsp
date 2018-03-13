@@ -23,7 +23,6 @@
 </head>
 <body>
 
-
 <header>
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="navbar-header">
@@ -46,17 +45,6 @@
 <section id="finance-content">
 	<div class="finance-content clearfix">
 		<div class="finance-content-nav menu">
-			<c:if test="${state == 1 }">
-			<title>购买历史</title>
-			</c:if>
-			<c:if test="${state == 0 }">
-			<title>我的功勋簿</title>
-			</c:if>
-			
-		</div>
-		
-		<div class="finance-content-middle">
-			<div class="finance-content-middle-title">
 				<c:if test="${state == 1 }">
 					<div class="menuParent">
 						<div class="ListTitlePanel">
@@ -88,8 +76,9 @@
 						</div>
 					</div>
 				</c:if>
+				
 				<c:if test="${state == 0 }">
-				<div class="menuParent">
+					<div class="menuParent">
 						<div class="ListTitlePanel">
 							<h3 class="ListTitle">Do 购买</h3>
 						</div>
@@ -118,6 +107,16 @@
 							<a href="${pageContext.request.contextPath}/accountAction_payInCash">劳务提现</a>
 						</div>
 					</div>
+				</c:if>
+			</div>
+		
+		<div class="finance-content-middle">
+			<div class="finance-content-middle-title">
+				<c:if test="${state == 1 }">
+				<h4>购买历史</h4>
+				</c:if>
+				<c:if test="${state == 0 }">
+				<h4>我的功勋簿</h4>
 				</c:if>
 			</div>
 			<div class="finance-content-middle-form">
@@ -165,8 +164,7 @@
 					</table>
 				</div>
 			</div>
-		</div>
-	</div>
+			</div>
 </section>
 <script src="../../Doers/Account/js/jquery-3.2.1.min.js"></script>
 <script src="../../Doers/Account/js/address.js"></script>

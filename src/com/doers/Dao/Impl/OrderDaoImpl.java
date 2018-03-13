@@ -12,7 +12,7 @@ import com.doers.domain.User;
 public class OrderDaoImpl extends BaseDaoImpl<Order> implements OrderDao {
 	@Override
 	public List<Order> getBuyingListByUser(User u) {
-		String hqlString = "from Order where customerUser.uid=? and orderState.dict_id > 49 and and orderState.dict_id != 62 ";
+		String hqlString = "from Order where customerUser.uid=?  and orderState.dict_id != 62 ";
 		return (List<Order>) getHibernateTemplate().find(hqlString, u.getUid());
 	}
 
@@ -30,7 +30,7 @@ public class OrderDaoImpl extends BaseDaoImpl<Order> implements OrderDao {
 
 	@Override
 	public List<Order> getServeringListByUser(User u) {
-		String hqlString = "from Order where serverUser.uid=? and orderState.dict_id > 49 and and orderState.dict_id != 62 ";
+		String hqlString = "from Order where serverUser.uid=? and orderState.dict_id != 62 ";
 		return (List<Order>) getHibernateTemplate().find(hqlString, u.getUid());
 	}
 

@@ -8,6 +8,10 @@ import com.doers.domain.Contract;
 @Transactional
 public class ContractServiceImpl implements ContractService {
 	private ContractDao contractDao;
+	
+	public void setContractDao(ContractDao contractDao) {
+		this.contractDao = contractDao;
+	}
 	@Override
 	public void addANewContract(Contract contract) {
 		contractDao.save(contract);

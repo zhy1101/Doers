@@ -17,6 +17,15 @@ public class SearchAction extends ActionSupport {
 	private ProductionService productionService;
 	private ArticleService articleService;
 	
+	
+	public void setProductionService(ProductionService productionService) {
+		this.productionService = productionService;
+	}
+
+	public void setArticleService(ArticleService articleService) {
+		this.articleService = articleService;
+	}
+
 	public void setUserService(UserService userService) {
 		this.userService = userService;
 	}

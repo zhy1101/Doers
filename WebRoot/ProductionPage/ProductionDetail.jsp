@@ -83,7 +83,7 @@
 					</div>
 				</div>
 				<div class="work-content-wrap ">
-					<div class="work-center-con" style="width:90%;padding: 20px; -webkit-box-shadow: 0 0px 5px #f5f5f5;-moz-box-shadow:  0 0px 5px #f5f5f5;box-shadow: 0 0px 5px #f5f5f5;transition:all 0.4s ease;">
+					<div class="work-center-con" style="width:90%;padding: 20px; -webkit-box-shadow: 0 0px 5px #f5f5f5;-moz-box-shadow:  0 0px 5px #f5f5f5;box-shadow: 0 0px 5px #f5f5f5;transition:all 0.4s ease;background: #F5FFFA;">
 					<section style="display:block">${production.content }</section></div>
 				</div>
 				<div class="recommend-box">

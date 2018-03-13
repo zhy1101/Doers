@@ -36,7 +36,7 @@
             </div>
         </nav>
 </header>
-
+<br><br>
 <section style="background-color: #f7f7f7;padding: 0px 0px 30px 0px;">
     <div class="container">
         <div class="page-header">
@@ -58,6 +58,9 @@
                 </a>
             </div>
             </c:forEach>
+           <c:if test="${empty productionList}">
+            	<p>暂无相关信息<p>
+            </c:if>
         </div>
     </div>
 </section>
@@ -71,6 +74,7 @@
             </div>
         </div>
         <div class="row">
+           <c:if test="${articleList!=null}">
         	<c:forEach items="${articleList }" var="arc" varStatus="vs">
             <div class="col-sm-4 animated" data-animation="bounceIn" data-delay="${vs.index}*200">
                 <a href="${pageContext.request.contextPath}/productionDetailAction_showArticleDetail?articleId=${arc.articleId}">
@@ -82,6 +86,10 @@
                 </a>
             </div>
             </c:forEach>
+            </c:if>
+            <c:if test="${ empty articleList}">
+            	<p>暂无相关信息<p>
+            </c:if>
         </div>
     </div>
 </section>
@@ -95,7 +103,6 @@
             </div>
         </div>
         <div class="row">
-        		<!-- 重复4次 -->
         	<c:forEach items="${userList }" var="u">
             <div class="col-sm-3 animated" data-animation="bounceIn" data-delay="0" style="text-align: center;">
                 <img src="${u.personImg_path }" >
@@ -105,6 +112,9 @@
                 </div>
             </div>
             </c:forEach>
+             <c:if test="${empty userList}">
+            	<p>暂无相关信息<p>
+            </c:if>
         </div>
 
     </div>

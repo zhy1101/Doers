@@ -85,6 +85,7 @@
 	   		 <result name="toMyAccountBase" >/Account/MyAccountBase.jsp</result>
 	   		 <result name="toPayInCash" >/Account/PayInCash.jsp</result>
 	   		 <result name="toMyCart" >/Account/MyCart.jsp</result> 
+	   		 <result name="OperateList" >/Account/OperateHistoryList.jsp</result> 
 	    </action>
 	    <action name="orderAction_*" class="orderAction" method="{1}">
 	   		 <result name="toMyBuyingList" >/Account/BuyingList.jsp</result>

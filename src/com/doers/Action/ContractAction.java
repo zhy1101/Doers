@@ -120,8 +120,8 @@ public class ContractAction extends ActionSupport implements ModelDriven<Contrac
 		order.setOrderState(baseDict);
 		String typeString = this.file.getName();
 	    typeString = typeString.substring(typeString.indexOf("."));
-	    this.file.renameTo(new File("D:/DoersWorks/AddContractFile/" +"con_"+ orderId+"."+typeString));
-	    this.contract.setAddFileURL("/ContractFile/" +"con_"+ orderId +"."+typeString);
+	    this.file.renameTo(new File("D:\\DoersWorks" +"\\"+"con_"+ orderId+"."+typeString));
+	    this.contract.setAddFileURL("/savePath/" +"con_"+ orderId +"."+typeString);
 	    contractService.addANewContract(contract);
 	    return "toMyServeringList";
 	}
