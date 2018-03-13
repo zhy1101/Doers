@@ -141,4 +141,21 @@ public class AccountAction extends ActionSupport {
 		return "OperateList";
 		
 	}
+
+	  public void addActionError(String anErrorMessage) {
+		    String s = anErrorMessage;
+		    System.out.println(s);
+		  }
+		  public void addActionMessage(String aMessage) {
+		    String s = aMessage;
+		    System.out.println(s);
+		  }
+
+		  public void addFieldError(String fieldName, String errorMessage) {
+		    String s = errorMessage;
+		    String f = fieldName;
+		    System.out.println(s);
+		    System.out.println(f);
+		  }
+
 }

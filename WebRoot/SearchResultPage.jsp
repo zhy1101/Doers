@@ -22,17 +22,13 @@
             </div>
             <div class="navbar-collapse collapse navbar-responsive-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="${pageContext.request.contextPath}/index.html">首页</a></li>
+                    <li><a href="${pageContext.request.contextPath}/index.html">首页</a></li>
                     <li><a href="${pageContext.request.contextPath}/productionListAction_getAllProductions">Do 博物</a></li>
                     <li><a href="${pageContext.request.contextPath}/serverDetailAction_loadingAllServers">Do 服务</a></li>
                     <li><a href="${pageContext.request.contextPath}/activityAction_loadingActivityCenter">Do 活动</a></li>
                     <li><a href="${pageContext.request.contextPath}/accountAction_OpenMyCart">Do 交易</a></li>
                     <li><a href="/Doers/UserWorkspace/UserWorkSpace.jsp">Do Myself</a></li>
                 </ul>
-                <form class="navbar-form navbar-left" action="${pageContext.request.contextPath}/searchAction_searchInSite" method="get">
-                    <input type="text" name="word" class="form-control col-lg-8" placeholder="输入你想要的关键字">
-                    <input type="submit" value="搜全站"/>
-                </form>
             </div>
         </nav>
 </header>
