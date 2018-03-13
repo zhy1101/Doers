@@ -12,6 +12,7 @@
 	<c:if test="${state == 0 }">
 	<title>我的功勋簿</title>
 	</c:if>
+	<link rel="shortcut icon" href="../../Doers/favicon.ico" />
 	<link rel="stylesheet" type="text/css" href="../../Doers/Account/css/base.css">
 	<link rel="stylesheet" type="text/css" href="../../Doers/Account/css/home.css">
     <link rel="stylesheet" type="text/css" href="../../Doers/bootstrap/css/candy-box.css" />

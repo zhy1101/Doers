@@ -6,6 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html">
 <title>劳务提现</title>
+	<link rel="shortcut icon" href="../../Doers/favicon.ico" />
 	<link rel="stylesheet" type="text/css" href="../../Doers/Account/css/base.css">
 	<link rel="stylesheet" type="text/css" href="../../Doers/Account/css/home.css">
 	<link rel="stylesheet" type="text/css" href="../../Doers/Account/css/Ext1.css">

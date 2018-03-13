@@ -6,6 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>博物列表</title>
+	<link rel="shortcut icon" href="../../Doers/favicon.ico" />
 	<link rel="stylesheet" href="../../Doers/ProductionPage/css/dropDown.css">
 	<link rel="stylesheet" href="../../Doers/ProductionPage/css/animate.css">
 	<link rel="stylesheet" href="../../Doers/ProductionPage/css/icomoon.css">

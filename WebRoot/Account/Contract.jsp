@@ -6,6 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>填写合约</title>
+	<link rel="shortcut icon" href="../../Doers/favicon.ico" />
 	<link rel="stylesheet" type="text/css" href="../../Doers/Account/css/base.css">
 	<link rel="stylesheet" type="text/css" href="../../Doers/Account/css/home.css">
 </head>

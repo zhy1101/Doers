@@ -6,7 +6,7 @@
   <head>
     <title>新增我的服务</title>
     <meta name="content-type" content="text/html; charset=UTF-8">
-    
+<link rel="shortcut icon" href="../../Doers/favicon.ico" />   
 <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" type="text/css" />
 <script src="../js/jquery-1.11.3.min.js" type="text/javascript"></script>
 <!-- 引入表单校验jquery插件 -->

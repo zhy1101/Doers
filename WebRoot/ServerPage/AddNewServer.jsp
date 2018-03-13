@@ -6,13 +6,11 @@
   <head>
     <title>新增我的服务</title>
     <meta name="content-type" content="text/html; charset=UTF-8">
-    
+<link rel="shortcut icon" href="../../Doers/favicon.ico" />   
 <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" type="text/css" />
 <script src="../js/jquery-1.11.3.min.js" type="text/javascript"></script>
-<!-- 引入表单校验jquery插件 -->
 <script src="../js/jquery.validate.min.js" type="text/javascript"></script>
 <script src="../bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-<!-- 引入自定义css文件 style.css -->
 <link rel="stylesheet" href="../css/style.css" type="text/css" />
 
 <style>

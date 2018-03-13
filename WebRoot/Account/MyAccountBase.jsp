@@ -5,7 +5,8 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>我的购物车</title>
+	<title>我的账户基本情况</title>
+	<link rel="shortcut icon" href="../../Doers/favicon.ico" />
 	<link rel="stylesheet" type="text/css" href="../../Doers/Account/css/base.css">
 	<link rel="stylesheet" type="text/css" href="../../Doers/Account/css/home.css">
     <link rel="stylesheet" type="text/css" href="../../Doers/bootstrap/css/candy-box.css" />

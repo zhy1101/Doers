@@ -6,6 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>合约详情</title>
+<link rel="shortcut icon" href="../../Doers/favicon.ico" />
 <style>
 body{text-align:center}
 h3{margin:0 auto;}

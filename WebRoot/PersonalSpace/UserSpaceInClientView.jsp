@@ -12,7 +12,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
         <meta name="description" content="FlexyCodes - FlexyCard vCard Template. Creating my personal page!"/>
-
+		<link rel="shortcut icon" href="../../Doers/favicon.ico" />
         <!-- CSS | bootstrap -->
         <!-- Credits: http://getbootstrap.com/ -->
         <link  rel="stylesheet" type="text/css" href="../../Doers/bootstrap/css/bootstrap.min.css" />

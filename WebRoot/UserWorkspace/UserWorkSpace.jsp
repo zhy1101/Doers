@@ -14,6 +14,7 @@
 	<link rel="stylesheet" type="text/css" href="common/css/skin.css" />
 	<link rel="stylesheet" type="text/css" href="../bootstrap/css/candy-box.css" />
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+	<link rel="shortcut icon" href="../../Doers/favicon.ico" />
 	<link rel="stylesheet" type="text/css" href="../css/demo.css">	
   </head>
   <body>

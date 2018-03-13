@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>${server.serverName} - 服务页详情 -</title>
-
+<link rel="shortcut icon" href="../../Doers/favicon.ico" />
 <!-- 引入自定义css文件 style.css -->
 <link rel="stylesheet" href="../Doers/css/style.css" type="text/css" />
 <link rel="stylesheet"

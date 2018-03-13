@@ -11,6 +11,7 @@
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="css/resign_gloab.css" rel="stylesheet">
 <link href="css/resign.css" rel="stylesheet">
+<link rel="shortcut icon" href="favicon.ico" />
 </head>
 <body class="bgf4" >
 <header>

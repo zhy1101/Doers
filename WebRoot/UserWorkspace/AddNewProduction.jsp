@@ -4,7 +4,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title></title>
+<title>新建作品</title>
+<link rel="shortcut icon" href="../../Doers/favicon.ico" />
 <script type="text/javascript" src="../../Doers/js/jquery-1.10.2.min.js"></script>
 <script src="../../Doers/js/my.js" type="text/javascript"></script>   
 <script type="text/javascript" charset="utf-8" src="../../Doers/utf8-jsp/ueditor.config.js"></script>

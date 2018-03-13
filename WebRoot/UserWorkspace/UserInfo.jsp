@@ -4,13 +4,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title></title>
+<title>用户信息</title>
 <link rel="stylesheet" href="common/css/main.css">
 <link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="common/css/personalProfile.css">
 <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="common/css/cropper.min.css" rel="stylesheet">
 <link href="common/css/sitelogo.css" rel="stylesheet">
+<link rel="shortcut icon" href="../../Doers/favicon.ico" />
 </head>
 <body>
 <div class="datum-item-box border-bottom" id="essentialinformation" style="background-color:#FCFCFC">

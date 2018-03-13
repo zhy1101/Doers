@@ -6,6 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>${production.productionTitle}</title>
+<link rel="shortcut icon" href="../../Doers/favicon.ico" />
 <link rel="stylesheet"
 	href="../../Doers/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet"
