@@ -132,23 +132,7 @@ public class ContractAction extends ActionSupport implements ModelDriven<Contrac
 		Order order = orderService.getOrderById(orderId);
 		Contract c = contractService.getContractByOrder(order);
 		ActionContext.getContext().put("c", c);
-		System.out.print(c.getId());
 		return "showContract";
 	}
-	 public void addActionError(String anErrorMessage) {
-		    String s = anErrorMessage;
-		    System.out.println(s);
-		  }
-		  public void addActionMessage(String aMessage) {
-		    String s = aMessage;
-		    System.out.println(s);
-		  }
-
-		  public void addFieldError(String fieldName, String errorMessage) {
-		    String s = errorMessage;
-		    String f = fieldName;
-		    System.out.println(s);
-		    System.out.println(f);
-		  }
 
 }
