@@ -114,7 +114,11 @@
 		<property name="baseDictService" ref="baseDictService" ></property>
 		<property name="contractService" ref="contractService"></property>
 	</bean>
-	
+	<bean name="searchAction" class="com.doers.Action.SearchAction" scope="prototype" >
+		<property name="articleService" ref="articleService"></property>
+		<property name="userService" ref="userService"></property>
+		<property name="productionService" ref="productionService"></property>
+	</bean>
 	
 	<!-- Service -->
 	<bean name="userService" class="com.doers.Service.Impl.UserServiceImpl">
