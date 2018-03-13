@@ -1,5 +1,8 @@
 package com.doers.Service;
 
+
+import java.util.List;
+
 import com.doers.domain.User;
 
 public  interface UserService
@@ -24,4 +27,6 @@ public void updateByCondition(String caddress, String cbirthday, String cweiChat
 		String cdescription, Long uid);
 
 public void updatePersonImg(String urlString, Long uid);
+
+public List<User> getRelativeUsersByWord(String word);
 }

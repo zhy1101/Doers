@@ -30,8 +30,9 @@
                     <li><a href="${pageContext.request.contextPath}/accountAction_OpenMyCart">Do 交易</a></li>
                     <li><a href="/Doers/UserWorkspace/UserWorkSpace.jsp">Do Myself</a></li>
                 </ul>
-                <form class="navbar-form navbar-left">
-                    <input type="text" class="form-control col-lg-8" placeholder="搜索">
+                <form class="navbar-form navbar-left" action="${pageContext.request.contextPath}/searchAction_searchInSite" method="get">
+                    <input type="text" name="word" class="form-control col-lg-8" placeholder="输入你想要的关键字">
+                    <input type="submit" value="搜全站"/>
                 </form>
                <lable id ="ready_login" style="display:none">欢迎你，<a>${user.user_name}</a></lable>
                 <ul class="nav navbar-nav navbar-right" id = "no_login" style="display:block">

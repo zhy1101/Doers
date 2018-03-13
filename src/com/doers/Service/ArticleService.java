@@ -15,4 +15,6 @@ public interface ArticleService {
 
 	List<Article> getHotArticle();
 
+	List<Article> getRelativeArticlesByWord(String word);
+
 }

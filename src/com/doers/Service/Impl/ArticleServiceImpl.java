@@ -39,4 +39,9 @@ public class ArticleServiceImpl implements ArticleService {
 		return this.articleDao.getHotArticle();
 	}
 
+	@Override
+	public List<Article> getRelativeArticlesByWord(String word) {
+		return articleDao.getRelativeArticlesByWord(word);
+	}
+
 }

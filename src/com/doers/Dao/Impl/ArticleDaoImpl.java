@@ -34,4 +34,10 @@ public class ArticleDaoImpl extends BaseDaoImpl<Article>  implements ArticleDao 
 		return (List<Article>) getHibernateTemplate().find(hqlString);	
 	}
 
+	@Override
+	public List<Article> getRelativeArticlesByWord(String word) {
+		String hqiString = "from Article where articleTitle like? or word1 like ? or word2 like ? or word3 like ?";
+		return (List<Article>) getHibernateTemplate().find(hqiString,"%" + word + "%","%" + word + "%","%" + word + "%","%" + word + "%");
+	}
+
 }

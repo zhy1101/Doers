@@ -79,4 +79,10 @@ public class UserDaoImpl extends BaseDaoImpl<User> implements UserDao
 		user.setPersonImg_path(urlString);
 		getHibernateTemplate().update(user);		
 	}
+
+	@Override
+	public List<User> getRelativeUsersByWord(String word) {
+		String hqiString = "from User where user_name like? or skill like ?";
+		return (List<User>) getHibernateTemplate().find(hqiString,"%" + word + "%","%" + word + "%");
+	}
 }

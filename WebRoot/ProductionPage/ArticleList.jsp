@@ -30,9 +30,6 @@
              		<li><a href="${pageContext.request.contextPath}/accountAction_OpenMyCart">Do 交易</a></li>
              		<li><a href="/Doers/UserWorkspace/UserWorkSpace.jsp">Do Myself</a></li>
                 </ul>
-                <form class="navbar-form navbar-left">
-                    <input type="text" class="form-control col-lg-8" placeholder="搜索">
-                </form>
             </div>
         </nav>
 </header>

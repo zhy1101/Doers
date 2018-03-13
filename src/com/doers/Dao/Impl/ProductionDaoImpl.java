@@ -77,4 +77,10 @@ public class ProductionDaoImpl extends BaseDaoImpl<Production> implements Produc
 		String hqlString = "from Production where user.uid=?";
 		return (List<Production>) getHibernateTemplate().find(hqlString, u.getUid());	
 	}
+
+	@Override
+	public List<Production> getRelativeProductionsByWord(String word) {
+		String hqiString = "from Production where productionTitle like? or shortcontent like ?";
+		return (List<Production>) getHibernateTemplate().find(hqiString,"%" + word + "%","%" + word + "%");
+	}
 }

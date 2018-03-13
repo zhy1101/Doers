@@ -32,4 +32,6 @@ public  interface ProductionService
 	
 	public List<Production> getTopWordAndPicProductionList();
 
+	public List<Production> getRelativeProductionsByWord(String word);
+
 }

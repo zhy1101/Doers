@@ -100,5 +100,8 @@
 	   		 </result>
 	   		 <result name="showContract" >/Account/showContract.jsp</result>
 	    </action>
+	    <action name="searchAction_*" class="searchAction" method="{1}">
+	   		 <result name="toSearchResult" >/SearchResultPage.jsp</result> 
+	    </action>
 	</package>
 </struts>

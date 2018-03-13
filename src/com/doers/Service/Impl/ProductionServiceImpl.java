@@ -79,4 +79,9 @@ public class ProductionServiceImpl implements ProductionService
 	public List<Production> getTopWordAndPicProductionList() {
 		return productionDao.getTopWordAndPicProductionList();
 	}
+
+	@Override
+	public List<Production> getRelativeProductionsByWord(String word) {
+		return productionDao.getRelativeProductionsByWord(word);
+	}
 }

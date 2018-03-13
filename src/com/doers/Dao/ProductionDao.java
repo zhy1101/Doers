@@ -24,4 +24,6 @@ public  interface ProductionDao extends BaseDao<Production>
 	public List<Production> getTopWordAndPicProductionList();
 
 	public List<Production> getUserProductionList(User u);
+
+	public List<Production> getRelativeProductionsByWord(String word);
 }

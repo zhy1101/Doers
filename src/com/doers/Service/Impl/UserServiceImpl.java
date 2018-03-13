@@ -5,6 +5,9 @@ import com.doers.Dao.UserDao;
 import com.doers.domain.Account;
 import com.doers.domain.User;
 import com.doers.Service.UserService;
+
+import java.util.List;
+
 import org.springframework.transaction.annotation.Transactional;
 
 @Transactional
@@ -84,5 +87,10 @@ public boolean saveUser(User u)
 	@Override
 	public void updatePersonImg(String urlString, Long uid) {
 		userDao.updatePersonImg(urlString,uid) ;
+	}
+
+	@Override
+	public List<User> getRelativeUsersByWord(String word) {
+		return userDao.getRelativeUsersByWord(word);
 	}
 }
