@@ -73,6 +73,7 @@
 	</bean>
 	<bean name="loadMainPageAction" class="com.doers.Action.LoadMainPageAction" scope="prototype" >
 		<property name="productionService" ref="productionService"></property>
+		<property name="userService" ref="userService"></property>
 	</bean>
 	<bean name="zanAction" class="com.doers.Action.ZanAction" scope="prototype" >
 		<property name="zanService" ref="zanService"></property>

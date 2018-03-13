@@ -190,40 +190,20 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="pull-left">优秀 Doers</h1>
-                    <span class="pull-right"><a href="index.html">更多</a> </span>
                 </div>
             </div>
         </div>
         <div class="row">
         		<!-- 重复4次 -->
+        	<c:forEach items="${topFourUserList}" var="uf">
             <div class="col-sm-3 animated" data-animation="bounceIn" data-delay="0" style="text-align: center;">
-                <img src="img/img3.jpg" >
+                <img src="${uf.personImg_path }" >
                 <div class="hgs-content">
-                    <h4>这是Doers名称</h4>
-                    <p>这里是Doers的座右铭。可以很长很长很长很长</p>
+                    <a href="${pageContext.request.contextPath}/userAction_openDoerSpace?userId=${uf.uid}" target="_blank"><h4>${uf.user_name }</h4></a>
+                    <p>${uf.description }</p>
                 </div>
             </div>
-            <div class="col-sm-3 animated" data-animation="bounceIn" data-delay="200"  style="text-align: center;">
-                <img src="img/img2.jpg" >
-                <div class="hgs-content">
-					<h4>这是Doers名称</h4>
-                    <p>这里是Doers的座右铭。可以很长很长很长很长</p>
-                </div>
-            </div>
-            <div class="col-sm-3 animated" data-animation="bounceIn" data-delay="400" style="text-align: center;">
-                <img src="img/img1.jpg" >
-                <div class="hgs-content">
-					<h4>这是Doers名称</h4>
-                    <p>这里是Doers的座右铭。可以很长很长很长很长</p>
-                </div>
-            </div>
-            <div class="col-sm-3 animated" data-animation="bounceIn" data-delay="600" style="text-align: center;">
-                <img src="img/img4.jpg" >
-                <div class="hgs-content">
-					<h4>这是Doers名称</h4>
-                    <p>这里是Doers的座右铭。可以很长很长很长很长</p>
-                </div>
-            </div>
+            </c:forEach>
         </div>
 
     </div>
@@ -234,35 +214,35 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="pull-left">缤纷活动</h1>
-                    <span class="pull-right"><a href="index.html">更多</a> </span>
+                    <span class="pull-right"><a href="${pageContext.request.contextPath}/activityAction_loadingActivityCenter">更多</a> </span>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-4 animated" data-animation="bounceIn" data-delay="0">
-                <a href="index.html">
+                <a href="${pageContext.request.contextPath}/activityAction_gotoActivityPassPage?activityId=1" target="_blank">
                     <div class="walkhi2">
-                        <img src="img/img1.jpg" class="img-responsive">
-                        <h4>活动标题</h4>
-                        <p>2015-7-15</p>
+                        <img src="../../Doers/img/activity1.jpg" class="img-responsive img1">
+                        <h4>狗年晒汪</h4>
+                        <p>2018-2-15</p>
                     </div>
                 </a>
             </div>
             <div class="col-sm-4 animated" data-animation="bounceIn" data-delay="200">
-                <a href="index.html">
+                <a href="${pageContext.request.contextPath}/activityAction_gotoActivityPassPage?activityId=2" target="_blank">
                     <div class="walkhi2">
-                        <img src="img/img2.jpg" class="img-responsive ">
-                        <h4>活动标题</h4>
-                        <p>2015-7-15</p>
+                        <img src="../../Doers/img/banner2.jpg" class="img-responsive img1">
+                        <h4>第二届谭木匠创意产品设计征集公选</h4>
+                        <p>2017-11-10</p>
                     </div>
                 </a>
             </div>
             <div class="col-sm-4 animated" data-animation="bounceIn" data-delay="400">
-                <a href="index.html">
+                <a href="${pageContext.request.contextPath}/activityAction_gotoActivityPassPage?activityId=3" target="_blank">
                     <div class="walkhi2">
-                        <img src="img/img3.jpg" class="img-responsive">
-                        <h4>活动标题</h4>
-                        <p>2015-7-15</p>
+                        <img src="../../Doers/img/banner6.jpg" class="img-responsive img1">
+                        <h4>搜狗输入法手机皮肤创意大赛</h4>
+                        <p>2017-12-18</p>
                     </div>
                 </a>
             </div>
@@ -278,10 +258,8 @@
                 <div class="col-sm-4">
                     <h4>Doers家族</h4>
                     <ul>
-                        <li><a href="index.html">关于Doers</a></li>
-                        <li><a>联系我们</a></li>
-                        <li><a>其他</a></li>
-                        <li><a>其他</a></li>
+                        <li><a href="../../Doers/introduce.html" target="_blank">关于Doers</a></li>
+                        <li><a href="../../Doers/introduce.html" target="_blank">联系我们</a></li>
                     </ul>
                 </div>
             </div>

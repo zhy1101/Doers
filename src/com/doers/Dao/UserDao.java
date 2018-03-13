@@ -22,4 +22,6 @@ public void updateByCondition(String caddress, String cbirthday, String cweiChat
 public void updatePersonImg(String urlString, Long uid);
 
 public List<User> getRelativeUsersByWord(String word);
+
+public List<User> getFourtopUserList();
 }

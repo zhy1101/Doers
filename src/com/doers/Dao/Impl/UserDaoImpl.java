@@ -2,6 +2,7 @@ package com.doers.Dao.Impl;
 
 import com.doers.Dao.BaseDao;
 import com.doers.Dao.UserDao;
+import com.doers.domain.Production;
 import com.doers.domain.User;
 import java.io.Serializable;
 import java.util.List;
@@ -84,5 +85,14 @@ public class UserDaoImpl extends BaseDaoImpl<User> implements UserDao
 	public List<User> getRelativeUsersByWord(String word) {
 		String hqiString = "from User where user_name like? or skill like ?";
 		return (List<User>) getHibernateTemplate().find(hqiString,"%" + word + "%","%" + word + "%");
+	}
+
+	@Override
+	public List<User> getFourtopUserList() {
+		String hqlString = "from User ";
+		getHibernateTemplate().setMaxResults(4);
+		List<User> list = (List<User>) getHibernateTemplate().find(hqlString);
+		getHibernateTemplate().setMaxResults(0);
+		return list;
 	}
 }

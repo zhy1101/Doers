@@ -117,10 +117,8 @@
                 <div class="col-sm-4">
                     <h4>Doers家族</h4>
                     <ul>
-                        <li><a href="index.html">关于Doers</a></li>
-                        <li><a>联系我们</a></li>
-                        <li><a>其他</a></li>
-                        <li><a>其他</a></li>
+                        <li><a href="../../Doers/introduce.html" target="_blank">关于Doers</a></li>
+                        <li><a href="../../Doers/introduce.html" target="_blank">联系我们</a></li>
                     </ul>
                 </div>
             </div>
@@ -139,5 +137,11 @@
         height         : 200,  
         showoncomplete : true  });
 </script>
+<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+<script src="js/jquery.skippr.js"></script>
+<script src="js/jquery.scrollto.min.js"></script>
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/jquery.parallax-1.1.3.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

@@ -93,4 +93,9 @@ public boolean saveUser(User u)
 	public List<User> getRelativeUsersByWord(String word) {
 		return userDao.getRelativeUsersByWord(word);
 	}
+
+	@Override
+	public List<User> getFourtopUserList() {
+		return userDao.getFourtopUserList();
+	}
 }
