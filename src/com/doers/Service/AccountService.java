@@ -21,4 +21,8 @@ public interface AccountService {
 
 	void deleteInCartByServerId(User user, String serverId);
 
+	List<AccountOperate> get5AccountOperateByAccount(Account a);
+
+	List<AccountOperate> checkAllOperate(Account a);
+
 }

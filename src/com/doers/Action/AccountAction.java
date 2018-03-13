@@ -24,7 +24,19 @@ public class AccountAction extends ActionSupport {
 	private BaseDictService baseDictService;
 	private String serverId;
 	private ServerService serverService;
+	private Long accountId;
 	
+	
+	
+	public Long getAccountId() {
+		return accountId;
+	}
+
+
+	public void setAccountId(Long accountId) {
+		this.accountId = accountId;
+	}
+
 
 	public void setServerService(ServerService serverService) {
 		this.serverService = serverService;
@@ -64,7 +76,9 @@ public class AccountAction extends ActionSupport {
 	public String loadingMyAccount()  throws Exception{
 		User user = (User) ActionContext.getContext().getSession().get("user");
 		Account a = accountService.getAccountByUser(user);
+		List<AccountOperate> operateList = accountService.get5AccountOperateByAccount(a);
 		ActionContext.getContext().put("myAccount", a);
+		ActionContext.getContext().put("operateList", operateList);
 		return "toMyAccountBase";
 	}
 	public String addDoMoeny() throws Exception{
@@ -118,5 +132,13 @@ public class AccountAction extends ActionSupport {
 		User user = (User) ActionContext.getContext().getSession().get("user");
 		accountService.deleteInCartByServerId(user,serverId);
 		return OpenMyCart();	
+	}
+	public String checkAllOperate(){
+		User user = (User) ActionContext.getContext().getSession().get("user");
+		Account a = accountService.getAccountByUser(user);
+		List<AccountOperate> operateList = accountService.checkAllOperate(a);
+		ActionContext.getContext().put("AllOperateList", operateList);
+		return "OperateList";
+		
 	}
 }

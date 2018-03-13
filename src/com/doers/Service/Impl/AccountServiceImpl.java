@@ -69,4 +69,16 @@ public class AccountServiceImpl implements AccountService {
 		cartDao.deleteInCartByServerId(user,serverId);
 	}
 
+
+	@Override
+	public List<AccountOperate> get5AccountOperateByAccount(Account a) {
+		return accountOperateDao.get5AccountOperateByAccount(a);
+		
+	}
+
+
+	@Override
+	public List<AccountOperate> checkAllOperate(Account a) {
+		return accountOperateDao.checkAllOperate(a);
+	}
 }

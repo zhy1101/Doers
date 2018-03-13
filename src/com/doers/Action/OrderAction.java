@@ -10,6 +10,7 @@ import com.doers.Service.BaseDictService;
 import com.doers.Service.OrderService;
 import com.doers.Service.ServerService;
 import com.doers.domain.Account;
+import com.doers.domain.AccountOperate;
 import com.doers.domain.BaseDict;
 import com.doers.domain.Order;
 import com.doers.domain.Server;
@@ -120,6 +121,15 @@ public class OrderAction extends ActionSupport {
 			account.setWallet1(account.getWallet1()-price);
 			order.setOrderState(baseDict);
 		}
+		AccountOperate aOperate = new AccountOperate();
+		aOperate.setAccount(account);
+		BaseDict behave = baseDictService.getByItemCode("60");
+		aOperate.setBehave(behave);
+		aOperate.setDoMoeny(price);
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+	    String pdate = format.format(new Date());
+		aOperate.setTime(pdate);
+		accountService.addAccountOperate(aOperate);
 		return loadBuyingList();
 	}
 	
@@ -131,6 +141,15 @@ public class OrderAction extends ActionSupport {
 		User u =order.getServerUser();
 		Account account = accountService.getAccountByUser(u);
 		account.setWallet2(account.getWallet2()+price);
+		AccountOperate aOperate = new AccountOperate();
+		aOperate.setAccount(account);
+		BaseDict behave = baseDictService.getByItemCode("59");
+		aOperate.setBehave(behave);
+		aOperate.setDoMoeny(price);
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+	    String pdate = format.format(new Date());
+		aOperate.setTime(pdate);
+		accountService.addAccountOperate(aOperate);
 		return loadBuyingHistory();
 	}
 	public String finishWork(){

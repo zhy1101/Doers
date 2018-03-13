@@ -90,6 +90,7 @@
 	   		 <result name="toMyBuyingList" >/Account/BuyingList.jsp</result>
 	   		 <result name="toHistoryPage" >/Account/History.jsp</result>
 	   		 <result name="toMyServeringList" >/Account/ServeringList.jsp</result>
+	   		<result name="OperateList" >/Account/OperateHistoryList.jsp</result>
 	   		 <result name="noMoney" >/Account/TipsToAddMoney.html</result>
 	    </action>
 	    <action name="contractAction_*" class="contractAction" method="{1}">

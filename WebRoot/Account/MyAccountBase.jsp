@@ -89,7 +89,23 @@
 						<li>
 							<span class="finance-step">账户变动记录</span>
 							<p>
-								<a href="#">查看全部</a>
+								<c:forEach items="${operateList }" var="op">
+								<label>${op.time}</label>&nbsp;&nbsp;
+									<c:if test="${op.behave.dict_id==58 }">
+						 			<label>充值${op.doMoeny} Do币</label>
+						 			</c:if>
+						 			<c:if test="${op.behave.dict_id==59 }">
+						 			<label>获得劳务报酬 ${op.doMoeny} Do币</label>
+						 			</c:if>
+						 			<c:if test="${op.behave.dict_id==60 }">
+						 			<label>支付劳务报酬 ${op.doMoeny} Do币</label>
+						 			</c:if>
+						 			<c:if test="${op.behave.dict_id==61 }">
+						 			<label>劳务提现 ${op.doMoeny} Do币</label>
+						 			</c:if>
+								<br>
+								</c:forEach>
+								<a href="${pageContext.request.contextPath}/accountAction_checkAllOperate?accountId=${myAccount.account_id}" target="_blank">查看全部</a>
 							</p>
 						</li>
 
