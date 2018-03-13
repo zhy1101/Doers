@@ -9,27 +9,26 @@
 <link rel="shortcut icon" href="../../Doers/favicon.ico" />
 <style>
 body{text-align:center}
-h3{margin:0 auto;}
-.zhengwen{margin:0 auto;}
+.zhengwen{}
 </style>
 </head>
 <body>
-	<div class="zhengwen">
+	<div style="margin:0 auto;width:800px">
 		<p
 			style="font-size:14pt; line-height:150%; margin:0pt; orphans:0; text-align:center; widows:0">
 			<span style="font-family:微软雅黑; font-size:14pt; font-weight:bold">Doers平台劳动合约</span>
 		</p>
 		<p
 			style="font-size:10.5pt; line-height:150%; margin:0pt; orphans:0; text-align:justify; text-indent:21pt; widows:0">
-			<span style="font-family:微软雅黑; font-size:10.5pt">甲方：</span>${contract.belongToOder.customerUser.user_name}(Doers平台注册用户)
+			<span style="font-family:微软雅黑; font-size:10.5pt">甲方：</span>${c.belongToOder.customerUser.user_name}(Doers平台注册用户)
 		</p>
 		<p
 			style="font-size:10.5pt; line-height:150%; margin:0pt; orphans:0; text-align:justify; text-indent:21pt; widows:0">
-			<span style="font-family:微软雅黑; font-size:10.5pt">住所：${contract.belongToOder.customerUser.address}</span>
+			<span style="font-family:微软雅黑; font-size:10.5pt">住所：${c.belongToOder.customerUser.address}</span>
 		</p>
 		<p
 			style="font-size:10.5pt; line-height:150%; margin:0pt; orphans:0; text-align:justify; text-indent:21pt; widows:0">
-			<span style="font-family:微软雅黑; font-size:10.5pt">联系电话：${contract.belongToOder.customerUser.phone}</span>
+			<span style="font-family:微软雅黑; font-size:10.5pt">联系电话：${c.belongToOder.customerUser.phone}</span>
 		</p>
 		<p
 			style="font-size:10.5pt; line-height:150%; margin:0pt; orphans:0; text-align:justify; text-indent:21pt; widows:0">
@@ -37,15 +36,15 @@ h3{margin:0 auto;}
 		</p>
 		<p
 			style="font-size:10.5pt; line-height:150%; margin:0pt; orphans:0; text-align:justify; text-indent:21pt; widows:0">
-			<span style="font-family:微软雅黑; font-size:10.5pt">乙方：${contract.belongToOder.serverUser.user_name}(Doers平台注册用户)</span>
+			<span style="font-family:微软雅黑; font-size:10.5pt">乙方：${c.belongToOder.serverUser.user_name}(Doers平台注册用户)</span>
 		</p>
 		<p
 			style="font-size:10.5pt; line-height:150%; margin:0pt; orphans:0; text-align:justify; text-indent:21pt; widows:0">
-			<span style="font-family:微软雅黑; font-size:10.5pt">联系电话：${contract.belongToOder.serverUser.phone}</span>
+			<span style="font-family:微软雅黑; font-size:10.5pt">联系电话：${c.belongToOder.serverUser.phone}</span>
 		</p>
 		<p
 			style="font-size:10.5pt; line-height:150%; margin:0pt; orphans:0; text-align:justify; text-indent:21pt; widows:0">
-			<span style="font-family:微软雅黑; font-size:10.5pt">住址：${contract.belongToOder.serverUser.address}</span>
+			<span style="font-family:微软雅黑; font-size:10.5pt">住址：${c.belongToOder.serverUser.address}</span>
 		</p>
 	
 		<p
@@ -62,7 +61,7 @@ h3{margin:0 auto;}
 		</p>
 		<p
 			style="font-size:10.5pt; line-height:150%; margin:0pt; orphans:0; text-align:justify; text-indent:21pt; widows:0">
-			<span style="font-family:微软雅黑; font-size:10.5pt">自${contract.serverTimeStart}起至${contract.serverTimeEnd }止。</span>
+			<span style="font-family:微软雅黑; font-size:10.5pt">自${c.serverTimeStart}起至${c.serverTimeEnd }止。</span>
 		</p>
 		<p
 			style="font-size:9pt; line-height:150%; margin:0pt; orphans:0; text-align:justify; widows:0">
@@ -92,10 +91,10 @@ h3{margin:0 auto;}
 			style="font-size:10.5pt; line-height:150%; margin:0pt; orphans:0; text-align:justify; text-indent:21pt; widows:0">
 			<span
 				style="color:#262626; font-family:微软雅黑; font-size:10.5pt">第三条、甲乙双方约定的其他详细服务内容：</span>
-				<br>
-			<span style="color:#262626; font-family:微软雅黑; font-size:10.5pt">双反经协商后，甲方于${contract.serverTimeEnd }前为乙方完成如下服务：
+			<span style="color:#262626; font-family:微软雅黑; font-size:10.5pt">双方经协商后，甲方于${c.serverTimeEnd }前为乙方完成如下服务：
 			<br>
-			<span style="color:#262626; font-family:微软雅黑; font-size:10.5pt">${contract.content },并约定服务验收方式为：${contract.conveyStyle }。</span>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#262626; font-family:微软雅黑; font-size:10.5pt">${c.content }</span><br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#262626; font-family:微软雅黑; font-size:10.5pt">双方约定服务验收方式为：${c.conveyStyle }。</span>
 		</p>
 		<p
 			style="font-size:10.5pt; line-height:150%; margin:0pt; orphans:0; text-align:justify; text-indent:21pt; widows:0">
@@ -122,11 +121,11 @@ h3{margin:0 auto;}
 		</p>
 		<p
 			style="font-size:10.5pt; line-height:150%; margin:0pt; orphans:0; text-align:justify; text-indent:21pt; widows:0">
-			<span style="color:#262626; font-family:微软雅黑; font-size:10.5pt">甲方：${contract.belongToOder.customerUser.user_name}</span>
+			<span style="color:#262626; font-family:微软雅黑; font-size:10.5pt">甲方：${c.belongToOder.customerUser.user_name}</span>
 		</p>
 		<p
 			style="font-size:10.5pt; line-height:150%; margin:0pt; orphans:0; text-align:justify; text-indent:21pt; widows:0">
-			<span style="color:#262626; font-family:微软雅黑; font-size:10.5pt">${contract.serverTimeStart}</span>
+			<span style="color:#262626; font-family:微软雅黑; font-size:10.5pt">${c.serverTimeStart}</span>
 		</p>
 		<p
 			style="font-size:10.5pt; line-height:150%; margin:0pt; orphans:0; text-align:justify; text-indent:21pt; widows:0">
@@ -134,11 +133,11 @@ h3{margin:0 auto;}
 		</p>
 		<p
 			style="font-size:10.5pt; line-height:150%; margin:0pt; orphans:0; text-align:justify; text-indent:21pt; widows:0">
-			<span style="color:#262626; font-family:微软雅黑; font-size:10.5pt">乙方：${contract.belongToOder.serverUser.user_name}</span>
+			<span style="color:#262626; font-family:微软雅黑; font-size:10.5pt">乙方：${c.belongToOder.serverUser.user_name}</span>
 		</p>
 		<p
 			style="font-size:10.5pt; line-height:150%; margin:0pt; orphans:0; text-align:justify; text-indent:21pt; widows:0">
-			<span style="color:#262626; font-family:微软雅黑; font-size:10.5pt">${contract.serverTimeStart}</span>
+			<span style="color:#262626; font-family:微软雅黑; font-size:10.5pt">${c.serverTimeStart}</span>
 		</p>
    </div>
    <div style="margin-top:50px;margin-left:50px;"><img src="../../Doers/img/yizhang.PNG"></div>

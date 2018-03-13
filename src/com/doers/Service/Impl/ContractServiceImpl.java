@@ -5,6 +5,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.doers.Dao.ContractDao;
 import com.doers.Service.ContractService;
 import com.doers.domain.Contract;
+import com.doers.domain.Order;
 @Transactional
 public class ContractServiceImpl implements ContractService {
 	private ContractDao contractDao;
@@ -19,6 +20,10 @@ public class ContractServiceImpl implements ContractService {
 	@Override
 	public Contract getContractById(Long cId) {
 		return contractDao.getById(cId);
+	}
+	@Override
+	public Contract getContractByOrder(Order order) {
+		return contractDao.getContractByOrder( order);
 	}
 
 }

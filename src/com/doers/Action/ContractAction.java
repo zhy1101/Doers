@@ -129,8 +129,10 @@ public class ContractAction extends ActionSupport implements ModelDriven<Contrac
 	    return "toMyServeringList";
 	}
 	public String checkContract(){
-		Contract c = contractService.getContractById(cId);
-		ActionContext.getContext().put("contract", c);
+		Order order = orderService.getOrderById(orderId);
+		Contract c = contractService.getContractByOrder(order);
+		ActionContext.getContext().put("c", c);
+		System.out.print(c.getId());
 		return "showContract";
 	}
 	 public void addActionError(String anErrorMessage) {
