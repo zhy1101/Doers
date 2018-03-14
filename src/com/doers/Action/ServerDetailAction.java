@@ -54,4 +54,8 @@ public class ServerDetailAction extends ActionSupport {
 		return "gotoSeverList";
 		
 	}
+	public String deleteServerById(){
+		serverService.deleteServerById(serverId);
+		return showMyServers();
+	}
 }

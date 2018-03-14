@@ -80,6 +80,7 @@
 	    <action name="activityAction_*" class="activityAction" method="{1}">
 	   		 <result name="gotoActivityCenter" >/Activity/ActivityCenter.jsp</result>
 	   		 <result name="gotoActivityPassStation" >/Activity/ActivityPassStation.jsp</result>
+	   		 <result name="toMyActivityList" >/Activity/MyActivityList.jsp</result>
 	    </action>
 	    <action name="accountAction_*" class="accountAction" method="{1}">
 	   		 <result name="toMyAccountBase" >/Account/MyAccountBase.jsp</result>

@@ -18,7 +18,7 @@
 				<th>用户</th>
 				<th>时间</th>
 				<th>留言</th>
-				<th>回复</th>
+				<th>拜访对方</th>
             </tr>
 		</thead>
         <tbody>
@@ -27,7 +27,7 @@
             	<td>${msg.fromUser.user_name}</td>
                 <td>${msg.time}</td>
                 <td>${msg.content }</td>
-                <td><button>回复</button></td>
+                <td><a href="${pageContext.request.contextPath}/userAction_openDoerSpace?userId=${msg.fromUser.uid}" target="_blank">访问对方空间</a></td>
             </tr>
             </c:forEach>
         </tbody>

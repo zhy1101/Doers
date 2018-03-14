@@ -2,6 +2,7 @@ package com.doers.Action;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.forwardedUrl;
 
+import java.util.Iterator;
 import java.util.List;
 
 import com.doers.Service.ProductionService;
@@ -65,20 +66,31 @@ public class ServerConnectProductionAction extends ActionSupport {
 		ActionContext.getContext().put("MyServersList", list);
 		return "gotoHistoryServer";
 	}
-	public void addActionError(String anErrorMessage) {
-	    String s = anErrorMessage;
-	    System.out.println(s);
-	  }
-	  public void addActionMessage(String aMessage) {
-	    String s = aMessage;
-	    System.out.println(s);
-	  }
+	public String refreshConnectionStepOne(){
+		User u = (User) ActionContext.getContext().getSession().get("user");
+		List<Production> userProList = productionService.getUserProductionList(u);
+		ActionContext.getContext().put("userProList", userProList);
+		ActionContext.getContext().put("server_id", server_id);
+		ActionContext.getContext().put("version","refresh");
+		return "gotoConnect";	
+	}
+	public String refreshConnectionStepTwo(){
+		Server server = serverService.findServiceById(server_id);
+		 for(Iterator it = server.getConnectedProductions().iterator();it.hasNext();){
+	            Object obj = it.next();
+	            server.getConnectedProductions().remove(obj);//试图删除迭代出来的元素
+	        }
+		for(int i=0;i<no.length;i++){
+			Server_production server_production = new Server_production();
+			server_production.setServer(server);
+			Production production = productionService.getProductionById(no[i]);
+			server_production.setProduction(production);
+			serverService.addConnectPro(server_production);
+		}
+		List<Server> list = serverService.getServersByUser((User)ActionContext.getContext().getSession().get("user"));
+		ActionContext.getContext().put("MyServersList", list);
+		return "gotoHistoryServer";
+	}
 
-	  public void addFieldError(String fieldName, String errorMessage) {
-	    String s = errorMessage;
-	    String f = fieldName;
-	    System.out.println(s);
-	    System.out.println(f);
-	  }
 
 }

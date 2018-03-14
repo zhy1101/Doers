@@ -17,4 +17,6 @@ public interface ArticleService {
 
 	List<Article> getRelativeArticlesByWord(String word);
 
+	void deleteArcById(Long aid);
+
 }

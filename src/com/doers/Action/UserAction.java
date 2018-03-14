@@ -31,8 +31,10 @@ public class UserAction extends ActionSupport implements ModelDriven<User>
   private File avatar_file;
   private String avatar_fileFileName;
   private Long userId;
+  private Long pid;
+  private Long aid;
   
-  UserService userService;
+  private UserService userService;
   private ProductionService productionService;
   private LeaveMessageService leaveMessageService;
   private ZanService zanService;
@@ -114,7 +116,20 @@ public void setUserService(UserService userService)
   {
     this.userService = userService;
   }
-  public String login() throws Exception {
+	
+  public Long getPid() {
+	return pid;
+}
+public void setPid(Long pid) {
+	this.pid = pid;
+}
+public Long getAid() {
+	return aid;
+}
+public void setAid(Long aid) {
+	this.aid = aid;
+}
+public String login() throws Exception {
     User u = this.userService.getUserByCodePassWord(this.user);
     ActionContext.getContext().getSession().put("user", u);
     return "toHome";
@@ -177,6 +192,14 @@ public void setUserService(UserService userService)
   }
   public User getModel() {
     return this.user;
+  }
+  public String deleteProById(){
+	  productionService.deleteProById(pid);
+	  return loadMyProduction();
+  }
+  private String deleteArcById(){
+	  articleService.deleteArcById(aid);
+	  return loadMyProduction();
   }
 
 }

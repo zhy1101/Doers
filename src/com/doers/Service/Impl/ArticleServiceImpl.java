@@ -44,4 +44,9 @@ public class ArticleServiceImpl implements ArticleService {
 		return articleDao.getRelativeArticlesByWord(word);
 	}
 
+	@Override
+	public void deleteArcById(Long aid) {
+		articleDao.delete(aid);
+	}
+
 }

@@ -84,4 +84,9 @@ public class ProductionServiceImpl implements ProductionService
 	public List<Production> getRelativeProductionsByWord(String word) {
 		return productionDao.getRelativeProductionsByWord(word);
 	}
+
+	@Override
+	public void deleteProById(Long pid) {
+		productionDao.delete(pid);
+	}
 }

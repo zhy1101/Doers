@@ -9,6 +9,7 @@ import com.doers.Dao.Activity_UserDao;
 import com.doers.Service.ActivityService;
 import com.doers.domain.Activity;
 import com.doers.domain.Activity_User;
+import com.doers.domain.User;
 import com.sun.org.apache.bcel.internal.generic.NEW;
 @Transactional
 public class ActivityServiceImpl implements ActivityService{
@@ -44,6 +45,11 @@ public class ActivityServiceImpl implements ActivityService{
 	@Override
 	public void userTakeActivity(Activity_User au) {
 		activity_userDao.save(au);	
+	}
+
+	@Override
+	public List<Activity_User> getActivityByUser(User user) {
+		return activity_userDao.getActivityByUser(user);
 	}
 
 }

@@ -12,7 +12,7 @@
 <c:forEach items="${MyServersList}" var="ser">
 <div class="card-box">
     <div class="card-img">
-        <a href="" class="card-img-hover" target="_blank" z-st="home_main_card_cover">
+        <a href="${pageContext.request.contextPath}/serverDetailAction_showServerDetail?serverId=${ser.serverId} " class="card-img-hover" target="_blank" z-st="home_main_card_cover">
             <img src="${ser.serverCover }">
         </a>
     </div>
@@ -21,17 +21,16 @@
             <a href="${pageContext.request.contextPath}/serverDetailAction_showServerDetail?serverId=${ser.serverId} " class="title-content" target="_blank" z-st="home_main_card_title">${ser.serverName }</a>    
         </p>
         <p class="card-info-type" >协约期： ${ser.talkTime } 天</p>
-        <p class="card-info-item">      
-           	共为<span style="color:blue;">0</span>人 服务过          
-        </p>
     </div>
      <div class="card-item">
         <span class="user-avatar showMemberCard">
-            <a href=""  target="_blank" z-st="home_main_card_user">
-    		<button>管理关联</button>
+            <a href="${pageContext.request.contextPath}/serverConnectProductionAction_refreshConnectionStepOne?server_id=${ser.serverId}"  target="_blank" z-st="home_main_card_user">
+    		<button>重新关联</button>
+        	</a>
+        	<a href="javascript:if(confirm('确认删除该发布的项目吗?')) location='${pageContext.request.contextPath}/serverDetailAction_deleteServerById?serverId=${ser.serverId}' "  z-st="home_main_card_user" style="margin-left:9px">
+    		<button>删除</button>
         	</a>
         </span>
-        <span class="time" ><button style="margin-top:3px">删除</button></span>
     </div>
 </div> 
 </c:forEach>

@@ -77,6 +77,7 @@ public class OrderAction extends ActionSupport {
 		BaseDict state = baseDictService.getByItemCode("50");
 		o.setOrderState(state);
 		orderService.createAndStartTalk(o);
+		accountService.deleteInCartByServerId(u, serId);
 		return loadBuyingList();	
 	}
 	public String loadBuyingList(){

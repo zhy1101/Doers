@@ -34,4 +34,6 @@ public  interface ProductionService
 
 	public List<Production> getRelativeProductionsByWord(String word);
 
+	public void deleteProById(Long pid);
+
 }

@@ -29,11 +29,10 @@
     </div>
      <div class="card-item">
         <span class="user-avatar showMemberCard">
-            <a href=""  target="_blank" z-st="home_main_card_user">
-    		<button>重新编辑</button>
+            <a href="javascript:if(confirm('确认删除该发布的作品吗?')) location='${pageContext.request.contextPath}/userAction_deleteProById?pid=${pro.productionId}' "   z-st="home_main_card_user">
+    		<button>删除</button>
         	</a>
         </span>
-        <span class="time" ><button style="margin-top:3px">删除</button></span>
     </div>
 </div> 
 </c:forEach>
@@ -57,10 +56,7 @@
     </div>
      <div class="card-item">
         <span class="user-avatar showMemberCard">
-            <a href=""  target="_blank" z-st="home_main_card_user">
-    		<button>重新编辑</button>
-        	</a>
-        	<a href=""  target="_blank" z-st="home_main_card_user">
+            <a href="javascript:if(confirm('确认删除该发布的作品吗?')) location=' ${pageContext.request.contextPath}/userAction_deleteArcById?aid=${art.articleId}' "  z-st="home_main_card_user">
     		<button>删除</button>
         	</a>
         </span>

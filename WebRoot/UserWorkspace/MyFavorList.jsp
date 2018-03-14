@@ -12,7 +12,7 @@
 <c:forEach items="${myFavorProductionList}" var="pro">
 <div class="card-box">
     <div class="card-img">
-        <a href="" class="card-img-hover" target="_blank" z-st="home_main_card_cover">
+        <a href="${pageContext.request.contextPath}/productionDetailAction_showProductionDetail?productionId=${pro.productionId}" class="card-img-hover" target="_blank" z-st="home_main_card_cover">
             <img src="${pro.coverURL}">
         </a>
     </div>
@@ -20,7 +20,7 @@
         <p class="card-info-title">
             <a href="${pageContext.request.contextPath}/productionDetailAction_showProductionDetail?productionId=${pro.productionId} " class="title-content" target="_blank" z-st="home_main_card_title">${pro.productionTitle }</a>    
         </p>
-        <p class="card-info-type" ><span>${pro.big_kind.dict_item_name}-<span>${pro.small_kind.dict_item_name}</p>
+        <p class="card-info-type" ><span>${pro.big_kind.dict_item_name}</span>-<span>${pro.small_kind.dict_item_name}</span></p>
         <p class="card-info-item">      
            	共<span style="color:blue;">${pro.zan}</span>人 赞过          
         </p>
@@ -39,7 +39,7 @@
         <p class="card-info-title">
             <a href="${pageContext.request.contextPath}/productionDetailAction_showArticleDetail?articleId=${art.articleId} " class="title-content" target="_blank" z-st="home_main_card_title">${art.articleTitle }</a>    
         </p>
-        <p class="card-info-type" ><span>${art.word1}&nbsp;${art.word2}&nbsp;${art.word3}</p>
+        <p class="card-info-type" ><span>${art.word1}&nbsp;${art.word2}&nbsp;${art.word3}</span></p>
         <p class="card-info-item">      
            	共<span style="color:blue;">${art.push}</span>人 赞过          
         </p>

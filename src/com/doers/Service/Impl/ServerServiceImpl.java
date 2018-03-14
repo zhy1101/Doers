@@ -89,6 +89,11 @@ public class ServerServiceImpl implements ServerService{
 		return pageBean;
 	}
 
+	@Override
+	public void deleteServerById(String serverId) {
+		serverDao.delete(serverId);
+	}
+
 	
 	
 

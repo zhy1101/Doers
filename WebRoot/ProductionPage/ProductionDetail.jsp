@@ -147,10 +147,8 @@
                 <div class="col-sm-4">
                     <h4>Doers家族</h4>
                     <ul>
-                        <li><a href="index.html">关于Doers</a></li>
-                        <li><a>联系我们</a></li>
-                        <li><a>其他</a></li>
-                        <li><a>其他</a></li>
+                        <li><a href="../../Doers/introduce.html" target="_blank">关于Doers</a></li>
+                        <li><a href="../../Doers/introduce.html" target="_blank">联系我们</a></li>
                     </ul>
                 </div>
             </div>
