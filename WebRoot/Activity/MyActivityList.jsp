@@ -9,20 +9,18 @@
 <link rel="stylesheet" href="../../UserWorkspace/common/css/main.css">
 </HEAD>
 <BODY>
+<div style="margin-left:100px">
+<img src="../../img/adBanner.png">
+</div>
 <c:forEach items="${myActivityList}" var="item">
-<div class="card-box">
-    <div class="card-img">
-        <a href="${pageContext.request.contextPath}/activityAction_gotoActivityPassPage?activityId=${item.activity.activityId} " class="card-img-hover" target="_blank" z-st="home_main_card_cover">
-            <img src="${item.activity.activityCoverURL}">
-        </a>
-    </div>
+<div class="card-box" style="margin-top:30px;margin-left:20px">
     <div class="card-info">
         <p class="card-info-title">
             <a href="${pageContext.request.contextPath}/activityAction_gotoActivityPassPage?activityId=${item.activity.activityId} " class="title-content" target="_blank" z-st="home_main_card_title">${item.activity.activityTitle }</a>    
         </p>
         <p class="card-info-type" ><span>${item.activity.activityType.dict_item_name}</p>
         <p class="card-info-item">      
-           	活动时间：<span style="color:blue;">${item.activity.startTime}至${item.activity.endTime}</span>          
+           	活动时间：<span style="color:blue;">${item.activity.startTime}~${item.activity.endTime}</span>          
         </p>
     </div>
 </div> 

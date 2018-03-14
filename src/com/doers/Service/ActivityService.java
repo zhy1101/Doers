@@ -19,5 +19,7 @@ public interface ActivityService {
 	List<Activity> loadingClassActivity();
 
 	List<Activity_User> getActivityByUser(User user);
+	
+	List<Activity> getActivityByUser_direct(User user);
 
 }

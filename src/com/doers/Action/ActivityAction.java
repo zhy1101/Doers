@@ -50,7 +50,7 @@ public class ActivityAction extends ActionSupport {
 		activityService.userTakeActivity(au);
 		return NONE;
 	}
-	private String loadMyActivities(){
+	public String loadMyActivities(){
 		User user  = (User) ActionContext.getContext().getSession().get("user");
 		List <Activity_User> myActivityList = activityService.getActivityByUser(user);
 		ActionContext.getContext().put("myActivityList", myActivityList);

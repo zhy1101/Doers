@@ -10,7 +10,9 @@ import org.springframework.orm.hibernate5.HibernateCallback;
 
 import com.doers.Dao.ActivityDao;
 import com.doers.domain.Activity;
+import com.doers.domain.Production;
 import com.doers.domain.Server;
+import com.doers.domain.User;
 
 public class ActivityDaoImpl extends BaseDaoImpl<Activity> implements ActivityDao {
 
@@ -53,6 +55,12 @@ public class ActivityDaoImpl extends BaseDaoImpl<Activity> implements ActivityDa
 		    return query.list();
 		}
 		  });
+	}
+	public List<Activity> getActivityByUser(User u){
+		String hqlString = "from Activity p inner join fetch p.activity_User_con z where z.user.uid=?";
+		List<Activity> find = (List<Activity>) this.getHibernateTemplate().find(hqlString,u.getUid());
+		return find;
+		
 	}
 
 

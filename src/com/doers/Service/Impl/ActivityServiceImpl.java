@@ -51,5 +51,9 @@ public class ActivityServiceImpl implements ActivityService{
 	public List<Activity_User> getActivityByUser(User user) {
 		return activity_userDao.getActivityByUser(user);
 	}
+	@Override
+	public List<Activity> getActivityByUser_direct(User user) {
+		return activityDao.getActivityByUser(user);
+	}
 
 }
