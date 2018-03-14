@@ -65,14 +65,14 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="pull-left">Do 编码</h1>
-                    <span class="pull-right"><a href="${pageContext.request.contextPath}/productionListAction_getProductionsByBigkind?bigkindId=4">更多</a> </span>
+                    <span class="pull-right"><a href="${pageContext.request.contextPath}/productionListAction_getProductionsByBigkind?bigkindId=4" target="_blank">更多</a> </span>
                 </div>
             </div>
         </div>
         <div class="row">
         	<c:forEach items="${topCodeProductionList }" var="codePro" varStatus="vs">
             <div class="col-sm-4 animated" data-animation="bounceIn" data-delay="${vs.index}*200">
-                <a href="${pageContext.request.contextPath}/productionDetailAction_showProductionDetail?productionId=${codePro.productionId}">
+                <a href="${pageContext.request.contextPath}/productionDetailAction_showProductionDetail?productionId=${codePro.productionId}" target="_blank">
                     <div class="walkhi">
                         <img src="${codePro.coverURL}"    class="img1">
                         <h4>${codePro.productionTitle}</h4>
@@ -90,13 +90,13 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="pull-left">Do 影音</h1>
-                    <span class="pull-right"><a href="${pageContext.request.contextPath}/productionListAction_getProductionsByBigkind?bigkindId=5">更多</a> </span>
+                    <span class="pull-right"><a href="${pageContext.request.contextPath}/productionListAction_getProductionsByBigkind?bigkindId=5" target="_blank">更多</a> </span>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-8 gallery-item animated" data-animation="bounceIn" data-delay="0">
-                <a href="${pageContext.request.contextPath}/productionDetailAction_showProductionDetail?productionId=${topVideoProductionList[0].productionId}">
+                <a href="${pageContext.request.contextPath}/productionDetailAction_showProductionDetail?productionId=${topVideoProductionList[0].productionId}" target="_blank">
                     <div class="gallery-item">
                         <img src="${topVideoProductionList[0].coverURL}"  class="videoBigImg">
                         <div class="img-caption">
@@ -108,7 +108,7 @@
             </div>
             <div class="col-sm-4 animated" data-animation="bounceIn" data-delay="400">
                 <div class="col-sm-12" style="margin: 0px; padding: 0px;">
-                    <a href="${pageContext.request.contextPath}/productionDetailAction_showProductionDetail?productionId=${topVideoProductionList[1].productionId}">
+                    <a href="${pageContext.request.contextPath}/productionDetailAction_showProductionDetail?productionId=${topVideoProductionList[1].productionId}" target="_blank">
                         <div class="gallery-item">
                             <img src="${topVideoProductionList[1].coverURL}" class="videoImg"  >
                             <div class="img-caption">
@@ -119,7 +119,7 @@
                     </a>
                 </div>
                 <div class="col-sm-12" style="margin: 0px; padding: 0px;">
-                    <a href="${pageContext.request.contextPath}/productionDetailAction_showProductionDetail?productionId=${topVideoProductionList[2].productionId}">
+                    <a href="${pageContext.request.contextPath}/productionDetailAction_showProductionDetail?productionId=${topVideoProductionList[2].productionId}" target="_blank">
                         <div class="gallery-item">
                             <img src="${topVideoProductionList[2].coverURL}" class="videoImg"  >
                             <div class="img-caption">
@@ -145,7 +145,7 @@
         </div>
         <div class="row" style="padding:0px 15px;">
             <div class="col-sm-8 clear-lr gallery-item animated" data-animation="bounceIn" data-delay="0">
-                <a href="${pageContext.request.contextPath}/productionDetailAction_showProductionDetail?productionId=${topOtherProductionList[0].productionId}">
+                <a href="${pageContext.request.contextPath}/productionDetailAction_showProductionDetail?productionId=${topOtherProductionList[0].productionId}" target="_blank">
                     <div class="gallery-item" style="height: 253px; overflow: hidden;">
                         <img src="${topOtherProductionList[0].coverURL}" class="wpBigImg1">
                         <div class="img-caption">
@@ -156,7 +156,7 @@
                 </a>
             </div>
             <div class="col-sm-4 clear-lr animated" data-animation="bounceIn" data-delay="400">
-                <a href="${pageContext.request.contextPath}/productionDetailAction_showProductionDetail?productionId=${topOtherProductionList[1].productionId}">
+                <a href="${pageContext.request.contextPath}/productionDetailAction_showProductionDetail?productionId=${topOtherProductionList[1].productionId}" target="_blank">
                     <div class="gallery-item">
                         <img src="${topOtherProductionList[1].coverURL}" class="wpBigImg2">
                         <div class="img-caption">
@@ -170,7 +170,7 @@
         <div class="row" style="padding:0px 15px;">
         	<c:forEach items="${topWordAndPicProductionList }" var="wpPro" >
             <div class="col-sm-3 clear-lr animated" data-animation="bounceIn" data-delay="400" style="margin: 0px;">
-                <a href="${pageContext.request.contextPath}/productionDetailAction_showProductionDetail?productionId=${wpPro.productionId}">
+                <a href="${pageContext.request.contextPath}/productionDetailAction_showProductionDetail?productionId=${wpPro.productionId}" target="_blank">
                     <div class="gallery-item" >
                         <img src="${wpPro.coverURL}" class="wpImg img-response" >
                         <div class="img-caption">
@@ -214,7 +214,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="pull-left">缤纷活动</h1>
-                    <span class="pull-right"><a href="${pageContext.request.contextPath}/activityAction_loadingActivityCenter">更多</a> </span>
+                    <span class="pull-right"><a href="${pageContext.request.contextPath}/activityAction_loadingActivityCenter" target="_blank">更多</a> </span>
                 </div>
             </div>
         </div>
