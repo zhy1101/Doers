@@ -33,7 +33,7 @@
         <link rel="stylesheet" type="text/css" href="../../Doers/css/jquery.mCustomScrollbar.css" />
 
         <!-- CSS | Google Fonts -->
-        <link href='http://fonts.useso.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+        <!-- <link href='http://fonts.useso.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'> -->
 
         <!-- CSS | Style -->
         <!-- Credits: http://themeforest.net/user/FlexyCodes -->
@@ -74,8 +74,6 @@
 
     <body>
 
-        <!-- Laoding page -->
-        <div id="preloader"><div id="spinner"></div></div>
 
         <!-- .wrapper --> 
         <div class="wrapper">

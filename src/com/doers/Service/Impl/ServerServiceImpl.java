@@ -94,6 +94,37 @@ public class ServerServiceImpl implements ServerService{
 		serverDao.delete(serverId);
 	}
 
+	@Override
+	public PageBean<Server> getAllServersByPageAndWord(String serWord, int currentPage) {
+		int currentCount = 12;
+		PageBean<Server> pageBean = new PageBean<Server>();
+		//1、封装当前页
+		pageBean.setCurrentPage(currentPage);
+		//2、封装每页显示的条数
+		pageBean.setCurrentCount(currentCount);
+		//3、封装总条数
+		int totalCount = 0;
+		totalCount = serverDao.getCountByWord(serWord);
+		pageBean.setTotalCount(totalCount);
+		//4、封装总页数
+		int totalPage = (int) Math.ceil(1.0*totalCount/currentCount);
+		pageBean.setTotalPage(totalPage);
+		
+		//5、当前页显示的数据
+		// select * from product where cid=? limit ?,?
+		// 当前页与起始索引index的关系
+		int index = (currentPage-1)*currentCount;
+		List<Server> list = null;
+		try {
+			list = serverDao.findProductByPageAndWord(index,currentCount,serWord);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		pageBean.setList(list);
+		return pageBean;
+	}
+
 	
 	
 

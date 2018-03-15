@@ -26,4 +26,6 @@ public interface ServerService {
 
 	void deleteServerById(String serverId);
 
+	PageBean<Server> getAllServersByPageAndWord(String serWord, int currentPage1);
+
 }

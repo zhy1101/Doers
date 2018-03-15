@@ -4,9 +4,11 @@ import java.util.List;
 
 import com.doers.Service.ArticleService;
 import com.doers.Service.ProductionService;
+import com.doers.Service.ServerService;
 import com.doers.Service.UserService;
 import com.doers.domain.Article;
 import com.doers.domain.Production;
+import com.doers.domain.Server;
 import com.doers.domain.User;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
@@ -37,6 +39,8 @@ public class SearchAction extends ActionSupport {
 	public void setWord(String word) {
 		this.word = word;
 	}
+	
+
 	public String searchInSite(){
 		List<User> userList = userService.getRelativeUsersByWord(word);
 		List<Production> productionList = productionService.getRelativeProductionsByWord(word);

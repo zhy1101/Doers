@@ -42,4 +42,32 @@ public class ServerDaoImpl extends BaseDaoImpl<Server> implements ServerDao{
 			  });
 			 }
 
+	@Override
+	public List<Server> getServerByWord(String serWord) {
+		String hqiString = "from Server where serverName like? or serverDescribtion like ?";
+		return (List<Server>) getHibernateTemplate().find(hqiString,"%" + serWord + "%","%" + serWord + "%");
+	}
+
+	@Override
+	public int getCountByWord(String serWord) {
+		String hql ="select count(*) from Server where serverName like? or serverDescribtion like ?";
+		return ((Long) getHibernateTemplate().iterate(hql,"%" + serWord + "%","%" + serWord + "%").next()).intValue();
+	}
+
+	@Override
+	public List<Server> findProductByPageAndWord(int index, int currentCount, String serWord)  throws HibernateException, SQLException{
+		  final String hql = "from Server where serverName like? or serverDescribtion like ?";
+		  return  (List<Server>) this.getHibernateTemplate().execute(new HibernateCallback() {
+		@Override
+		public Object doInHibernate(org.hibernate.Session arg0) throws HibernateException {
+			final Query query =  arg0.createQuery(hql);
+			query.setParameter(0, serWord);
+			query.setParameter(1, serWord);
+		    query.setMaxResults(currentCount);
+		    query.setFirstResult(index);    
+		    return query.list();
+		}
+		  });
+		 }
+
 }

@@ -13,6 +13,24 @@ public class ServerDetailAction extends ActionSupport {
 	private String serverId;
 	private ServerService serverService;
 	private String currentPage;
+	private String serWord;
+	private String checkAll;
+
+	public String getSerWord() {
+		return serWord;
+	}
+
+	public void setSerWord(String serWord) {
+		this.serWord = serWord;
+	}
+
+	public String getCheckAll() {
+		return checkAll;
+	}
+
+	public void setCheckAll(String checkAll) {
+		this.checkAll = checkAll;
+	}
 
 	public String getServerId() {
 		return serverId;
@@ -49,7 +67,12 @@ public class ServerDetailAction extends ActionSupport {
 	public String loadingAllServers(){
 		if(currentPage==null) currentPage="1";
 		int currentPage1 = Integer.parseInt(currentPage);
-		PageBean<Server> pageBean =serverService.getAllServersByPage(currentPage1);
+		PageBean<Server> pageBean=null;
+		if(checkAll.equals("yes")){
+		pageBean =serverService.getAllServersByPage(currentPage1);}
+		else {
+		pageBean = serverService.getAllServersByPageAndWord(serWord,currentPage1);
+		}
 		ActionContext.getContext().put("pageBean",pageBean);
 		return "gotoSeverList";
 		

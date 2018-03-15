@@ -85,28 +85,25 @@ body {
                 <ul class="nav navbar-nav">
                     <li><a href="${pageContext.request.contextPath}/index.html">首页</a></li>
                     <li><a href="${pageContext.request.contextPath}/productionListAction_getAllProductions">Do 博物</a></li>
-                    <li class="active"><a href="${pageContext.request.contextPath}/serverDetailAction_loadingAllServers">Do 服务</a></li>
+                    <li class="active"><a href="${pageContext.request.contextPath}/serverDetailAction_loadingAllServers?checkAll=yes">Do 服务</a></li>
                     <li><a href="${pageContext.request.contextPath}/activityAction_loadingActivityCenter">Do 活动</a></li>
                     <li><a href="${pageContext.request.contextPath}/accountAction_OpenMyCart">Do 交易</a></li>
                     <li><a href="/Doers/UserWorkspace/UserWorkSpace.jsp">Do Myself</a></li>
                 </ul>
-                <form class="navbar-form navbar-left">
-                    <input type="text" class="form-control col-lg-8" placeholder="搜索">
-                </form>
             </div>
         </nav>
 </header>
 	<br><br><br><br>
 	<div >
-		<form action="/search" id="search-form" class="form" method="GET">
+		<form action="${pageContext.request.contextPath}/serverDetailAction_loadingAllServers?checkAll=no" id="search-form" class="form" method="GET">
         <div class="form-group">
-               <span style="margin-left:110px;color:grey"> 搜索服务：</span><input type="text" id="home-searchInput" name="" value="">
-                    <button type="submit" id="" name="" class="btn btn-primary">
+               <span style="margin-left:110px;color:grey"> 搜索服务：</span><input type="text" id="home-searchInput" name="serWord">
+                    <button type="submit" id="submit1" class="btn btn-primary">
                         <i class="iconfont icon-sousuo"></i>搜索
                     </button>
                     </div>
                     </form>
-        <span style="margin-left:110px;color:grey">热门服务：</span>&nbsp;&nbsp;<a>ppt定制</a>&nbsp;&nbsp;<a>图标设计</a>&nbsp;&nbsp;<a>小程序制作</a>&nbsp;&nbsp;<a>活动策划编写</a>
+        <span style="margin-left:110px;color:grey">热门服务：</span>&nbsp;&nbsp;<a href="${pageContext.request.contextPath}/serverDetailAction_loadingAllServers?checkAll=no&serWord=ppt定制">ppt定制</a>&nbsp;&nbsp;<a href="${pageContext.request.contextPath}/serverDetailAction_loadingAllServers?checkAll=no&serWord=图标设计">图标设计</a>&nbsp;&nbsp;<a href="${pageContext.request.contextPath}/serverDetailAction_loadingAllServers?checkAll=no&serWord=小程序制作">小程序制作</a>&nbsp;&nbsp;<a href="${pageContext.request.contextPath}/serverDetailAction_loadingAllServers?checkAll=no&serWord=活动策划">活动策划编写</a>
    </div>
 	<hr>
 		<div class="row" style="width: 1210px; margin: 0 auto;">		
