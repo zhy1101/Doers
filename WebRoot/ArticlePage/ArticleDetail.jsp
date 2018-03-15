@@ -40,7 +40,7 @@
                 <ul class="breadcrumb">
                     <li><a href="${pageContext.request.contextPath}/index.html">首页</a></li>
                     <li><a href="${pageContext.request.contextPath}/productionListAction_getAllProductions">Do 博物</a></li>
-                    <li><a href="#">交流文章</a></li>
+                    <li><a href="${pageContext.request.contextPath}/productionListAction_getHotArticle">精选文章</a></li>
                     <li class="active">${article.articleTitle}</li>
                 </ul>
             </div>
@@ -54,7 +54,7 @@
                 <div class="view-content-left">
                     <div class="content-header">
                         <h2>${article.articleTitle}</h2>
-                        <span><a href="hiview-info.html"><img src="${article.user.personImg_path }" style="float:left;height: 25px;width: 25px;border-radius: 50%;margin-right: 5px">${article.user.user_name}</a> <i class="fa fa-clock-o"></i>${article.time}</span>
+                        <span><a href="${pageContext.request.contextPath}/userAction_openDoerSpace?userId=${article.user.uid }" target="_blank"><img src="${article.user.personImg_path }" style="float:left;height: 25px;width: 25px;border-radius: 50%;margin-right: 5px">${article.user.user_name}</a> <i class="fa fa-clock-o"></i>${article.time}</span>
                     </div>
 					<section class="article"><div>${article.content}</div></section>
                     <hr/>
@@ -105,10 +105,8 @@
                 <div class="col-sm-4">
                     <h4>Doers家族</h4>
                     <ul>
-                        <li><a href="index.html">关于Doers</a></li>
-                        <li><a>联系我们</a></li>
-                        <li><a>其他</a></li>
-                        <li><a>其他</a></li>
+                        <li><a href="../../Doers/introduce.html" target="_blank">关于Doers</a></li>
+                        <li><a href="../../Doers/introduce.html" target="_blank">联系我们</a></li>
                     </ul>
                 </div>
             </div>
