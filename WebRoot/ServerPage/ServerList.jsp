@@ -95,7 +95,7 @@ body {
 </header>
 	<br><br><br><br>
 	<div >
-		<form action="${pageContext.request.contextPath}/serverDetailAction_loadingAllServers?checkAll=no" id="search-form" class="form" method="GET">
+		<form action="${pageContext.request.contextPath}/serverDetailAction_loadingAllServers?checkAll=no" id="search-form" class="form" method="GET" name="form1">
         <div class="form-group">
                <span style="margin-left:110px;color:grey"> 搜索服务：</span><input type="text" id="home-searchInput" name="serWord">
                     <button type="submit" id="submit1" class="btn btn-primary">
@@ -109,11 +109,11 @@ body {
 		<div class="row" style="width: 1210px; margin: 0 auto;">		
 		<c:forEach items="${pageBean.list }" var="ser">		
 			<div class="col-md-2" style="height:250px">
-				<a href="${pageContext.request.contextPath}/serverDetailAction_showServerDetail?serverId=${ser.serverId}"> 
+				<a href="${pageContext.request.contextPath}/serverDetailAction_showServerDetail?serverId=${ser.serverId}" target="_blank"> 
 					<img src="${ser.serverCover}" width="170" height="170" style="display: inline-block;">
 				</a>
 				<p>
-					<a href="${pageContext.request.contextPath}/serverDetailAction_showServerDetail?serverId=${ser.serverId}" style='color: #6082b6'>${ser.serverName }</a>
+					<a href="${pageContext.request.contextPath}/serverDetailAction_showServerDetail?serverId=${ser.serverId}" style="color: #6082b6" target="_blank">${ser.serverName }</a>
 				</p>
 				<p>
 					<font color="#FF0000">预估价：&yen;${ser.lowLine }</font>
@@ -175,5 +175,17 @@ body {
 		</ul>
 	</div>
 	<!-- 分页结束 -->
+<script src="../../Doers/js/jquery-1.10.2.min.js"></script> 	
+<script language="javascript" type="text/javascript">
+window.onload=function(){
+			var bt=document.getElementById("submit1");
+			bt.onclick=function(){
+				if(document.form1.serWord.value==""){
+				alert("搜索关键词不能为空!");
+				document.form1.serWord.focus();
+				return false;} 
+				}
+}
+</script>
 </body>
 </html>

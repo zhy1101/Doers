@@ -29,11 +29,16 @@ body {
 	width: 100%;
 	height: 300px;
 }
+.hotlist{width:936px;height:80px;margin:15px auto 0}
+.hotlist li{float:left;width:70px;height:80px;overflow:hidden;text-align:center;line-height:2.5;font-family:sinsum;font-size:12px;margin:0 7px;display:inline}
+.hotlist li img{display:block;width:58px;height:58px;margin:0 auto;border-radius:5px}
+.hotlist li a{color:#333;}
+.hotlist li a:hover{color:#6082b6}
 </style>
 <script src="../Doers/js/jquery-1.11.3.min.js" type="text/javascript"></script>
 <script src="../Doers/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 </head>
-<body>
+<body >
 <nav class="navbar navbar-default navbar-fixed-top">
             <div class="navbar-header">
                 <a class="navbar-brand" href="${pageContext.request.contextPath}/index.html">Doers</a>
@@ -55,7 +60,7 @@ body {
 <div class="container" style="margin-top:80px">
 		<div class="row">
 			<div style="border: 1px solid #e4e4e4; width: 930px; margin-bottom: 10px; margin: 0 auto; padding: 10px; margin-bottom: 10px;">
-				<a href="./index.htm">首页&nbsp;&nbsp;&gt;</a> <a href="./蔬菜分类.htm">Do 服务&nbsp;&nbsp;&gt;</a>
+				<a href="./index.htm">首页&nbsp;&nbsp;&gt;</a> <a href="${pageContext.request.contextPath}/serverDetailAction_loadingAllServers?checkAll=yes">Do 服务&nbsp;&nbsp;&gt;</a>
 				<a>${server.serverName}</a>
 			</div>
 
@@ -95,19 +100,23 @@ body {
 					<table class="table table-bordered">
 						<tbody>
 							<tr class="active">
-								<th><strong>商品评论</strong></th>
+								<th><strong>相关技能作品展示</strong></th>
 							</tr>
 							<tr class="warning">
-								<th>暂无商品评论信息 <a>[发表商品评论]</a></th>
+								<th>
+								<ul class="hotlist cf">
+									<c:forEach items="${server.connectedProductions}" var="poo">
+									<li ><a href="${pageContext.request.contextPath}/serverDetailAction_showServerDetail?serverId=${poo.production.productionId}" alt="${poo.production.productionTitle }"><img src="${poo.production.coverURL }" alt="${poo.production.productionTitle }"/>${poo.production.productionTitle }</a></li>
+									</c:forEach>
+								</ul>
+								</th>
 							</tr>
 						</tbody>
 					</table>
 				</div>
-
 			</div>
 
 		</div>
 	</div>
-
 </body>
 </html>

@@ -30,9 +30,9 @@
                     <li><a href="${pageContext.request.contextPath}/accountAction_OpenMyCart">Do 交易</a></li>
                     <li><a href="/Doers/UserWorkspace/UserWorkSpace.jsp">Do Myself</a></li>
                 </ul>
-                <form class="navbar-form navbar-left" action="${pageContext.request.contextPath}/searchAction_searchInSite" method="get">
-                    <input type="text" name="word" class="form-control col-lg-8" placeholder="输入你想要的关键字">
-                    <input type="submit" class="form-control col-lg-8" style="margin-left:5px;" value="搜全站"/>
+                <form class="navbar-form navbar-left" action="${pageContext.request.contextPath}/searchAction_searchInSite" method="get" name="form1">
+                    <input type="text" name="word" class="form-control col-lg-8" placeholder="输入你想要的关键字" >
+                    <input type="submit" class="form-control col-lg-8" style="margin-left:5px;" value="搜全站" form="form1" id="send"/>
                 </form>
                <lable id ="ready_login" style="display:none">欢迎你，<a>${user.user_name}</a></lable>
                 <ul class="nav navbar-nav navbar-right" id = "no_login" style="display:block">
@@ -360,6 +360,17 @@
         width          : 285,  
         height         : 250,  
         showoncomplete : true  });
+</script>
+<script language="javascript" type="text/javascript">
+window.onload=function(){
+			var bt=document.getElementById("send");
+			bt.onclick=function(){
+				if(document.form1.word.value==""){
+				alert("搜索关键词不能为空!");
+				document.form1.word.focus();
+				return false;} 
+				}
+}
 </script>
 <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
 <script src="js/jquery.skippr.js"></script>
