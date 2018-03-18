@@ -14,6 +14,7 @@
     <link rel="stylesheet" type="text/css" href="css/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="css/demo.css">	
 	<link rel="shortcut icon" href="favicon.ico" />
+	
 </head>
 <body>
 <header>
@@ -34,7 +35,6 @@
                     <input type="text" name="word" class="form-control col-lg-8" placeholder="输入你想要的关键字" >
                     <input type="submit" class="form-control col-lg-8" style="margin-left:5px;" value="搜全站" form="form1" id="send"/>
                 </form>
-               <lable id ="ready_login" style="display:none">欢迎你，<a>${user.user_name}</a></lable>
                 <ul class="nav navbar-nav navbar-right" id = "no_login" style="display:block">
                 	
                 	<c:if test="${empty user }">
@@ -42,7 +42,7 @@
                     	<li><a href="/Doers/resign.jsp" target="_blank">注册</a></li>
                 	</c:if>
                 	<c:if test="${!empty user }">
-                		<li><a href=java:void(0)>欢迎您 ，${user.user_name }</a></li>
+                		<li><a href="javascript:void(0);">欢迎您 ，${user.user_name }</a></li>
                 		<li><a href="${pageContext.request.contextPath}/userAction_dropout" >退出</a></li>
                 	</c:if>
                </ul>
@@ -362,15 +362,14 @@
         showoncomplete : true  });
 </script>
 <script language="javascript" type="text/javascript">
-window.onload=function(){
-			var bt=document.getElementById("send");
-			bt.onclick=function(){
-				if(document.form1.word.value==""){
-				alert("搜索关键词不能为空!");
-				document.form1.word.focus();
-				return false;} 
-				}
-}
+		$("#send").click(function(){
+						var bt=document.getElementById("send");
+						if(document.form1.word.value==""){
+						alert("搜索关键词不能为空!");
+						document.form1.word.focus();
+						return false;} 
+						document.form1.submit();
+ });
 </script>
 <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
 <script src="js/jquery.skippr.js"></script>

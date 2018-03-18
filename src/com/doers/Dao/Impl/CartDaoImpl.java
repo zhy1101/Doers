@@ -1,5 +1,7 @@
 package com.doers.Dao.Impl;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -20,8 +22,9 @@ public class CartDaoImpl extends BaseDaoImpl<Cart> implements CartDao {
 
 	@Override
 	public void deleteInCartByServerId(User user, String serverId) {
-		String hqlString="delete from Cart where cart_user.uid=? and cart_item.serverId=?";
-		getHibernateTemplate().find(hqlString, user.getUid(),serverId);
+		String hqlString="from Cart c where c.cart_user.uid=? and c.cart_item.serverId=?";
+		Cart cart = (Cart) getHibernateTemplate().find(hqlString, user.getUid(),serverId).get(0);
+		getHibernateTemplate().delete(cart);
 		
 	}
 
