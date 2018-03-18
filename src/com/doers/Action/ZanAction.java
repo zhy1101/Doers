@@ -26,15 +26,18 @@ public class ZanAction extends ActionSupport {
 	public String addZan(){
 		Zan zan =new Zan();
 		zan.setZan_user((User) ActionContext.getContext().getSession().get("user"));
-		zan.setZan_pro((Production) ActionContext.getContext().getSession().get("production"));
+		Production  production = (Production) ActionContext.getContext().getSession().get("production");
+		zan.setZan_pro(production);
+		production.setZan(production.getZan()+1);	
 		zanService.addZan(zan);
 		return NONE;
 	}
 	
 	public String removeZan() throws Exception{
 		Long uid = ((User)ActionContext.getContext().getSession().get("user")).getUid();
-		Long pid=((Production) ActionContext.getContext().getSession().get("production")).getProductionId();
-		Zan zan =zanService.findZanByCondition(uid,pid);
+		Production  production = (Production) ActionContext.getContext().getSession().get("production");
+		Zan zan =zanService.findZanByCondition(uid,production.getProductionId());
+		production.setZan(production.getZan()-1);
 		zanService.removeZan(zan);
 		return NONE;
 	}

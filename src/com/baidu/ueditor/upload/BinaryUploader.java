@@ -68,7 +68,7 @@ public class BinaryUploader
 
       String rootPath = ConfigManager.getRootPath(request, conf);
 
-      String physicalPath = "D:/DoersWorks/" + savePath;
+      String physicalPath = "c:/DoersWorks/" + savePath;
 
       InputStream is = fileStream.openStream();
       State storageState = StorageManager.saveFileByInputStream(is, 

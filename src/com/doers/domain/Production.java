@@ -32,7 +32,7 @@ public class Production
     this.shortcontent = shortcontent;
   }
   public int getZan() {
-    return this.zanlist.size();
+    return this.zan;
   }
   public void setZan(int zan) {
     this.zan = zan;

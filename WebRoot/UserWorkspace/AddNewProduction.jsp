@@ -41,7 +41,6 @@
 <body>
 <h3 class="h-bloc">发布新作</h3><br> 
     <form action="/Doers/ueditorAction_addNewProduction" method="post" enctype="multipart/form-data" id="newProduct">
-    	<input name="user" type="hidden" value="${user}">
               标题：<input name="productionTitle" type="text" style="width:300px">&nbsp;&nbsp;
               类别：<span class="f-fl item-ifo" id="big_kind"></span> 
 	     <span class="f-fl item-ifo" id="small_kind"></span>

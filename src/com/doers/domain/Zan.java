@@ -5,6 +5,8 @@ public class Zan {
 	
 	private Production zan_pro;
 	private User zan_user;
+	
+	
 	public String getZan_id() {
 		return zan_id;
 	}

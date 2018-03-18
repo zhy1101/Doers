@@ -18,8 +18,15 @@ public class AddServerAction extends ActionSupport implements ModelDriven<Server
 	private Server s = new Server();
 	private File cover;
 	private ServerService serverService;
+	private String coverFileName;
 	
 	
+	public String getCoverFileName() {
+		return coverFileName;
+	}
+	public void setCoverFileName(String coverFileName) {
+		this.coverFileName = coverFileName;
+	}
 	public void setServerService(ServerService serverService) {
 		this.serverService = serverService;
 	}
@@ -35,10 +42,8 @@ public class AddServerAction extends ActionSupport implements ModelDriven<Server
 		User user = (User) ActionContext.getContext().getSession().get("user");
 		s.setUser(user);
 	    String uuid=UUID.randomUUID().toString();
-	    String typeString = this.cover.getName();
-	    typeString = typeString.substring(typeString.indexOf("."));
-	    this.cover.renameTo(new File("D:/DoersWorks/AddContractFile/" +"ser_"+ uuid+"."+typeString));
-	    this.s.setServerCover("/productionCovers/" +"ser_"+ uuid+"."+typeString);
+	    this.cover.renameTo(new File("c:/DoersWorks/ProductionCoverPage/" +"ser_"+ uuid+"_" + this.coverFileName));
+	    this.s.setServerCover("/productionCovers/" +"ser_"+ uuid+"_" + this.coverFileName);
 	    s.setServerId(uuid);
 	    ActionContext.getContext().put("server_id", uuid);
 	    this.serverService.addNewServer(this.s);

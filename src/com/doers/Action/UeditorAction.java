@@ -49,13 +49,27 @@ public class UeditorAction extends ActionSupport
     String pdate = format.format(new Date());
     this.p.setTime(pdate);
     String uuid=UUID.randomUUID().toString();
-    this.cover.renameTo(new File("D:/DoersWorks/ProductionCoverPage/" + uuid+ "_" + this.coverFileName));
+    this.cover.renameTo(new File("c:/DoersWorks/ProductionCoverPage/" + uuid+ "_" + this.coverFileName));
     this.p.setCoverURL("/productionCovers/" + uuid + "_" + this.coverFileName);
     this.p.setUser(user);
     this.productionService.addNewProduction(this.p);
     return "handInSuccess";
   }
+  public void addActionError(String anErrorMessage) {
+	    String s = anErrorMessage;
+	    System.out.println(s);
+	  }
+	  public void addActionMessage(String aMessage) {
+	    String s = aMessage;
+	    System.out.println(s);
+	  }
 
+	  public void addFieldError(String fieldName, String errorMessage) {
+	    String s = errorMessage;
+	    String f = fieldName;
+	    System.out.println(s);
+	    System.out.println(f);
+	  }
   public Production getModel() {
     return this.p;
   }

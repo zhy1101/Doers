@@ -23,8 +23,17 @@ public class AddArticleAction extends ActionSupport implements ModelDriven<Artic
 	private String word1;
 	private String word2;
 	private String word3;
+	private String coverFileName;
 	
 	
+	public String getCoverFileName() {
+		return coverFileName;
+	}
+
+	public void setCoverFileName(String coverFileName) {
+		this.coverFileName = coverFileName;
+	}
+
 	@Override
 	public Article getModel() {
 		return this.article;
@@ -76,10 +85,8 @@ public class AddArticleAction extends ActionSupport implements ModelDriven<Artic
 	    String pdate = format.format(new Date());
 	    this.article.setTime(pdate);
 	    String uuid=UUID.randomUUID().toString();
-	    String typeString = this.cover.getName();
-	    typeString = typeString.substring(typeString.indexOf("."));
-	    this.cover.renameTo(new File("D:/DoersWorks/ProductionCoverPage/" +"art_"+ uuid+"."+typeString));
-	    this.article.setCoverURL("/productionCovers/" +"art_"+ uuid +"."+typeString);
+	    this.cover.renameTo(new File("c:/DoersWorks/ProductionCoverPage/" +"art_"+ uuid+"_" + this.coverFileName));
+	    this.article.setCoverURL("/productionCovers/" +"art_"+ uuid +"_" + this.coverFileName);
 	    this.article.setUser(user);
 	    this.articleService.addNewArticle(this.article);
 	    return "handInSuccess";
