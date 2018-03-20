@@ -22,7 +22,7 @@ public class AccountOperateDaoImpl extends BaseDaoImpl<AccountOperate> implement
 
 	@Override
 	public List<AccountOperate> checkAllOperate(Account a) {
-		String hqiString ="from AccountOperate where account.account_id=? order by operate_id desc desc";
+		String hqiString ="from AccountOperate where account.account_id=? order by operate_id desc";
 		return (List<AccountOperate>) getHibernateTemplate().find(hqiString, a.getAccount_id());
 	}
 
