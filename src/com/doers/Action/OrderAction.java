@@ -93,7 +93,7 @@ public class OrderAction extends ActionSupport {
 		ActionContext.getContext().put("state", 1);
 		return "toHistoryPage";
 	}
-	public String loadServeringHistory(){
+	public String loadServeringingHistory(){
 		User u = (User) ActionContext.getContext().getSession().get("user");
 		List<Order> myServeringHistory = orderService.getServeringHistoryByUser(u);
 		ActionContext.getContext().put("myServeringHistory", myServeringHistory);
@@ -114,7 +114,8 @@ public class OrderAction extends ActionSupport {
 		Account account  = accountService.getAccountByUser(u);
 		if((account.getWallet1()+account.getWallet2())<price){
 			return "noMoney";
-		}else if(account.getWallet1()<price){
+		}else {
+			if(account.getWallet1()<price){
 			account.setWallet1(0);
 			account.setWallet2(account.getWallet2()-(price-account.getWallet1()));	
 			order.setOrderState(baseDict);
@@ -122,6 +123,7 @@ public class OrderAction extends ActionSupport {
 			account.setWallet1(account.getWallet1()-price);
 			order.setOrderState(baseDict);
 		}
+			}
 		AccountOperate aOperate = new AccountOperate();
 		aOperate.setAccount(account);
 		BaseDict behave = baseDictService.getByItemCode("60");

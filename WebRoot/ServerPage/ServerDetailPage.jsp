@@ -106,7 +106,7 @@ body {
 								<th>
 								<ul class="hotlist cf">
 									<c:forEach items="${server.connectedProductions}" var="poo">
-									<li ><a href="${pageContext.request.contextPath}/serverDetailAction_showServerDetail?serverId=${poo.production.productionId}" alt="${poo.production.productionTitle }"><img src="${poo.production.coverURL }" alt="${poo.production.productionTitle }"/>${poo.production.productionTitle }</a></li>
+									<li ><a href="${pageContext.request.contextPath}/productionDetailAction_showProductionDetail?productionId=${poo.production.productionId}" alt="${poo.production.productionTitle }"><img src="${poo.production.coverURL }" alt="${poo.production.productionTitle }"/>${poo.production.productionTitle }</a></li>
 									</c:forEach>
 								</ul>
 								</th>

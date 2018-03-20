@@ -16,7 +16,7 @@ public class ContractDaoImpl extends BaseDaoImpl<Contract> implements ContractDa
 	@Override
 	public Contract getContractByOrder(Order order) {
 		String hql = "from Contract where belongToOder.orderId = ?";
-		return (Contract) getHibernateTemplate().find(hql, order.getOrderId()).get(0);
+		return (Contract) (getHibernateTemplate().find(hql, order.getOrderId())).get(0);
 	}
 
 
