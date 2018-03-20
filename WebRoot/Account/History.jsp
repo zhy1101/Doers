@@ -144,7 +144,7 @@
 										<td>${items.talkTimeStart }&nbsp;至&nbsp;${items.talkTimeEnd }</td>
 										<td>${items.orderContract.serverTimeStart }&nbsp;至&nbsp;${items.orderContract.serverTimeEnd }</td>
 										<td>${items.orderContract.price } Do币</td>
-										<td><a href="${pageContext.request.contextPath}/contractAction_checkContract?cId=${orderItem.orderContract.id}">查看合约</a></td>
+										<td><a href="${pageContext.request.contextPath}/contractAction_checkContract?cId=${items.orderContract.id}">查看合约</a></td>
 									</tr>
 								</c:forEach>
 							</c:if>

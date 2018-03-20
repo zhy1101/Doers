@@ -112,7 +112,7 @@ public class OrderAction extends ActionSupport {
 		BaseDict baseDict =baseDictService.getByItemCode("52");
 		User u = (User) ActionContext.getContext().getSession().get("user");
 		Account account  = accountService.getAccountByUser(u);
-		if(account.getWallet1()+account.getWallet2()<price){
+		if((account.getWallet1()+account.getWallet2())<price){
 			return "noMoney";
 		}else if(account.getWallet1()<price){
 			account.setWallet1(0);
