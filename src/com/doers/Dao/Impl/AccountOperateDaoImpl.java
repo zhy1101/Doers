@@ -13,7 +13,7 @@ public class AccountOperateDaoImpl extends BaseDaoImpl<AccountOperate> implement
 
 	@Override
 	public List<AccountOperate> get5AccountOperateByAccount(Account account ) {
-		String hqiString ="from AccountOperate where account.account_id=?";
+		String hqiString ="from AccountOperate where account.account_id=? order by operate_id desc";
 		getHibernateTemplate().setMaxResults(5);
 		List<AccountOperate> list = (List<AccountOperate>) getHibernateTemplate().find(hqiString, account.getAccount_id());
 		getHibernateTemplate().setMaxResults(0);
@@ -22,7 +22,7 @@ public class AccountOperateDaoImpl extends BaseDaoImpl<AccountOperate> implement
 
 	@Override
 	public List<AccountOperate> checkAllOperate(Account a) {
-		String hqiString ="from AccountOperate where account.account_id=?";
+		String hqiString ="from AccountOperate where account.account_id=? order by operate_id desc desc";
 		return (List<AccountOperate>) getHibernateTemplate().find(hqiString, a.getAccount_id());
 	}
 

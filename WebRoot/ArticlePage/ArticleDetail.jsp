@@ -72,12 +72,11 @@
                     <img src="${article.coverURL }" class="img-responsive" />
                 </div>
                 <div class="view-content-right">
-                    <h1>热门文章</h1>
+                    <h1>最新文章</h1>
                     <div class="aside-top">
-                        <a href="index.html"><img src="img/img1.jpg" style="float:left;height: 40px;width: 40px;border-radius: 50%;margin-right: 15px">2015应该学习的前端语言与框架</a>
-                        <a href="index.html"><img src="img/img2.jpg" style="float:left;height: 40px;width: 40px;border-radius: 50%;margin-right: 15px">看看硅谷的科技企业是如何开除员工的</a>
-                        <a href="index.html"><img src="img/img3.jpg" style="float:left;height: 40px;width: 40px;border-radius: 50%;margin-right: 15px">大圣归来 三里屯优衣库试衣间是怎么刷爆朋友圈的</a>
-                        <a href="index.html"><img src="img/img4.jpg" style="float:left;height: 40px;width: 40px;border-radius: 50%;margin-right: 15px">不要被VR的火热骗了 至少现在它还真没什么卵用</a>
+                    	<c:forEach items="${newArticles }" var="var1">
+                        <a href="${pageContext.request.contextPath}/productionDetailAction_showArticleDetail?articleId=${var1.articleId}"><img src="${var1.coverURL }" style="float:left;height: 40px;width: 40px;border-radius: 50%;margin-right: 15px">${var1.articleTitle }</a>
+                        </c:forEach>
                     </div>
                 </div>
                 <div class="view-content-right" style="margin: 20px 0;">
@@ -85,12 +84,16 @@
                 </div>
 
                 <div class="view-content-right">
-                    <h1>同作者其他文章</h1>
+                    <h1>作者文章列表</h1>
                     <div class="aside-top">
-                        <a href="index.html"><img src="img/img1.jpg" style="height: 40px;width: 40px;border-radius: 50%;margin-right: 15px">2015应该学习的前端语言与框架</a>
-                        <a href="index.html"><img src="img/img2.jpg" style="height: 40px;width: 40px;border-radius: 50%;margin-right: 15px">2015应该学习的前端语言与框架</a>
-                        <a href="index.html"><img src="img/img3.jpg" style="height: 40px;width: 40px;border-radius: 50%;margin-right: 15px">2015应该学习的前端语言与框架</a>
-                        <a href="index.html"><img src="img/img4.jpg" style="height: 40px;width: 40px;border-radius: 50%;margin-right: 15px">2015应该学习的前端语言与框架</a>
+                      <c:if test="${!empty myAriticArticles }">
+                        <c:forEach items="${myAriticArticles }" var="var2">
+                        <a href="${pageContext.request.contextPath}/productionDetailAction_showArticleDetail?articleId=${var2.articleId}"><img src="${var2.coverURL }" style="float:left;height: 40px;width: 40px;border-radius: 50%;margin-right: 15px">${var2.articleTitle }</a>
+                        </c:forEach>
+                       </c:if>
+                       <c:if test="${empty myAriticArticles }">
+                        暂无更多文章
+                       </c:if>
                     </div>
                 </div>
             </div>

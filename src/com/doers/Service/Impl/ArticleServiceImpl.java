@@ -49,4 +49,10 @@ public class ArticleServiceImpl implements ArticleService {
 		articleDao.delete(aid);
 	}
 
+	@Override
+	public List<Article> getNewArticle() {
+		// TODO Auto-generated method stub
+		return articleDao.getNewArticle();
+	}
+
 }

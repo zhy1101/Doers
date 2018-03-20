@@ -17,4 +17,6 @@ public interface ArticleDao extends BaseDao<Article> {
 
 	List<Article> getRelativeArticlesByWord(String word);
 
+	List<Article> getNewArticle();
+
 }

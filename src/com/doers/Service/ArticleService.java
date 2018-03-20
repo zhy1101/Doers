@@ -19,4 +19,6 @@ public interface ArticleService {
 
 	void deleteArcById(Long aid);
 
+	List<Article> getNewArticle();
+
 }

@@ -185,13 +185,9 @@
   $(function(){
 
  $("input:radio[name='doneMoney']").change(function(){
-
    var v = $(this).val();
-
    if (v =="5"){
-
     $("#payment").text("5.00");
-
    }else if (v =="10"){
 	$("#payment").text("10.00");
 } else if (v =="20"){
@@ -205,7 +201,7 @@
 }else if (v =="100"){
 	$("#payment").text("100.00");
 }
-
+	
 });
 
           });
@@ -219,7 +215,7 @@ function hiddenEle(){
 	document.getElementById("paypanel").style.display="none";
 }
 function confirmMoney(){
-   var v = $("input:radio[name='doneMoney']").val();
+ var v =$("input:radio[name='doneMoney']:checked").val();
    var url= "${pageContext.request.contextPath}/accountAction_addDoMoeny?doneMoney="+v;
 	window.open(url);
 }

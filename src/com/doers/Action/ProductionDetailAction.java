@@ -3,6 +3,7 @@ package com.doers.Action;
 import com.doers.domain.Article;
 import com.doers.domain.Production;
 import com.doers.domain.Server;
+import com.doers.domain.User;
 import com.doers.Service.ArticleService;
 import com.doers.Service.ProductionService;
 import com.doers.Service.ServerService;
@@ -56,8 +57,13 @@ public String showProductionDetail() {
   }
   
   public String showArticleDetail() {
+	  User u = (User) ActionContext.getContext().getSession().get("user");
 	    Article art = this.articleService.getArticleById(this.articleId);
+	    List<Article> newArticles = articleService.getNewArticle();
+	    List<Article> myAriticArticles = articleService.getUserArticleList(u);
 	    ActionContext.getContext().getSession().put("article", art);
+	    ActionContext.getContext().getSession().put("newArticles", newArticles);
+	    ActionContext.getContext().getSession().put("myAriticArticles", myAriticArticles);
 	    return "gotoArticleDetail";
 	  }
 }
