@@ -29,7 +29,7 @@
                     <li><a href="${pageContext.request.contextPath}/serverDetailAction_loadingAllServers?checkAll=yes">Do 服务</a></li>
                     <li><a href="${pageContext.request.contextPath}/activityAction_loadingActivityCenter">Do 活动</a></li>
                     <li><a href="${pageContext.request.contextPath}/accountAction_OpenMyCart">Do 交易</a></li>
-                    <li><a href="/Doers/UserWorkspace/UserWorkSpace.jsp">Do Myself</a></li>
+                    <li><a href="/DoersInLocal/UserWorkspace/UserWorkSpace.jsp">Do Myself</a></li>
                 </ul>
                 <form class="navbar-form navbar-left" action="${pageContext.request.contextPath}/searchAction_searchInSite" method="get" name="form1">
                     <input type="text" name="word" class="form-control col-lg-8" placeholder="输入你想要的关键字" >
@@ -38,8 +38,8 @@
                 <ul class="nav navbar-nav navbar-right" id = "no_login" style="display:block">
                 	
                 	<c:if test="${empty user }">
-                		<li><a  href=/Doers/Login.jsp >登录</a></li>
-                    	<li><a href="/Doers/resign.jsp" target="_blank">注册</a></li>
+                		<li><a  href=/DoersInLocal/Login.jsp >登录</a></li>
+                    	<li><a href="/DoersInLocal/resign.jsp" target="_blank">注册</a></li>
                 	</c:if>
                 	<c:if test="${!empty user }">
                 		<li><a href="javascript:void(0);">欢迎您 ，${user.user_name }</a></li>
@@ -222,7 +222,7 @@
             <div class="col-sm-4 animated" data-animation="bounceIn" data-delay="0">
                 <a href="${pageContext.request.contextPath}/activityAction_gotoActivityPassPage?activityId=1" target="_blank">
                     <div class="walkhi2">
-                        <img src="../../Doers/img/activity1.jpg" class="img-responsive img1">
+                        <img src="../../DoersInLocal/img/activity1.jpg" class="img-responsive img1">
                         <h4>狗年晒汪</h4>
                         <p>2018-2-15</p>
                     </div>
@@ -231,7 +231,7 @@
             <div class="col-sm-4 animated" data-animation="bounceIn" data-delay="200">
                 <a href="${pageContext.request.contextPath}/activityAction_gotoActivityPassPage?activityId=2" target="_blank">
                     <div class="walkhi2">
-                        <img src="../../Doers/img/banner2.jpg" class="img-responsive img1">
+                        <img src="../../DoersInLocal/img/banner2.jpg" class="img-responsive img1">
                         <h4>第二届谭木匠创意产品设计征集公选</h4>
                         <p>2017-11-10</p>
                     </div>
@@ -240,7 +240,7 @@
             <div class="col-sm-4 animated" data-animation="bounceIn" data-delay="400">
                 <a href="${pageContext.request.contextPath}/activityAction_gotoActivityPassPage?activityId=3" target="_blank">
                     <div class="walkhi2">
-                        <img src="../../Doers/img/banner6.jpg" class="img-responsive img1">
+                        <img src="../../DoersInLocal/img/banner6.jpg" class="img-responsive img1">
                         <h4>搜狗输入法手机皮肤创意大赛</h4>
                         <p>2017-12-18</p>
                     </div>
@@ -258,8 +258,8 @@
                 <div class="col-sm-4">
                     <h4>Doers家族</h4>
                     <ul>
-                        <li><a href="../../Doers/introduce.html" target="_blank">关于Doers</a></li>
-                        <li><a href="../../Doers/introduce.html" target="_blank">联系我们</a></li>
+                        <li><a href="../../DoersInLocal/introduce.html" target="_blank">关于Doers</a></li>
+                        <li><a href="../../DoersInLocal/introduce.html" target="_blank">联系我们</a></li>
                     </ul>
                 </div>
             </div>

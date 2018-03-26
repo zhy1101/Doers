@@ -6,7 +6,7 @@
   <head>
     <title>新增我的服务</title>
     <meta name="content-type" content="text/html; charset=UTF-8">
-<link rel="shortcut icon" href="../../Doers/favicon.ico" />   
+<link rel="shortcut icon" href="../../DoersInLocal/favicon.ico" />   
 <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" type="text/css" />
 <script src="../js/jquery-1.11.3.min.js" type="text/javascript"></script>
 <script src="../js/jquery.validate.min.js" type="text/javascript"></script>
@@ -81,7 +81,7 @@ font {
 			<div class="col-md-8"
 				style="background: #fff; padding: 40px 80px; margin: 30px; border: 7px solid #ccc;">
 				<font>新增个人服务   >> <span style="color:red;"><b>Step One 基本信息</b></span> >>Step Two 关联相关样本作品</font>
-				<form class="form-horizontal" action="/Doers/addServerAction_addNewServer" method="post" style="margin-top: 5px;" enctype="multipart/form-data">
+				<form class="form-horizontal" action="/DoersInLocal/addServerAction_addNewServer" method="post" style="margin-top: 5px;" enctype="multipart/form-data">
 					<div class="form-group">
 						<label for="serverName" class="col-sm-2 control-label">服务项名称</label>
 						<div class="col-sm-6">

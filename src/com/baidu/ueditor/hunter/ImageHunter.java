@@ -77,7 +77,7 @@ public class ImageHunter
 
       String savePath = getPath(this.savePath, this.filename, suffix);
 
-      String physicalPath = "c:/DoersWorks/" + savePath;
+      String physicalPath = "d:/DoersWorks/" + savePath;
 
       State state = StorageManager.saveFileByInputStream(connection.getInputStream(), physicalPath);
 

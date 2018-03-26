@@ -6,10 +6,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Do 服务列表</title>
-	<link rel="shortcut icon" href="../../Doers/favicon.ico" />
-	<link rel="stylesheet" href="../../Doers/bootstrap/css/bootstrap.min.css" type="text/css" />
-	<script src="../../Doers/js/jquery-1.11.3.min.js" type="text/javascript"></script>
-	<script src="../../Doers/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+	<link rel="shortcut icon" href="../../DoersInLocal/favicon.ico" />
+	<link rel="stylesheet" href="../../DoersInLocal/bootstrap/css/bootstrap.min.css" type="text/css" />
+	<script src="../../DoersInLocal/js/jquery-1.11.3.min.js" type="text/javascript"></script>
+	<script src="../../DoersInLocal/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 	<!-- 引入自定义css文件 style.css -->
 	<link rel="stylesheet" href="css/style.css" type="text/css" />
 	<style>
@@ -88,7 +88,7 @@ body {
                     <li class="active"><a href="${pageContext.request.contextPath}/serverDetailAction_loadingAllServers?checkAll=yes">Do 服务</a></li>
                     <li><a href="${pageContext.request.contextPath}/activityAction_loadingActivityCenter">Do 活动</a></li>
                     <li><a href="${pageContext.request.contextPath}/accountAction_OpenMyCart">Do 交易</a></li>
-                    <li><a href="/Doers/UserWorkspace/UserWorkSpace.jsp">Do Myself</a></li>
+                    <li><a href="/DoersInLocal/UserWorkspace/UserWorkSpace.jsp">Do Myself</a></li>
                 </ul>
             </div>
         </nav>
@@ -175,7 +175,7 @@ body {
 		</ul>
 	</div>
 	<!-- 分页结束 -->
-<script src="../../Doers/js/jquery-1.10.2.min.js"></script> 	
+<script src="../../DoersInLocal/js/jquery-1.10.2.min.js"></script> 	
 <script language="javascript" type="text/javascript">
 window.onload=function(){
 			var bt=document.getElementById("submit1");

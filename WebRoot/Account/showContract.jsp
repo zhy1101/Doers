@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>合约详情</title>
-<link rel="shortcut icon" href="../../Doers/favicon.ico" />
+<link rel="shortcut icon" href="../../DoersInLocal/favicon.ico" />
 <style>
 body{text-align:center}
 .zhengwen{}
@@ -140,6 +140,6 @@ body{text-align:center}
 			<span style="color:#262626; font-family:微软雅黑; font-size:10.5pt">${c.serverTimeStart}</span>
 		</p>
    </div>
-   <div style="margin-top:50px;margin-left:50px;"><img src="../../Doers/img/yizhang.PNG"></div>
+   <div style="margin-top:50px;margin-left:50px;"><img src="../../DoersInLocal/img/yizhang.PNG"></div>
 </body>
 </html>

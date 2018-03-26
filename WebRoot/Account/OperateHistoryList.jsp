@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>账户操作记录</title>
-<link rel="shortcut icon" href="../../Doers/favicon.ico" />
+<link rel="shortcut icon" href="../../DoersInLocal/favicon.ico" />
 </head>
 <body style="text-align:center">
 	<div style="margin:0 auto">

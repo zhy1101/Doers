@@ -26,7 +26,7 @@
                     <li><a href="${pageContext.request.contextPath}/serverDetailAction_loadingAllServers?checkAll=yes">Do 服务</a></li>
                     <li><a href="${pageContext.request.contextPath}/activityAction_loadingActivityCenter">Do 活动</a></li>
                     <li><a href="${pageContext.request.contextPath}/accountAction_OpenMyCart">Do 交易</a></li>
-                    <li><a href="/Doers/UserWorkspace/UserWorkSpace.jsp">Do Myself</a></li>
+                    <li><a href="/DoersInLocal/UserWorkspace/UserWorkSpace.jsp">Do Myself</a></li>
                 </ul>
                 <form class="navbar-form navbar-left">
                     <input type="text" class="form-control col-lg-8" placeholder="搜索">
@@ -35,8 +35,8 @@
                 <ul class="nav navbar-nav navbar-right" id = "no_login" style="display:block">
                 	
                 	<c:if test="${empty user }">
-                		<li><a  href=/Doers/Login.jsp >登录</a></li>
-                    	<li><a href="/Doers/resign.jsp">注册</a></li>
+                		<li><a  href=/DoersInLocal/Login.jsp >登录</a></li>
+                    	<li><a href="/DoersInLocal/resign.jsp">注册</a></li>
                 	</c:if>
                 	<c:if test="${!empty user }">
                 		<li><a href=java:void(0)>欢迎您 ，${user.user_name }</a></li>

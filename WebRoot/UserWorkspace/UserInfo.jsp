@@ -11,7 +11,7 @@
 <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="common/css/cropper.min.css" rel="stylesheet">
 <link href="common/css/sitelogo.css" rel="stylesheet">
-<link rel="shortcut icon" href="../../Doers/favicon.ico" />
+<link rel="shortcut icon" href="../../DoersInLocal/favicon.ico" />
 </head>
 <body>
 <div class="datum-item-box border-bottom" id="essentialinformation" style="background-color:#FCFCFC">

@@ -6,8 +6,8 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>留言箱</title>
-	<link rel="stylesheet" href="/Doers/UserWorkspace/common/css/leaveMsg_style.css">
-	<link rel="shortcut icon" href="../../Doers/favicon.ico" />
+	<link rel="stylesheet" href="/DoersInLocal/UserWorkspace/common/css/leaveMsg_style.css">
+	<link rel="shortcut icon" href="../../DoersInLocal/favicon.ico" />
 </head>
 <body>
 <div id="container">   

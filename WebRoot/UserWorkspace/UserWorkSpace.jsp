@@ -14,7 +14,7 @@
 	<link rel="stylesheet" type="text/css" href="common/css/skin.css" />
 	<link rel="stylesheet" type="text/css" href="../bootstrap/css/candy-box.css" />
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
-	<link rel="shortcut icon" href="../../Doers/favicon.ico" />
+	<link rel="shortcut icon" href="../../DoersInLocal/favicon.ico" />
 	<link rel="stylesheet" type="text/css" href="../css/demo.css">	
   </head>
   <body>
@@ -30,7 +30,7 @@
                     <li><a href="${pageContext.request.contextPath}/serverDetailAction_loadingAllServers?checkAll=yes">Do 服务</a></li>
                     <li><a href="${pageContext.request.contextPath}/activityAction_loadingActivityCenter">Do 活动</a></li>
                     <li><a href="${pageContext.request.contextPath}/accountAction_OpenMyCart">Do 交易</a></li>
-                    <li class="active"><a href="/Doers/UserWorkspace/UserWorkSpace.jsp">Do Myself</a></li>
+                    <li class="active"><a href="/DoersInLocal/UserWorkspace/UserWorkSpace.jsp">Do Myself</a></li>
                 </ul>
             </div>
         </nav>

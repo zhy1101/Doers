@@ -5,12 +5,12 @@
 <html>
 <head>
 <title>新建作品</title>
-<link rel="shortcut icon" href="../../Doers/favicon.ico" />
-<script type="text/javascript" src="../../Doers/js/jquery-1.10.2.min.js"></script>
-<script src="../../Doers/js/my.js" type="text/javascript"></script>   
-<script type="text/javascript" charset="utf-8" src="../../Doers/utf8-jsp/ueditor.config.js"></script>
-<script type="text/javascript" charset="utf-8" src="../../Doers/utf8-jsp/ueditor.all.js"> </script>
-<script type="text/javascript" charset="utf-8" src="../../Doers/utf8-jsp/lang/zh-cn/zh-cn.js"></script>
+<link rel="shortcut icon" href="../../DoersInLocal/favicon.ico" />
+<script type="text/javascript" src="../../DoersInLocal/js/jquery-1.10.2.min.js"></script>
+<script src="../../DoersInLocal/js/my.js" type="text/javascript"></script>   
+<script type="text/javascript" charset="utf-8" src="../../DoersInLocal/utf8-jsp/ueditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../DoersInLocal/utf8-jsp/ueditor.all.js"> </script>
+<script type="text/javascript" charset="utf-8" src="../../DoersInLocal/utf8-jsp/lang/zh-cn/zh-cn.js"></script>
 <script type="text/javascript">
 		$(document).ready(function(){
 			loadSelect("002","big_kind","big_kind.dict_id");
@@ -40,7 +40,7 @@
 </head>
 <body>
 <h3 class="h-bloc">发布新作</h3><br> 
-    <form action="/Doers/ueditorAction_addNewProduction" method="post" enctype="multipart/form-data" id="newProduct">
+    <form action="/DoersInLocal/ueditorAction_addNewProduction" method="post" enctype="multipart/form-data" id="newProduct">
               标题：<input name="productionTitle" type="text" style="width:300px">&nbsp;&nbsp;
               类别：<span class="f-fl item-ifo" id="big_kind"></span> 
 	     <span class="f-fl item-ifo" id="small_kind"></span>

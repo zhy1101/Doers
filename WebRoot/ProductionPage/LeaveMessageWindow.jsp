@@ -15,7 +15,7 @@
     max-height: 250px;
     resize: none;}
     </style>
-    <link rel="shortcut icon" href="../../Doers/favicon.ico" />
+    <link rel="shortcut icon" href="../../DoersInLocal/favicon.ico" />
   </head>
   <body background="../img/leaveMsg.jpg" >
   <form action="${pageContext.request.contextPath}/leaveMessageAction_makeAMessage" method="post" id="leaveMsg">

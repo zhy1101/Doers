@@ -7,12 +7,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>活动详情</title>
-    <link rel="shortcut icon" href="../../Doers/favicon.ico" />
-    <link rel="stylesheet" type="text/css" href="../../Doers/bootstrap/css/candy-box.css" />
-    <link rel="stylesheet" type="text/css" href="../../Doers/css/font-awesome.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../Doers/css/animate.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../Doers/css/style.css" />
-    <link rel="stylesheet" type="text/css" href="../../Doers/Activity/css/activemedia.css" />
+    <link rel="shortcut icon" href="../../DoersInLocal/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="../../DoersInLocal/bootstrap/css/candy-box.css" />
+    <link rel="stylesheet" type="text/css" href="../../DoersInLocal/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../DoersInLocal/css/animate.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../DoersInLocal/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../DoersInLocal/Activity/css/activemedia.css" />
 
 </head>
 <body>
@@ -28,7 +28,7 @@
 	             <li><a href="${pageContext.request.contextPath}/serverDetailAction_loadingAllServers?checkAll=yes">Do 服务</a></li>
 	             <li class="active"><a href="${pageContext.request.contextPath}/activityAction_loadingActivityCenter">Do 活动</a></li>
 	             <li><a href="${pageContext.request.contextPath}/accountAction_OpenMyCart">Do 交易</a></li>
-	             <li><a href="/Doers/UserWorkspace/UserWorkSpace.jsp">Do Myself</a></li>
+	             <li><a href="/DoersInLocal/UserWorkspace/UserWorkSpace.jsp">Do Myself</a></li>
                 </ul>
             </div>
         </nav>
@@ -73,8 +73,8 @@
                 <div class="col-sm-4">
                     <h4>Doers家族</h4>
                     <ul>
-                        <li><a href="../../Doers/introduce.html" target="_blank">关于Doers</a></li>
-                        <li><a href="../../Doers/introduce.html" target="_blank">联系我们</a></li>
+                        <li><a href="../../DoersInLocal/introduce.html" target="_blank">关于Doers</a></li>
+                        <li><a href="../../DoersInLocal/introduce.html" target="_blank">联系我们</a></li>
                     </ul>
                 </div>
             </div>
@@ -85,13 +85,13 @@
     </div>
 </footer>
 
-<script type="text/javascript" src="../../Doers/js/jquery-1.10.2.min.js"></script>
-<script type="text/javascript" src="../../Doers/bootstrap/js/bootstrap.min.js"></script>
-<script src="../../Doers/js/jquery.scrollto.min.js"></script>
-<script src="../../Doers/js/jquery.easing.min.js"></script>
-<script src="../../Doers/js/jquery.parallax-1.1.3.js" type="text/javascript"></script>
-<script type="text/javascript" src="../../Doers/js/main.js"></script>
-<script type="text/javascript" src="../../Doers/js/jqthumb.js"></script>
+<script type="text/javascript" src="../../DoersInLocal/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../../DoersInLocal/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../DoersInLocal/js/jquery.scrollto.min.js"></script>
+<script src="../../DoersInLocal/js/jquery.easing.min.js"></script>
+<script src="../../DoersInLocal/js/jquery.parallax-1.1.3.js" type="text/javascript"></script>
+<script type="text/javascript" src="../../DoersInLocal/js/main.js"></script>
+<script type="text/javascript" src="../../DoersInLocal/js/jqthumb.js"></script>
 <script type="text/javascript" language="javascript">			
 			function takePartInActivity(activityId,typeId){
 				var isTakeIn = confirm("您确认要参与该活动吗？");

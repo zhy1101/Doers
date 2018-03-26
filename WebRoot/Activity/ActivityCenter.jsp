@@ -7,11 +7,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Do 活动</title>
-    <link rel="shortcut icon" href="../../Doers/favicon.ico" />
-    <link rel="stylesheet" type="text/css" href="../../Doers/bootstrap/css/candy-box.css" />
-    <link rel="stylesheet" type="text/css" href="../../Doers/css/font-awesome.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../Doers/css/animate.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../Doers/css/style.css" />
+    <link rel="shortcut icon" href="../../DoersInLocal/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="../../DoersInLocal/bootstrap/css/candy-box.css" />
+    <link rel="stylesheet" type="text/css" href="../../DoersInLocal/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../DoersInLocal/css/animate.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../DoersInLocal/css/style.css" />
 </head>
 <body>
 <header>
@@ -26,7 +26,7 @@
 	             <li><a href="${pageContext.request.contextPath}/serverDetailAction_loadingAllServers?checkAll=yes">Do 服务</a></li>
 	             <li class="active"><a href="${pageContext.request.contextPath}/activityAction_loadingActivityCenter">Do 活动</a></li>
 	             <li><a href="${pageContext.request.contextPath}/accountAction_OpenMyCart">Do 交易</a></li>
-	             <li><a href="/Doers/UserWorkspace/UserWorkSpace.jsp">Do Myself</a></li>
+	             <li><a href="/DoersInLocal/UserWorkspace/UserWorkSpace.jsp">Do Myself</a></li>
                 </ul>
             </div>
         </nav>
@@ -37,7 +37,7 @@
              <div class="col-sm-8" style="margin: 0;padding: 0px 0px 0px 15px;">
                  <a href="${pageContext.request.contextPath}/activityAction_gotoActivityPassPage?activityId=1" target="_blank">
                  <div class="gallery-item" style="height: 400px; overflow: hidden;">
-                     <img src="../../Doers/img/activity1.jpg" class="img-responsive imgbig">
+                     <img src="../../DoersInLocal/img/activity1.jpg" class="img-responsive imgbig">
                      <div class="info">
                          <div class="info-con">
                              <h3>狗年晒汪——门外狗粮三两箱，不及汪汪遛我情</h3>
@@ -55,7 +55,7 @@
                 <div class="col-sm-12" style="margin: 0;padding: 0px;">
                     <a href="${pageContext.request.contextPath}/activityAction_gotoActivityPassPage?activityId=2" target="_blank">
                     <div class="gallery-item" style="height: 200px; overflow: hidden;">
-                        <img src="../../Doers/img/banner2.jpg" class="img-responsive imgsmall">
+                        <img src="../../DoersInLocal/img/banner2.jpg" class="img-responsive imgsmall">
                         <div class="info">
                             <div class="info-con">
                                 <h3>2017最据匠心的美好工艺之作</h3>
@@ -72,7 +72,7 @@
                 <div class="col-sm-12" style="margin: 0;padding: 0px;">
                     <a href="${pageContext.request.contextPath}/activityAction_gotoActivityPassPage?activityId=3" target="_blank">
                     <div class="gallery-item" style="height: 200px; overflow: hidden;">
-                        <img src="../../Doers/img/banner6.jpg" class="img-responsive imgsmall">
+                        <img src="../../DoersInLocal/img/banner6.jpg" class="img-responsive imgsmall">
                         <div class="info">
                             <div class="info-con">
                                 <h3>颜值担当，皮肤有责</h3>
@@ -128,7 +128,7 @@
                             </div>
                         </div>
                         <div class="view-content-right" style="margin: 20px 0;">
-                            <img src="../../Doers/img/img5.jpg" class="img-responsive" />
+                            <img src="../../DoersInLocal/img/img5.jpg" class="img-responsive" />
                         </div>
 
                         <div class="view-content-right">
@@ -151,8 +151,8 @@
                 <div class="col-sm-4">
                     <h4>Doers家族</h4>
                     <ul>
-                        <li><a href="../../Doers/introduce.html" target="_blank">关于Doers</a></li>
-                        <li><a href="../../Doers/introduce.html" target="_blank">联系我们</a></li>
+                        <li><a href="../../DoersInLocal/introduce.html" target="_blank">关于Doers</a></li>
+                        <li><a href="../../DoersInLocal/introduce.html" target="_blank">联系我们</a></li>
                     </ul>
                 </div>
             </div>
@@ -163,13 +163,13 @@
     </div>
 </footer>
 
-<script type="text/javascript" src="../../Doers/js/jquery-1.10.2.min.js"></script>
-<script type="text/javascript" src="../../Doers/bootstrap/js/bootstrap.min.js"></script>
-<script src="../../Doers/js/jquery.scrollto.min.js"></script>
-<script src="../../Doers/js/jquery.easing.min.js"></script>
-<script src="../../Doers/js/jquery.parallax-1.1.3.js" type="text/javascript"></script>
-<script type="text/javascript" src="../../Doers/js/main.js"></script>
-<script type="text/javascript" src="../../Doers/js/jqthumb.js"></script>
+<script type="text/javascript" src="../../DoersInLocal/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../../DoersInLocal/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../DoersInLocal/js/jquery.scrollto.min.js"></script>
+<script src="../../DoersInLocal/js/jquery.easing.min.js"></script>
+<script src="../../DoersInLocal/js/jquery.parallax-1.1.3.js" type="text/javascript"></script>
+<script type="text/javascript" src="../../DoersInLocal/js/main.js"></script>
+<script type="text/javascript" src="../../DoersInLocal/js/jqthumb.js"></script>
 <script language="javascript" type="text/javascript">
 		$('.imgbig').jqthumb({
  		classname: 'jqthumb',  

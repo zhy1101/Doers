@@ -5,11 +5,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<link rel="shortcut icon" href="../../Doers/favicon.ico" />
+	<link rel="shortcut icon" href="../../DoersInLocal/favicon.ico" />
 	<link rel="stylesheet" href="../../UserWorkspace/common/css/main.css">
 </HEAD>
 <BODY>
-<img src="/Doers/img/ProBanner.png">
+<img src="/DoersInLocal/img/ProBanner.png">
 <br>
 <c:forEach items="${myProductionList}" var="pro">
 <div class="card-box">
@@ -37,7 +37,7 @@
 </div> 
 </c:forEach>
 <br>
-<img src="/Doers/img/articleBanner.png">
+<img src="/DoersInLocal/img/articleBanner.png">
 <c:forEach items="${myArticleList}" var="art">
 <div class="card-box">
     <div class="card-img">

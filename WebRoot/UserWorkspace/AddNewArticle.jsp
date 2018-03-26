@@ -5,17 +5,17 @@
 <html>
 <head>
 <title>分享文章</title>
-<script type="text/javascript" src="../../Doers/js/jquery-1.10.2.min.js"></script>
-<script src="../../Doers/js/my.js" type="text/javascript"></script>   
-<script type="text/javascript" charset="utf-8" src="../../Doers/utf8-jsp/ueditor.config.js"></script>
-<script type="text/javascript" charset="utf-8" src="../../Doers/utf8-jsp/ueditor.all.js"> </script>
-<script type="text/javascript" charset="utf-8" src="../../Doers/utf8-jsp/lang/zh-cn/zh-cn.js"></script>
-<link rel="shortcut icon" href="../../Doers/favicon.ico" />
+<script type="text/javascript" src="../../DoersInLocal/js/jquery-1.10.2.min.js"></script>
+<script src="../../DoersInLocal/js/my.js" type="text/javascript"></script>   
+<script type="text/javascript" charset="utf-8" src="../../DoersInLocal/utf8-jsp/ueditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../DoersInLocal/utf8-jsp/ueditor.all.js"> </script>
+<script type="text/javascript" charset="utf-8" src="../../DoersInLocal/utf8-jsp/lang/zh-cn/zh-cn.js"></script>
+<link rel="shortcut icon" href="../../DoersInLocal/favicon.ico" />
 </head>
 <body>
 <h3 class="h-bloc">分享文章</h3>
 <h6 class="h-bloc" style="color:#B0C4DE"> "Do家族 感谢你每一次无偿的技能知识共享     共同付出收获快乐"</h6>
-    <form action="/Doers/addArticleAction_addNewArticle" method="post" enctype="multipart/form-data" id="newProduct">
+    <form action="/DoersInLocal/addArticleAction_addNewArticle" method="post" enctype="multipart/form-data" id="newProduct">
               标题：<input name="articleTitle" type="text" >&nbsp;&nbsp;
              关键词：<input name="word1" placeholder="关键词1">&nbsp;<input name="word2" placeholder="关键词2">&nbsp;<input name="word3" placeholder="关键词3">
     <br>封面选择：<input name="cover" type="file" name="cover">

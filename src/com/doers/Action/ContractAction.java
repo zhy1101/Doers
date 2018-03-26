@@ -120,7 +120,7 @@ public class ContractAction extends ActionSupport implements ModelDriven<Contrac
 		order.setOrderState(state);
 		order.getOrderState().setDict_id("51");
 		if(file!=null){
-	    this.file.renameTo(new File("c:/DoersWorks/AddContractFile" +"/"+"con_"+ orderId+"_"+file.getName()));
+	    this.file.renameTo(new File("d:/DoersWorks/AddContractFile" +"/"+"con_"+ orderId+"_"+file.getName()));
 	    this.contract.setAddFileURL("/ContractFile/" +"con_"+ orderId+"_"+file.getName());}
 	    contractService.addANewContract(contract);
 	    order.setOrderContract(contract);

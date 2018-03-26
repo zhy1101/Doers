@@ -6,9 +6,9 @@
 <head>
 	<meta charset="UTF-8">
 	<title>填写合约</title>
-	<link rel="shortcut icon" href="../../Doers/favicon.ico" />
-	<link rel="stylesheet" type="text/css" href="../../Doers/Account/css/base.css">
-	<link rel="stylesheet" type="text/css" href="../../Doers/Account/css/home.css">
+	<link rel="shortcut icon" href="../../DoersInLocal/favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="../../DoersInLocal/Account/css/base.css">
+	<link rel="stylesheet" type="text/css" href="../../DoersInLocal/Account/css/home.css">
 </head>
 <body>
 <section id="finance-content">
@@ -160,7 +160,7 @@
 								<tr>
 									<td>
 										<div class="finance-up-img">
-											<img src="../../Doers/Account/themes/img/upImg.jpg" style="width:148px;height:63px">
+											<img src="../../DoersInLocal/Account/themes/img/upImg.jpg" style="width:148px;height:63px">
 											<input type="file" name="file"/>
 										</div>
 									</td>
@@ -175,8 +175,8 @@
 		</div>
 	</div>
 </section>
-<script src="../../Doers/Account/js/jquery-3.2.1.min.js"></script>
-<script src="../../Doers/Account/js/address.js"></script>
+<script src="../../DoersInLocal/Account/js/jquery-3.2.1.min.js"></script>
+<script src="../../DoersInLocal/Account/js/address.js"></script>
 <script type="text/javascript">
     $(function(){
         $("#sjld").sjld("#shenfen","#chengshi","#quyu");

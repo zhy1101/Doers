@@ -100,9 +100,9 @@ public String getActiveCode() {
 
     if (isRegisterSuccess)
     {
-      String emailMsg = "恭喜您注册成功，请点击下面的连接进行激活账户<a href='http://localhost:8080/Doers/resignAction_active?activeCode=" + 
+      String emailMsg = "恭喜您注册成功，请点击下面的连接进行激活账户<a href='http://localhost:8080/DoersInLocal/resignAction_active?activeCode=" + 
         activeCode + "'>" + 
-        "http://localhost:8080/Doers/resignAction_active?activeCode=" + activeCode + "</a>";
+        "http://localhost:8080/DoersInLocal/resignAction_active?activeCode=" + activeCode + "</a>";
       try {
         MailUtils.sendMail(this.u.getEmail(), emailMsg);
       } catch (MessagingException e) {

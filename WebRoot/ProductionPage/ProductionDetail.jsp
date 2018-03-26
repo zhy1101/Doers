@@ -6,20 +6,20 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>${production.productionTitle}</title>
-<link rel="shortcut icon" href="../../Doers/favicon.ico" />
+<link rel="shortcut icon" href="../../DoersInLocal/favicon.ico" />
 <link rel="stylesheet"
-	href="../../Doers/bootstrap/css/bootstrap.min.css">
+	href="../../DoersInLocal/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet"
-	href="../../Doers/ProductionPage/css/detail_main.css">
+	href="../../DoersInLocal/ProductionPage/css/detail_main.css">
 <link rel="stylesheet"
-	href="../../Doers/ProductionPage/css/detail_thirdDropDownStyle.css">
+	href="../../DoersInLocal/ProductionPage/css/detail_thirdDropDownStyle.css">
 <link rel="stylesheet"
-	href="../../Doers/ProductionPage/css/detail_commentWidget.css">
+	href="../../DoersInLocal/ProductionPage/css/detail_commentWidget.css">
 <link rel="stylesheet"
-	href="../../Doers/ProductionPage/css/detail_work.css">
-<link href="../../Doers/ProductionPage/css/detail_jiathis_share.css"
+	href="../../DoersInLocal/ProductionPage/css/detail_work.css">
+<link href="../../DoersInLocal/ProductionPage/css/detail_jiathis_share.css"
 	rel="stylesheet" type="text/css">
-<link href="../../Doers/ProductionPage/css/detail_dianzan.css"
+<link href="../../DoersInLocal/ProductionPage/css/detail_dianzan.css"
 	rel="stylesheet" type="text/css">
 </head>
 <style type="text/css">
@@ -57,7 +57,7 @@
              <li ><a href="${pageContext.request.contextPath}/serverDetailAction_loadingAllServers?checkAll=yes">Do 服务</a></li>
              <li><a href="${pageContext.request.contextPath}/activityAction_loadingActivityCenter">Do 活动</a></li>
              <li><a href="${pageContext.request.contextPath}/accountAction_OpenMyCart">Do 交易</a></li>
-             <li><a href="/Doers/UserWorkspace/UserWorkSpace.jsp">Do Myself</a></li>
+             <li><a href="/DoersInLocal/UserWorkspace/UserWorkSpace.jsp">Do Myself</a></li>
 		</ul>		
 	</div>
 	</nav> 
@@ -88,7 +88,7 @@
 				</div>
 				<div class="recommend-box">
 					<div class="praise">
-					<span id="praise"><img src="../../Doers/img/zan.png" id="praise-img" /></span>
+					<span id="praise"><img src="../../DoersInLocal/img/zan.png" id="praise-img" /></span>
 					<span id="praise-txt">${production.zan }</span>
 					<span id="add-num"><em>+1</em></span>
 					</div>
@@ -147,8 +147,8 @@
                 <div class="col-sm-4">
                     <h4>Doers家族</h4>
                     <ul>
-                        <li><a href="../../Doers/introduce.html" target="_blank">关于Doers</a></li>
-                        <li><a href="../../Doers/introduce.html" target="_blank">联系我们</a></li>
+                        <li><a href="../../DoersInLocal/introduce.html" target="_blank">关于Doers</a></li>
+                        <li><a href="../../DoersInLocal/introduce.html" target="_blank">联系我们</a></li>
                     </ul>
                 </div>
             </div>
@@ -158,19 +158,19 @@
        made by YU
     </div>
 </footer>
-<script src="../../Doers/js/jquery-1.10.2.min.js"></script> 
+<script src="../../DoersInLocal/js/jquery-1.10.2.min.js"></script> 
 <script type="text/javascript">
 	$(document).ready(
 	function(){
 	$.ajax({ 		type:"POST",
 					async: false,
-					url: "/Doers/zanAction_checkZan",
+					url: "/DoersInLocal/zanAction_checkZan",
 					dataType:"json",
 					success:function(data){
 						if(data.isZan){
-						$("#praise-img").attr("src","../../Doers/img/yizan.png");
+						$("#praise-img").attr("src","../../DoersInLocal/img/yizan.png");
 						}else{
-						$("#praise-img").attr("src","../../Doers/img/zan.png");
+						$("#praise-img").attr("src","../../DoersInLocal/img/zan.png");
 						}
 					}
 		});
@@ -185,8 +185,8 @@
 			var text_box = $("#add-num");
 			var praise_txt = $("#praise-txt");
 			var num=parseInt(praise_txt.text());
-			if(praise_img.attr("src") == ("../../Doers/img/yizan.png")){
-				$(this).html("<img src='../../Doers/img/zan.png' id='praise-img' class='animation' />");
+			if(praise_img.attr("src") == ("../../DoersInLocal/img/yizan.png")){
+				$(this).html("<img src='../../DoersInLocal/img/zan.png' id='praise-img' class='animation' />");
 				praise_txt.removeClass("hover");
 				text_box.show().html("<em class='add-animation'>-1</em>");
 				$(".add-animation").removeClass("hover");
@@ -194,10 +194,10 @@
 				praise_txt.text(num)
 				$.ajax({
 					type:"GET",
-					url: "/Doers/zanAction_removeZan",
+					url: "/DoersInLocal/zanAction_removeZan",
 				});
 			}else{
-				$(this).html("<img src='../../Doers/img/yizan.png' id='praise-img' class='animation' />");
+				$(this).html("<img src='../../DoersInLocal/img/yizan.png' id='praise-img' class='animation' />");
 				praise_txt.addClass("hover");
 				text_box.show().html("<em class='add-animation'>+1</em>");
 				$(".add-animation").addClass("hover");
@@ -205,7 +205,7 @@
 				praise_txt.text(num)
 				$.ajax({
 					type:"GET",
-					url: "/Doers/zanAction_addZan",
+					url: "/DoersInLocal/zanAction_addZan",
 				});
 			}
 		});

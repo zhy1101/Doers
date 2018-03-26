@@ -11,37 +11,37 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
         <meta name="description" content="FlexyCodes - FlexyCard vCard Template. Creating my personal page!"/>
-		<link rel="shortcut icon" href="../../Doers/favicon.ico" />
+		<link rel="shortcut icon" href="../../DoersInLocal/favicon.ico" />
         <!-- CSS | bootstrap -->
         <!-- Credits: http://getbootstrap.com/ -->
-        <link  rel="stylesheet" type="text/css" href="../../Doers/bootstrap/css/bootstrap.min.css" />
+        <link  rel="stylesheet" type="text/css" href="../../DoersInLocal/bootstrap/css/bootstrap.min.css" />
 
         <!-- CSS | font-awesome -->
         <!-- Credits: http://fortawesome.github.io/Font-Awesome/icons/ -->
-        <link rel="stylesheet" type="text/css" href="../../Doers/css/font-awesome.min.css" />
+        <link rel="stylesheet" type="text/css" href="../../DoersInLocal/css/font-awesome.min.css" />
 
         <!-- CSS | Colors -->
-        <link rel="stylesheet" type="text/css" href="../../Doers/css/DarkBlue.css" id="colors-style" />
-        <link rel="stylesheet" type="text/css" href="../../Doers/css/switcher.css" />
+        <link rel="stylesheet" type="text/css" href="../../DoersInLocal/css/DarkBlue.css" id="colors-style" />
+        <link rel="stylesheet" type="text/css" href="../../DoersInLocal/css/switcher.css" />
 
         <!-- CSS | animate -->
         <!-- Credits: http://daneden.github.io/animate.css/ -->
-        <link rel="stylesheet" type="text/css" href="../../Doers/css/animate.min.css" />
+        <link rel="stylesheet" type="text/css" href="../../DoersInLocal/css/animate.min.css" />
 
         <!-- CSS | Normalize -->
         <!-- Credits: http://manos.malihu.gr/jquery-custom-content-scroller -->
-        <link rel="stylesheet" type="text/css" href="../../Doers/css/jquery.mCustomScrollbar.css" />
+        <link rel="stylesheet" type="text/css" href="../../DoersInLocal/css/jquery.mCustomScrollbar.css" />
 
         <!-- CSS | Google Fonts -->
         <!-- <link href='http://fonts.useso.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'> -->
 
         <!-- CSS | Style -->
         <!-- Credits: http://themeforest.net/user/FlexyCodes -->
-        <link rel="stylesheet" type="text/css" href="../../Doers/PersonalSpace/css/main.css" />
+        <link rel="stylesheet" type="text/css" href="../../DoersInLocal/PersonalSpace/css/main.css" />
 
         <!-- CSS | prettyPhoto -->
         <!-- Credits: http://www.no-margin-for-errors.com/ -->
-        <link rel="stylesheet" type="text/css" href="../../Doers/css/prettyPhoto.css"/>
+        <link rel="stylesheet" type="text/css" href="../../DoersInLocal/css/prettyPhoto.css"/>
 
         <style>
             @media only screen and (max-width : 991px){
@@ -479,47 +479,47 @@
 
         <!-- jquery | jQuery 1.11.0 -->
         <!-- Credits: http://jquery.com -->
-        <script type="text/javascript" src="../../Doers/js/jquery.min.js"></script>
+        <script type="text/javascript" src="../../DoersInLocal/js/jquery.min.js"></script>
 
         <!-- Js | jquery.cycle -->
         <!-- Credits: https://github.com/malsup/cycle2 -->
-        <script type="text/javascript" src="../../Doers/js/jquery.cycle2.min.js"></script>
+        <script type="text/javascript" src="../../DoersInLocal/js/jquery.cycle2.min.js"></script>
 
         <!-- Js | bootstrap -->
         <!-- Credits: http://getbootstrap.com/ -->
-        <script type="text/javascript" src="../../Doers/bootstrap/js/bootstrap.min.js"></script> 
+        <script type="text/javascript" src="../../DoersInLocal/bootstrap/js/bootstrap.min.js"></script> 
 
         <!-- Js | easyResponsiveTabs -->
         <!-- Credits: http://webtrendset.com/demo/easy-responsive-tabs/Index.html -->
-        <script type="text/javascript" src="../../Doers/js/easyResponsiveTabs.min.js"></script> 
+        <script type="text/javascript" src="../../DoersInLocal/js/easyResponsiveTabs.min.js"></script> 
 
         <!-- Js | jquery.cookie -->
         <!-- Credits: https://github.com/carhartl/jquery-cookie --> 
-        <script type="text/javascript" src="../../Doers/js/jquery.cookie.js"></script>	
+        <script type="text/javascript" src="../../DoersInLocal/js/jquery.cookie.js"></script>	
 
         <!-- Js | switcher -->
         <!-- Credits: http://themeforest.net/user/FlexyCodes -->
-        <script type="text/javascript" src="../../Doers/js/switcher.js"></script>	
+        <script type="text/javascript" src="../../DoersInLocal/js/switcher.js"></script>	
 
         <!-- Js | mCustomScrollbar -->
         <!-- Credits: http://manos.malihu.gr/jquery-custom-content-scroller -->
-        <script type="text/javascript" src="../../Doers/js/jquery.mCustomScrollbar.concat.min.js"></script>		
+        <script type="text/javascript" src="../../DoersInLocal/js/jquery.mCustomScrollbar.concat.min.js"></script>		
 
         <!-- Js | gmaps -->
         <!-- Credits: http://maps.google.com/maps/api/js?sensor=true-->
         
-        <script type="text/javascript" src="../../Doers/js/gmaps.min.js"></script>
+        <script type="text/javascript" src="../../DoersInLocal/js/gmaps.min.js"></script>
 
         <!-- Js | Js -->
         <!-- Credits: http://themeforest.net/user/FlexyCodes -->
-        <script type="text/javascript" src="../../Doers/js/main.js"></script>
+        <script type="text/javascript" src="../../DoersInLocal/js/main.js"></script>
 
         <!-- jquery | rotate and portfolio -->
         <!-- Credits: http://jquery.com -->
-        <script type="text/javascript" src="../../Doers/js/jquery.mixitup.min.js"></script> 
-        <script type="text/javascript" src="../../Doers/js/HeadImage.js"></script>
+        <script type="text/javascript" src="../../DoersInLocal/js/jquery.mixitup.min.js"></script> 
+        <script type="text/javascript" src="../../DoersInLocal/js/HeadImage.js"></script>
         
-        <script type="text/javascript" src="../../Doers/js/jqthumb.js"></script>
+        <script type="text/javascript" src="../../DoersInLocal/js/jqthumb.js"></script>
 
 
         <!-- code js for image rotate -->

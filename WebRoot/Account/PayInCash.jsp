@@ -6,14 +6,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html">
 <title>劳务提现</title>
-	<link rel="shortcut icon" href="../../Doers/favicon.ico" />
-	<link rel="stylesheet" type="text/css" href="../../Doers/Account/css/base.css">
-	<link rel="stylesheet" type="text/css" href="../../Doers/Account/css/home.css">
-	<link rel="stylesheet" type="text/css" href="../../Doers/Account/css/Ext1.css">
-    <link rel="stylesheet" type="text/css" href="../../Doers/bootstrap/css/candy-box.css" />
-    <link rel="stylesheet" type="text/css" href="../../Doers/css/font-awesome.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../Doers/css/animate.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../Doers/css/style.css" />
+	<link rel="shortcut icon" href="../../DoersInLocal/favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="../../DoersInLocal/Account/css/base.css">
+	<link rel="stylesheet" type="text/css" href="../../DoersInLocal/Account/css/home.css">
+	<link rel="stylesheet" type="text/css" href="../../DoersInLocal/Account/css/Ext1.css">
+    <link rel="stylesheet" type="text/css" href="../../DoersInLocal/bootstrap/css/candy-box.css" />
+    <link rel="stylesheet" type="text/css" href="../../DoersInLocal/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../DoersInLocal/css/animate.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../DoersInLocal/css/style.css" />
     <style>
     a:hover{color:red}
     
@@ -32,7 +32,7 @@
 		             <li><a href="${pageContext.request.contextPath}/serverDetailAction_loadingAllServers?checkAll=yes">Do 服务</a></li>
 		             <li><a href="${pageContext.request.contextPath}/activityAction_loadingActivityCenter">Do 活动</a></li>
 		             <li  class="active"><a href="${pageContext.request.contextPath}/accountAction_OpenMyCart">Do 交易</a></li>
-		             <li><a href="/Doers/UserWorkspace/UserWorkSpace.jsp">Do Myself</a></li>
+		             <li><a href="/DoersInLocal/UserWorkspace/UserWorkSpace.jsp">Do Myself</a></li>
                 </ul>
             </div>
         </nav>
@@ -109,8 +109,8 @@
                 <div class="col-sm-4">
                     <h4>Doers家族</h4>
                     <ul>
-                        <li><a href="../../Doers/introduce.html" target="_blank">关于Doers</a></li>
-                        <li><a href="../../Doers/introduce.html" target="_blank">联系我们</a></li>
+                        <li><a href="../../DoersInLocal/introduce.html" target="_blank">关于Doers</a></li>
+                        <li><a href="../../DoersInLocal/introduce.html" target="_blank">联系我们</a></li>
                     </ul>
                 </div>
             </div>
